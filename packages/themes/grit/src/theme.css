@@ -1,0 +1,61 @@
+/* Grit personality: everything is outlined, and pressing pushes things into their shadow. */
+
+[data-ds-theme="grit"] .ds-heading[data-size="6"],
+[data-ds-theme="grit"] .ds-heading[data-size="5"] { text-transform: uppercase; line-height: 0.95; }
+
+[data-ds-theme="grit"] .ds-button { border-color: var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-button[data-variant="solid"]:hover:not(:disabled) { --_bg: var(--_tone); transform: translate(-1px, -1px); box-shadow: 4px 4px 0 0 var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-button:active:not(:disabled) { transform: translate(3px, 3px); box-shadow: 0 0 0 0 var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-button[data-variant="outline"],
+[data-ds-theme="grit"] .ds-button[data-variant="soft"] { --_fg: var(--ds-color-text); --_bd: var(--ds-color-border); background: var(--ds-color-surface); box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="grit"] .ds-button[data-variant="soft"] { background: color-mix(in srgb, var(--_tone) 30%, var(--ds-color-surface)); }
+[data-ds-theme="grit"] .ds-button[data-variant="ghost"] { --_fg: var(--ds-color-text); }
+[data-ds-theme="grit"] .ds-button[data-tone="neutral"][data-variant="solid"] { --_tone: var(--ds-color-text); }
+
+[data-ds-theme="grit"] .ds-card { border: var(--ds-border-width) solid var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-card[data-variant="outlined"] { box-shadow: none; }
+[data-ds-theme="grit"] .ds-card[data-variant="filled"] { background: var(--ds-color-accent); color: var(--ds-color-on-accent); }
+[data-ds-theme="grit"] .ds-card[data-variant="filled"] .ds-text[data-muted] { color: inherit; opacity: 0.85; }
+[data-ds-theme="grit"] .ds-card[data-interactive]:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 0 var(--ds-color-border); }
+
+[data-ds-theme="grit"] .ds-badge { border-color: var(--ds-color-border); color: var(--ds-color-text); }
+[data-ds-theme="grit"] .ds-badge[data-variant="soft"] { background: color-mix(in srgb, var(--_tone) 45%, var(--ds-color-surface)); }
+[data-ds-theme="grit"] .ds-badge[data-variant="solid"] { color: var(--_on); }
+
+[data-ds-theme="grit"] .ds-input,
+[data-ds-theme="grit"] .ds-select__control,
+[data-ds-theme="grit"] .ds-textarea { box-shadow: var(--ds-shadow-sm); }
+[data-ds-theme="grit"] .ds-input:focus-within,
+[data-ds-theme="grit"] .ds-select__control:focus,
+[data-ds-theme="grit"] .ds-textarea:focus { border-color: var(--ds-color-border); box-shadow: 4px 4px 0 0 var(--ds-color-accent); }
+
+[data-ds-theme="grit"] .ds-choice__box { border-color: var(--ds-color-border); border-width: var(--ds-border-width); box-shadow: var(--ds-shadow-sm); }
+[data-ds-theme="grit"] .ds-choice__input:checked + .ds-choice__box { border-color: var(--ds-color-border); color: var(--ds-color-on-primary); }
+[data-ds-theme="grit"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { box-shadow: inset 0 0 0 4px var(--ds-color-surface), inset 0 0 0 10px var(--ds-color-primary), var(--ds-shadow-sm); }
+
+[data-ds-theme="grit"] .ds-switch__track { border: var(--ds-border-width) solid var(--ds-color-border); box-shadow: var(--ds-shadow-sm); }
+[data-ds-theme="grit"] .ds-switch__track[data-state="on"] { border-color: var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-switch__thumb { background: var(--ds-color-surface); border: var(--ds-border-width) solid var(--ds-color-border); box-shadow: none; width: 18px; height: 18px; left: 2px; }
+[data-ds-theme="grit"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--ds-color-surface); }
+
+[data-ds-theme="grit"] .ds-alert { border: var(--ds-border-width) solid var(--ds-color-border); background: color-mix(in srgb, var(--_tone) 35%, var(--ds-color-surface)); box-shadow: var(--ds-shadow-sm); }
+[data-ds-theme="grit"] .ds-alert__icon { color: var(--ds-color-text); }
+[data-ds-theme="grit"] .ds-alert__content { color: var(--ds-color-text); }
+
+[data-ds-theme="grit"] .ds-progress { height: 16px; border: var(--ds-border-width) solid var(--ds-color-border); border-radius: var(--ds-radius-sm); background: var(--ds-color-surface); }
+[data-ds-theme="grit"] .ds-progress__bar { border-radius: 0; border-right: var(--ds-border-width) solid var(--ds-color-border); background-image: repeating-linear-gradient(-45deg, transparent 0 6px, rgba(0, 0, 0, 0.14) 6px 12px); }
+
+[data-ds-theme="grit"] .ds-slider__control::-webkit-slider-runnable-track { height: 10px; border: var(--ds-border-width) solid var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-slider__control::-webkit-slider-thumb { border-radius: 4px; border: var(--ds-border-width) solid var(--ds-color-border); background: var(--ds-color-warning); margin-top: -6px; box-shadow: var(--ds-shadow-sm); }
+
+[data-ds-theme="grit"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border: var(--ds-border-width) solid var(--ds-color-border); background: var(--ds-color-surface); }
+[data-ds-theme="grit"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-warning); color: #0b0b0b; box-shadow: none; outline: var(--ds-border-width) solid var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom-width: var(--ds-border-width); border-color: var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 5px; bottom: -2px; }
+
+[data-ds-theme="grit"] .ds-avatar { border: var(--ds-border-width) solid var(--ds-color-border); background: var(--ds-color-warning); color: #0b0b0b; }
+[data-ds-theme="grit"] .ds-accordion,
+[data-ds-theme="grit"] .ds-accordion__item { border-color: var(--ds-color-border); border-width: var(--ds-border-width); }
+[data-ds-theme="grit"] .ds-dialog__panel { border: var(--ds-border-width-strong) solid var(--ds-color-border); }
+[data-ds-theme="grit"] .ds-tooltip__content { border: var(--ds-border-width) solid var(--ds-color-border); background: var(--ds-color-warning); color: #0b0b0b; box-shadow: var(--ds-shadow-sm); font-weight: 700; }
+[data-ds-theme="grit"] .ds-kbd { border-width: var(--ds-border-width); border-color: var(--ds-color-border); box-shadow: var(--ds-shadow-sm); }

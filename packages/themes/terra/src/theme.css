@@ -1,0 +1,43 @@
+/* Terra personality: paper grain, leaf-shaped corners and hand-thrown warmth. */
+
+[data-ds-theme="terra"] {
+  background-color: var(--ds-color-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0 0.1 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-ds-theme="terra"] .ds-heading { font-optical-sizing: auto; }
+[data-ds-theme="terra"] .ds-heading[data-size="6"],
+[data-ds-theme="terra"] .ds-heading[data-size="5"] { font-weight: 800; letter-spacing: -0.045em; }
+
+/* Leaf corners: one corner stays tighter than the rest. */
+[data-ds-theme="terra"] .ds-card { border-radius: var(--ds-radius-lg) var(--ds-radius-lg) var(--ds-radius-lg) var(--ds-radius-sm); }
+[data-ds-theme="terra"] .ds-dialog__panel { border-radius: var(--ds-radius-lg) var(--ds-radius-lg) var(--ds-radius-sm) var(--ds-radius-lg); }
+[data-ds-theme="terra"] .ds-alert { border-radius: var(--ds-radius-md) var(--ds-radius-md) var(--ds-radius-md) 4px; border-width: 0; }
+[data-ds-theme="terra"] .ds-card[data-variant="filled"] { background: var(--ds-color-accent); color: var(--ds-color-on-accent); }
+[data-ds-theme="terra"] .ds-card[data-variant="filled"] .ds-text[data-muted] { color: inherit; opacity: 0.82; }
+[data-ds-theme="terra"] .ds-card[data-variant="outlined"] { border-style: dashed; border-width: 1.5px; border-color: var(--ds-color-border-strong); background: transparent; }
+
+[data-ds-theme="terra"] .ds-button { font-weight: 600; }
+[data-ds-theme="terra"] .ds-button[data-variant="solid"]:hover:not(:disabled) { transform: translateY(-1px) rotate(-0.6deg); }
+[data-ds-theme="terra"] .ds-button[data-variant="outline"] { border-width: 1.5px; }
+
+[data-ds-theme="terra"] .ds-input,
+[data-ds-theme="terra"] .ds-select__control { border-radius: var(--ds-radius-md); background: var(--ds-color-surface); border-width: 1.5px; }
+[data-ds-theme="terra"] .ds-textarea { border-radius: var(--ds-radius-md); border-width: 1.5px; }
+
+[data-ds-theme="terra"] .ds-badge { border-radius: 999px 999px 999px 4px; padding: 0 0.8em; }
+[data-ds-theme="terra"] .ds-avatar { border-radius: 42% 58% 55% 45% / 48% 42% 58% 52%; background: var(--ds-color-accent); color: var(--ds-color-on-accent); }
+[data-ds-theme="terra"] .ds-choice__box { border-radius: 6px; border-width: 1.5px; }
+[data-ds-theme="terra"] .ds-switch__track { height: 26px; width: 48px; background: var(--ds-color-surface-alt); border-color: transparent; }
+[data-ds-theme="terra"] .ds-switch__thumb { width: 20px; height: 20px; background: var(--ds-color-surface); box-shadow: 0 1px 3px rgba(74, 48, 24, 0.35); }
+[data-ds-theme="terra"] .ds-switch__track[data-state="on"] { background: var(--ds-color-accent); border-color: transparent; }
+[data-ds-theme="terra"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--ds-color-surface); transform: translate(21px, -50%); }
+
+[data-ds-theme="terra"] .ds-progress { height: 10px; background: var(--ds-color-surface-alt); }
+[data-ds-theme="terra"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; border-radius: 3px; background: var(--ds-color-primary); }
+[data-ds-theme="terra"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-text); color: var(--ds-color-bg); }
+[data-ds-theme="terra"] .ds-accordion__trigger { font-family: var(--ds-font-display); font-size: var(--ds-text-1); font-weight: 600; letter-spacing: -0.015em; }
+[data-ds-theme="terra"] .ds-accordion,
+[data-ds-theme="terra"] .ds-accordion__item { border-style: dashed; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="terra"] .ds-slider__control::-webkit-slider-thumb { width: 22px; height: 22px; margin-top: -8px; border-width: 3px; border-color: var(--ds-color-surface); background: var(--ds-color-primary); }
+[data-ds-theme="terra"] .ds-tooltip__content { border-radius: 10px 10px 10px 3px; }

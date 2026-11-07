@@ -1,0 +1,29 @@
+{
+  "name": "design-system-hub",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "pnpm --filter showcase dev",
+    "build": "pnpm --filter showcase build",
+    "typecheck": "pnpm -r --parallel exec tsc -p tsconfig.json",
+    "check:contrast": "tsx scripts/check-contrast.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "tsx": "^4.20.0",
+    "@dsh/core": "workspace:*",
+    "@dsh/theme-folio": "workspace:*",
+    "@dsh/theme-grid": "workspace:*",
+    "@dsh/theme-grit": "workspace:*",
+    "@dsh/theme-mist": "workspace:*",
+    "@dsh/theme-phosphor": "workspace:*",
+    "@dsh/theme-terra": "workspace:*"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

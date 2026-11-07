@@ -1,0 +1,37 @@
+/* Folio personality: print details the token contract can't express. */
+
+[data-ds-theme="folio"] .ds-heading { font-optical-sizing: auto; font-variation-settings: "SOFT" 30; }
+[data-ds-theme="folio"] .ds-heading[data-size="6"],
+[data-ds-theme="folio"] .ds-heading[data-size="5"] { font-weight: 400; font-style: italic; letter-spacing: -0.025em; }
+
+/* Labels read as small caps: a touch smaller, generously tracked. */
+[data-ds-theme="folio"] .ds-button,
+[data-ds-theme="folio"] .ds-badge,
+[data-ds-theme="folio"] .ds-tabs__tab { font-family: var(--ds-font-mono); font-size: 0.74rem; font-weight: 500; }
+[data-ds-theme="folio"] .ds-button[data-size="lg"] { font-size: 0.82rem; }
+[data-ds-theme="folio"] .ds-field__label { font-style: italic; font-weight: 500; font-size: var(--ds-text-0); }
+
+/* Ghost buttons become underlined text links. */
+[data-ds-theme="folio"] .ds-button[data-variant="ghost"] { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+[data-ds-theme="folio"] .ds-button[data-variant="ghost"]:hover:not(:disabled) { background: transparent; text-decoration-thickness: 2px; }
+
+/* Cards are framed by a double rule at the top, like a section break. */
+[data-ds-theme="folio"] .ds-card[data-variant="outlined"] { border-top: 3px double var(--ds-color-text); }
+
+/* Inputs are ruled lines on a page, not boxes. */
+[data-ds-theme="folio"] .ds-input,
+[data-ds-theme="folio"] .ds-select__control {
+  border-width: 0 0 var(--ds-border-width) 0;
+  border-radius: 0;
+  background: transparent;
+  padding-left: 0;
+}
+[data-ds-theme="folio"] .ds-input:focus-within,
+[data-ds-theme="folio"] .ds-select__control:focus { box-shadow: 0 1px 0 0 var(--ds-color-primary); }
+
+[data-ds-theme="folio"] .ds-alert { border-width: 0 0 0 3px; border-color: var(--_tone); border-radius: 0; }
+[data-ds-theme="folio"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 1px; background: var(--ds-color-text); }
+[data-ds-theme="folio"] .ds-progress { height: 3px; border-radius: 0; }
+[data-ds-theme="folio"] .ds-avatar { font-family: var(--ds-font-display); font-style: italic; font-weight: 500; }
+[data-ds-theme="folio"] .ds-switch__thumb { box-shadow: none; }
+[data-ds-theme="folio"] .ds-dialog__title { font-style: italic; font-weight: 400; font-size: var(--ds-text-3); }

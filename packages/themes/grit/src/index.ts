@@ -1,0 +1,93 @@
+import { defineTheme } from "@dsh/core";
+
+/** Grit: neo-brutalist, loud and honest. Thick outlines, hard shadows, no gradients. */
+export const grit = defineTheme({
+  meta: {
+    id: "grit",
+    name: "Grit",
+    tagline: "Thick lines. Hard shadows. No apologies.",
+    description:
+      "A neo-brutalist system with heavy black outlines, offset shadows that move when you press, and bright flat color. Made for indie tools, launch pages, creative apps and anything that should feel handmade and a little rebellious.",
+    keywords: ["brutalist", "bold", "playful", "flat"],
+    fontsHref:
+      "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap",
+  },
+  color: {
+    bg: "#fff3d1",
+    surface: "#ffffff",
+    surfaceAlt: "#f7e6b5",
+    text: "#0b0b0b",
+    textMuted: "#3e3a30",
+    border: "#0b0b0b",
+    borderStrong: "#0b0b0b",
+    primary: "#ff5b1f",
+    onPrimary: "#0b0b0b",
+    accent: "#3d5cff",
+    onAccent: "#ffffff",
+    success: "#22c25d",
+    warning: "#ffc414",
+    danger: "#ff4545",
+    info: "#4cc6ff",
+    onStatus: "#0b0b0b",
+    focus: "#3d5cff",
+    overlay: "rgba(11, 11, 11, 0.55)",
+  },
+  colorDark: {
+    bg: "#141310",
+    surface: "#1f1d18",
+    surfaceAlt: "#2c2920",
+    text: "#fff3d1",
+    textMuted: "#d6ccb0",
+    border: "#fff3d1",
+    borderStrong: "#fff3d1",
+    accent: "#8fa0ff",
+    onAccent: "#0b0b0b",
+    focus: "#8fa0ff",
+    overlay: "rgba(0, 0, 0, 0.7)",
+  },
+  type: {
+    fontDisplay: '"Space Grotesk", system-ui, sans-serif',
+    fontBody: '"Space Grotesk", system-ui, sans-serif',
+    fontMono: '"Space Mono", ui-monospace, monospace',
+    baseSize: 16,
+    scaleRatio: 1.25,
+    lineHeight: 1.5,
+    weightBody: 500,
+    weightStrong: 700,
+    weightDisplay: 700,
+    trackingDisplay: "-0.035em",
+    trackingLabel: "0.02em",
+    labelCase: "uppercase",
+  },
+  shape: {
+    radiusSm: "6px",
+    radiusMd: "10px",
+    radiusLg: "14px",
+    radiusControl: "10px",
+    borderWidth: "2px",
+    borderWidthStrong: "3px",
+  },
+  elevation: {
+    shadowSm: "2px 2px 0 0 #0b0b0b",
+    shadowMd: "5px 5px 0 0 #0b0b0b",
+    shadowLg: "9px 9px 0 0 #0b0b0b",
+    shadowControl: "3px 3px 0 0 #0b0b0b",
+  },
+  elevationDark: {
+    shadowSm: "2px 2px 0 0 #fff3d1",
+    shadowMd: "5px 5px 0 0 #fff3d1",
+    shadowLg: "9px 9px 0 0 #fff3d1",
+    shadowControl: "3px 3px 0 0 #fff3d1",
+  },
+  space: { unit: 4, controlSm: 34, controlMd: 42, controlLg: 52 },
+  motion: {
+    durationFast: "90ms",
+    durationBase: "140ms",
+    durationSlow: "220ms",
+    easing: "cubic-bezier(0.3, 0, 0.4, 1)",
+    easingEnter: "cubic-bezier(0.2, 1.6, 0.4, 1)",
+    pressScale: 1,
+  },
+});
+
+export default grit;
