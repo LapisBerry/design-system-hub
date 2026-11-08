@@ -10,11 +10,17 @@
   },
   "dependencies": {
     "@dsh/core": "workspace:*",
+    "@dsh/theme-blueprint": "workspace:*",
+    "@dsh/theme-dial": "workspace:*",
     "@dsh/theme-folio": "workspace:*",
     "@dsh/theme-grid": "workspace:*",
     "@dsh/theme-grit": "workspace:*",
+    "@dsh/theme-konstrukt": "workspace:*",
     "@dsh/theme-mist": "workspace:*",
+    "@dsh/theme-noir": "workspace:*",
     "@dsh/theme-phosphor": "workspace:*",
+    "@dsh/theme-riso": "workspace:*",
+    "@dsh/theme-sorbet": "workspace:*",
     "@dsh/theme-terra": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

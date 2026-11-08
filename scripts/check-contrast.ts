@@ -9,8 +9,14 @@ import { mist } from "@dsh/theme-mist";
 import { phosphor } from "@dsh/theme-phosphor";
 import { terra } from "@dsh/theme-terra";
 import { grid } from "@dsh/theme-grid";
+import { konstrukt } from "@dsh/theme-konstrukt";
+import { sorbet } from "@dsh/theme-sorbet";
+import { noir } from "@dsh/theme-noir";
+import { blueprint } from "@dsh/theme-blueprint";
+import { riso } from "@dsh/theme-riso";
+import { dial } from "@dsh/theme-dial";
 
-const themes: ThemeDefinition[] = [folio, grit, mist, phosphor, terra, grid];
+const themes: ThemeDefinition[] = [folio, grit, mist, phosphor, terra, grid, konstrukt, sorbet, noir, blueprint, riso, dial];
 let failures = 0;
 
 for (const theme of themes) {

@@ -11,15 +11,21 @@
     "check:contrast": "tsx scripts/check-contrast.ts"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "tsx": "^4.20.0",
     "@dsh/core": "workspace:*",
+    "@dsh/theme-blueprint": "workspace:*",
+    "@dsh/theme-dial": "workspace:*",
     "@dsh/theme-folio": "workspace:*",
     "@dsh/theme-grid": "workspace:*",
     "@dsh/theme-grit": "workspace:*",
+    "@dsh/theme-konstrukt": "workspace:*",
     "@dsh/theme-mist": "workspace:*",
+    "@dsh/theme-noir": "workspace:*",
     "@dsh/theme-phosphor": "workspace:*",
-    "@dsh/theme-terra": "workspace:*"
+    "@dsh/theme-riso": "workspace:*",
+    "@dsh/theme-sorbet": "workspace:*",
+    "@dsh/theme-terra": "workspace:*",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
