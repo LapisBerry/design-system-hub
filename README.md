@@ -14,6 +14,12 @@ packages/
     terra/              Organic: clay, olive, sand, leaf corners
     grid/               Swiss precision for dense software
     phosphor/           Retro CRT terminal (dark only)
+    konstrukt/          Bauhaus geometry in primary colors
+    sorbet/             Y2K candy: glossy bubbles, bouncy motion
+    noir/               Couture luxury: Didone, gold hairlines
+    blueprint/          Technical drafting: graph paper, crop marks
+    riso/               Risograph print: two inks, halftones (light only)
+    dial/               Tactile hardware: raised keys, LCD readouts
 apps/
   showcase/             Vite + React gallery, compare view, token docs
 scripts/
@@ -40,6 +46,12 @@ pnpm check:contrast
 | **Terra** | Earthy palette, leaf-shaped corners, paper grain | Food, travel, sustainability, lifestyle | Light, dark |
 | **Grid** | Tight grotesque, strict 4px rhythm, one signal red, dense controls | Admin panels, analytics, finance | Light, dark |
 | **Phosphor** | Green glow, scanlines, monospace, `[ BRACKETED ]` buttons | Dev tools, status pages, retro games | Dark only |
+| **Konstrukt** | Bauhaus primaries, geometric sans, quarter-circle panel corners | Museums, schools, events, architecture | Light, dark |
+| **Sorbet** | Glossy bubble buttons, plum outlines, confetti, springy motion | Social apps, games, creator tools | Light, dark |
+| **Noir** | Didone headlines, wide-tracked labels, gold hairlines, slow motion | Fashion, hospitality, premium brands | Light, dark |
+| **Blueprint** | Graph paper, crop marks, condensed type, safety orange | Hardware, CAD, infrastructure, maker tools | Vellum light, cyanotype dark |
+| **Riso** | Fluorescent pink and blue overprint, halftones, misregistration | Zines, music events, indie publishers | Light only |
+| **Dial** | Molded plastic, keys that press in, LCD readouts, LED toggles | Audio tools, smart home, gadget apps | Light, dark |
 
 Every theme passes the contrast checks in `packages/core/src/tokens/contrast.ts` (4.5:1 for body text and primary button labels, 3:1 for large text and UI parts) in every mode it supports.
 

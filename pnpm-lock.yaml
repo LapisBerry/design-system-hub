@@ -11,6 +11,12 @@ importers:
       '@dsh/core':
         specifier: workspace:*
         version: link:packages/core
+      '@dsh/theme-blueprint':
+        specifier: workspace:*
+        version: link:packages/themes/blueprint
+      '@dsh/theme-dial':
+        specifier: workspace:*
+        version: link:packages/themes/dial
       '@dsh/theme-folio':
         specifier: workspace:*
         version: link:packages/themes/folio
@@ -20,12 +26,24 @@ importers:
       '@dsh/theme-grit':
         specifier: workspace:*
         version: link:packages/themes/grit
+      '@dsh/theme-konstrukt':
+        specifier: workspace:*
+        version: link:packages/themes/konstrukt
       '@dsh/theme-mist':
         specifier: workspace:*
         version: link:packages/themes/mist
+      '@dsh/theme-noir':
+        specifier: workspace:*
+        version: link:packages/themes/noir
       '@dsh/theme-phosphor':
         specifier: workspace:*
         version: link:packages/themes/phosphor
+      '@dsh/theme-riso':
+        specifier: workspace:*
+        version: link:packages/themes/riso
+      '@dsh/theme-sorbet':
+        specifier: workspace:*
+        version: link:packages/themes/sorbet
       '@dsh/theme-terra':
         specifier: workspace:*
         version: link:packages/themes/terra
@@ -41,6 +59,12 @@ importers:
       '@dsh/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@dsh/theme-blueprint':
+        specifier: workspace:*
+        version: link:../../packages/themes/blueprint
+      '@dsh/theme-dial':
+        specifier: workspace:*
+        version: link:../../packages/themes/dial
       '@dsh/theme-folio':
         specifier: workspace:*
         version: link:../../packages/themes/folio
@@ -50,12 +74,24 @@ importers:
       '@dsh/theme-grit':
         specifier: workspace:*
         version: link:../../packages/themes/grit
+      '@dsh/theme-konstrukt':
+        specifier: workspace:*
+        version: link:../../packages/themes/konstrukt
       '@dsh/theme-mist':
         specifier: workspace:*
         version: link:../../packages/themes/mist
+      '@dsh/theme-noir':
+        specifier: workspace:*
+        version: link:../../packages/themes/noir
       '@dsh/theme-phosphor':
         specifier: workspace:*
         version: link:../../packages/themes/phosphor
+      '@dsh/theme-riso':
+        specifier: workspace:*
+        version: link:../../packages/themes/riso
+      '@dsh/theme-sorbet':
+        specifier: workspace:*
+        version: link:../../packages/themes/sorbet
       '@dsh/theme-terra':
         specifier: workspace:*
         version: link:../../packages/themes/terra
@@ -94,6 +130,18 @@ importers:
         specifier: ^19.2.0
         version: 19.3.1(react@19.3.1)
 
+  packages/themes/blueprint:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/dial:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/folio:
     dependencies:
       '@dsh/core':
@@ -112,13 +160,37 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/konstrukt:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/mist:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/noir:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/phosphor:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/riso:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/sorbet:
     dependencies:
       '@dsh/core':
         specifier: workspace:*

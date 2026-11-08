@@ -1,0 +1,115 @@
+/* Dial personality: raised keys that press in, recessed wells, LCD readouts, screw-head details. */
+
+[data-ds-theme="dial"] {
+  --dial-well: inset 0 2px 4px rgba(28, 28, 26, 0.28), inset 0 -1px 0 rgba(255, 255, 255, 0.55);
+  --dial-lcd-bg: #b9c4a6;
+  --dial-lcd-fg: #23291a;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ds-color-bg) 92%, white), var(--ds-color-bg));
+}
+[data-ds-theme="dial"][data-ds-mode="dark"] {
+  --dial-well: inset 0 2px 4px rgba(0, 0, 0, 0.6), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  --dial-lcd-bg: #1a2414;
+  --dial-lcd-fg: #a6f08a;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ds-color-bg) 90%, white), var(--ds-color-bg));
+}
+
+[data-ds-theme="dial"] .ds-heading[data-size="2"],
+[data-ds-theme="dial"] .ds-heading[data-size="1"] { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; font-weight: 600; color: var(--ds-color-text-muted); }
+
+/* Keys: raised, then physically pressed in. */
+[data-ds-theme="dial"] .ds-button { border-color: rgba(0, 0, 0, 0.12); font-weight: 600; font-size: 0.78rem; }
+[data-ds-theme="dial"] .ds-button[data-variant="outline"],
+[data-ds-theme="dial"] .ds-button[data-variant="soft"] {
+  --_bg: linear-gradient(180deg, color-mix(in srgb, var(--ds-color-surface) 92%, white), var(--ds-color-surface));
+  background: var(--_bg);
+  --_fg: var(--ds-color-text);
+  --_bd: rgba(0, 0, 0, 0.12);
+  box-shadow: var(--ds-shadow-control);
+}
+[data-ds-theme="dial"] .ds-button[data-variant="soft"][data-tone="danger"] { --_fg: var(--ds-color-danger); }
+[data-ds-theme="dial"] .ds-button[data-variant="solid"] { background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(0, 0, 0, 0.06)); }
+[data-ds-theme="dial"] .ds-button:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3), 0 0 0 rgba(0, 0, 0, 0);
+}
+[data-ds-theme="dial"] .ds-button[data-variant="ghost"] { --_fg: var(--ds-color-text-muted); }
+[data-ds-theme="dial"] .ds-icon-button[data-variant="ghost"] { border-radius: 50%; }
+
+/* Panels have four screw heads. */
+[data-ds-theme="dial"] .ds-card {
+  --_screw: radial-gradient(circle, var(--ds-color-border-strong) 0 2px, color-mix(in srgb, var(--ds-color-border-strong) 50%, transparent) 2.5px, transparent 3.5px);
+  background-image: var(--_screw), var(--_screw), var(--_screw), var(--_screw);
+  background-size: 8px 8px;
+  background-position: 8px 8px, calc(100% - 8px) 8px, 8px calc(100% - 8px), calc(100% - 8px) calc(100% - 8px);
+  background-repeat: no-repeat;
+  background-color: var(--ds-color-surface);
+}
+[data-ds-theme="dial"] .ds-card[data-variant="outlined"] { background-color: transparent; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="dial"] .ds-card[data-variant="filled"] { background-color: var(--ds-color-surface-alt); box-shadow: var(--dial-well); }
+
+/* Inputs are recessed wells. */
+[data-ds-theme="dial"] .ds-input,
+[data-ds-theme="dial"] .ds-select__control,
+[data-ds-theme="dial"] .ds-textarea { background: var(--ds-color-surface-alt); border-color: transparent; box-shadow: var(--dial-well); }
+[data-ds-theme="dial"] .ds-input:focus-within,
+[data-ds-theme="dial"] .ds-select__control:focus,
+[data-ds-theme="dial"] .ds-textarea:focus { border-color: var(--ds-color-primary); box-shadow: var(--dial-well), 0 0 0 3px color-mix(in srgb, var(--ds-color-primary) 25%, transparent); }
+[data-ds-theme="dial"] .ds-field__label,
+[data-ds-theme="dial"] .ds-radio-group legend { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; font-weight: 600; color: var(--ds-color-text-muted); }
+
+/* LCD readouts: slider value, keyboard keys, code. */
+[data-ds-theme="dial"] .ds-slider__value,
+[data-ds-theme="dial"] .ds-code {
+  background: var(--dial-lcd-bg);
+  color: var(--dial-lcd-fg);
+  font-family: var(--ds-font-mono);
+  padding: 1px 8px;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
+  font-size: 0.95em;
+}
+[data-ds-theme="dial"] .ds-kbd { background: var(--ds-color-surface); box-shadow: var(--ds-shadow-control); border: 0; }
+
+[data-ds-theme="dial"] .ds-choice__box { background: var(--ds-color-surface-alt); border-color: transparent; box-shadow: var(--dial-well); border-radius: 5px; }
+[data-ds-theme="dial"] .ds-choice__input:checked + .ds-choice__box { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3); }
+
+/* Switch: a physical slide toggle with an indicator LED. */
+[data-ds-theme="dial"] .ds-switch__track { width: 48px; height: 26px; border: 0; border-radius: 6px; background: var(--ds-color-surface-alt); box-shadow: var(--dial-well); }
+[data-ds-theme="dial"] .ds-switch__thumb {
+  width: 22px;
+  height: 20px;
+  left: 3px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ds-color-surface) 85%, white), var(--ds-color-surface));
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+[data-ds-theme="dial"] .ds-switch__thumb::after { content: ""; position: absolute; top: 50%; left: 50%; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--ds-color-border-strong); }
+[data-ds-theme="dial"] .ds-switch__track[data-state="on"] { background: var(--ds-color-surface-alt); }
+[data-ds-theme="dial"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: linear-gradient(180deg, color-mix(in srgb, var(--ds-color-surface) 85%, white), var(--ds-color-surface)); transform: translate(20px, -50%); }
+[data-ds-theme="dial"] .ds-switch__track[data-state="on"] .ds-switch__thumb::after { background: var(--ds-color-primary); box-shadow: 0 0 6px var(--ds-color-primary); }
+
+[data-ds-theme="dial"] .ds-badge { border-radius: 4px; font-family: var(--ds-font-mono); font-size: 0.78rem; }
+[data-ds-theme="dial"] .ds-avatar { background: var(--ds-color-surface); color: var(--ds-color-text); box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="dial"] .ds-alert { border: 0; background: var(--ds-color-surface); box-shadow: var(--ds-shadow-sm); }
+[data-ds-theme="dial"] .ds-alert__icon { filter: drop-shadow(0 0 4px var(--_tone)); }
+
+/* Progress is a segmented LED meter in an LCD window. */
+[data-ds-theme="dial"] .ds-progress { height: 14px; border-radius: 4px; padding: 3px; background: var(--dial-lcd-bg); box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35); }
+[data-ds-theme="dial"] .ds-progress__bar { border-radius: 1px; background: repeating-linear-gradient(90deg, var(--dial-lcd-fg) 0 5px, transparent 5px 7px); }
+[data-ds-theme="dial"] .ds-progress[data-tone="primary"] .ds-progress__bar { background: repeating-linear-gradient(90deg, var(--ds-color-primary) 0 5px, transparent 5px 7px); }
+
+[data-ds-theme="dial"] .ds-slider__control::-webkit-slider-runnable-track { height: 8px; box-shadow: var(--dial-well); background: var(--ds-color-surface-alt); }
+[data-ds-theme="dial"] .ds-slider__control::-webkit-slider-thumb {
+  width: 26px;
+  height: 26px;
+  margin-top: -9px;
+  border: 0;
+  background: radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--ds-color-surface) 80%, white), var(--ds-color-surface) 60%);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.35), inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+}
+
+[data-ds-theme="dial"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: var(--ds-color-surface-alt); box-shadow: var(--dial-well); border-radius: 12px; }
+[data-ds-theme="dial"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-surface); box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="dial"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; border-radius: 3px; background: var(--ds-color-primary); box-shadow: 0 0 6px var(--ds-color-primary); }
+[data-ds-theme="dial"] .ds-dialog__panel { border: 0; }
+[data-ds-theme="dial"] .ds-tooltip__content { background: var(--dial-lcd-bg); color: var(--dial-lcd-fg); font-family: var(--ds-font-mono); border-radius: 4px; }
