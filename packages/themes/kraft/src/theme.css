@@ -1,0 +1,91 @@
+/* Kraft personality: paper fibers, packing tape, rubber stamps, white shipping labels, cut lines. */
+
+[data-ds-theme="kraft"] {
+  --kraft-fibers:
+    repeating-linear-gradient(17deg, rgba(90, 60, 25, 0.06) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(-71deg, rgba(255, 240, 210, 0.07) 0 1px, transparent 1px 11px);
+  --kraft-tape: linear-gradient(180deg, rgba(160, 120, 70, 0.55), rgba(190, 150, 95, 0.5));
+  --kraft-label: #fbf7ee;
+  background: var(--kraft-fibers), var(--ds-color-bg);
+}
+
+[data-ds-theme="kraft"] .ds-heading { text-transform: uppercase; }
+[data-ds-theme="kraft"] .ds-heading[data-size="6"],
+[data-ds-theme="kraft"] .ds-heading[data-size="5"] { line-height: 1; color: #24180b; mix-blend-mode: multiply; }
+[data-ds-theme="kraft"] .ds-heading[data-size="2"],
+[data-ds-theme="kraft"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 700; letter-spacing: 0.08em; font-size: 0.9rem; }
+
+[data-ds-theme="kraft"] .ds-button { font-family: var(--ds-font-body); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+[data-ds-theme="kraft"] .ds-button[data-variant="solid"] { box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25), var(--ds-shadow-control); }
+[data-ds-theme="kraft"] .ds-button[data-variant="outline"] { border-width: 2px; border-style: dashed; background: var(--kraft-label); }
+[data-ds-theme="kraft"] .ds-button[data-variant="soft"] { --_bg: var(--kraft-label); }
+
+/* Cards: kraft panels; raised ones get a strip of packing tape, filled ones are white shipping labels. */
+[data-ds-theme="kraft"] .ds-card { position: relative; background: var(--kraft-fibers), var(--ds-color-surface); border: 1px solid var(--ds-color-border); }
+[data-ds-theme="kraft"] .ds-card[data-variant="elevated"]::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 96px;
+  height: 22px;
+  transform: translateX(-50%) rotate(-2deg);
+  background: var(--kraft-tape);
+  clip-path: polygon(0 8%, 4% 0, 8% 10%, 12% 0, 16% 8%, 20% 0, 80% 0, 84% 10%, 88% 0, 92% 8%, 96% 0, 100% 10%, 100% 90%, 96% 100%, 92% 92%, 88% 100%, 84% 90%, 80% 100%, 20% 100%, 16% 92%, 12% 100%, 8% 90%, 4% 100%, 0 92%);
+  pointer-events: none;
+}
+[data-ds-theme="kraft"] .ds-card[data-variant="filled"] { background: var(--kraft-label); border: 2px solid var(--ds-color-border-strong); box-shadow: inset 0 0 0 4px var(--kraft-label), inset 0 0 0 5px var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-card[data-variant="outlined"] { background: transparent; border: 2px dashed var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-dialog__panel { background: var(--kraft-label); border: 2px solid var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-dialog__title { font-family: var(--ds-font-display); text-transform: uppercase; }
+
+[data-ds-theme="kraft"] .ds-field__label,
+[data-ds-theme="kraft"] .ds-radio-group legend { font-family: var(--ds-font-mono); font-weight: 700; font-size: 0.78rem; }
+[data-ds-theme="kraft"] .ds-input,
+[data-ds-theme="kraft"] .ds-select__control,
+[data-ds-theme="kraft"] .ds-textarea { background: var(--kraft-label); border-color: var(--ds-color-border-strong); font-family: var(--ds-font-mono); }
+[data-ds-theme="kraft"] .ds-input__control { font-family: var(--ds-font-mono); }
+[data-ds-theme="kraft"] .ds-choice__box { background: var(--kraft-label); border-color: var(--ds-color-border-strong); border-radius: 0; }
+[data-ds-theme="kraft"] .ds-choice__input:checked + .ds-choice__box { background: var(--kraft-label); color: var(--ds-color-primary); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-choice__input:checked + .ds-choice__box svg { stroke-width: 4; }
+[data-ds-theme="kraft"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 50%; }
+[data-ds-theme="kraft"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { background: var(--kraft-label); box-shadow: inset 0 0 0 4px var(--kraft-label), inset 0 0 0 10px var(--ds-color-primary); }
+[data-ds-theme="kraft"] .ds-switch__track { border-radius: 3px; background: var(--kraft-label); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-switch__thumb { border-radius: 2px; background: var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-switch__track[data-state="on"] { background: var(--ds-color-primary); border-color: var(--ds-color-primary); }
+
+/* Badges are rubber stamps: double outline, slight tilt, uneven ink. */
+[data-ds-theme="kraft"] .ds-badge {
+  background: transparent;
+  color: var(--_tone);
+  border: 2px solid var(--_tone);
+  outline: 1px solid var(--_tone);
+  outline-offset: 2px;
+  border-radius: 2px;
+  transform: rotate(-3deg);
+  font-family: var(--ds-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 3px;
+  opacity: 0.92;
+}
+[data-ds-theme="kraft"] .ds-badge[data-tone="neutral"] { --_tone: var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-avatar { border-radius: 50%; background: var(--kraft-label); color: var(--ds-color-primary); border: 2px solid var(--ds-color-primary); font-family: var(--ds-font-display); }
+[data-ds-theme="kraft"] .ds-alert { border-radius: 0; background: var(--kraft-label); border: 2px solid var(--_tone); }
+[data-ds-theme="kraft"] .ds-alert__title { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.06em; color: var(--_tone); }
+[data-ds-theme="kraft"] .ds-progress { height: 14px; border-radius: 0; background: var(--kraft-label); box-shadow: inset 0 0 0 1px var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-progress__bar { border-radius: 0; background: repeating-linear-gradient(-45deg, var(--_tone) 0 8px, color-mix(in srgb, var(--_tone) 70%, #000) 8px 16px); }
+[data-ds-theme="kraft"] .ds-tabs__tab { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; font-size: 0.85rem; }
+[data-ds-theme="kraft"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom: 2px dashed var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; background: var(--ds-color-primary); }
+[data-ds-theme="kraft"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 3px; background: var(--ds-color-surface-alt); }
+[data-ds-theme="kraft"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--kraft-label); }
+[data-ds-theme="kraft"] .ds-slider__control::-webkit-slider-thumb { border-radius: 2px; background: var(--ds-color-border-strong); border: 2px solid var(--kraft-label); }
+[data-ds-theme="kraft"] .ds-accordion__trigger { text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+[data-ds-theme="kraft"] .ds-accordion__item { border-bottom-style: dashed; border-bottom-color: var(--ds-color-border-strong); }
+[data-ds-theme="kraft"] .ds-divider { border: 0; border-top: 2px dashed var(--ds-color-border-strong); position: relative; overflow: visible; }
+[data-ds-theme="kraft"] .ds-divider::after { content: "✂"; position: absolute; left: 10px; top: -0.8em; padding: 0 4px; background: var(--ds-color-bg); color: var(--ds-color-border-strong); font-size: 1rem; line-height: 1.4em; }
+[data-ds-theme="kraft"] .ds-card .ds-divider::after { background: var(--ds-color-surface); }
+[data-ds-theme="kraft"] .ds-tooltip__content { border-radius: 0; background: var(--kraft-label); color: var(--ds-color-text); border: 1px solid var(--ds-color-border-strong); font-family: var(--ds-font-mono); }
+[data-ds-theme="kraft"] .ds-kbd,
+[data-ds-theme="kraft"] .ds-code { background: var(--kraft-label); }

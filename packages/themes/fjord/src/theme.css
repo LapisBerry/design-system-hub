@@ -1,0 +1,53 @@
+/* Fjord personality: felt surfaces, wool-stitch borders and a knitted band on raised panels. */
+
+[data-ds-theme="fjord"] {
+  /* Two rows of knitted chevrons, drawn from triangles. */
+  --fjord-knit:
+    linear-gradient(135deg, var(--ds-color-primary) 25%, transparent 25%) -6px 0 / 12px 12px,
+    linear-gradient(225deg, var(--ds-color-primary) 25%, transparent 25%) -6px 0 / 12px 12px,
+    linear-gradient(315deg, var(--ds-color-accent) 25%, transparent 25%) 0 6px / 12px 12px,
+    linear-gradient(45deg, var(--ds-color-accent) 25%, transparent 25%) 0 6px / 12px 12px,
+    var(--ds-color-surface-alt);
+  background:
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--ds-color-text) 3%, transparent) 1px, transparent 1.2px) 0 0 / 4px 4px,
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="fjord"] .ds-heading[data-size="6"],
+[data-ds-theme="fjord"] .ds-heading[data-size="5"] { font-weight: 800; letter-spacing: -0.035em; }
+[data-ds-theme="fjord"] .ds-heading[data-size="2"],
+[data-ds-theme="fjord"] .ds-heading[data-size="1"] { color: var(--ds-color-accent); font-weight: 600; }
+
+[data-ds-theme="fjord"] .ds-button { font-weight: 600; }
+[data-ds-theme="fjord"] .ds-button[data-variant="outline"] { border-style: dashed; border-width: 1.5px; }
+[data-ds-theme="fjord"] .ds-button[data-variant="soft"] { --_bg: var(--ds-color-surface-alt); --_fg: var(--ds-color-text); }
+
+/* Panels: soft felt with a stitched inner seam; raised ones wear a knitted band. */
+[data-ds-theme="fjord"] .ds-card { outline: 1px dashed color-mix(in srgb, var(--ds-color-border-strong) 55%, transparent); outline-offset: -7px; }
+[data-ds-theme="fjord"] .ds-card[data-variant="elevated"] { position: relative; padding-top: calc(var(--ds-space-5) + 18px); border-color: var(--ds-color-border); }
+[data-ds-theme="fjord"] .ds-card[data-variant="elevated"][data-padding="sm"] { padding-top: calc(var(--ds-space-3) + 18px); }
+[data-ds-theme="fjord"] .ds-card[data-variant="elevated"][data-padding="lg"] { padding-top: calc(var(--ds-space-8) + 18px); }
+[data-ds-theme="fjord"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 12px; border-radius: calc(var(--ds-radius-lg) - 1px) calc(var(--ds-radius-lg) - 1px) 0 0; background: var(--fjord-knit); opacity: 0.8; }
+[data-ds-theme="fjord"] .ds-card[data-variant="filled"] { background: var(--ds-color-surface-alt); outline-color: color-mix(in srgb, var(--ds-color-border-strong) 70%, transparent); }
+[data-ds-theme="fjord"] .ds-card[data-variant="outlined"] { outline: 0; }
+[data-ds-theme="fjord"] .ds-card[data-interactive]:hover { transform: translateY(-1px); }
+[data-ds-theme="fjord"] .ds-dialog__panel { border: 0; outline: 1px dashed var(--ds-color-border-strong); outline-offset: -9px; padding: var(--ds-space-8); }
+
+[data-ds-theme="fjord"] .ds-input,
+[data-ds-theme="fjord"] .ds-select__control,
+[data-ds-theme="fjord"] .ds-textarea { background: var(--ds-color-surface); border-color: var(--ds-color-border); }
+[data-ds-theme="fjord"] .ds-input:focus-within,
+[data-ds-theme="fjord"] .ds-select__control:focus,
+[data-ds-theme="fjord"] .ds-textarea:focus { border-color: var(--ds-color-primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ds-color-primary) 14%, transparent); }
+[data-ds-theme="fjord"] .ds-switch__track { background: var(--ds-color-surface-alt); border-color: var(--ds-color-border); }
+[data-ds-theme="fjord"] .ds-switch__track[data-state="on"] { background: var(--ds-color-primary); border-color: var(--ds-color-primary); }
+
+[data-ds-theme="fjord"] .ds-badge { border-radius: 6px; font-weight: 600; }
+[data-ds-theme="fjord"] .ds-avatar { background: var(--ds-color-surface-alt); color: var(--ds-color-primary); font-weight: 700; box-shadow: inset 0 0 0 1px var(--ds-color-border), 0 0 0 2px var(--ds-color-surface), 0 0 0 3px color-mix(in srgb, var(--ds-color-accent) 50%, transparent); }
+[data-ds-theme="fjord"] .ds-alert { border: 0; border-radius: 10px; background: color-mix(in srgb, var(--_tone) 9%, var(--ds-color-surface)); outline: 1px dashed color-mix(in srgb, var(--_tone) 40%, transparent); outline-offset: -5px; }
+[data-ds-theme="fjord"] .ds-progress { height: 8px; background: var(--ds-color-surface-alt); }
+[data-ds-theme="fjord"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; border-radius: 3px; background: var(--ds-color-accent); }
+[data-ds-theme="fjord"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: var(--ds-color-surface-alt); }
+[data-ds-theme="fjord"] .ds-accordion__trigger { font-weight: 600; }
+[data-ds-theme="fjord"] .ds-divider { border: 0; height: 6px; opacity: 0.5; background: linear-gradient(135deg, var(--ds-color-border-strong) 25%, transparent 25%) -3px 0 / 6px 6px, linear-gradient(225deg, var(--ds-color-border-strong) 25%, transparent 25%) -3px 0 / 6px 6px; }
+[data-ds-theme="fjord"] .ds-tooltip__content { border-radius: 8px; }

@@ -27,9 +27,35 @@ import { graphite } from "@dsh/theme-graphite";
 import { harbor } from "@dsh/theme-harbor";
 import { puff } from "@dsh/theme-puff";
 import { cyber } from "@dsh/theme-cyber";
+import { vapor } from "@dsh/theme-vapor";
+import { bevel } from "@dsh/theme-bevel";
+import { botanica } from "@dsh/theme-botanica";
+import { ledger } from "@dsh/theme-ledger";
+import { tube } from "@dsh/theme-tube";
+import { vesper } from "@dsh/theme-vesper";
+import { squiggle } from "@dsh/theme-squiggle";
+import { kraft } from "@dsh/theme-kraft";
+import { wash } from "@dsh/theme-wash";
+import { tropic } from "@dsh/theme-tropic";
+import { fjord } from "@dsh/theme-fjord";
+import { tile } from "@dsh/theme-tile";
+import { atomic } from "@dsh/theme-atomic";
+import { rivet } from "@dsh/theme-rivet";
+import { marquee } from "@dsh/theme-marquee";
+import { holo } from "@dsh/theme-holo";
+import { wire } from "@dsh/theme-wire";
+import { bento } from "@dsh/theme-bento";
+import { contour } from "@dsh/theme-contour";
+import { transit } from "@dsh/theme-transit";
+import { receipt } from "@dsh/theme-receipt";
+import { groove } from "@dsh/theme-groove";
+import { relief } from "@dsh/theme-relief";
+import { sprint } from "@dsh/theme-sprint";
 
 const themes: ThemeDefinition[] = [folio, grit, mist, phosphor, terra, grid, konstrukt, sorbet, noir, blueprint, riso, dial,
   kumo, arcade, clarity, pow, origami, aurora, sketch, deco, graphite, harbor, puff, cyber,
+  vapor, bevel, botanica, ledger, tube, vesper, squiggle, kraft, wash, tropic, fjord, tile,
+  atomic, rivet, marquee, holo, wire, bento, contour, transit, receipt, groove, relief, sprint,
 ];
 let failures = 0;
 

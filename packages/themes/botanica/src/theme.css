@@ -1,0 +1,67 @@
+/* Botanica personality: paper grain, italic Caslon, tape on specimen sheets, labels and fleurons. */
+
+[data-ds-theme="botanica"] {
+  --botanica-tape: color-mix(in srgb, var(--ds-color-accent) 30%, rgba(255, 250, 230, 0.75));
+  background:
+    radial-gradient(circle at 20% 15%, color-mix(in srgb, var(--ds-color-accent) 6%, transparent), transparent 40%),
+    radial-gradient(circle at 85% 80%, color-mix(in srgb, var(--ds-color-primary) 7%, transparent), transparent 45%),
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="botanica"] .ds-heading[data-size="6"],
+[data-ds-theme="botanica"] .ds-heading[data-size="5"],
+[data-ds-theme="botanica"] .ds-heading[data-size="4"] { font-style: italic; color: var(--ds-color-primary); line-height: 1.1; }
+[data-ds-theme="botanica"] .ds-heading[data-size="3"] { font-style: italic; }
+[data-ds-theme="botanica"] .ds-heading[data-size="2"],
+[data-ds-theme="botanica"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-variant: small-caps; letter-spacing: 0.1em; font-weight: 400; text-transform: lowercase; font-size: 1.05rem; }
+
+[data-ds-theme="botanica"] .ds-button { font-style: italic; font-size: 0.95rem; letter-spacing: 0.01em; }
+[data-ds-theme="botanica"] .ds-button[data-variant="outline"] { border-style: double; border-width: 3px; }
+[data-ds-theme="botanica"] .ds-button[data-variant="ghost"] { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--_tone) 40%, transparent); text-underline-offset: 4px; }
+
+/* Cards are specimen sheets: a hairline frame inside, tape holding the top corners. */
+[data-ds-theme="botanica"] .ds-card { position: relative; border: 1px solid var(--ds-color-border); box-shadow: inset 0 0 0 5px var(--ds-color-surface), inset 0 0 0 6px var(--ds-color-border), var(--ds-shadow-sm); }
+[data-ds-theme="botanica"] .ds-card[data-variant="elevated"] { box-shadow: inset 0 0 0 5px var(--ds-color-surface), inset 0 0 0 6px var(--ds-color-border), var(--ds-shadow-md); }
+[data-ds-theme="botanica"] .ds-card[data-variant="elevated"]::before,
+[data-ds-theme="botanica"] .ds-card[data-variant="elevated"]::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 58px;
+  height: 18px;
+  background: var(--botanica-tape);
+  box-shadow: 0 1px 2px rgba(60, 50, 20, 0.15);
+  pointer-events: none;
+}
+[data-ds-theme="botanica"] .ds-card[data-variant="elevated"]::before { left: 14px; transform: rotate(-7deg); }
+[data-ds-theme="botanica"] .ds-card[data-variant="elevated"]::after { right: 14px; transform: rotate(6deg); }
+[data-ds-theme="botanica"] .ds-card[data-variant="filled"] { background: var(--ds-color-surface-alt); box-shadow: inset 0 0 0 5px var(--ds-color-surface-alt), inset 0 0 0 6px var(--ds-color-border-strong); }
+[data-ds-theme="botanica"] .ds-card[data-variant="outlined"] { background: transparent; box-shadow: none; border-style: dashed; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="botanica"] .ds-dialog__panel { box-shadow: inset 0 0 0 6px var(--ds-color-surface), inset 0 0 0 7px var(--ds-color-border-strong), var(--ds-shadow-lg); padding: var(--ds-space-8); }
+[data-ds-theme="botanica"] .ds-dialog__title { font-style: italic; font-size: var(--ds-text-3); color: var(--ds-color-primary); }
+
+/* Field notes: inputs are ruled lines, not boxes. */
+[data-ds-theme="botanica"] .ds-field__label,
+[data-ds-theme="botanica"] .ds-radio-group legend { font-variant: small-caps; text-transform: lowercase; letter-spacing: 0.1em; font-size: 1rem; }
+[data-ds-theme="botanica"] .ds-input,
+[data-ds-theme="botanica"] .ds-select__control { border-width: 0 0 1px; border-radius: 0; background: transparent; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="botanica"] .ds-textarea { background: repeating-linear-gradient(transparent 0 calc(1.6em - 1px), var(--ds-color-border) calc(1.6em - 1px) 1.6em) var(--ds-color-surface); background-attachment: local; line-height: 1.6; }
+[data-ds-theme="botanica"] .ds-input:focus-within,
+[data-ds-theme="botanica"] .ds-select__control:focus { border-color: var(--ds-color-primary); box-shadow: 0 1px 0 var(--ds-color-primary); }
+[data-ds-theme="botanica"] .ds-choice__box { border-width: 1px; }
+[data-ds-theme="botanica"] .ds-switch__track { background: var(--ds-color-surface); }
+[data-ds-theme="botanica"] .ds-switch__track[data-state="on"] { background: var(--ds-color-primary); }
+
+/* Badges are specimen labels with a typed number. */
+[data-ds-theme="botanica"] .ds-badge { border-radius: 0; font-family: var(--ds-font-mono); font-weight: 400; letter-spacing: 0.04em; border: 1px solid color-mix(in srgb, var(--_tone) 60%, transparent); }
+[data-ds-theme="botanica"] .ds-avatar { font-family: var(--ds-font-display); font-style: italic; background: var(--ds-color-surface-alt); color: var(--ds-color-primary); box-shadow: 0 0 0 1px var(--ds-color-border-strong), 0 0 0 3px var(--ds-color-surface), 0 0 0 4px var(--ds-color-border-strong); }
+[data-ds-theme="botanica"] .ds-alert { border-radius: 0; border-width: 0 0 0 3px; border-style: double; border-left-width: 4px; border-color: var(--_tone); }
+[data-ds-theme="botanica"] .ds-alert__title { font-style: italic; }
+[data-ds-theme="botanica"] .ds-progress { height: 4px; border-radius: 0; }
+[data-ds-theme="botanica"] .ds-progress__bar { border-radius: 0; }
+[data-ds-theme="botanica"] .ds-tabs__tab { font-style: italic; }
+[data-ds-theme="botanica"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 1px; box-shadow: 0 3px 0 var(--ds-color-primary); }
+[data-ds-theme="botanica"] .ds-accordion__trigger { font-style: italic; font-size: 1.05rem; }
+[data-ds-theme="botanica"] .ds-divider { border: 0; height: 1.4em; display: flex; align-items: center; gap: 0.8em; color: var(--ds-color-border-strong); overflow: visible; background: linear-gradient(var(--ds-color-border-strong), var(--ds-color-border-strong)) 0 50% / calc(50% - 1.2em) 1px no-repeat, linear-gradient(var(--ds-color-border-strong), var(--ds-color-border-strong)) 100% 50% / calc(50% - 1.2em) 1px no-repeat; text-align: center; }
+[data-ds-theme="botanica"] .ds-divider::after { content: "❧"; display: block; width: 100%; text-align: center; font-size: 1.1em; line-height: 1.4em; color: var(--ds-color-primary); }
+[data-ds-theme="botanica"] .ds-tooltip__content { border-radius: 0; background: var(--ds-color-surface); color: var(--ds-color-text); border: 1px solid var(--ds-color-border-strong); font-style: italic; box-shadow: var(--ds-shadow-md); }

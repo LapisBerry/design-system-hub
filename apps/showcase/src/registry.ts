@@ -23,6 +23,30 @@ import { graphite } from "@dsh/theme-graphite";
 import { harbor } from "@dsh/theme-harbor";
 import { puff } from "@dsh/theme-puff";
 import { cyber } from "@dsh/theme-cyber";
+import { vapor } from "@dsh/theme-vapor";
+import { bevel } from "@dsh/theme-bevel";
+import { botanica } from "@dsh/theme-botanica";
+import { ledger } from "@dsh/theme-ledger";
+import { tube } from "@dsh/theme-tube";
+import { vesper } from "@dsh/theme-vesper";
+import { squiggle } from "@dsh/theme-squiggle";
+import { kraft } from "@dsh/theme-kraft";
+import { wash } from "@dsh/theme-wash";
+import { tropic } from "@dsh/theme-tropic";
+import { fjord } from "@dsh/theme-fjord";
+import { tile } from "@dsh/theme-tile";
+import { atomic } from "@dsh/theme-atomic";
+import { rivet } from "@dsh/theme-rivet";
+import { marquee } from "@dsh/theme-marquee";
+import { holo } from "@dsh/theme-holo";
+import { wire } from "@dsh/theme-wire";
+import { bento } from "@dsh/theme-bento";
+import { contour } from "@dsh/theme-contour";
+import { transit } from "@dsh/theme-transit";
+import { receipt } from "@dsh/theme-receipt";
+import { groove } from "@dsh/theme-groove";
+import { relief } from "@dsh/theme-relief";
+import { sprint } from "@dsh/theme-sprint";
 
 import "@dsh/core/styles.css";
 import "@dsh/theme-folio/theme.css";
@@ -49,6 +73,30 @@ import "@dsh/theme-graphite/theme.css";
 import "@dsh/theme-harbor/theme.css";
 import "@dsh/theme-puff/theme.css";
 import "@dsh/theme-cyber/theme.css";
+import "@dsh/theme-vapor/theme.css";
+import "@dsh/theme-bevel/theme.css";
+import "@dsh/theme-botanica/theme.css";
+import "@dsh/theme-ledger/theme.css";
+import "@dsh/theme-tube/theme.css";
+import "@dsh/theme-vesper/theme.css";
+import "@dsh/theme-squiggle/theme.css";
+import "@dsh/theme-kraft/theme.css";
+import "@dsh/theme-wash/theme.css";
+import "@dsh/theme-tropic/theme.css";
+import "@dsh/theme-fjord/theme.css";
+import "@dsh/theme-tile/theme.css";
+import "@dsh/theme-atomic/theme.css";
+import "@dsh/theme-rivet/theme.css";
+import "@dsh/theme-marquee/theme.css";
+import "@dsh/theme-holo/theme.css";
+import "@dsh/theme-wire/theme.css";
+import "@dsh/theme-bento/theme.css";
+import "@dsh/theme-contour/theme.css";
+import "@dsh/theme-transit/theme.css";
+import "@dsh/theme-receipt/theme.css";
+import "@dsh/theme-groove/theme.css";
+import "@dsh/theme-relief/theme.css";
+import "@dsh/theme-sprint/theme.css";
 
 /** Every design system in the hub. Add a new theme package here to show it in the showcase. */
 export const THEMES: ThemeDefinition[] = [
@@ -76,6 +124,30 @@ export const THEMES: ThemeDefinition[] = [
   harbor,
   puff,
   cyber,
+  vapor,
+  bevel,
+  botanica,
+  ledger,
+  tube,
+  vesper,
+  squiggle,
+  kraft,
+  wash,
+  tropic,
+  fjord,
+  tile,
+  atomic,
+  rivet,
+  marquee,
+  holo,
+  wire,
+  bento,
+  contour,
+  transit,
+  receipt,
+  groove,
+  relief,
+  sprint,
 ];
 
 export const themeById = (id: string) => THEMES.find((t) => t.meta.id === id);

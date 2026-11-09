@@ -1,0 +1,98 @@
+/* Vapor personality: dusk gradient, a perspective floor grid, chrome headlines and a striped sun. */
+
+[data-ds-theme="vapor"] {
+  --vapor-chrome: linear-gradient(180deg, #ffe0f7 0%, #ff71ce 45%, #b967ff 70%, #01cdfe 100%);
+  --vapor-sun: linear-gradient(180deg, #fffb96 0%, #ff9a5a 45%, #ff71ce 100%);
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(120% 60% at 50% 100%, rgba(255, 113, 206, 0.22), transparent 60%),
+    linear-gradient(180deg, #120724 0%, var(--ds-color-bg) 55%, #2a0f45 100%);
+}
+/* The floor grid, tilted back toward the horizon. */
+[data-ds-theme="vapor"]::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 260px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 113, 206, 0.35) 1px, transparent 1px) 0 0 / 100% 28px,
+    linear-gradient(90deg, rgba(1, 205, 254, 0.3) 1px, transparent 1px) 50% 0 / 48px 100%;
+  transform: perspective(260px) rotateX(58deg);
+  transform-origin: 50% 100%;
+  -webkit-mask: linear-gradient(transparent, #000 70%);
+  mask: linear-gradient(transparent, #000 70%);
+}
+
+[data-ds-theme="vapor"] .ds-heading[data-size="6"],
+[data-ds-theme="vapor"] .ds-heading[data-size="5"],
+[data-ds-theme="vapor"] .ds-heading[data-size="4"] {
+  background: var(--vapor-chrome);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: italic;
+  filter: drop-shadow(0 0 14px rgba(255, 113, 206, 0.45));
+}
+[data-ds-theme="vapor"] .ds-heading[data-size="2"],
+[data-ds-theme="vapor"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ds-color-accent); }
+
+[data-ds-theme="vapor"] .ds-button { text-transform: uppercase; letter-spacing: 0.12em; font-weight: 500; font-size: 0.82rem; }
+[data-ds-theme="vapor"] .ds-button[data-variant="solid"][data-tone="primary"] { background: linear-gradient(100deg, #ff71ce, #ff9ad8 40%, #b967ff); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25) inset, var(--ds-shadow-control); }
+[data-ds-theme="vapor"] .ds-button[data-variant="solid"][data-tone="accent"] { background: linear-gradient(100deg, #01cdfe, #7af0ff); box-shadow: 0 6px 20px -8px rgba(1, 205, 254, 0.9); }
+[data-ds-theme="vapor"] .ds-button[data-variant="solid"]:hover:not(:disabled) { filter: brightness(1.1) saturate(1.1); }
+[data-ds-theme="vapor"] .ds-button[data-variant="outline"] { box-shadow: 0 0 12px -4px var(--_tone), inset 0 0 12px -6px var(--_tone); }
+
+[data-ds-theme="vapor"] .ds-card,
+[data-ds-theme="vapor"] .ds-dialog__panel {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(color-mix(in srgb, var(--ds-color-surface) 88%, transparent), color-mix(in srgb, var(--ds-color-surface) 88%, transparent)) padding-box,
+    linear-gradient(140deg, #ff71ce, #b967ff 45%, #01cdfe) border-box;
+  backdrop-filter: blur(6px);
+}
+[data-ds-theme="vapor"] .ds-card[data-variant="outlined"] { background: linear-gradient(var(--ds-color-bg), var(--ds-color-bg)) padding-box, linear-gradient(140deg, #ff71ce, #01cdfe) border-box; }
+[data-ds-theme="vapor"] .ds-card[data-variant="filled"] { background: linear-gradient(var(--ds-color-surface-alt), var(--ds-color-surface-alt)) padding-box, linear-gradient(140deg, #b967ff, #01cdfe) border-box; }
+/* A striped retro sun sits in the corner of raised cards. */
+[data-ds-theme="vapor"] .ds-card[data-variant="elevated"] { position: relative; }
+[data-ds-theme="vapor"] .ds-card[data-variant="elevated"]::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--vapor-sun);
+  -webkit-mask: linear-gradient(#000 0 50%, transparent 50% 56%, #000 56% 66%, transparent 66% 72%, #000 72% 80%, transparent 80% 86%, #000 86%);
+  mask: linear-gradient(#000 0 50%, transparent 50% 56%, #000 56% 66%, transparent 66% 72%, #000 72% 80%, transparent 80% 86%, #000 86%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+[data-ds-theme="vapor"] .ds-input,
+[data-ds-theme="vapor"] .ds-select__control,
+[data-ds-theme="vapor"] .ds-textarea { background: rgba(10, 3, 22, 0.55); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="vapor"] .ds-input:focus-within,
+[data-ds-theme="vapor"] .ds-select__control:focus,
+[data-ds-theme="vapor"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: 0 0 0 1px var(--ds-color-accent), 0 0 18px -4px var(--ds-color-accent); }
+
+[data-ds-theme="vapor"] .ds-choice__input:checked + .ds-choice__box { background: linear-gradient(135deg, #ff71ce, #01cdfe); border-color: transparent; }
+[data-ds-theme="vapor"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-surface); box-shadow: inset 0 0 0 5px var(--ds-color-primary), 0 0 10px -2px var(--ds-color-primary); }
+[data-ds-theme="vapor"] .ds-switch__track[data-state="on"] { background: linear-gradient(90deg, #ff71ce, #b967ff); border-color: transparent; box-shadow: 0 0 14px -3px #ff71ce; }
+
+[data-ds-theme="vapor"] .ds-badge { font-style: italic; letter-spacing: 0.08em; text-transform: uppercase; }
+[data-ds-theme="vapor"] .ds-avatar { background: var(--vapor-sun); color: #1a0b2e; font-family: var(--ds-font-display); }
+[data-ds-theme="vapor"] .ds-alert { background: color-mix(in srgb, var(--_tone) 9%, rgba(10, 3, 22, 0.6)); border-color: color-mix(in srgb, var(--_tone) 55%, transparent); }
+[data-ds-theme="vapor"] .ds-progress { background: rgba(10, 3, 22, 0.6); box-shadow: inset 0 0 0 1px var(--ds-color-border); }
+[data-ds-theme="vapor"] .ds-progress__bar { background: linear-gradient(90deg, #ff71ce, #b967ff, #01cdfe); box-shadow: 0 0 12px -2px #ff71ce; }
+[data-ds-theme="vapor"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { background: linear-gradient(90deg, #ff71ce, #01cdfe); box-shadow: 0 0 10px #ff71ce; }
+[data-ds-theme="vapor"] .ds-tabs__tab { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; }
+[data-ds-theme="vapor"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: linear-gradient(100deg, #ff71ce, #b967ff); color: #1a0b2e; }
+[data-ds-theme="vapor"] .ds-divider { border: 0; height: 2px; background: linear-gradient(90deg, transparent, #ff71ce 20%, #01cdfe 80%, transparent); }
+[data-ds-theme="vapor"] .ds-slider__control::-webkit-slider-thumb { background: var(--vapor-sun); border: 0; box-shadow: 0 0 10px #ff71ce; }
+[data-ds-theme="vapor"] .ds-tooltip__content { background: linear-gradient(100deg, #ff71ce, #b967ff); color: #1a0b2e; font-weight: 500; }
+[data-ds-theme="vapor"] .ds-kbd,
+[data-ds-theme="vapor"] .ds-code { color: var(--ds-color-accent); }

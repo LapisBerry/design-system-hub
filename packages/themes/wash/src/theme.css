@@ -1,0 +1,79 @@
+/* Wash personality: pigment blooms on paper, painted buttons, highlighter strokes, soft bleeding edges. */
+
+[data-ds-theme="wash"] {
+  --wash-indigo: color-mix(in srgb, var(--ds-color-primary) 22%, transparent);
+  --wash-coral: color-mix(in srgb, var(--ds-color-accent) 24%, transparent);
+  --wash-sage: color-mix(in srgb, var(--ds-color-success) 18%, transparent);
+  background:
+    radial-gradient(38% 30% at 12% 8%, var(--wash-indigo), transparent 70%),
+    radial-gradient(30% 26% at 88% 22%, var(--wash-coral), transparent 70%),
+    radial-gradient(34% 30% at 70% 95%, var(--wash-sage), transparent 70%),
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--ds-color-text) 5%, transparent) 1px, transparent 1.5px) 0 0 / 5px 5px,
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="wash"] .ds-heading[data-size="6"],
+[data-ds-theme="wash"] .ds-heading[data-size="5"],
+[data-ds-theme="wash"] .ds-heading[data-size="4"] {
+  width: fit-content;
+  background: linear-gradient(100deg, transparent 0.2em, var(--wash-coral) 0.4em, color-mix(in srgb, var(--ds-color-accent) 34%, transparent) 60%, transparent calc(100% - 0.1em)) 0 85% / 100% 42% no-repeat;
+  padding: 0 0.1em;
+}
+[data-ds-theme="wash"] .ds-heading[data-size="5"],
+[data-ds-theme="wash"] .ds-heading[data-size="4"] { background-image: linear-gradient(100deg, transparent 0.2em, var(--wash-indigo) 0.4em, color-mix(in srgb, var(--ds-color-primary) 30%, transparent) 60%, transparent calc(100% - 0.1em)); }
+[data-ds-theme="wash"] .ds-heading[data-size="2"],
+[data-ds-theme="wash"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-style: italic; font-weight: 600; }
+
+/* Buttons are painted: uneven pigment, darker where the brush pooled. */
+[data-ds-theme="wash"] .ds-button { border-radius: 16px 12px 18px 10px / 12px 16px 10px 18px; font-weight: 600; }
+[data-ds-theme="wash"] .ds-button[data-variant="solid"] {
+  background:
+    radial-gradient(60% 90% at 85% 70%, color-mix(in srgb, var(--_tone) 70%, #000) 0, transparent 70%),
+    radial-gradient(70% 100% at 10% 20%, color-mix(in srgb, var(--_tone) 75%, #fff) 0, transparent 70%),
+    var(--_tone);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--_tone) 20%, transparent), var(--ds-shadow-control);
+}
+[data-ds-theme="wash"] .ds-button[data-variant="solid"]:hover:not(:disabled) { filter: saturate(1.15) brightness(1.04); }
+[data-ds-theme="wash"] .ds-button[data-variant="soft"] { background: radial-gradient(80% 120% at 30% 30%, color-mix(in srgb, var(--_tone) 22%, transparent), color-mix(in srgb, var(--_tone) 10%, transparent)); }
+[data-ds-theme="wash"] .ds-button[data-variant="outline"] { border-width: 2px; --_bd: color-mix(in srgb, var(--_tone) 55%, transparent); }
+
+/* Cards bleed: no hard border, a soft halo, and a bloom of color in one corner. */
+[data-ds-theme="wash"] .ds-card { border: 0; border-radius: 26px 20px 28px 18px / 20px 28px 18px 26px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--ds-color-border) 70%, transparent), 0 0 18px 2px color-mix(in srgb, var(--ds-color-bg) 80%, transparent); }
+[data-ds-theme="wash"] .ds-card[data-variant="elevated"] {
+  background:
+    radial-gradient(55% 45% at 100% 0, var(--wash-coral), transparent 70%),
+    radial-gradient(40% 40% at 0 100%, var(--wash-indigo), transparent 70%),
+    var(--ds-color-surface);
+  box-shadow: var(--ds-shadow-md);
+}
+[data-ds-theme="wash"] .ds-card[data-variant="filled"] { background: radial-gradient(90% 80% at 30% 20%, var(--wash-indigo), transparent 80%), var(--ds-color-surface-alt); }
+[data-ds-theme="wash"] .ds-card[data-variant="outlined"] { background: transparent; box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--ds-color-primary) 22%, transparent), inset 0 0 14px color-mix(in srgb, var(--ds-color-primary) 12%, transparent); }
+[data-ds-theme="wash"] .ds-card[data-interactive]:hover { box-shadow: var(--ds-shadow-lg); }
+[data-ds-theme="wash"] .ds-dialog__panel { border: 0; border-radius: 30px 24px 32px 22px / 24px 32px 22px 30px; background: radial-gradient(50% 40% at 100% 0, var(--wash-coral), transparent 70%), radial-gradient(45% 40% at 0 100%, var(--wash-sage), transparent 70%), var(--ds-color-surface); }
+
+[data-ds-theme="wash"] .ds-input,
+[data-ds-theme="wash"] .ds-select__control,
+[data-ds-theme="wash"] .ds-textarea { border-color: transparent; background: color-mix(in srgb, var(--ds-color-primary) 6%, var(--ds-color-surface)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-color-border-strong) 50%, transparent); }
+[data-ds-theme="wash"] .ds-input:focus-within,
+[data-ds-theme="wash"] .ds-select__control:focus,
+[data-ds-theme="wash"] .ds-textarea:focus { box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--ds-color-accent) 70%, transparent), 0 0 0 6px var(--wash-coral); }
+[data-ds-theme="wash"] .ds-choice__box { border-radius: 7px 5px 8px 4px; border-color: color-mix(in srgb, var(--ds-color-primary) 50%, var(--ds-color-border-strong)); }
+[data-ds-theme="wash"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 50% 46% 52% 48%; }
+[data-ds-theme="wash"] .ds-switch__track { border-color: transparent; background: color-mix(in srgb, var(--ds-color-primary) 16%, var(--ds-color-surface)); }
+[data-ds-theme="wash"] .ds-switch__track[data-state="on"] { background: radial-gradient(70% 100% at 80% 60%, color-mix(in srgb, var(--ds-color-primary) 70%, #000), var(--ds-color-primary)); }
+
+[data-ds-theme="wash"] .ds-badge { border-radius: 10px 8px 12px 6px; border: 0; }
+[data-ds-theme="wash"] .ds-badge[data-variant="soft"] { background: radial-gradient(80% 120% at 30% 30%, color-mix(in srgb, var(--_tone) 26%, transparent), color-mix(in srgb, var(--_tone) 12%, transparent)); }
+[data-ds-theme="wash"] .ds-avatar { border-radius: 52% 48% 50% 46% / 48% 52% 46% 50%; background: radial-gradient(80% 80% at 30% 30%, color-mix(in srgb, var(--ds-color-accent) 60%, var(--ds-color-surface)), var(--ds-color-accent)); color: var(--ds-color-on-accent); font-family: var(--ds-font-display); }
+[data-ds-theme="wash"] .ds-alert { border: 0; border-radius: 18px 14px 20px 12px; background: radial-gradient(70% 140% at 0 50%, color-mix(in srgb, var(--_tone) 20%, transparent), color-mix(in srgb, var(--_tone) 6%, var(--ds-color-surface)) 80%); }
+[data-ds-theme="wash"] .ds-progress { height: 10px; background: color-mix(in srgb, var(--ds-color-primary) 10%, var(--ds-color-surface)); }
+[data-ds-theme="wash"] .ds-progress__bar { background: linear-gradient(90deg, color-mix(in srgb, var(--_tone) 40%, transparent), var(--_tone) 70%, color-mix(in srgb, var(--_tone) 80%, #000)); border-radius: 0 999px 999px 0; }
+[data-ds-theme="wash"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom-color: transparent; background: linear-gradient(90deg, var(--wash-indigo), transparent) 0 100% / 100% 2px no-repeat; }
+[data-ds-theme="wash"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 6px; border-radius: 6px; background: var(--wash-coral); filter: blur(0.5px); }
+[data-ds-theme="wash"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: color-mix(in srgb, var(--ds-color-primary) 8%, var(--ds-color-surface)); }
+[data-ds-theme="wash"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: radial-gradient(80% 120% at 30% 30%, var(--ds-color-surface), color-mix(in srgb, var(--ds-color-accent) 18%, var(--ds-color-surface))); }
+[data-ds-theme="wash"] .ds-accordion { border-top-color: transparent; }
+[data-ds-theme="wash"] .ds-accordion__item { border-bottom: 0; background: linear-gradient(90deg, transparent, var(--wash-indigo) 30%, transparent) 0 100% / 100% 1px no-repeat; }
+[data-ds-theme="wash"] .ds-divider { border: 0; height: 6px; border-radius: 6px; background: linear-gradient(90deg, transparent, var(--wash-indigo) 15%, var(--wash-coral) 60%, transparent); }
+[data-ds-theme="wash"] .ds-slider__control::-webkit-slider-thumb { border-radius: 50% 46% 52% 48%; background: var(--ds-color-accent); border: 3px solid var(--ds-color-surface); }
+[data-ds-theme="wash"] .ds-tooltip__content { border-radius: 12px 10px 14px 8px; background: var(--ds-color-primary); color: var(--ds-color-on-primary); }

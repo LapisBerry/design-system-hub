@@ -32,6 +32,30 @@ packages/
     harbor/             Nautical: slab serif, rope rules, pennants
     puff/               Claymorphism: inflated, squishy pastel shapes
     cyber/              Sci-fi HUD: chamfered corners, hazard yellow (dark only)
+    vapor/              Vaporwave: neon floor grid, chrome type (dark only)
+    bevel/              1990s desktop: raised bevels, title bars (light only)
+    botanica/           Herbarium: pressed ferns, Caslon italics, specimen tags
+    ledger/             Bookkeeping: green-bar paper, tabular figures
+    tube/               Neon signs: glowing glass tubes on brick (dark only)
+    vesper/             Gothic: blackletter, oxblood, pointed arches (dark only)
+    squiggle/           Memphis: confetti, wavy underlines (light only)
+    kraft/              Packaging: kraft paper, stencils, rubber stamps (light only)
+    wash/               Watercolor: pigment blooms, painted buttons
+    tropic/             Tropical: palm green, hibiscus, scalloped waves
+    fjord/              Scandinavian: wool, birch, a knitted band
+    tile/               Mediterranean tiles: cobalt glaze, tile frames
+    atomic/             Mid-century: starbursts, boomerangs, kidney shapes
+    rivet/              Steampunk: copper plates, rivets, brass (dark only)
+    marquee/            Theatre: chasing bulbs, ticket buttons (dark only)
+    holo/               Holographic foil: iridescent edges, shimmer
+    wire/               Wireframe: grayscale, crossed placeholders
+    bento/              Bento grid: big rounded tiles, lime highlight
+    contour/            Topo map: contour lines, trail blazes, compass
+    transit/            Wayfinding: sign bands, line roundels
+    receipt/            Thermal receipt: torn edges, barcodes (light only)
+    groove/             1970s: stacked stripes, fat type
+    relief/             Soft UI: shapes pressed out of one surface
+    sprint/             Sports: slanted italics, speed stripes
 apps/
   showcase/             Vite + React gallery, compare view, token docs
 scripts/
@@ -76,6 +100,30 @@ pnpm check:contrast
 | **Harbor** | Slab serif, navy and signal red, rope dividers, porthole avatars | Outdoors, logistics, coastal hospitality | Light, dark |
 | **Puff** | Inflated clay shapes, pressed-in wells, squish on press | Kids' apps, beginner finance, onboarding | Light, dark |
 | **Cyber** | Chamfered plates, hazard stripes, HUD brackets, hover glitch | Games, esports, cockpit-style dashboards | Dark only |
+| **Vapor** | Purple dusk, perspective floor grid, chrome pink-to-cyan headlines, striped sun | Music, nightlife, creator tools, retro games | Dark only |
+| **Bevel** | Gray raised and sunken bevels, navy title bars, block progress, teal desktop | Nostalgic games, playful internal tools, web toys | Light only |
+| **Botanica** | Parchment, fern and ochre, Caslon italics, taped specimen cards, fleurons | Plant shops, wellness, nature journals, archives | Light, dark |
+| **Ledger** | Green-bar bands, red margin rules, tabular figures, double total rules | Accounting, invoicing, budgeting, back offices | Light, dark |
+| **Tube** | Glowing glass-tube outlines, flicker-on headlines, brick wall | Bars and venues, events, streaming overlays | Dark only |
+| **Vesper** | Blackletter titles, bone and oxblood, gold hairlines, pointed arches | Fantasy games, tabletop, music, dark academia | Dark only |
+| **Squiggle** | Memphis confetti, wavy underlines, patterned color-block shadows | Creative studios, parties, education, playful marketing | Light only |
+| **Kraft** | Kraft paper fibers, stencil type, rubber-stamp badges, packing tape | E-commerce, shipping, coffee and craft brands | Light only |
+| **Wash** | Watercolor blooms, painted buttons, highlighter headings, soft edges | Journaling, stationery, children's books, art classes | Light, dark |
+| **Tropic** | Palm green and hibiscus, leaf corners, wave dividers, cabana stripes | Travel, hospitality, food and drink, summer campaigns | Light, dark |
+| **Fjord** | Oat and birch neutrals, stitched seams, knitted pattern band | Home goods, notes and productivity, public services | Light, dark |
+| **Tile** | Cobalt and saffron, painted tile pattern, checkered tile frames, glaze | Restaurants, hotels, ceramics, cultural sites | Light, dark |
+| **Atomic** | Teal, mustard and coral, starbursts, boomerang badges, kidney panels | Interiors, diners, retro launches, cheerful apps | Light, dark |
+| **Rivet** | Leather and copper, rivets on every corner, brass levers and gauges | Adventure games, workshops, breweries, storytelling | Dark only |
+| **Marquee** | Red velvet, chasing light-bulb frames, ticket-stub buttons | Cinemas, theatres, ticketing, live events | Dark only |
+| **Holo** | Iridescent foil edges, shimmer sweep on hover, prism progress | Fashion, beauty, collectibles, launch pages | Light, dark |
+| **Wire** | Grayscale dashed boxes, crossed placeholders, blue annotation notes | Prototypes, UX workshops, undecided builds | Light, dark |
+| **Bento** | Big borderless tiles, giant tight headings, lime highlight | Product pages, launches, dashboards, link pages | Light, dark |
+| **Contour** | Topographic lines, trail blazes, waypoint badges, compass rose | Hiking and outdoor apps, parks, fitness, gear | Light, dark |
+| **Transit** | Black sign bands, line-color roundels, station-stop progress | Mobility, maps, venues, glanceable interfaces | Light, dark |
+| **Receipt** | Thermal paper, torn zigzag edges, dotted rules, barcode progress | Point of sale, expenses, menus, order summaries | Light only |
+| **Groove** | Orange, mustard and brown stacked stripes, fat swash type | Coffee and food, record shops, vintage fashion | Light, dark |
+| **Relief** | Soft UI: raised and pressed shapes from one matte surface | Smart home, music players, calm dashboards | Light, dark |
+| **Sprint** | Forward slant, heavy italics, speed stripes, jersey avatars | Fitness, leagues, live scores, energetic launches | Light, dark |
 
 Every theme passes the contrast checks in `packages/core/src/tokens/contrast.ts` (4.5:1 for body text and primary button labels, 3:1 for large text and UI parts) in every mode it supports.
 

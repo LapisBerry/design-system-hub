@@ -1,0 +1,76 @@
+/* Sprint personality: forward slant, speed stripes, scoreboard panels and jersey-number avatars. */
+
+[data-ds-theme="sprint"] {
+  --sprint-slant: -10deg;
+  --sprint-stripes: linear-gradient(115deg, transparent 0 40%, var(--ds-color-primary) 40% 46%, transparent 46% 50%, var(--ds-color-accent) 50% 53%, transparent 53%);
+  background:
+    linear-gradient(115deg, transparent 0 70%, color-mix(in srgb, var(--ds-color-primary) 7%, transparent) 70% 76%, transparent 76% 79%, color-mix(in srgb, var(--ds-color-accent) 7%, transparent) 79% 81%, transparent 81%),
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="sprint"] .ds-heading { font-style: italic; text-transform: uppercase; }
+[data-ds-theme="sprint"] .ds-heading[data-size="6"],
+[data-ds-theme="sprint"] .ds-heading[data-size="5"] { line-height: 0.9; letter-spacing: -0.015em; }
+[data-ds-theme="sprint"] .ds-heading[data-size="6"]::after,
+[data-ds-theme="sprint"] .ds-heading[data-size="5"]::after { content: ""; display: block; width: 90px; height: 8px; margin-top: 0.2em; background: linear-gradient(90deg, var(--ds-color-primary) 0 60%, transparent 60% 68%, var(--ds-color-accent) 68%); transform: skewX(var(--sprint-slant)); }
+[data-ds-theme="sprint"] .ds-heading[data-size="2"],
+[data-ds-theme="sprint"] .ds-heading[data-size="1"] { color: var(--ds-color-primary); letter-spacing: 0.06em; }
+
+/* Buttons lean forward; the label is skewed back so it stays readable. */
+[data-ds-theme="sprint"] .ds-button { transform: skewX(var(--sprint-slant)); font-family: var(--ds-font-display); font-style: italic; text-transform: uppercase; font-weight: 800; letter-spacing: 0.04em; font-size: 1rem; }
+[data-ds-theme="sprint"] .ds-button > * { transform: skewX(calc(var(--sprint-slant) * -1)); }
+[data-ds-theme="sprint"] .ds-button:hover:not(:disabled) { transform: skewX(var(--sprint-slant)) translateX(2px); }
+[data-ds-theme="sprint"] .ds-button:active:not(:disabled) { transform: skewX(var(--sprint-slant)) scale(var(--ds-press-scale, 0.96)); }
+[data-ds-theme="sprint"] .ds-button[data-variant="solid"] { box-shadow: 4px 0 0 0 var(--ds-color-accent); }
+[data-ds-theme="sprint"] .ds-button[data-variant="solid"][data-tone="accent"] { box-shadow: 4px 0 0 0 var(--ds-color-primary); }
+[data-ds-theme="sprint"] .ds-button[data-variant="outline"] { border-width: 2px; }
+[data-ds-theme="sprint"] .ds-icon-button { transform: none; border-radius: 50%; }
+[data-ds-theme="sprint"] .ds-icon-button:hover:not(:disabled) { transform: none; }
+
+/* Scoreboard panels: a slanted stripe in the corner of raised cards, a dark scoreboard for filled ones. */
+[data-ds-theme="sprint"] .ds-card { border: 1px solid var(--ds-color-border); }
+[data-ds-theme="sprint"] .ds-card[data-variant="elevated"] { position: relative; overflow: hidden; border-left: 4px solid var(--ds-color-primary); }
+[data-ds-theme="sprint"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: 0; right: 0; width: 120px; height: 100%; background: var(--sprint-stripes); opacity: 0.18; pointer-events: none; }
+[data-ds-theme="sprint"] .ds-card[data-variant="filled"] { background: #0b1020; color: #f3f5fa; border-color: #0b1020; font-family: var(--ds-font-display); }
+[data-ds-theme="sprint"] .ds-card[data-variant="filled"] .ds-heading,
+[data-ds-theme="sprint"] .ds-card[data-variant="filled"] .ds-text { color: #f3f5fa; }
+[data-ds-theme="sprint"] .ds-card[data-variant="filled"] .ds-text[data-muted] { color: #a8b0c4; }
+[data-ds-theme="sprint"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); background: transparent; }
+[data-ds-theme="sprint"] .ds-card[data-interactive]:hover { transform: translateX(3px); }
+[data-ds-theme="sprint"] .ds-dialog__panel { border: 0; border-top: 6px solid var(--ds-color-primary); }
+[data-ds-theme="sprint"] .ds-dialog__title { font-style: italic; text-transform: uppercase; font-size: var(--ds-text-3); }
+
+[data-ds-theme="sprint"] .ds-field__label,
+[data-ds-theme="sprint"] .ds-radio-group legend { font-family: var(--ds-font-display); font-style: italic; font-weight: 700; font-size: 0.9rem; }
+[data-ds-theme="sprint"] .ds-input,
+[data-ds-theme="sprint"] .ds-select__control,
+[data-ds-theme="sprint"] .ds-textarea { border-width: 0 0 2px; border-color: var(--ds-color-border-strong); background: var(--ds-color-surface-alt); }
+[data-ds-theme="sprint"] .ds-input:focus-within,
+[data-ds-theme="sprint"] .ds-select__control:focus,
+[data-ds-theme="sprint"] .ds-textarea:focus { border-color: var(--ds-color-primary); box-shadow: 0 2px 0 var(--ds-color-primary); }
+[data-ds-theme="sprint"] .ds-choice__box { transform: skewX(var(--sprint-slant)); border-radius: 0; }
+[data-ds-theme="sprint"] .ds-choice[data-kind="radio"] .ds-choice__box { transform: none; border-radius: 50%; }
+[data-ds-theme="sprint"] .ds-switch__track { border-radius: 2px; transform: skewX(var(--sprint-slant)); }
+[data-ds-theme="sprint"] .ds-switch__thumb { border-radius: 1px; }
+[data-ds-theme="sprint"] .ds-switch__track[data-state="on"] { background: var(--ds-color-primary); border-color: var(--ds-color-primary); }
+
+[data-ds-theme="sprint"] .ds-badge { border-radius: 0; transform: skewX(var(--sprint-slant)); font-family: var(--ds-font-display); font-style: italic; font-weight: 800; text-transform: uppercase; font-size: 0.82rem; }
+/* Avatars read as jersey numbers. */
+[data-ds-theme="sprint"] .ds-avatar { border-radius: 4px; background: var(--ds-color-primary); color: #fff; font-family: var(--ds-font-display); font-style: italic; font-weight: 900; box-shadow: inset 0 -5px 0 var(--ds-color-accent); }
+[data-ds-theme="sprint"] .ds-alert { border-radius: 0; border-width: 0 0 0 6px; border-color: var(--_tone); }
+[data-ds-theme="sprint"] .ds-alert__title { font-family: var(--ds-font-display); font-style: italic; text-transform: uppercase; font-size: 1rem; }
+[data-ds-theme="sprint"] .ds-progress { height: 10px; border-radius: 0; transform: skewX(var(--sprint-slant)); }
+[data-ds-theme="sprint"] .ds-progress__bar { border-radius: 0; background: repeating-linear-gradient(115deg, var(--_tone) 0 10px, color-mix(in srgb, var(--_tone) 75%, #fff) 10px 14px); }
+[data-ds-theme="sprint"] .ds-tabs__tab { font-family: var(--ds-font-display); font-style: italic; text-transform: uppercase; font-weight: 800; font-size: 1rem; letter-spacing: 0.02em; }
+[data-ds-theme="sprint"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; background: var(--ds-color-primary); transform: skewX(var(--sprint-slant)) scaleX(0); }
+[data-ds-theme="sprint"] .ds-tabs[data-variant="line"] .ds-tabs__tab[data-state="active"]::after { transform: skewX(var(--sprint-slant)) scaleX(1); }
+[data-ds-theme="sprint"] .ds-tabs[data-variant="pill"] .ds-tabs__list,
+[data-ds-theme="sprint"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 0; }
+[data-ds-theme="sprint"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); transform: skewX(var(--sprint-slant)); }
+[data-ds-theme="sprint"] .ds-accordion__trigger { font-family: var(--ds-font-display); font-style: italic; text-transform: uppercase; font-weight: 800; font-size: 1.05rem; }
+[data-ds-theme="sprint"] .ds-slider__control::-webkit-slider-runnable-track { border-radius: 0; }
+[data-ds-theme="sprint"] .ds-slider__control::-webkit-slider-thumb { border-radius: 0; transform: skewX(var(--sprint-slant)); width: 14px; height: 22px; margin-top: -8px; background: var(--ds-color-primary); border: 0; }
+[data-ds-theme="sprint"] .ds-divider { border: 0; height: 4px; background: linear-gradient(90deg, var(--ds-color-primary) 0 40%, transparent 40% 42%, var(--ds-color-accent) 42% 52%, transparent 52% 54%, var(--ds-color-border) 54%); }
+[data-ds-theme="sprint"] .ds-tooltip__content { border-radius: 0; background: var(--ds-color-primary); color: var(--ds-color-on-primary); font-family: var(--ds-font-display); font-style: italic; font-weight: 700; text-transform: uppercase; }
+[data-ds-theme="sprint"] .ds-kbd,
+[data-ds-theme="sprint"] .ds-code { border-radius: 0; }

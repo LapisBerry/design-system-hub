@@ -1,0 +1,68 @@
+/* Atomic personality: starbursts, boomerang shapes, kidney-bean panels and an orbiting spinner. */
+
+[data-ds-theme="atomic"] {
+  --atomic-star: polygon(50% 0, 56% 40%, 100% 50%, 56% 60%, 50% 100%, 44% 60%, 0 50%, 44% 40%);
+  --atomic-coral: #e86f51;
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--ds-color-primary) 18%, transparent) 2px, transparent 2.5px) 0 0 / 80px 80px,
+    radial-gradient(circle, color-mix(in srgb, var(--atomic-coral) 18%, transparent) 2px, transparent 2.5px) 40px 40px / 80px 80px,
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="atomic"] .ds-heading[data-size="6"],
+[data-ds-theme="atomic"] .ds-heading[data-size="5"] { color: var(--ds-color-primary); line-height: 1.05; position: relative; }
+[data-ds-theme="atomic"] .ds-heading[data-size="6"]::before,
+[data-ds-theme="atomic"] .ds-heading[data-size="5"]::before { content: ""; display: inline-block; width: 0.7em; height: 0.7em; margin-right: 0.25em; vertical-align: 0.05em; background: var(--ds-color-accent); clip-path: var(--atomic-star); }
+[data-ds-theme="atomic"] .ds-heading[data-size="2"],
+[data-ds-theme="atomic"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.82rem; color: var(--atomic-coral); }
+
+[data-ds-theme="atomic"] .ds-button { font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.82rem; box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="atomic"] .ds-button[data-variant="ghost"] { box-shadow: none; }
+[data-ds-theme="atomic"] .ds-button[data-variant="outline"] { background: var(--ds-color-surface); }
+[data-ds-theme="atomic"] .ds-button:active:not(:disabled) { box-shadow: none; transform: translateY(2px); }
+
+/* Cards are kidney-bean shaped; raised ones get a sparkle. */
+[data-ds-theme="atomic"] .ds-card { border-radius: 36px 18px 36px 18px / 24px 36px 24px 36px; border: 2px solid var(--ds-color-border); }
+[data-ds-theme="atomic"] .ds-card[data-variant="elevated"] { position: relative; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="atomic"] .ds-card[data-variant="elevated"]::before,
+[data-ds-theme="atomic"] .ds-card[data-variant="elevated"]::after { content: ""; position: absolute; clip-path: var(--atomic-star); pointer-events: none; }
+[data-ds-theme="atomic"] .ds-card[data-variant="elevated"]::before { top: -12px; right: 28px; width: 28px; height: 28px; background: var(--ds-color-accent); }
+[data-ds-theme="atomic"] .ds-card[data-variant="elevated"]::after { top: 8px; right: 12px; width: 14px; height: 14px; background: var(--atomic-coral); }
+[data-ds-theme="atomic"] .ds-card[data-variant="filled"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); border-color: transparent; }
+[data-ds-theme="atomic"] .ds-card[data-variant="filled"] .ds-heading,
+[data-ds-theme="atomic"] .ds-card[data-variant="filled"] .ds-text { color: var(--ds-color-on-primary); }
+[data-ds-theme="atomic"] .ds-card[data-variant="outlined"] { border-style: dashed; border-color: var(--ds-color-border-strong); background: transparent; }
+[data-ds-theme="atomic"] .ds-card[data-interactive]:hover { transform: translateY(-3px) rotate(-0.5deg); }
+[data-ds-theme="atomic"] .ds-dialog__panel { border-radius: 40px 20px 40px 20px / 28px 40px 28px 40px; border: 2px solid var(--ds-color-border-strong); }
+
+[data-ds-theme="atomic"] .ds-input,
+[data-ds-theme="atomic"] .ds-select__control,
+[data-ds-theme="atomic"] .ds-textarea { border-color: var(--ds-color-border-strong); background: var(--ds-color-surface); }
+[data-ds-theme="atomic"] .ds-textarea { border-radius: 18px; }
+[data-ds-theme="atomic"] .ds-input:focus-within,
+[data-ds-theme="atomic"] .ds-select__control:focus,
+[data-ds-theme="atomic"] .ds-textarea:focus { border-color: var(--ds-color-primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ds-color-accent) 40%, transparent); }
+[data-ds-theme="atomic"] .ds-choice__box { border-radius: 6px; }
+[data-ds-theme="atomic"] .ds-switch__track { background: var(--ds-color-surface-alt); }
+[data-ds-theme="atomic"] .ds-switch__track[data-state="on"] { background: var(--ds-color-primary); }
+[data-ds-theme="atomic"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--ds-color-accent); }
+
+/* Badges are boomerangs: tapered at the ends. */
+[data-ds-theme="atomic"] .ds-badge { border-radius: 999px 6px 999px 6px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.68rem; }
+[data-ds-theme="atomic"] .ds-avatar { background: conic-gradient(var(--ds-color-primary) 0 33%, var(--ds-color-accent) 0 66%, var(--atomic-coral) 0); color: #1f2b2b; font-family: var(--ds-font-display); box-shadow: 0 0 0 3px var(--ds-color-surface); text-shadow: 0 0 6px #fffaf0, 0 0 2px #fffaf0; }
+[data-ds-theme="atomic"] .ds-alert { border-radius: 20px 8px 20px 8px; border-width: 2px; }
+[data-ds-theme="atomic"] .ds-progress { height: 12px; background: var(--ds-color-surface-alt); box-shadow: inset 0 0 0 2px var(--ds-color-border); }
+[data-ds-theme="atomic"] .ds-progress__bar { background: linear-gradient(90deg, var(--ds-color-primary), var(--ds-color-accent), var(--atomic-coral)); }
+/* Spinner: an electron orbiting the nucleus. */
+[data-ds-theme="atomic"] .ds-spinner { border-color: transparent; border-top-color: var(--atomic-coral); border-bottom-color: var(--ds-color-primary); border-radius: 50% / 35%; }
+[data-ds-theme="atomic"] .ds-tabs__tab { font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.82rem; }
+[data-ds-theme="atomic"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom-width: 2px; }
+[data-ds-theme="atomic"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 6px; border-radius: 999px 2px; background: var(--atomic-coral); }
+[data-ds-theme="atomic"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-accent); color: var(--ds-color-on-accent); }
+[data-ds-theme="atomic"] .ds-slider__control::-webkit-slider-thumb { background: var(--ds-color-accent); border: 3px solid var(--ds-color-surface); box-shadow: 0 0 0 2px var(--ds-color-primary); }
+[data-ds-theme="atomic"] .ds-accordion { border-top-width: 2px; }
+[data-ds-theme="atomic"] .ds-accordion__item { border-bottom-width: 2px; }
+/* Divider: a line with a starburst in the middle. */
+[data-ds-theme="atomic"] .ds-divider { border: 0; height: 16px; background: linear-gradient(var(--ds-color-border-strong), var(--ds-color-border-strong)) 0 50% / calc(50% - 14px) 2px no-repeat, linear-gradient(var(--ds-color-border-strong), var(--ds-color-border-strong)) 100% 50% / calc(50% - 14px) 2px no-repeat; position: relative; overflow: visible; }
+[data-ds-theme="atomic"] .ds-divider::after { content: ""; position: absolute; left: 50%; top: 0; width: 16px; height: 16px; transform: translateX(-50%); background: var(--ds-color-accent); clip-path: var(--atomic-star); }
+[data-ds-theme="atomic"] .ds-tooltip__content { background: var(--ds-color-primary); color: var(--ds-color-on-primary); border-radius: 999px 6px 999px 6px; padding-left: 0.9em; padding-right: 0.9em; }
