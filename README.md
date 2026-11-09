@@ -20,6 +20,18 @@ packages/
     blueprint/          Technical drafting: graph paper, crop marks
     riso/               Risograph print: two inks, halftones (light only)
     dial/               Tactile hardware: raised keys, LCD readouts
+    kumo/               Japanese minimalism: sumi ink, vermilion seal
+    arcade/             8-bit pixel art (dark only)
+    clarity/            Accessibility first: large legible type, big targets
+    pow/                Comic book: ink, halftones, speech bubbles
+    origami/            Folded paper corners and layered sheets
+    aurora/             Dark SaaS: gradient hairlines, aurora glow (dark only)
+    sketch/             Hand-drawn notebook / chalkboard
+    deco/               Art Deco: emerald, brass, stepped corners
+    graphite/           E-ink: pure black and white, dithering, no motion
+    harbor/             Nautical: slab serif, rope rules, pennants
+    puff/               Claymorphism: inflated, squishy pastel shapes
+    cyber/              Sci-fi HUD: chamfered corners, hazard yellow (dark only)
 apps/
   showcase/             Vite + React gallery, compare view, token docs
 scripts/
@@ -52,6 +64,18 @@ pnpm check:contrast
 | **Blueprint** | Graph paper, crop marks, condensed type, safety orange | Hardware, CAD, infrastructure, maker tools | Vellum light, cyanotype dark |
 | **Riso** | Fluorescent pink and blue overprint, halftones, misregistration | Zines, music events, indie publishers | Light only |
 | **Dial** | Molded plastic, keys that press in, LCD readouts, LED toggles | Audio tools, smart home, gadget apps | Light, dark |
+| **Kumo** | Mincho headlines, ink-wash grays, a vermilion seal, wide margins | Tea, craft, wellness, travel | Light, dark |
+| **Arcade** | Stepped pixel corners, pixel fonts, starfield, blinking cursor | Games, game jams, streaming overlays | Dark only |
+| **Clarity** | Hyperlegible 18px type, 52px targets, thick yellow focus, ON/OFF labels | Healthcare, government, education | Light, dark |
+| **Pow** | Inked panels, Ben-Day dots, starburst badges, speech-bubble tooltips | Entertainment, kids' learning, fandoms | Light, dark |
+| **Origami** | Folded-corner sheets, stacked paper shadows, creased buttons | Notes, planning, education | Light, dark |
+| **Aurora** | Near-black glass, gradient hairline borders, drifting aurora glow | Developer platforms, AI products | Dark only |
+| **Sketch** | Wobbly pen outlines, handwriting, highlighter, notebook / chalkboard | Wireframes, teaching, journaling | Notebook light, chalkboard dark |
+| **Deco** | Tall geometric caps, ziggurat corners, sunburst, brass double rules | Hotels, theaters, events, perfume | Light, dark |
+| **Graphite** | 1-bit black and white, dither patterns for tone, zero animation | Reading, focus tools, e-paper | Light, dark |
+| **Harbor** | Slab serif, navy and signal red, rope dividers, porthole avatars | Outdoors, logistics, coastal hospitality | Light, dark |
+| **Puff** | Inflated clay shapes, pressed-in wells, squish on press | Kids' apps, beginner finance, onboarding | Light, dark |
+| **Cyber** | Chamfered plates, hazard stripes, HUD brackets, hover glitch | Games, esports, cockpit-style dashboards | Dark only |
 
 Every theme passes the contrast checks in `packages/core/src/tokens/contrast.ts` (4.5:1 for body text and primary button labels, 3:1 for large text and UI parts) in every mode it supports.
 

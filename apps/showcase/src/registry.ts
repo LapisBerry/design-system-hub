@@ -11,6 +11,18 @@ import { noir } from "@dsh/theme-noir";
 import { blueprint } from "@dsh/theme-blueprint";
 import { riso } from "@dsh/theme-riso";
 import { dial } from "@dsh/theme-dial";
+import { kumo } from "@dsh/theme-kumo";
+import { arcade } from "@dsh/theme-arcade";
+import { clarity } from "@dsh/theme-clarity";
+import { pow } from "@dsh/theme-pow";
+import { origami } from "@dsh/theme-origami";
+import { aurora } from "@dsh/theme-aurora";
+import { sketch } from "@dsh/theme-sketch";
+import { deco } from "@dsh/theme-deco";
+import { graphite } from "@dsh/theme-graphite";
+import { harbor } from "@dsh/theme-harbor";
+import { puff } from "@dsh/theme-puff";
+import { cyber } from "@dsh/theme-cyber";
 
 import "@dsh/core/styles.css";
 import "@dsh/theme-folio/theme.css";
@@ -25,6 +37,18 @@ import "@dsh/theme-noir/theme.css";
 import "@dsh/theme-blueprint/theme.css";
 import "@dsh/theme-riso/theme.css";
 import "@dsh/theme-dial/theme.css";
+import "@dsh/theme-kumo/theme.css";
+import "@dsh/theme-arcade/theme.css";
+import "@dsh/theme-clarity/theme.css";
+import "@dsh/theme-pow/theme.css";
+import "@dsh/theme-origami/theme.css";
+import "@dsh/theme-aurora/theme.css";
+import "@dsh/theme-sketch/theme.css";
+import "@dsh/theme-deco/theme.css";
+import "@dsh/theme-graphite/theme.css";
+import "@dsh/theme-harbor/theme.css";
+import "@dsh/theme-puff/theme.css";
+import "@dsh/theme-cyber/theme.css";
 
 /** Every design system in the hub. Add a new theme package here to show it in the showcase. */
 export const THEMES: ThemeDefinition[] = [
@@ -40,6 +64,18 @@ export const THEMES: ThemeDefinition[] = [
   blueprint,
   riso,
   dial,
+  kumo,
+  arcade,
+  clarity,
+  pow,
+  origami,
+  aurora,
+  sketch,
+  deco,
+  graphite,
+  harbor,
+  puff,
+  cyber,
 ];
 
 export const themeById = (id: string) => THEMES.find((t) => t.meta.id === id);

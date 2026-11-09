@@ -1,0 +1,82 @@
+/* Aurora personality: drifting aurora glow, gradient hairline borders, subtle grain of light. */
+
+[data-ds-theme="aurora"] {
+  --aurora-edge: linear-gradient(140deg, rgba(124, 242, 200, 0.55), rgba(165, 139, 255, 0.35) 35%, rgba(255, 255, 255, 0.06) 60%, rgba(255, 255, 255, 0.12));
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(60% 45% at 15% -5%, rgba(124, 242, 200, 0.16), transparent 70%),
+    radial-gradient(50% 40% at 85% 0%, rgba(165, 139, 255, 0.18), transparent 70%),
+    radial-gradient(40% 30% at 50% 110%, rgba(124, 182, 255, 0.1), transparent 70%),
+    var(--ds-color-bg);
+  background-size: 140% 140%, 140% 140%, 100% 100%, auto;
+  animation: aurora-drift 18s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) { [data-ds-theme="aurora"] { animation: none; } }
+@keyframes aurora-drift {
+  to { background-position: 30% 10%, 70% 20%, 50% 50%, 0 0; }
+}
+
+[data-ds-theme="aurora"] .ds-heading[data-size="6"],
+[data-ds-theme="aurora"] .ds-heading[data-size="5"] {
+  background: linear-gradient(180deg, #ffffff 30%, #8d93a3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+/* Gradient hairline borders using a masked pseudo-element. */
+[data-ds-theme="aurora"] .ds-card,
+[data-ds-theme="aurora"] .ds-dialog__panel { position: relative; border-color: transparent; background: linear-gradient(180deg, color-mix(in srgb, var(--ds-color-surface) 92%, white), var(--ds-color-surface)); }
+[data-ds-theme="aurora"] .ds-card::before,
+[data-ds-theme="aurora"] .ds-dialog__panel::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--aurora-edge);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+[data-ds-theme="aurora"] .ds-card[data-variant="outlined"] { background: transparent; }
+[data-ds-theme="aurora"] .ds-card[data-variant="outlined"]::before { background: var(--ds-color-border-strong); }
+[data-ds-theme="aurora"] .ds-card[data-variant="filled"] { background: var(--ds-color-surface-alt); }
+[data-ds-theme="aurora"] .ds-card[data-variant="filled"]::before { display: none; }
+[data-ds-theme="aurora"] .ds-card[data-interactive]:hover { box-shadow: var(--ds-shadow-lg); transform: none; }
+
+[data-ds-theme="aurora"] .ds-button[data-variant="solid"][data-tone="primary"] { background: linear-gradient(180deg, #ffffff, #d4d7e0); }
+[data-ds-theme="aurora"] .ds-button[data-variant="solid"][data-tone="accent"] { background: linear-gradient(135deg, var(--ds-color-accent), #a58bff); }
+[data-ds-theme="aurora"] .ds-button[data-variant="outline"] { --_bd: var(--ds-color-border-strong); --_fg: var(--ds-color-text); background: rgba(255, 255, 255, 0.02); }
+[data-ds-theme="aurora"] .ds-button[data-variant="soft"] { --_bg: rgba(255, 255, 255, 0.06); --_fg: var(--ds-color-text); }
+[data-ds-theme="aurora"] .ds-button[data-variant="soft"][data-tone="danger"] { --_bg: rgba(255, 122, 133, 0.12); --_fg: var(--ds-color-danger); }
+
+[data-ds-theme="aurora"] .ds-input,
+[data-ds-theme="aurora"] .ds-select__control,
+[data-ds-theme="aurora"] .ds-textarea { background: rgba(255, 255, 255, 0.02); }
+[data-ds-theme="aurora"] .ds-input:focus-within,
+[data-ds-theme="aurora"] .ds-select__control:focus,
+[data-ds-theme="aurora"] .ds-textarea:focus { border-color: var(--ds-color-focus); box-shadow: 0 0 0 3px rgba(165, 139, 255, 0.2), 0 0 20px -4px rgba(165, 139, 255, 0.5); }
+[data-ds-theme="aurora"] .ds-field__label { color: var(--ds-color-text-muted); font-weight: 500; }
+
+[data-ds-theme="aurora"] .ds-switch__track[data-state="on"] { background: linear-gradient(90deg, var(--ds-color-accent), #a58bff); border-color: transparent; }
+[data-ds-theme="aurora"] .ds-switch__thumb { background: #eceef4; }
+[data-ds-theme="aurora"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: #07080c; }
+[data-ds-theme="aurora"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-text); border-color: var(--ds-color-text); }
+
+[data-ds-theme="aurora"] .ds-badge { font-family: var(--ds-font-mono); font-size: 11px; font-weight: 500; border-radius: 999px; }
+[data-ds-theme="aurora"] .ds-badge[data-variant="soft"] { border-color: color-mix(in srgb, var(--_tone) 30%, transparent); background: color-mix(in srgb, var(--_tone) 10%, transparent); }
+[data-ds-theme="aurora"] .ds-avatar { background: conic-gradient(from 200deg, #7cf2c8, #a58bff, #7cb6ff, #7cf2c8); color: #07080c; }
+[data-ds-theme="aurora"] .ds-alert { background: color-mix(in srgb, var(--_tone) 6%, var(--ds-color-surface)); border-color: color-mix(in srgb, var(--_tone) 25%, transparent); }
+[data-ds-theme="aurora"] .ds-progress { height: 4px; background: rgba(255, 255, 255, 0.06); }
+[data-ds-theme="aurora"] .ds-progress__bar { background: linear-gradient(90deg, #7cf2c8, #a58bff); box-shadow: 0 0 12px rgba(124, 242, 200, 0.6); }
+[data-ds-theme="aurora"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 1px; background: linear-gradient(90deg, transparent, var(--ds-color-accent), transparent); box-shadow: 0 0 10px var(--ds-color-accent); }
+[data-ds-theme="aurora"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: rgba(255, 255, 255, 0.04); border: 1px solid var(--ds-color-border); }
+[data-ds-theme="aurora"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+[data-ds-theme="aurora"] .ds-slider__control::-webkit-slider-runnable-track { height: 4px; background: linear-gradient(to right, #7cf2c8, #a58bff var(--ds-slider-fill), rgba(255, 255, 255, 0.08) var(--ds-slider-fill)); }
+[data-ds-theme="aurora"] .ds-slider__control::-webkit-slider-thumb { margin-top: -7px; border: 0; background: #fff; box-shadow: 0 0 0 4px rgba(165, 139, 255, 0.25); }
+[data-ds-theme="aurora"] .ds-kbd { background: rgba(255, 255, 255, 0.04); }
+[data-ds-theme="aurora"] .ds-tooltip__content { background: #1b1e28; color: var(--ds-color-text); border: 1px solid var(--ds-color-border-strong); }

@@ -15,8 +15,22 @@ import { noir } from "@dsh/theme-noir";
 import { blueprint } from "@dsh/theme-blueprint";
 import { riso } from "@dsh/theme-riso";
 import { dial } from "@dsh/theme-dial";
+import { kumo } from "@dsh/theme-kumo";
+import { arcade } from "@dsh/theme-arcade";
+import { clarity } from "@dsh/theme-clarity";
+import { pow } from "@dsh/theme-pow";
+import { origami } from "@dsh/theme-origami";
+import { aurora } from "@dsh/theme-aurora";
+import { sketch } from "@dsh/theme-sketch";
+import { deco } from "@dsh/theme-deco";
+import { graphite } from "@dsh/theme-graphite";
+import { harbor } from "@dsh/theme-harbor";
+import { puff } from "@dsh/theme-puff";
+import { cyber } from "@dsh/theme-cyber";
 
-const themes: ThemeDefinition[] = [folio, grit, mist, phosphor, terra, grid, konstrukt, sorbet, noir, blueprint, riso, dial];
+const themes: ThemeDefinition[] = [folio, grit, mist, phosphor, terra, grid, konstrukt, sorbet, noir, blueprint, riso, dial,
+  kumo, arcade, clarity, pow, origami, aurora, sketch, deco, graphite, harbor, puff, cyber,
+];
 let failures = 0;
 
 for (const theme of themes) {

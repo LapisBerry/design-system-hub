@@ -1,0 +1,95 @@
+/* Cyber personality: chamfered corners, HUD brackets, hazard stripes, scanlines and a hover glitch. */
+
+[data-ds-theme="cyber"] {
+  --cut: 12px;
+  --chamfer: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+  --hazard: repeating-linear-gradient(-45deg, var(--ds-color-primary) 0 8px, #0a0b0d 8px 16px);
+  background:
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 4px),
+    linear-gradient(rgba(33, 230, 242, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, rgba(33, 230, 242, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="cyber"] .ds-heading { text-transform: uppercase; }
+[data-ds-theme="cyber"] .ds-heading[data-size="6"],
+[data-ds-theme="cyber"] .ds-heading[data-size="5"] { color: var(--ds-color-primary); text-shadow: 2px 0 0 rgba(255, 42, 109, 0.7), -2px 0 0 rgba(33, 230, 242, 0.6); letter-spacing: 0.02em; }
+[data-ds-theme="cyber"] .ds-heading[data-size="2"]::before,
+[data-ds-theme="cyber"] .ds-heading[data-size="1"]::before { content: "// "; color: var(--ds-color-accent); }
+
+/* Buttons: chamfered plates. Hover runs a short glitch. */
+[data-ds-theme="cyber"] .ds-button { --cut: 10px; clip-path: var(--chamfer); font-family: var(--ds-font-display); font-weight: 700; border: 0; }
+[data-ds-theme="cyber"] .ds-button[data-variant="outline"] { background: linear-gradient(var(--ds-color-bg), var(--ds-color-bg)) padding-box, var(--_tone); box-shadow: inset 0 0 0 1px var(--_tone); }
+[data-ds-theme="cyber"] .ds-button[data-variant="soft"] { --_bg: color-mix(in srgb, var(--_tone) 16%, var(--ds-color-surface)); --_fg: var(--_tone); }
+[data-ds-theme="cyber"] .ds-button[data-variant="ghost"] { --_fg: var(--ds-color-accent); }
+[data-ds-theme="cyber"] .ds-button[data-tone="neutral"] { --_tone: var(--ds-color-text); }
+[data-ds-theme="cyber"] .ds-button:hover:not(:disabled) { animation: cyber-glitch 260ms steps(2) 1; }
+@keyframes cyber-glitch {
+  0% { transform: translate(0); text-shadow: 2px 0 #ff2a6d, -2px 0 #21e6f2; }
+  33% { transform: translate(-2px, 1px); }
+  66% { transform: translate(2px, -1px); text-shadow: -2px 0 #ff2a6d, 2px 0 #21e6f2; }
+  100% { transform: translate(0); text-shadow: none; }
+}
+
+/* Panels: chamfered, with a hazard tab on the corner and HUD corner brackets. */
+[data-ds-theme="cyber"] .ds-card,
+[data-ds-theme="cyber"] .ds-dialog__panel {
+  --cut: 16px;
+  position: relative;
+  clip-path: var(--chamfer);
+  border: 0;
+  background:
+    linear-gradient(var(--ds-color-accent), var(--ds-color-accent)) right top / 14px 1px no-repeat,
+    linear-gradient(var(--ds-color-accent), var(--ds-color-accent)) right top / 1px 14px no-repeat,
+    linear-gradient(var(--ds-color-accent), var(--ds-color-accent)) left bottom / 14px 1px no-repeat,
+    linear-gradient(var(--ds-color-accent), var(--ds-color-accent)) left bottom / 1px 14px no-repeat,
+    var(--ds-color-surface);
+  box-shadow: inset 0 0 0 1px var(--ds-color-border);
+}
+[data-ds-theme="cyber"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: 0; left: 16px; width: 64px; height: 4px; background: var(--hazard); }
+[data-ds-theme="cyber"] .ds-card[data-variant="filled"] { background: var(--ds-color-surface-alt); }
+[data-ds-theme="cyber"] .ds-card[data-variant="outlined"] { background: transparent; box-shadow: inset 0 0 0 1px var(--ds-color-border-strong); }
+[data-ds-theme="cyber"] .ds-card[data-interactive]:hover { box-shadow: inset 0 0 0 1px var(--ds-color-accent); transform: none; }
+[data-ds-theme="cyber"] .ds-dialog__panel { box-shadow: inset 0 0 0 1px var(--ds-color-primary); }
+
+[data-ds-theme="cyber"] .ds-field__label,
+[data-ds-theme="cyber"] .ds-radio-group legend { font-family: var(--ds-font-mono); font-weight: 400; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; color: var(--ds-color-accent); }
+[data-ds-theme="cyber"] .ds-input,
+[data-ds-theme="cyber"] .ds-select__control,
+[data-ds-theme="cyber"] .ds-textarea { --cut: 8px; background: #060708; clip-path: var(--chamfer); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="cyber"] .ds-input:focus-within,
+[data-ds-theme="cyber"] .ds-select__control:focus,
+[data-ds-theme="cyber"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: inset 0 0 12px -4px rgba(33, 230, 242, 0.6); }
+
+[data-ds-theme="cyber"] .ds-choice__box { border-width: 1px; border-color: var(--ds-color-accent); background: transparent; clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px); }
+[data-ds-theme="cyber"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 0; transform: rotate(45deg) scale(0.8); clip-path: none; }
+[data-ds-theme="cyber"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { background: transparent; box-shadow: inset 0 0 0 4px var(--ds-color-bg), inset 0 0 0 10px var(--ds-color-primary); }
+[data-ds-theme="cyber"] .ds-switch__track { border-radius: 0; background: #060708; border-color: var(--ds-color-border-strong); clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px); }
+[data-ds-theme="cyber"] .ds-switch__thumb { border-radius: 0; background: var(--ds-color-text-muted); box-shadow: none; }
+[data-ds-theme="cyber"] .ds-switch__track[data-state="on"] { background: var(--hazard); border-color: var(--ds-color-primary); }
+[data-ds-theme="cyber"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: #0a0b0d; box-shadow: 0 0 0 2px var(--ds-color-primary); }
+
+[data-ds-theme="cyber"] .ds-badge { border-radius: 0; font-family: var(--ds-font-mono); font-weight: 400; clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); padding: 0 1em; }
+[data-ds-theme="cyber"] .ds-avatar { border-radius: 0; clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); background: var(--ds-color-primary); color: var(--ds-color-on-primary); font-family: var(--ds-font-display); }
+[data-ds-theme="cyber"] .ds-alert { border: 0; border-left: 3px solid var(--_tone); background: color-mix(in srgb, var(--_tone) 8%, var(--ds-color-surface)); }
+[data-ds-theme="cyber"] .ds-alert__title { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.06em; color: var(--_tone); }
+[data-ds-theme="cyber"] .ds-alert__title::before { content: "▲ "; font-size: 0.75em; }
+[data-ds-theme="cyber"] .ds-progress { height: 10px; border-radius: 0; background: #060708; box-shadow: inset 0 0 0 1px var(--ds-color-border-strong); padding: 2px; }
+[data-ds-theme="cyber"] .ds-progress__bar { border-radius: 0; background: repeating-linear-gradient(90deg, var(--_tone) 0 4px, transparent 4px 6px); box-shadow: 0 0 10px -2px var(--_tone); }
+[data-ds-theme="cyber"] .ds-tabs__tab { font-family: var(--ds-font-display); }
+[data-ds-theme="cyber"] .ds-tabs__tab[data-state="active"] { color: var(--ds-color-primary); }
+[data-ds-theme="cyber"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 2px; background: var(--ds-color-primary); box-shadow: 0 0 8px var(--ds-color-primary); }
+[data-ds-theme="cyber"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 0; background: #060708; }
+[data-ds-theme="cyber"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 0; }
+[data-ds-theme="cyber"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); }
+[data-ds-theme="cyber"] .ds-slider__control::-webkit-slider-runnable-track { height: 2px; border-radius: 0; }
+[data-ds-theme="cyber"] .ds-slider__control::-webkit-slider-thumb { width: 12px; height: 22px; margin-top: -10px; border-radius: 0; border: 0; background: var(--ds-color-primary); box-shadow: 0 0 10px var(--ds-color-primary); }
+[data-ds-theme="cyber"] .ds-accordion__trigger { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.06em; }
+[data-ds-theme="cyber"] .ds-accordion__item[open] > .ds-accordion__trigger { color: var(--ds-color-primary); }
+[data-ds-theme="cyber"] .ds-tooltip__content { border-radius: 0; background: var(--ds-color-primary); color: var(--ds-color-on-primary); font-family: var(--ds-font-mono); clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px); }
+[data-ds-theme="cyber"] .ds-kbd,
+[data-ds-theme="cyber"] .ds-code { border-radius: 0; color: var(--ds-color-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-ds-theme="cyber"] .ds-button:hover:not(:disabled) { animation: none; }
+}
