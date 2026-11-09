@@ -1,0 +1,80 @@
+/* Contour personality: topo lines, trail-sign headings, waypoint badges and a compass rose. */
+
+[data-ds-theme="contour"] {
+  --contour-line: color-mix(in srgb, var(--ds-color-primary) 13%, transparent);
+  --contour-topo:
+    repeating-radial-gradient(ellipse 120% 80% at 18% 30%, transparent 0 22px, var(--contour-line) 22px 23px),
+    repeating-radial-gradient(ellipse 90% 110% at 85% 75%, transparent 0 26px, var(--contour-line) 26px 27px);
+  background: var(--contour-topo), var(--ds-color-bg);
+}
+
+[data-ds-theme="contour"] .ds-heading { text-transform: uppercase; }
+[data-ds-theme="contour"] .ds-heading[data-size="6"],
+[data-ds-theme="contour"] .ds-heading[data-size="5"] { line-height: 0.95; font-weight: 800; }
+/* Trail-blaze mark before big headings. */
+[data-ds-theme="contour"] .ds-heading[data-size="6"]::before,
+[data-ds-theme="contour"] .ds-heading[data-size="5"]::before { content: ""; display: block; width: 18px; height: 30px; margin-bottom: 0.25em; border-radius: 2px; background: var(--ds-color-accent); box-shadow: 0 0 0 3px var(--ds-color-surface), 0 0 0 4px var(--ds-color-border-strong); }
+[data-ds-theme="contour"] .ds-heading[data-size="2"],
+[data-ds-theme="contour"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 500; letter-spacing: 0.06em; font-size: 0.78rem; color: var(--ds-color-accent); }
+
+[data-ds-theme="contour"] .ds-button { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; font-size: 1rem; box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="contour"] .ds-button[data-variant="ghost"],
+[data-ds-theme="contour"] .ds-button[data-variant="outline"] { box-shadow: none; }
+[data-ds-theme="contour"] .ds-button[data-variant="outline"] { border-width: 2px; }
+
+/* Raised cards are map panels with a compass rose in the corner. */
+[data-ds-theme="contour"] .ds-card { border: 1px solid var(--ds-color-border); }
+[data-ds-theme="contour"] .ds-card[data-variant="elevated"] { position: relative; border-color: var(--ds-color-border-strong); border-top: 4px solid var(--ds-color-primary); }
+[data-ds-theme="contour"] .ds-card[data-variant="elevated"]::before {
+  content: "N";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: start center;
+  font: 700 9px/1 var(--ds-font-mono);
+  color: var(--ds-color-accent);
+  background:
+    conic-gradient(from -22.5deg, var(--ds-color-accent) 0 45deg, transparent 0 90deg, var(--ds-color-border-strong) 0 135deg, transparent 0 180deg, var(--ds-color-border-strong) 0 225deg, transparent 0 270deg, var(--ds-color-border-strong) 0 315deg, transparent 0);
+  -webkit-mask: radial-gradient(circle, #000 0 4px, transparent 4.5px), conic-gradient(from -8deg, #000 0 16deg, transparent 0 82deg, #000 0 98deg, transparent 0 172deg, #000 0 188deg, transparent 0 262deg, #000 0 278deg, transparent 0);
+  mask: radial-gradient(circle, #000 0 4px, transparent 4.5px), conic-gradient(from -8deg, #000 0 16deg, transparent 0 82deg, #000 0 98deg, transparent 0 172deg, #000 0 188deg, transparent 0 262deg, #000 0 278deg, transparent 0);
+  border-radius: 50%;
+  opacity: 0.85;
+  pointer-events: none;
+}
+[data-ds-theme="contour"] .ds-card[data-variant="filled"] { background: var(--contour-topo), var(--ds-color-surface-alt); }
+[data-ds-theme="contour"] .ds-card[data-variant="outlined"] { background: transparent; border: 2px dashed var(--ds-color-border-strong); }
+[data-ds-theme="contour"] .ds-dialog__panel { border-top: 4px solid var(--ds-color-accent); }
+[data-ds-theme="contour"] .ds-dialog__title { font-family: var(--ds-font-display); text-transform: uppercase; font-size: var(--ds-text-3); }
+
+[data-ds-theme="contour"] .ds-field__label,
+[data-ds-theme="contour"] .ds-radio-group legend { font-family: var(--ds-font-display); font-size: 0.85rem; font-weight: 700; }
+[data-ds-theme="contour"] .ds-input,
+[data-ds-theme="contour"] .ds-select__control,
+[data-ds-theme="contour"] .ds-textarea { border-color: var(--ds-color-border-strong); }
+[data-ds-theme="contour"] .ds-input:focus-within,
+[data-ds-theme="contour"] .ds-select__control:focus,
+[data-ds-theme="contour"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-color-accent) 22%, transparent); }
+[data-ds-theme="contour"] .ds-switch__track { border-radius: 6px; }
+[data-ds-theme="contour"] .ds-switch__thumb { border-radius: 4px; }
+[data-ds-theme="contour"] .ds-switch__track[data-state="on"] { background: var(--ds-color-primary); }
+
+/* Badges are waypoint markers. */
+[data-ds-theme="contour"] .ds-badge { border-radius: 3px; font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+[data-ds-theme="contour"] .ds-badge::before { content: ""; width: 0.5em; height: 0.5em; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: currentColor; flex: none; }
+[data-ds-theme="contour"] .ds-avatar { border-radius: 50% 50% 50% 4px; background: var(--ds-color-accent); color: var(--ds-color-on-accent); font-family: var(--ds-font-display); font-weight: 700; }
+[data-ds-theme="contour"] .ds-alert { border-radius: 4px; border-width: 0 0 0 4px; border-color: var(--_tone); }
+[data-ds-theme="contour"] .ds-alert__title { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 1rem; }
+/* Progress: an elevation profile with distance ticks. */
+[data-ds-theme="contour"] .ds-progress { height: 14px; border-radius: 2px; background: repeating-linear-gradient(90deg, var(--ds-color-border-strong) 0 1px, transparent 1px 10%) 0 100% / 100% 5px no-repeat, var(--ds-color-surface-alt); }
+[data-ds-theme="contour"] .ds-progress__bar { border-radius: 2px; background: repeating-linear-gradient(-45deg, transparent 0 4px, rgba(255, 255, 255, 0.18) 4px 8px), var(--_tone); }
+[data-ds-theme="contour"] .ds-tabs__tab { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; font-size: 1rem; }
+[data-ds-theme="contour"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; background: var(--ds-color-accent); }
+[data-ds-theme="contour"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="contour"] .ds-accordion__trigger { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.05rem; font-weight: 700; }
+[data-ds-theme="contour"] .ds-slider__control::-webkit-slider-thumb { border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--ds-color-accent); border: 2px solid var(--ds-color-surface); }
+/* Divider: a dashed trail. */
+[data-ds-theme="contour"] .ds-divider { border: 0; height: 3px; background: repeating-linear-gradient(90deg, var(--ds-color-accent) 0 10px, transparent 10px 18px); border-radius: 3px; }
+[data-ds-theme="contour"] .ds-tooltip__content { background: var(--ds-color-primary); color: var(--ds-color-on-primary); font-family: var(--ds-font-mono); font-size: 0.75rem; }

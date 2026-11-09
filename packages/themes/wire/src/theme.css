@@ -1,0 +1,69 @@
+/* Wire personality: dashed boxes, crossed placeholders, redline spacing marks and blue sticky notes. */
+
+[data-ds-theme="wire"] {
+  --wire-cross:
+    linear-gradient(to top right, transparent calc(50% - 0.5px), var(--ds-color-border-strong) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(to bottom right, transparent calc(50% - 0.5px), var(--ds-color-border-strong) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+  --wire-note: color-mix(in srgb, var(--ds-color-accent) 12%, var(--ds-color-surface));
+  background:
+    linear-gradient(color-mix(in srgb, var(--ds-color-border) 45%, transparent) 1px, transparent 1px) 0 0 / 8px 8px,
+    linear-gradient(90deg, color-mix(in srgb, var(--ds-color-border) 45%, transparent) 1px, transparent 1px) 0 0 / 8px 8px,
+    var(--ds-color-bg);
+}
+
+/* Headings get a redline spacing tick on the left. */
+[data-ds-theme="wire"] .ds-heading[data-size="6"],
+[data-ds-theme="wire"] .ds-heading[data-size="5"] { padding-left: 14px; border-left: 2px solid var(--ds-color-accent); }
+[data-ds-theme="wire"] .ds-heading[data-size="2"],
+[data-ds-theme="wire"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.06em; color: var(--ds-color-text-muted); }
+
+[data-ds-theme="wire"] .ds-button { font-weight: 500; }
+[data-ds-theme="wire"] .ds-button[data-variant="solid"][data-tone="accent"] { --_tone: var(--ds-color-accent); }
+[data-ds-theme="wire"] .ds-button[data-variant="outline"] { --_bd: var(--ds-color-border-strong); --_fg: var(--ds-color-text); }
+[data-ds-theme="wire"] .ds-button[data-variant="soft"] { --_bg: var(--ds-color-surface-alt); --_fg: var(--ds-color-text); }
+[data-ds-theme="wire"] .ds-button[data-variant="ghost"] { text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+
+/* Cards are dashed boxes; raised cards show a crossed image placeholder strip on top. */
+[data-ds-theme="wire"] .ds-card { border: 1px dashed var(--ds-color-border-strong); }
+[data-ds-theme="wire"] .ds-card[data-variant="elevated"] { border-style: solid; padding-top: calc(var(--ds-space-5) + 64px); position: relative; }
+[data-ds-theme="wire"] .ds-card[data-variant="elevated"][data-padding="sm"] { padding-top: calc(var(--ds-space-3) + 64px); }
+[data-ds-theme="wire"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: 8px; left: 8px; right: 8px; height: 52px; background: var(--wire-cross), var(--ds-color-surface-alt); border: 1px solid var(--ds-color-border-strong); border-radius: 3px; }
+[data-ds-theme="wire"] .ds-card[data-variant="filled"] { background: var(--ds-color-surface-alt); }
+[data-ds-theme="wire"] .ds-card[data-variant="outlined"] { background: transparent; }
+[data-ds-theme="wire"] .ds-card[data-interactive]:hover { transform: none; border-color: var(--ds-color-accent); box-shadow: 0 0 0 1px var(--ds-color-accent); }
+[data-ds-theme="wire"] .ds-dialog__panel { border: 2px solid var(--ds-color-text); box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12); }
+
+[data-ds-theme="wire"] .ds-input,
+[data-ds-theme="wire"] .ds-select__control,
+[data-ds-theme="wire"] .ds-textarea { border-color: var(--ds-color-border-strong); }
+[data-ds-theme="wire"] .ds-input:focus-within,
+[data-ds-theme="wire"] .ds-select__control:focus,
+[data-ds-theme="wire"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: 0 0 0 1px var(--ds-color-accent); }
+[data-ds-theme="wire"] .ds-input__control::placeholder,
+[data-ds-theme="wire"] .ds-textarea::placeholder { font-family: var(--ds-font-mono); }
+[data-ds-theme="wire"] .ds-field__hint { font-family: var(--ds-font-mono); font-size: 0.78rem; }
+[data-ds-theme="wire"] .ds-choice__box { border-width: 1px; }
+[data-ds-theme="wire"] .ds-switch__track { border-style: dashed; background: var(--ds-color-surface); }
+[data-ds-theme="wire"] .ds-switch__track[data-state="on"] { border-style: solid; }
+
+[data-ds-theme="wire"] .ds-badge { border-radius: 3px; font-weight: 500; font-family: var(--ds-font-mono); }
+[data-ds-theme="wire"] .ds-badge[data-variant="soft"] { background: var(--ds-color-surface-alt); color: var(--ds-color-text); border: 1px dashed var(--ds-color-border-strong); }
+[data-ds-theme="wire"] .ds-badge[data-tone="accent"],
+[data-ds-theme="wire"] .ds-badge[data-tone="info"] { color: var(--ds-color-accent); border-color: var(--ds-color-accent); }
+[data-ds-theme="wire"] .ds-badge[data-variant="solid"][data-tone="accent"],
+[data-ds-theme="wire"] .ds-badge[data-variant="solid"][data-tone="info"] { color: var(--ds-color-on-accent); }
+/* Avatar: an image placeholder with an X. */
+[data-ds-theme="wire"] .ds-avatar { border-radius: 4px; background: var(--wire-cross), var(--ds-color-surface-alt); color: var(--ds-color-text); border: 1px solid var(--ds-color-border-strong); font-family: var(--ds-font-mono); font-weight: 600; text-shadow: 0 0 3px var(--ds-color-surface-alt), 0 0 3px var(--ds-color-surface-alt); }
+/* Alerts read as annotation notes. */
+[data-ds-theme="wire"] .ds-alert { border: 1px solid var(--ds-color-accent); border-radius: 2px; background: var(--wire-note); }
+[data-ds-theme="wire"] .ds-alert__icon { color: var(--ds-color-accent); }
+[data-ds-theme="wire"] .ds-alert__title { font-family: var(--ds-font-mono); text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.04em; }
+[data-ds-theme="wire"] .ds-progress { border-radius: 2px; background: var(--ds-color-surface); box-shadow: inset 0 0 0 1px var(--ds-color-border-strong); height: 10px; }
+[data-ds-theme="wire"] .ds-progress__bar { border-radius: 0; background: repeating-linear-gradient(-45deg, var(--ds-color-primary) 0 2px, transparent 2px 6px); box-shadow: inset 0 0 0 1px var(--ds-color-primary); }
+[data-ds-theme="wire"] .ds-tabs__tab { font-weight: 500; }
+[data-ds-theme="wire"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 2px; background: var(--ds-color-text); }
+[data-ds-theme="wire"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border: 1px dashed var(--ds-color-border-strong); background: transparent; }
+[data-ds-theme="wire"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { box-shadow: 0 0 0 1px var(--ds-color-border-strong); }
+[data-ds-theme="wire"] .ds-accordion__item { border-bottom-style: dashed; }
+[data-ds-theme="wire"] .ds-divider { border-top-style: dashed; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="wire"] .ds-tooltip__content { background: var(--ds-color-accent); color: var(--ds-color-on-accent); border-radius: 2px; font-family: var(--ds-font-mono); }

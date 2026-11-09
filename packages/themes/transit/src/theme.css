@@ -1,0 +1,79 @@
+/* Transit personality: black sign bands, line-colored roundels, built-in arrows and station strips. */
+
+[data-ds-theme="transit"] {
+  --transit-sign: #141414;
+  --transit-on-sign: #ffffff;
+  --transit-lines: linear-gradient(90deg, #dc241f 0 20%, #0019a8 0 40%, #00843d 0 60%, #ffcd00 0 80%, #9b0058 0);
+}
+[data-ds-theme="transit"][data-ds-mode="dark"] { --transit-sign: #000000; }
+
+[data-ds-theme="transit"] .ds-heading[data-size="6"],
+[data-ds-theme="transit"] .ds-heading[data-size="5"] { line-height: 1; }
+/* The biggest heading sits on a sign band. */
+[data-ds-theme="transit"] .ds-heading[data-size="6"] { display: block; width: fit-content; background: var(--transit-sign); color: var(--transit-on-sign); padding: 0.18em 0.4em 0.08em; border-radius: 6px; }
+[data-ds-theme="transit"] .ds-heading[data-size="5"]::before { content: ""; display: inline-block; width: 0.75em; height: 0.75em; margin-right: 0.3em; border-radius: 50%; border: 0.16em solid #dc241f; box-shadow: inset 0 0 0 0.06em var(--ds-color-surface); vertical-align: -0.02em; background: linear-gradient(#0019a8, #0019a8) center / 140% 0.2em no-repeat; }
+[data-ds-theme="transit"] .ds-heading[data-size="2"],
+[data-ds-theme="transit"] .ds-heading[data-size="1"] { font-weight: 800; }
+
+[data-ds-theme="transit"] .ds-button { font-weight: 700; border-width: 2px; }
+[data-ds-theme="transit"] .ds-button[data-variant="solid"][data-tone="primary"]::after { content: "→"; font-weight: 800; margin-left: 0.1em; }
+[data-ds-theme="transit"] .ds-button[data-variant="outline"] { --_bd: var(--ds-color-border-strong); --_fg: var(--ds-color-text); }
+[data-ds-theme="transit"] .ds-icon-button[data-variant="solid"][data-tone="primary"]::after { content: none; }
+
+/* Cards: elevated cards are sign panels with a black header band and the line colors along the bottom. */
+[data-ds-theme="transit"] .ds-card { border: 2px solid var(--ds-color-border); }
+[data-ds-theme="transit"] .ds-card[data-variant="elevated"] { position: relative; border-color: var(--ds-color-border-strong); padding-top: calc(var(--ds-space-5) + 10px); padding-bottom: calc(var(--ds-space-5) + 6px); overflow: hidden; }
+[data-ds-theme="transit"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: var(--transit-sign); }
+[data-ds-theme="transit"] .ds-card[data-variant="elevated"]::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 6px; background: var(--transit-lines); }
+[data-ds-theme="transit"] .ds-card[data-variant="filled"] { background: var(--transit-sign); color: var(--transit-on-sign); border-color: var(--transit-sign); }
+[data-ds-theme="transit"] .ds-card[data-variant="filled"] .ds-heading,
+[data-ds-theme="transit"] .ds-card[data-variant="filled"] .ds-text { color: var(--transit-on-sign); }
+[data-ds-theme="transit"] .ds-card[data-variant="filled"] .ds-text[data-muted] { color: #c8c8c2; }
+[data-ds-theme="transit"] .ds-card[data-variant="outlined"] { border-color: var(--ds-color-border-strong); background: transparent; }
+[data-ds-theme="transit"] .ds-card[data-interactive]:hover { transform: none; border-color: var(--ds-color-info); }
+[data-ds-theme="transit"] .ds-dialog__panel { border: 0; padding-top: 0; overflow: hidden; }
+[data-ds-theme="transit"] .ds-dialog__header { background: var(--transit-sign); color: var(--transit-on-sign); margin: 0 calc(var(--ds-space-6) * -1); padding: var(--ds-space-4) calc(var(--ds-space-6) + var(--ds-space-8)) var(--ds-space-4) var(--ds-space-6); }
+[data-ds-theme="transit"] .ds-dialog__description { color: #c8c8c2; }
+[data-ds-theme="transit"] .ds-dialog__close { color: var(--transit-on-sign); top: var(--ds-space-3); right: var(--ds-space-3); }
+
+[data-ds-theme="transit"] .ds-field__label,
+[data-ds-theme="transit"] .ds-radio-group legend { font-weight: 800; }
+[data-ds-theme="transit"] .ds-input,
+[data-ds-theme="transit"] .ds-select__control,
+[data-ds-theme="transit"] .ds-textarea { border-width: 2px; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="transit"] .ds-input:focus-within,
+[data-ds-theme="transit"] .ds-select__control:focus,
+[data-ds-theme="transit"] .ds-textarea:focus { border-color: var(--ds-color-focus); box-shadow: 0 0 0 3px var(--ds-color-accent); }
+[data-ds-theme="transit"] .ds-choice__box { border-width: 2px; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="transit"] .ds-switch__track { border-width: 2px; border-color: var(--ds-color-border-strong); background: var(--ds-color-surface); }
+[data-ds-theme="transit"] .ds-switch__thumb { background: var(--ds-color-border-strong); }
+[data-ds-theme="transit"] .ds-switch__track[data-state="on"] { background: var(--ds-color-success); border-color: var(--ds-color-success); }
+[data-ds-theme="transit"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: #fff; }
+
+/* Badges are line roundels: a colored pill with bold white type. */
+[data-ds-theme="transit"] .ds-badge { border-radius: 999px; font-weight: 800; letter-spacing: 0; height: 1.75em; padding: 0 0.8em; }
+[data-ds-theme="transit"] .ds-badge[data-variant="soft"],
+[data-ds-theme="transit"] .ds-badge[data-variant="outline"] { background: var(--ds-color-surface); color: var(--ds-color-text); border: 3px solid var(--_tone); }
+[data-ds-theme="transit"] .ds-avatar { background: var(--ds-color-surface); color: var(--ds-color-text); font-weight: 800; border: 4px solid #dc241f; }
+[data-ds-theme="transit"] .ds-alert { border-radius: 6px; border: 0; background: var(--transit-sign); color: var(--transit-on-sign); }
+[data-ds-theme="transit"] .ds-alert .ds-alert__content { color: #d8d8d2; }
+[data-ds-theme="transit"] .ds-alert:not([data-tone="warning"]) .ds-alert__action .ds-button { --_fg: #fff; --_bd: #fff; }
+[data-ds-theme="transit"] .ds-alert__icon { color: var(--_tone); }
+[data-ds-theme="transit"] .ds-alert[data-tone="warning"] { background: var(--ds-color-accent); color: #141414; }
+[data-ds-theme="transit"] .ds-alert[data-tone="warning"] .ds-alert__content,
+[data-ds-theme="transit"] .ds-alert[data-tone="warning"] .ds-alert__icon { color: #141414; }
+/* Progress: a line with station stops. */
+[data-ds-theme="transit"] .ds-progress { height: 10px; border-radius: 5px; background: radial-gradient(circle, var(--ds-color-surface) 2px, transparent 2.5px) 0 50% / 10% 10px repeat-x, var(--ds-color-border); }
+[data-ds-theme="transit"] .ds-progress__bar { background: radial-gradient(circle, #fff 2px, transparent 2.5px) 0 50% / 10px 10px repeat-x, var(--_tone); }
+[data-ds-theme="transit"] .ds-tabs__tab { font-weight: 700; }
+[data-ds-theme="transit"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom-width: 2px; }
+[data-ds-theme="transit"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 5px; border-radius: 3px 3px 0 0; background: var(--ds-color-accent); }
+[data-ds-theme="transit"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: var(--transit-sign); }
+[data-ds-theme="transit"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { color: #c8c8c2; }
+[data-ds-theme="transit"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-accent); color: #141414; }
+[data-ds-theme="transit"] .ds-accordion { border-top-width: 2px; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="transit"] .ds-accordion__trigger { font-weight: 700; }
+[data-ds-theme="transit"] .ds-slider__control::-webkit-slider-thumb { background: var(--ds-color-surface); border: 4px solid var(--ds-color-text); }
+[data-ds-theme="transit"] .ds-divider { border: 0; height: 4px; border-radius: 2px; background: var(--transit-lines); }
+[data-ds-theme="transit"] .ds-tooltip__content { background: var(--transit-sign); color: var(--transit-on-sign); font-weight: 700; border-radius: 4px; }
+[data-ds-theme="transit"] .ds-tooltip__content::after { content: " →"; }

@@ -1,0 +1,77 @@
+/* Rivet personality: leather grain, brushed copper plates, rivets on every corner, brass gauges. */
+
+[data-ds-theme="rivet"] {
+  --rivet-copper: linear-gradient(180deg, #e7a46e 0%, #c0743d 45%, #8c4f25 100%);
+  --rivet-brass: linear-gradient(180deg, #f0d68a 0%, #c9a648 50%, #8a6d24 100%);
+  --rivet-head: radial-gradient(circle at 35% 35%, #f6e1b0 0 1px, #c9a648 2px, #6b5016 4px, transparent 4.5px);
+  --rivets:
+    var(--rivet-head) 6px 6px / 10px 10px no-repeat,
+    var(--rivet-head) calc(100% - 6px) 6px / 10px 10px no-repeat,
+    var(--rivet-head) 6px calc(100% - 6px) / 10px 10px no-repeat,
+    var(--rivet-head) calc(100% - 6px) calc(100% - 6px) / 10px 10px no-repeat;
+  --rivet-leather:
+    radial-gradient(circle at 30% 20%, rgba(255, 210, 150, 0.04), transparent 50%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 3px);
+  background: var(--rivet-leather), var(--ds-color-bg);
+}
+
+[data-ds-theme="rivet"] .ds-heading { text-transform: uppercase; }
+[data-ds-theme="rivet"] .ds-heading[data-size="6"],
+[data-ds-theme="rivet"] .ds-heading[data-size="5"] { background: var(--rivet-brass); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.7)); line-height: 1.1; }
+[data-ds-theme="rivet"] .ds-heading[data-size="2"],
+[data-ds-theme="rivet"] .ds-heading[data-size="1"] { font-size: 0.85rem; letter-spacing: 0.18em; color: var(--ds-color-primary); }
+
+/* Buttons are brushed metal plates. */
+[data-ds-theme="rivet"] .ds-button { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; font-size: 0.8rem; }
+[data-ds-theme="rivet"] .ds-button[data-variant="solid"][data-tone="primary"] { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 3px), var(--rivet-copper); box-shadow: var(--ds-shadow-control); text-shadow: 0 1px 0 rgba(255, 220, 180, 0.4); }
+[data-ds-theme="rivet"] .ds-button[data-variant="solid"][data-tone="accent"] { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 3px), var(--rivet-brass); box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="rivet"] .ds-button[data-variant="solid"]:hover:not(:disabled) { filter: brightness(1.12); }
+[data-ds-theme="rivet"] .ds-button[data-variant="outline"] { --_bd: #8c4f25; background: rgba(0, 0, 0, 0.25); box-shadow: inset 0 0 0 1px rgba(201, 166, 72, 0.25); }
+
+/* Panels are leather plates with a copper edge and a rivet in each corner. */
+[data-ds-theme="rivet"] .ds-card,
+[data-ds-theme="rivet"] .ds-dialog__panel { border: 2px solid #5a3b22; background: var(--rivets), var(--rivet-leather), var(--ds-color-surface); box-shadow: inset 0 0 0 1px rgba(208, 132, 74, 0.25), var(--ds-shadow-md); }
+[data-ds-theme="rivet"] .ds-card[data-variant="filled"] { border-color: #8c4f25; background: var(--rivets), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 3px), linear-gradient(180deg, #3a271a, #2b1d13); }
+[data-ds-theme="rivet"] .ds-card[data-variant="outlined"] { background: var(--rivets); box-shadow: none; border-style: solid; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="rivet"] .ds-card[data-interactive]:hover { transform: none; border-color: #c0743d; }
+[data-ds-theme="rivet"] .ds-dialog__panel { padding: var(--ds-space-8); }
+[data-ds-theme="rivet"] .ds-dialog__title { text-transform: uppercase; color: var(--ds-color-accent); }
+
+[data-ds-theme="rivet"] .ds-field__label,
+[data-ds-theme="rivet"] .ds-radio-group legend { font-family: var(--ds-font-display); font-size: 0.72rem; letter-spacing: 0.16em; color: var(--ds-color-accent); }
+[data-ds-theme="rivet"] .ds-input,
+[data-ds-theme="rivet"] .ds-select__control,
+[data-ds-theme="rivet"] .ds-textarea { background: #0e0a07; border-color: #5a3b22; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7); }
+[data-ds-theme="rivet"] .ds-input:focus-within,
+[data-ds-theme="rivet"] .ds-select__control:focus,
+[data-ds-theme="rivet"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(201, 166, 72, 0.25); }
+[data-ds-theme="rivet"] .ds-choice__box { background: #0e0a07; border-color: #8c4f25; }
+[data-ds-theme="rivet"] .ds-choice__input:checked + .ds-choice__box { background: var(--rivet-copper); border-color: #8c4f25; color: #1a0e05; }
+[data-ds-theme="rivet"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { background: #0e0a07; box-shadow: inset 0 0 0 4px #0e0a07, inset 0 0 0 10px var(--ds-color-accent); }
+/* Switch: a brass lever in a slot. */
+[data-ds-theme="rivet"] .ds-switch__track { background: #0e0a07; border-color: #5a3b22; border-radius: 4px; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8); }
+[data-ds-theme="rivet"] .ds-switch__thumb { border-radius: 3px; background: var(--rivet-brass); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); }
+[data-ds-theme="rivet"] .ds-switch__track[data-state="on"] { background: #3a271a; border-color: #8c4f25; }
+[data-ds-theme="rivet"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--rivet-copper); }
+
+[data-ds-theme="rivet"] .ds-badge { border-radius: 2px; font-family: var(--ds-font-display); letter-spacing: 0.08em; font-size: 0.66rem; text-transform: uppercase; }
+[data-ds-theme="rivet"] .ds-badge[data-variant="solid"] { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.3); }
+/* Avatar: a brass porthole. */
+[data-ds-theme="rivet"] .ds-avatar { background: radial-gradient(circle, #2b2018 60%, transparent 61%), var(--rivet-brass); color: var(--ds-color-accent); font-family: var(--ds-font-display); box-shadow: 0 0 0 1px #6b5016, 0 2px 4px rgba(0, 0, 0, 0.6); }
+[data-ds-theme="rivet"] .ds-alert { border-radius: 4px; background: var(--rivets), color-mix(in srgb, var(--_tone) 8%, var(--ds-color-surface)); border: 1px solid color-mix(in srgb, var(--_tone) 50%, #5a3b22); padding-left: var(--ds-space-6); }
+[data-ds-theme="rivet"] .ds-alert__title { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; }
+/* Progress: a pressure pipe with a glass window. */
+[data-ds-theme="rivet"] .ds-progress { height: 14px; border-radius: 7px; background: #0e0a07; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 0 2px #8c4f25, 0 0 0 3px #3a271a; }
+[data-ds-theme="rivet"] .ds-progress__bar { background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent 40%, rgba(0, 0, 0, 0.3)), var(--_tone); }
+[data-ds-theme="rivet"] .ds-tabs__tab { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; }
+[data-ds-theme="rivet"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom: 2px solid #5a3b22; }
+[data-ds-theme="rivet"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; background: var(--rivet-copper); }
+[data-ds-theme="rivet"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: #0e0a07; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8); }
+[data-ds-theme="rivet"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--rivet-copper); color: #1a0e05; }
+[data-ds-theme="rivet"] .ds-slider__control::-webkit-slider-runnable-track { height: 6px; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8); }
+[data-ds-theme="rivet"] .ds-slider__control::-webkit-slider-thumb { background: radial-gradient(circle at 35% 35%, #f6e1b0, #c9a648 45%, #6b5016); border: 0; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.7); }
+[data-ds-theme="rivet"] .ds-accordion__trigger { font-family: var(--ds-font-display); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9rem; }
+[data-ds-theme="rivet"] .ds-divider { border: 0; height: 10px; background: var(--rivet-head) 0 0 / 24px 10px repeat-x, linear-gradient(#5a3b22, #5a3b22) 0 50% / 100% 2px no-repeat; }
+[data-ds-theme="rivet"] .ds-tooltip__content { border-radius: 3px; background: var(--rivet-brass); color: #1a1203; font-family: var(--ds-font-display); font-weight: 700; letter-spacing: 0.04em; }
+[data-ds-theme="rivet"] .ds-kbd,
+[data-ds-theme="rivet"] .ds-code { background: #0e0a07; color: var(--ds-color-accent); }

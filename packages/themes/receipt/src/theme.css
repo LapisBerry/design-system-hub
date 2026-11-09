@@ -1,0 +1,90 @@
+/* Receipt personality: torn zigzag edges, asterisk rules, dotted leaders, inverted totals, barcodes. */
+
+[data-ds-theme="receipt"] {
+  --receipt-zig: 8px;
+  --receipt-barcode: repeating-linear-gradient(90deg, currentColor 0 2px, transparent 2px 3px, currentColor 3px 4px, transparent 4px 7px, currentColor 7px 10px, transparent 10px 11px);
+}
+
+[data-ds-theme="receipt"] .ds-heading { text-transform: uppercase; }
+[data-ds-theme="receipt"] .ds-heading[data-size="6"],
+[data-ds-theme="receipt"] .ds-heading[data-size="5"] { letter-spacing: 0.08em; text-align: left; }
+[data-ds-theme="receipt"] .ds-heading[data-size="6"]::after,
+[data-ds-theme="receipt"] .ds-heading[data-size="5"]::after { content: "********************************************************************************"; display: block; overflow: hidden; white-space: nowrap; font-size: 0.5em; letter-spacing: 0.1em; font-weight: 400; color: var(--ds-color-text-muted); margin-top: 0.3em; }
+[data-ds-theme="receipt"] .ds-heading[data-size="2"],
+[data-ds-theme="receipt"] .ds-heading[data-size="1"] { letter-spacing: 0.12em; font-size: 0.82rem; }
+
+[data-ds-theme="receipt"] .ds-button { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; font-weight: 700; }
+[data-ds-theme="receipt"] .ds-button[data-variant="outline"] { border-style: dashed; }
+[data-ds-theme="receipt"] .ds-button[data-variant="solid"]::before { content: "["; margin-right: 0.15em; opacity: 0.6; }
+[data-ds-theme="receipt"] .ds-button[data-variant="solid"]::after { content: "]"; margin-left: 0.15em; opacity: 0.6; }
+[data-ds-theme="receipt"] .ds-icon-button[data-variant="solid"]::before,
+[data-ds-theme="receipt"] .ds-icon-button[data-variant="solid"]::after { content: none; }
+
+/* Panels are lengths of till roll with torn top and bottom edges. */
+[data-ds-theme="receipt"] .ds-card,
+[data-ds-theme="receipt"] .ds-dialog__panel {
+  border: 0;
+  padding-top: calc(var(--ds-space-5) + 6px);
+  padding-bottom: calc(var(--ds-space-5) + 6px);
+  -webkit-mask: linear-gradient(#000 0 0) center / 100% calc(100% - 2 * var(--receipt-zig) + 2px) no-repeat, var(--receipt-edge);
+  mask: linear-gradient(#000 0 0) center / 100% calc(100% - 2 * var(--receipt-zig) + 2px) no-repeat, var(--receipt-edge);
+  --receipt-edge:
+    conic-gradient(from -45deg at bottom, #000 90deg, transparent 0) bottom / var(--receipt-zig) var(--receipt-zig) repeat-x,
+    conic-gradient(from 135deg at top, #000 90deg, transparent 0) top / var(--receipt-zig) var(--receipt-zig) repeat-x;
+}
+[data-ds-theme="receipt"] .ds-card { box-shadow: none; }
+[data-ds-theme="receipt"] .ds-card[data-variant="outlined"] { background: transparent; outline: 1px dashed var(--ds-color-border-strong); outline-offset: -10px; -webkit-mask: none; mask: none; padding-top: var(--ds-space-5); padding-bottom: var(--ds-space-5); }
+[data-ds-theme="receipt"] .ds-card[data-variant="filled"] { background: var(--ds-color-surface-alt); }
+[data-ds-theme="receipt"] .ds-card[data-interactive]:hover { transform: translateY(-2px); }
+[data-ds-theme="receipt"] .ds-dialog__panel { padding: calc(var(--ds-space-6) + 8px) var(--ds-space-6); }
+[data-ds-theme="receipt"] .ds-dialog__title { text-transform: uppercase; text-align: center; letter-spacing: 0.1em; }
+[data-ds-theme="receipt"] .ds-dialog__title::after { content: "- - - - - - - - - - - - - - - - - - - -"; display: block; overflow: hidden; white-space: nowrap; color: var(--ds-color-text-muted); font-weight: 400; font-size: 0.8em; }
+
+[data-ds-theme="receipt"] .ds-field__label,
+[data-ds-theme="receipt"] .ds-radio-group legend { font-size: 0.74rem; }
+[data-ds-theme="receipt"] .ds-input,
+[data-ds-theme="receipt"] .ds-select__control,
+[data-ds-theme="receipt"] .ds-textarea { border-width: 0 0 1px; border-style: dashed; border-color: var(--ds-color-border-strong); background: transparent; }
+[data-ds-theme="receipt"] .ds-textarea { border: 1px dashed var(--ds-color-border-strong); }
+[data-ds-theme="receipt"] .ds-input:focus-within,
+[data-ds-theme="receipt"] .ds-select__control:focus,
+[data-ds-theme="receipt"] .ds-textarea:focus { border-style: solid; box-shadow: 0 1px 0 var(--ds-color-text); }
+[data-ds-theme="receipt"] .ds-choice__box { border-width: 1px; background: transparent; color: var(--ds-color-text); }
+[data-ds-theme="receipt"] .ds-choice__input:checked + .ds-choice__box { background: transparent; border-color: var(--ds-color-text); color: var(--ds-color-text); }
+[data-ds-theme="receipt"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 0; }
+[data-ds-theme="receipt"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { background: transparent; box-shadow: inset 0 0 0 4px var(--ds-color-surface), inset 0 0 0 10px var(--ds-color-text); }
+[data-ds-theme="receipt"] .ds-switch__track { border-radius: 0; background: transparent; border-style: dashed; }
+[data-ds-theme="receipt"] .ds-switch__thumb { border-radius: 0; background: var(--ds-color-text); box-shadow: none; }
+[data-ds-theme="receipt"] .ds-switch__track[data-state="on"] { background: var(--ds-color-text); border-style: solid; border-color: var(--ds-color-text); }
+[data-ds-theme="receipt"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--ds-color-surface); }
+
+[data-ds-theme="receipt"] .ds-badge { border-radius: 0; font-weight: 700; letter-spacing: 0.06em; }
+[data-ds-theme="receipt"] .ds-badge[data-variant="soft"],
+[data-ds-theme="receipt"] .ds-badge[data-variant="outline"] { background: transparent; border: 1px solid currentColor; }
+[data-ds-theme="receipt"] .ds-badge[data-variant="soft"]::before { content: "*"; }
+[data-ds-theme="receipt"] .ds-badge[data-variant="soft"]::after { content: "*"; }
+[data-ds-theme="receipt"] .ds-avatar { border-radius: 0; background: var(--ds-color-text); color: var(--ds-color-surface); font-weight: 700; }
+[data-ds-theme="receipt"] .ds-alert { border-radius: 0; border: 1px dashed var(--_tone); background: transparent; }
+[data-ds-theme="receipt"] .ds-alert__title { text-transform: uppercase; letter-spacing: 0.06em; }
+[data-ds-theme="receipt"] .ds-alert__title::before { content: ">> "; color: var(--_tone); }
+/* Progress: a barcode that prints across. */
+[data-ds-theme="receipt"] .ds-progress { height: 16px; border-radius: 0; background: transparent; box-shadow: inset 0 -1px 0 var(--ds-color-border-strong); color: color-mix(in srgb, var(--ds-color-text) 15%, transparent); }
+[data-ds-theme="receipt"] .ds-progress::before { content: ""; position: absolute; inset: 0 0 3px; background: var(--receipt-barcode); }
+[data-ds-theme="receipt"] .ds-progress__bar { position: relative; z-index: 1; border-radius: 0; background: transparent; color: var(--_tone); }
+[data-ds-theme="receipt"] .ds-progress__bar::before { content: ""; position: absolute; inset: 0 0 3px; background: var(--receipt-barcode); }
+[data-ds-theme="receipt"] .ds-tabs__tab { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; }
+[data-ds-theme="receipt"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom-style: dashed; border-bottom-color: var(--ds-color-border-strong); }
+[data-ds-theme="receipt"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; background: var(--ds-color-text); }
+[data-ds-theme="receipt"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 0; background: transparent; border: 1px dashed var(--ds-color-border-strong); }
+[data-ds-theme="receipt"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 0; }
+[data-ds-theme="receipt"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-text); color: var(--ds-color-surface); box-shadow: none; }
+[data-ds-theme="receipt"] .ds-accordion { border-top: 1px dashed var(--ds-color-border-strong); }
+[data-ds-theme="receipt"] .ds-accordion__item { border-bottom: 1px dashed var(--ds-color-border-strong); }
+[data-ds-theme="receipt"] .ds-accordion__trigger { text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.85rem; }
+[data-ds-theme="receipt"] .ds-slider__control::-webkit-slider-runnable-track { height: 2px; border-radius: 0; }
+[data-ds-theme="receipt"] .ds-slider__control::-webkit-slider-thumb { border-radius: 0; background: var(--ds-color-text); border: 0; width: 10px; height: 18px; margin-top: -8px; }
+[data-ds-theme="receipt"] .ds-divider { border: 0; height: 1em; overflow: hidden; color: var(--ds-color-text-muted); }
+[data-ds-theme="receipt"] .ds-divider::after { content: "= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ="; display: block; white-space: nowrap; line-height: 1em; font-size: 0.8rem; }
+[data-ds-theme="receipt"] .ds-tooltip__content { border-radius: 0; background: var(--ds-color-text); color: var(--ds-color-surface); }
+[data-ds-theme="receipt"] .ds-kbd,
+[data-ds-theme="receipt"] .ds-code { border-radius: 0; border-style: dashed; }

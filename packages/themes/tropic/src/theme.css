@@ -1,0 +1,74 @@
+/* Tropic personality: leaf-shaped corners, a low sunset glow, scalloped waves and cabana stripes. */
+
+[data-ds-theme="tropic"] {
+  --tropic-leaf: 30px 6px 30px 6px;
+  --tropic-sunset: linear-gradient(100deg, #ffb347, #ff6b4a 55%, #e0457b);
+  background:
+    radial-gradient(60% 40% at 85% 0, color-mix(in srgb, var(--ds-color-accent) 18%, transparent), transparent 70%),
+    radial-gradient(50% 35% at 0 100%, color-mix(in srgb, var(--ds-color-primary) 14%, transparent), transparent 70%),
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="tropic"] .ds-heading[data-size="6"] { background: var(--tropic-sunset); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1.05; }
+[data-ds-theme="tropic"] .ds-heading[data-size="5"],
+[data-ds-theme="tropic"] .ds-heading[data-size="4"] { color: var(--ds-color-primary); line-height: 1.1; }
+[data-ds-theme="tropic"] .ds-heading[data-size="2"],
+[data-ds-theme="tropic"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 800; color: var(--ds-color-accent); }
+
+[data-ds-theme="tropic"] .ds-button { border-radius: 18px 4px 18px 4px; font-weight: 800; }
+[data-ds-theme="tropic"] .ds-button[data-size="lg"] { border-radius: 24px 5px 24px 5px; }
+[data-ds-theme="tropic"] .ds-button[data-variant="solid"][data-tone="accent"] { background: var(--tropic-sunset); }
+[data-ds-theme="tropic"] .ds-button[data-variant="solid"]:hover:not(:disabled) { transform: translateY(-2px) rotate(-1deg); }
+[data-ds-theme="tropic"] .ds-icon-button { border-radius: 50% 8px 50% 8px; }
+
+/* Cards are leaves: two round corners, two sharp ones. A palm frond rises behind raised cards. */
+[data-ds-theme="tropic"] .ds-card { border-radius: var(--tropic-leaf); }
+[data-ds-theme="tropic"] .ds-card[data-variant="elevated"] {
+  position: relative;
+  border-color: var(--ds-color-border);
+}
+[data-ds-theme="tropic"] .ds-card[data-variant="elevated"]::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  height: 120px;
+  border-bottom-right-radius: 30px;
+  background: repeating-conic-gradient(from 200deg at 100% 100%, color-mix(in srgb, var(--ds-color-primary) 16%, transparent) 0 7deg, transparent 7deg 13deg);
+  -webkit-mask: radial-gradient(circle at 100% 100%, #000 60%, transparent 71%);
+  mask: radial-gradient(circle at 100% 100%, #000 60%, transparent 71%);
+  pointer-events: none;
+}
+[data-ds-theme="tropic"] .ds-card[data-variant="elevated"] > * { position: relative; }
+[data-ds-theme="tropic"] .ds-card[data-variant="filled"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="tropic"] .ds-card[data-variant="filled"] .ds-heading,
+[data-ds-theme="tropic"] .ds-card[data-variant="filled"] .ds-text { color: var(--ds-color-on-primary); }
+[data-ds-theme="tropic"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); }
+[data-ds-theme="tropic"] .ds-dialog__panel { border-radius: 36px 8px 36px 8px; border: 0; }
+
+[data-ds-theme="tropic"] .ds-input,
+[data-ds-theme="tropic"] .ds-select__control,
+[data-ds-theme="tropic"] .ds-textarea { border-radius: 16px 4px 16px 4px; border-width: 2px; border-color: var(--ds-color-border); background: var(--ds-color-surface); }
+[data-ds-theme="tropic"] .ds-input:focus-within,
+[data-ds-theme="tropic"] .ds-select__control:focus,
+[data-ds-theme="tropic"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ds-color-accent) 20%, transparent); }
+[data-ds-theme="tropic"] .ds-choice__box { border-radius: 8px 2px 8px 2px; }
+[data-ds-theme="tropic"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 50% 4px 50% 4px; }
+[data-ds-theme="tropic"] .ds-switch__track[data-state="on"] { background: var(--tropic-sunset); border-color: transparent; }
+
+[data-ds-theme="tropic"] .ds-badge { border-radius: 999px 3px 999px 3px; font-weight: 800; }
+[data-ds-theme="tropic"] .ds-avatar { border-radius: 50% 8px 50% 8px; background: var(--tropic-sunset); color: #2a0c04; font-family: var(--ds-font-display); font-weight: 400; }
+[data-ds-theme="tropic"] .ds-alert { border-radius: 20px 4px 20px 4px; border-width: 0 0 0 5px; border-color: var(--_tone); }
+/* Progress is a cabana awning. */
+[data-ds-theme="tropic"] .ds-progress { height: 12px; border-radius: 12px 2px 12px 2px; background: var(--ds-color-surface-alt); }
+[data-ds-theme="tropic"] .ds-progress__bar { border-radius: inherit; background: repeating-linear-gradient(90deg, var(--_tone) 0 12px, color-mix(in srgb, var(--_tone) 30%, #fff) 12px 24px); }
+[data-ds-theme="tropic"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; border-radius: 4px 0; background: var(--tropic-sunset); }
+[data-ds-theme="tropic"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 22px 6px 22px 6px; }
+[data-ds-theme="tropic"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 16px 4px 16px 4px; }
+[data-ds-theme="tropic"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="tropic"] .ds-accordion__item[open] > .ds-accordion__trigger { color: var(--ds-color-primary); }
+[data-ds-theme="tropic"] .ds-slider__control::-webkit-slider-thumb { border-radius: 50% 4px 50% 4px; background: var(--ds-color-accent); }
+/* Divider: a scalloped line of little waves. */
+[data-ds-theme="tropic"] .ds-divider { border: 0; height: 10px; background: radial-gradient(circle at 10px -4px, transparent 10px, color-mix(in srgb, var(--ds-color-info) 55%, transparent) 10.5px 12px, transparent 12.5px) 0 0 / 20px 10px repeat-x; }
+[data-ds-theme="tropic"] .ds-tooltip__content { border-radius: 12px 3px 12px 3px; background: var(--ds-color-primary); color: var(--ds-color-on-primary); }

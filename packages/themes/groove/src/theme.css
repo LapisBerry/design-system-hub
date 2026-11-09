@@ -1,0 +1,63 @@
+/* Groove personality: rainbow stripe bands, stacked stripe shadows, a sunshine badge and fat type. */
+
+[data-ds-theme="groove"] {
+  --groove-chocolate: #6b3a1f;
+  --groove-stripes: linear-gradient(180deg, var(--ds-color-accent) 0 33.3%, var(--ds-color-primary) 0 66.6%, var(--groove-chocolate) 0);
+  background:
+    radial-gradient(circle at 100% 0, transparent 0 70px, var(--ds-color-accent) 70px 82px, var(--ds-color-primary) 82px 94px, var(--groove-chocolate) 94px 106px, transparent 106px) no-repeat,
+    var(--ds-color-bg);
+}
+[data-ds-theme="groove"][data-ds-mode="dark"] { --groove-chocolate: #8a4a26; }
+
+[data-ds-theme="groove"] .ds-heading[data-size="6"],
+[data-ds-theme="groove"] .ds-heading[data-size="5"] { color: var(--ds-color-primary); line-height: 1.05; text-shadow: 2px 2px 0 var(--ds-color-accent), 4px 4px 0 var(--groove-chocolate); }
+[data-ds-theme="groove"] .ds-heading[data-size="4"],
+[data-ds-theme="groove"] .ds-heading[data-size="3"] { color: var(--ds-color-text); }
+[data-ds-theme="groove"] .ds-heading[data-size="2"],
+[data-ds-theme="groove"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); color: var(--ds-color-primary); letter-spacing: 0.04em; }
+
+[data-ds-theme="groove"] .ds-button { box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="groove"] .ds-button[data-variant="solid"][data-tone="primary"] { box-shadow: 0 3px 0 var(--ds-color-accent), 0 6px 0 var(--groove-chocolate); margin-bottom: 6px; }
+[data-ds-theme="groove"] .ds-button[data-variant="solid"][data-tone="primary"]:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 1px 0 var(--ds-color-accent), 0 2px 0 var(--groove-chocolate); }
+[data-ds-theme="groove"] .ds-button[data-variant="ghost"] { box-shadow: none; }
+[data-ds-theme="groove"] .ds-button[data-variant="outline"] { border-width: 2px; background: var(--ds-color-surface); }
+
+/* Raised cards sit on stacked stripes; outlined cards have a rainbow band across the top. */
+[data-ds-theme="groove"] .ds-card { border: 2px solid var(--ds-color-border); }
+[data-ds-theme="groove"] .ds-card[data-variant="elevated"] { border-color: var(--groove-chocolate); margin-bottom: 15px; }
+[data-ds-theme="groove"] .ds-card[data-variant="outlined"] { position: relative; overflow: hidden; padding-top: calc(var(--ds-space-5) + 18px); border-color: var(--ds-color-border-strong); background: transparent; }
+[data-ds-theme="groove"] .ds-card[data-variant="outlined"]::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 15px; background: var(--groove-stripes); }
+[data-ds-theme="groove"] .ds-card[data-variant="filled"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); border-color: transparent; }
+[data-ds-theme="groove"] .ds-card[data-variant="filled"] .ds-heading,
+[data-ds-theme="groove"] .ds-card[data-variant="filled"] .ds-text { color: var(--ds-color-on-primary); text-shadow: none; }
+[data-ds-theme="groove"] .ds-card[data-interactive]:hover { transform: translateY(-3px); box-shadow: var(--ds-shadow-lg); }
+[data-ds-theme="groove"] .ds-dialog__panel { border: 3px solid var(--groove-chocolate); }
+[data-ds-theme="groove"] .ds-dialog__title { font-family: var(--ds-font-display); font-weight: 400; color: var(--ds-color-primary); font-size: var(--ds-text-3); }
+
+[data-ds-theme="groove"] .ds-input,
+[data-ds-theme="groove"] .ds-select__control { border-color: var(--ds-color-border-strong); background: var(--ds-color-surface); }
+[data-ds-theme="groove"] .ds-textarea { border-color: var(--ds-color-border-strong); background: var(--ds-color-surface); border-radius: 22px; }
+[data-ds-theme="groove"] .ds-input:focus-within,
+[data-ds-theme="groove"] .ds-select__control:focus,
+[data-ds-theme="groove"] .ds-textarea:focus { border-color: var(--ds-color-primary); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ds-color-accent) 45%, transparent); }
+[data-ds-theme="groove"] .ds-choice__box { border-radius: 8px; }
+[data-ds-theme="groove"] .ds-switch__track { border-width: 2px; background: var(--ds-color-surface-alt); }
+[data-ds-theme="groove"] .ds-switch__track[data-state="on"] { background: var(--groove-stripes); border-color: var(--groove-chocolate); }
+[data-ds-theme="groove"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--ds-color-surface); }
+
+[data-ds-theme="groove"] .ds-badge { border-radius: 999px; letter-spacing: 0.02em; }
+/* The accent badge is a little sunshine. */
+[data-ds-theme="groove"] .ds-badge[data-tone="accent"][data-variant="solid"] { box-shadow: 0 0 0 3px var(--ds-color-surface), 0 0 0 5px var(--ds-color-accent); }
+[data-ds-theme="groove"] .ds-avatar { background: radial-gradient(circle, var(--ds-color-accent) 0 45%, var(--ds-color-primary) 46% 70%, var(--groove-chocolate) 71%); color: var(--ds-color-text); font-family: var(--ds-font-display); }
+[data-ds-theme="groove"] .ds-alert { border-radius: 22px; border-width: 2px; }
+[data-ds-theme="groove"] .ds-progress { height: 15px; background: var(--ds-color-surface-alt); box-shadow: inset 0 0 0 2px var(--ds-color-border); }
+[data-ds-theme="groove"] .ds-progress[data-tone="primary"] .ds-progress__bar { background: var(--groove-stripes); }
+[data-ds-theme="groove"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom-width: 2px; }
+[data-ds-theme="groove"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 9px; bottom: -2px; border-radius: 9px 9px 0 0; background: var(--groove-stripes); }
+[data-ds-theme="groove"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: var(--ds-color-surface-alt); }
+[data-ds-theme="groove"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="groove"] .ds-accordion__trigger { font-size: 1.05rem; }
+[data-ds-theme="groove"] .ds-accordion__item[open] > .ds-accordion__trigger { color: var(--ds-color-primary); }
+[data-ds-theme="groove"] .ds-slider__control::-webkit-slider-thumb { background: radial-gradient(circle, var(--ds-color-accent) 0 35%, var(--ds-color-primary) 36%); border: 2px solid var(--groove-chocolate); }
+[data-ds-theme="groove"] .ds-divider { border: 0; height: 9px; border-radius: 9px; background: var(--groove-stripes); }
+[data-ds-theme="groove"] .ds-tooltip__content { background: var(--groove-chocolate); color: #fbecd2; }

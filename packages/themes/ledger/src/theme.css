@@ -1,0 +1,77 @@
+/* Ledger personality: green-bar bands, a red margin rule, tabular figures and double total rules. */
+
+[data-ds-theme="ledger"] {
+  --ledger-band: color-mix(in srgb, var(--ds-color-primary) 7%, transparent);
+  --ledger-margin: color-mix(in srgb, var(--ds-color-accent) 55%, transparent);
+  font-variant-numeric: tabular-nums lining-nums;
+  background:
+    repeating-linear-gradient(180deg, var(--ledger-band) 0 48px, transparent 48px 96px),
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="ledger"] .ds-heading[data-size="6"],
+[data-ds-theme="ledger"] .ds-heading[data-size="5"] { padding-bottom: 6px; border-bottom: 3px double var(--ds-color-text); display: inline-block; }
+[data-ds-theme="ledger"] .ds-heading[data-size="2"],
+[data-ds-theme="ledger"] .ds-heading[data-size="1"] { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: var(--ds-color-primary); }
+
+[data-ds-theme="ledger"] .ds-button { font-family: var(--ds-font-mono); text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.06em; font-weight: 500; }
+[data-ds-theme="ledger"] .ds-button[data-variant="solid"] { box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2); }
+[data-ds-theme="ledger"] .ds-button[data-variant="outline"] { border-width: 1px; }
+
+/* Cards are ledger pages: ruled lines, a red double margin on the left. */
+[data-ds-theme="ledger"] .ds-card {
+  border: 1px solid var(--ds-color-border);
+  padding-left: calc(var(--ds-space-5) + 14px);
+  background:
+    linear-gradient(90deg, transparent 18px, var(--ledger-margin) 18px 19px, transparent 19px 21px, var(--ledger-margin) 21px 22px, transparent 22px),
+    repeating-linear-gradient(180deg, transparent 0 27px, color-mix(in srgb, var(--ds-color-border) 70%, transparent) 27px 28px),
+    var(--ds-color-surface);
+  background-position: 0 0, 0 18px, 0 0;
+}
+[data-ds-theme="ledger"] .ds-card[data-padding="sm"] { padding-left: calc(var(--ds-space-3) + 22px); }
+[data-ds-theme="ledger"] .ds-card[data-padding="lg"] { padding-left: calc(var(--ds-space-8) + 10px); }
+[data-ds-theme="ledger"] .ds-card[data-variant="filled"] { background: linear-gradient(90deg, transparent 18px, var(--ledger-margin) 18px 19px, transparent 19px 21px, var(--ledger-margin) 21px 22px, transparent 22px), var(--ds-color-surface-alt); }
+[data-ds-theme="ledger"] .ds-card[data-variant="outlined"] { background: linear-gradient(90deg, transparent 18px, var(--ledger-margin) 18px 19px, transparent 19px 21px, var(--ledger-margin) 21px 22px, transparent 22px); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="ledger"] .ds-card[data-interactive]:hover { transform: none; border-color: var(--ds-color-primary); }
+[data-ds-theme="ledger"] .ds-dialog__panel { border-top: 4px solid var(--ds-color-primary); }
+
+[data-ds-theme="ledger"] .ds-field__label,
+[data-ds-theme="ledger"] .ds-radio-group legend { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; color: var(--ds-color-text-muted); }
+[data-ds-theme="ledger"] .ds-input,
+[data-ds-theme="ledger"] .ds-select__control,
+[data-ds-theme="ledger"] .ds-textarea { font-family: var(--ds-font-mono); font-size: 0.92rem; background: var(--ds-color-surface); }
+[data-ds-theme="ledger"] .ds-input__control,
+[data-ds-theme="ledger"] .ds-select__control,
+[data-ds-theme="ledger"] .ds-textarea { font-family: var(--ds-font-mono); }
+[data-ds-theme="ledger"] .ds-input:focus-within,
+[data-ds-theme="ledger"] .ds-select__control:focus,
+[data-ds-theme="ledger"] .ds-textarea:focus { box-shadow: inset 0 -2px 0 var(--ds-color-focus); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="ledger"] .ds-choice__box { border-width: 1px; border-radius: 0; }
+[data-ds-theme="ledger"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-surface); color: var(--ds-color-primary); border-color: var(--ds-color-primary); }
+[data-ds-theme="ledger"] .ds-switch__track { border-radius: 2px; }
+[data-ds-theme="ledger"] .ds-switch__thumb { border-radius: 1px; }
+[data-ds-theme="ledger"] .ds-switch__track[data-state="on"] { background: var(--ds-color-primary); }
+
+[data-ds-theme="ledger"] .ds-badge { font-family: var(--ds-font-mono); font-weight: 500; border-radius: 0; border: 1px solid var(--_tone); text-transform: uppercase; letter-spacing: 0.04em; }
+[data-ds-theme="ledger"] .ds-badge[data-tone="danger"] { color: var(--ds-color-danger); }
+[data-ds-theme="ledger"] .ds-badge[data-variant="solid"] { color: var(--_on); }
+[data-ds-theme="ledger"] .ds-avatar { border-radius: 2px; font-family: var(--ds-font-mono); background: var(--ds-color-surface-alt); color: var(--ds-color-primary); border: 1px solid var(--ds-color-border-strong); }
+[data-ds-theme="ledger"] .ds-alert { border-radius: 0; border-width: 0 0 0 4px; border-color: var(--_tone); border-style: solid; }
+[data-ds-theme="ledger"] .ds-alert__title { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.82rem; }
+/* Progress is a ruler with ticks every tenth. */
+[data-ds-theme="ledger"] .ds-progress { height: 12px; border-radius: 0; background: repeating-linear-gradient(90deg, var(--ds-color-border-strong) 0 1px, transparent 1px 10%) var(--ds-color-surface-alt); box-shadow: inset 0 0 0 1px var(--ds-color-border); }
+[data-ds-theme="ledger"] .ds-progress__bar { border-radius: 0; background: linear-gradient(var(--_tone), var(--_tone)) 0 100% / 100% 6px no-repeat; }
+/* Tabs are index tabs on the top of a ledger. */
+[data-ds-theme="ledger"] .ds-tabs__tab { font-family: var(--ds-font-mono); text-transform: uppercase; font-size: 0.76rem; letter-spacing: 0.06em; }
+[data-ds-theme="ledger"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom: 3px double var(--ds-color-border-strong); }
+[data-ds-theme="ledger"] .ds-tabs[data-variant="line"] .ds-tabs__tab { clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 100%, 0 100%); padding-left: var(--ds-space-5); padding-right: var(--ds-space-5); background: var(--ds-color-surface-alt); }
+[data-ds-theme="ledger"] .ds-tabs[data-variant="line"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="ledger"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { display: none; }
+[data-ds-theme="ledger"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 2px; }
+[data-ds-theme="ledger"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 1px; }
+[data-ds-theme="ledger"] .ds-accordion { border-top: 2px solid var(--ds-color-text); }
+[data-ds-theme="ledger"] .ds-accordion__item { border-bottom-style: dotted; }
+[data-ds-theme="ledger"] .ds-divider { border: 0; height: 5px; border-top: 1px solid var(--ds-color-text); border-bottom: 1px solid var(--ds-color-text); }
+[data-ds-theme="ledger"] .ds-tooltip__content { border-radius: 0; font-family: var(--ds-font-mono); font-size: 0.75rem; }
+[data-ds-theme="ledger"] .ds-kbd,
+[data-ds-theme="ledger"] .ds-code { border-radius: 0; }
