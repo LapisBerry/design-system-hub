@@ -1,0 +1,56 @@
+/* Origami personality: folded corners via clip-path + a gradient flap, creased buttons, stacked sheets. */
+
+[data-ds-theme="origami"] {
+  --fold: 22px;
+  background:
+    linear-gradient(135deg, transparent 49.6%, color-mix(in srgb, var(--ds-color-border-strong) 18%, transparent) 50%, transparent 50.4%) 0 0 / 220px 220px,
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="origami"] .ds-heading { font-weight: 600; }
+[data-ds-theme="origami"] .ds-heading[data-size="6"],
+[data-ds-theme="origami"] .ds-heading[data-size="5"] { font-weight: 300; letter-spacing: -0.04em; }
+
+/* A card is a sheet with its top-right corner folded down. */
+[data-ds-theme="origami"] .ds-card,
+[data-ds-theme="origami"] .ds-dialog__panel {
+  --_paper: var(--ds-color-surface);
+  position: relative;
+  border: 0;
+  background:
+    linear-gradient(225deg, transparent calc(var(--fold) * 0.707), color-mix(in srgb, var(--ds-color-border-strong) 45%, var(--_paper)) calc(var(--fold) * 0.707), var(--ds-color-surface-alt) calc(var(--fold) * 1.414), transparent calc(var(--fold) * 1.414)) top right / calc(var(--fold) * 1.414) calc(var(--fold) * 1.414) no-repeat,
+    linear-gradient(225deg, transparent calc(var(--fold) * 0.707), var(--_paper) calc(var(--fold) * 0.707));
+}
+[data-ds-theme="origami"] .ds-card[data-variant="elevated"] { box-shadow: var(--ds-shadow-md); }
+[data-ds-theme="origami"] .ds-card[data-variant="outlined"] { --_paper: transparent; box-shadow: none; outline: 1px dashed var(--ds-color-border-strong); outline-offset: -1px; }
+[data-ds-theme="origami"] .ds-card[data-variant="filled"] { --_paper: var(--ds-color-surface-alt); }
+[data-ds-theme="origami"] .ds-card[data-interactive]:hover { transform: translateY(-3px) rotate(-0.5deg); }
+[data-ds-theme="origami"] .ds-dialog__panel { --fold: 34px; box-shadow: var(--ds-shadow-lg); }
+
+/* Buttons carry a diagonal crease. */
+[data-ds-theme="origami"] .ds-button[data-variant="solid"] { background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 50%, rgba(0, 0, 0, 0.06) 50%); }
+[data-ds-theme="origami"] .ds-button[data-variant="outline"] { --_bd: var(--ds-color-border-strong); --_fg: var(--ds-color-text); background: var(--ds-color-surface); box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="origami"] .ds-button:hover:not(:disabled) { transform: translateY(-1px); }
+
+[data-ds-theme="origami"] .ds-input,
+[data-ds-theme="origami"] .ds-select__control,
+[data-ds-theme="origami"] .ds-textarea { background: var(--ds-color-surface); box-shadow: inset 0 1px 2px rgba(34, 48, 60, 0.08); }
+[data-ds-theme="origami"] .ds-field__label { font-weight: 500; }
+
+[data-ds-theme="origami"] .ds-choice__box { border-width: 1.5px; border-radius: 2px; }
+[data-ds-theme="origami"] .ds-choice__input:checked + .ds-choice__box { clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%); }
+[data-ds-theme="origami"] .ds-switch__track { border-radius: 3px; }
+[data-ds-theme="origami"] .ds-switch__thumb { border-radius: 2px; background: var(--ds-color-surface); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+[data-ds-theme="origami"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--ds-color-surface); }
+
+/* Badges are little paper tags with a notch. */
+[data-ds-theme="origami"] .ds-badge { border-radius: 0; padding-left: 0.9em; clip-path: polygon(6px 0, 100% 0, 100% 100%, 6px 100%, 0 50%); }
+[data-ds-theme="origami"] .ds-avatar { border-radius: 4px; background: var(--ds-color-accent); color: var(--ds-color-on-accent); clip-path: polygon(0 0, 70% 0, 100% 30%, 100% 100%, 0 100%); }
+[data-ds-theme="origami"] .ds-alert { border: 0; border-radius: 0; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+[data-ds-theme="origami"] .ds-progress { border-radius: 0; height: 8px; }
+[data-ds-theme="origami"] .ds-progress__bar { border-radius: 0; background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 75%, transparent 75%); background-size: 12px 12px; }
+[data-ds-theme="origami"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 3px; }
+[data-ds-theme="origami"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 2px; }
+[data-ds-theme="origami"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; background: var(--ds-color-accent); }
+[data-ds-theme="origami"] .ds-slider__control::-webkit-slider-thumb { border-radius: 2px; transform: rotate(45deg); }
+[data-ds-theme="origami"] .ds-tooltip__content { border-radius: 2px; }

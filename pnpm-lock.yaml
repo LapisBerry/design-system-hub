@@ -11,36 +11,72 @@ importers:
       '@dsh/core':
         specifier: workspace:*
         version: link:packages/core
+      '@dsh/theme-arcade':
+        specifier: workspace:*
+        version: link:packages/themes/arcade
+      '@dsh/theme-aurora':
+        specifier: workspace:*
+        version: link:packages/themes/aurora
       '@dsh/theme-blueprint':
         specifier: workspace:*
         version: link:packages/themes/blueprint
+      '@dsh/theme-clarity':
+        specifier: workspace:*
+        version: link:packages/themes/clarity
+      '@dsh/theme-cyber':
+        specifier: workspace:*
+        version: link:packages/themes/cyber
+      '@dsh/theme-deco':
+        specifier: workspace:*
+        version: link:packages/themes/deco
       '@dsh/theme-dial':
         specifier: workspace:*
         version: link:packages/themes/dial
       '@dsh/theme-folio':
         specifier: workspace:*
         version: link:packages/themes/folio
+      '@dsh/theme-graphite':
+        specifier: workspace:*
+        version: link:packages/themes/graphite
       '@dsh/theme-grid':
         specifier: workspace:*
         version: link:packages/themes/grid
       '@dsh/theme-grit':
         specifier: workspace:*
         version: link:packages/themes/grit
+      '@dsh/theme-harbor':
+        specifier: workspace:*
+        version: link:packages/themes/harbor
       '@dsh/theme-konstrukt':
         specifier: workspace:*
         version: link:packages/themes/konstrukt
+      '@dsh/theme-kumo':
+        specifier: workspace:*
+        version: link:packages/themes/kumo
       '@dsh/theme-mist':
         specifier: workspace:*
         version: link:packages/themes/mist
       '@dsh/theme-noir':
         specifier: workspace:*
         version: link:packages/themes/noir
+      '@dsh/theme-origami':
+        specifier: workspace:*
+        version: link:packages/themes/origami
       '@dsh/theme-phosphor':
         specifier: workspace:*
         version: link:packages/themes/phosphor
+      '@dsh/theme-pow':
+        specifier: workspace:*
+        version: link:packages/themes/pow
+      '@dsh/theme-puff':
+        specifier: workspace:*
+        version: link:packages/themes/puff
       '@dsh/theme-riso':
         specifier: workspace:*
         version: link:packages/themes/riso
+      '@dsh/theme-sketch':
+        specifier: workspace:*
+        version: link:packages/themes/sketch
       '@dsh/theme-sorbet':
         specifier: workspace:*
         version: link:packages/themes/sorbet
@@ -59,36 +95,72 @@ importers:
       '@dsh/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@dsh/theme-arcade':
+        specifier: workspace:*
+        version: link:../../packages/themes/arcade
+      '@dsh/theme-aurora':
+        specifier: workspace:*
+        version: link:../../packages/themes/aurora
       '@dsh/theme-blueprint':
         specifier: workspace:*
         version: link:../../packages/themes/blueprint
+      '@dsh/theme-clarity':
+        specifier: workspace:*
+        version: link:../../packages/themes/clarity
+      '@dsh/theme-cyber':
+        specifier: workspace:*
+        version: link:../../packages/themes/cyber
+      '@dsh/theme-deco':
+        specifier: workspace:*
+        version: link:../../packages/themes/deco
       '@dsh/theme-dial':
         specifier: workspace:*
         version: link:../../packages/themes/dial
       '@dsh/theme-folio':
         specifier: workspace:*
         version: link:../../packages/themes/folio
+      '@dsh/theme-graphite':
+        specifier: workspace:*
+        version: link:../../packages/themes/graphite
       '@dsh/theme-grid':
         specifier: workspace:*
         version: link:../../packages/themes/grid
       '@dsh/theme-grit':
         specifier: workspace:*
         version: link:../../packages/themes/grit
+      '@dsh/theme-harbor':
+        specifier: workspace:*
+        version: link:../../packages/themes/harbor
       '@dsh/theme-konstrukt':
         specifier: workspace:*
         version: link:../../packages/themes/konstrukt
+      '@dsh/theme-kumo':
+        specifier: workspace:*
+        version: link:../../packages/themes/kumo
       '@dsh/theme-mist':
         specifier: workspace:*
         version: link:../../packages/themes/mist
       '@dsh/theme-noir':
         specifier: workspace:*
         version: link:../../packages/themes/noir
+      '@dsh/theme-origami':
+        specifier: workspace:*
+        version: link:../../packages/themes/origami
       '@dsh/theme-phosphor':
         specifier: workspace:*
         version: link:../../packages/themes/phosphor
+      '@dsh/theme-pow':
+        specifier: workspace:*
+        version: link:../../packages/themes/pow
+      '@dsh/theme-puff':
+        specifier: workspace:*
+        version: link:../../packages/themes/puff
       '@dsh/theme-riso':
         specifier: workspace:*
         version: link:../../packages/themes/riso
+      '@dsh/theme-sketch':
+        specifier: workspace:*
+        version: link:../../packages/themes/sketch
       '@dsh/theme-sorbet':
         specifier: workspace:*
         version: link:../../packages/themes/sorbet
@@ -130,7 +202,37 @@ importers:
         specifier: ^19.2.0
         version: 19.3.1(react@19.3.1)
 
+  packages/themes/arcade:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/aurora:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/blueprint:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/clarity:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/cyber:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/deco:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
@@ -148,6 +250,12 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/graphite:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/grid:
     dependencies:
       '@dsh/core':
@@ -160,7 +268,19 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/harbor:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/konstrukt:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/kumo:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
@@ -178,13 +298,37 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/origami:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/phosphor:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/pow:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/puff:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/riso:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/sketch:
     dependencies:
       '@dsh/core':
         specifier: workspace:*

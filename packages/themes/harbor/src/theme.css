@@ -1,0 +1,61 @@
+/* Harbor personality: rope rules, pennant badges, porthole avatars, a gentle wave in the background. */
+
+[data-ds-theme="harbor"] {
+  --rope: repeating-linear-gradient(-60deg, var(--ds-color-border-strong) 0 3px, transparent 3px 6px);
+  --flag-red: #c8102e;
+  --flag-gold: #e8a317;
+  background:
+    radial-gradient(120% 60% at 50% 120%, color-mix(in srgb, var(--ds-color-info) 12%, transparent), transparent 60%),
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="harbor"] .ds-heading { color: var(--ds-color-primary); }
+[data-ds-theme="harbor"][data-ds-mode="dark"] .ds-heading { color: var(--ds-color-text); }
+[data-ds-theme="harbor"] .ds-heading[data-size="6"]::after,
+[data-ds-theme="harbor"] .ds-heading[data-size="5"]::after { content: ""; display: block; width: 96px; height: 6px; margin-top: 0.35em; background: var(--rope); border-radius: 3px; }
+
+[data-ds-theme="harbor"] .ds-button { font-weight: 600; font-size: 0.85rem; }
+[data-ds-theme="harbor"] .ds-button[data-variant="solid"] { border-color: color-mix(in srgb, var(--_tone) 70%, black); }
+[data-ds-theme="harbor"] .ds-button[data-variant="outline"] { --_bd: var(--ds-color-border-strong); --_fg: var(--ds-color-text); }
+[data-ds-theme="harbor"] .ds-button[data-variant="solid"]:hover:not(:disabled) { box-shadow: 0 4px 0 0 rgba(15, 34, 56, 0.35); transform: translateY(-1px); }
+
+/* Cards: stitched canvas edge. */
+[data-ds-theme="harbor"] .ds-card { border: var(--ds-border-width) solid var(--ds-color-border); }
+[data-ds-theme="harbor"] .ds-card[data-variant="elevated"] { outline: 1.5px dashed color-mix(in srgb, var(--ds-color-border-strong) 35%, transparent); outline-offset: -7px; }
+[data-ds-theme="harbor"] .ds-card[data-variant="filled"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); border-color: transparent; }
+[data-ds-theme="harbor"] .ds-card[data-variant="filled"] .ds-heading,
+[data-ds-theme="harbor"] .ds-card[data-variant="filled"] .ds-text { color: var(--ds-color-on-primary); }
+[data-ds-theme="harbor"] .ds-card[data-variant="outlined"] { border-color: var(--ds-color-border-strong); }
+[data-ds-theme="harbor"] .ds-dialog__panel { border-top: 6px solid var(--ds-color-accent); }
+
+[data-ds-theme="harbor"] .ds-field__label,
+[data-ds-theme="harbor"] .ds-radio-group legend { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; }
+[data-ds-theme="harbor"] .ds-input,
+[data-ds-theme="harbor"] .ds-select__control,
+[data-ds-theme="harbor"] .ds-textarea { border-color: var(--ds-color-border); }
+
+[data-ds-theme="harbor"] .ds-choice__box { border-width: 2px; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="harbor"] .ds-switch__track { border-width: 2px; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="harbor"] .ds-switch__track[data-state="on"] { background: var(--ds-color-primary); border-color: var(--ds-color-primary); }
+[data-ds-theme="harbor"] .ds-switch__thumb { box-shadow: inset 0 0 0 3px var(--ds-color-surface-alt); background: var(--ds-color-text-muted); }
+[data-ds-theme="harbor"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--flag-gold); box-shadow: none; }
+
+/* Pennant badges. */
+[data-ds-theme="harbor"] .ds-badge { border-radius: 0; padding: 0 1.3em 0 0.7em; clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 50%, 100% 100%, 0 100%); font-size: 0.7rem; }
+/* Porthole avatars: a brass ring with rivets. */
+[data-ds-theme="harbor"] .ds-avatar {
+  background: var(--ds-color-primary);
+  color: var(--ds-color-on-primary);
+  box-shadow: 0 0 0 3px #c9a453, 0 0 0 4px rgba(0, 0, 0, 0.25), inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+  font-family: var(--ds-font-display);
+}
+[data-ds-theme="harbor"] .ds-alert { border-width: 0 0 0 6px; border-color: var(--_tone); border-radius: 4px; }
+[data-ds-theme="harbor"] .ds-alert__title { font-family: var(--ds-font-display); font-weight: 700; }
+[data-ds-theme="harbor"] .ds-progress { height: 10px; background: var(--ds-color-surface-alt); }
+[data-ds-theme="harbor"] .ds-progress__bar { background-image: repeating-linear-gradient(-60deg, rgba(255, 255, 255, 0.22) 0 4px, transparent 4px 8px); }
+[data-ds-theme="harbor"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; background: var(--ds-color-accent); border-radius: 2px; }
+[data-ds-theme="harbor"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="harbor"] .ds-slider__control::-webkit-slider-thumb { border-color: var(--ds-color-primary); border-width: 4px; }
+[data-ds-theme="harbor"] .ds-accordion__trigger { font-family: var(--ds-font-display); font-size: 1.1rem; }
+[data-ds-theme="harbor"] .ds-divider { border: 0; height: 6px; border-radius: 3px; background: var(--rope); }
+[data-ds-theme="harbor"] .ds-tooltip__content { background: var(--ds-color-primary); color: var(--ds-color-on-primary); border-bottom: 3px solid var(--ds-color-accent); }
