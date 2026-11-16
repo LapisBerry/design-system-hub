@@ -1,0 +1,91 @@
+/* Optic personality: op art. Concentric rings, zebra stripes and checkerboards in black and white, plus one red. */
+
+[data-ds-theme="optic"] {
+  --op-ink: var(--ds-color-text);
+  --op-paper: var(--ds-color-surface);
+  --op-rings: repeating-radial-gradient(circle at var(--_x, 100%) var(--_y, 0%), var(--op-ink) 0 6px, var(--op-paper) 6px 12px);
+  --op-zebra: repeating-linear-gradient(90deg, var(--op-ink) 0 6px, var(--op-paper) 6px 12px);
+  --op-check: repeating-conic-gradient(var(--op-ink) 0 25%, var(--op-paper) 0 50%);
+  background:
+    radial-gradient(circle at 100% 0%, transparent 0 260px, var(--ds-color-bg) 340px),
+    repeating-radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--op-ink) 9%, transparent) 0 10px, transparent 10px 20px),
+    var(--ds-color-bg);
+}
+
+@keyframes optic-slide { to { background-position: 24px 0; } }
+@keyframes optic-pulse { 50% { background-size: 100% 100%, 18px 18px; } }
+
+[data-ds-theme="optic"] .ds-heading { text-transform: uppercase; line-height: 1.05; }
+[data-ds-theme="optic"] .ds-heading[data-size="6"] { font-size: calc(var(--ds-text-6) * 0.72); }
+[data-ds-theme="optic"] .ds-heading[data-size="5"] { font-size: calc(var(--ds-text-5) * 0.78); }
+[data-ds-theme="optic"] .ds-heading[data-size="4"] { font-size: calc(var(--ds-text-4) * 0.85); }
+[data-ds-theme="optic"] .ds-heading[data-size="6"]::after,
+[data-ds-theme="optic"] .ds-heading[data-size="5"]::after { content: ""; display: block; height: 12px; width: 100%; max-width: 280px; margin-top: 0.3em; background: linear-gradient(90deg, transparent, var(--op-paper)), repeating-linear-gradient(90deg, var(--op-ink) 0 2px, transparent 2px 6px); }
+[data-ds-theme="optic"] .ds-heading[data-size="2"],
+[data-ds-theme="optic"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); color: var(--ds-color-accent); letter-spacing: 0.08em; }
+
+/* Pills; hover sends rings rippling through the solid one. */
+[data-ds-theme="optic"] .ds-button { font-weight: 700; font-size: 0.8rem; border-width: 2px; }
+[data-ds-theme="optic"] .ds-button[data-variant="solid"] { --_bd: var(--_tone); }
+[data-ds-theme="optic"] .ds-button[data-variant="solid"]:hover:not(:disabled) { --_bg: var(--_tone); background-image: repeating-radial-gradient(circle at 50% 50%, transparent 0 4px, color-mix(in srgb, var(--_on) 18%, transparent) 4px 6px); }
+[data-ds-theme="optic"] .ds-button[data-variant="outline"] { border-width: 3px; }
+[data-ds-theme="optic"] .ds-button[data-variant="ghost"]:hover:not(:disabled) { background: var(--op-zebra) 0 100% / 100% 2px no-repeat; }
+
+/* Cards: a target of rings in the corner of raised ones, a zebra frame on outlined ones. */
+[data-ds-theme="optic"] .ds-card { border: 2px solid var(--op-ink); }
+[data-ds-theme="optic"] .ds-card[data-variant="elevated"] { position: relative; overflow: hidden; }
+[data-ds-theme="optic"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: -70px; right: -70px; width: 140px; height: 140px; border-radius: 50%; background: repeating-radial-gradient(circle, var(--op-ink) 0 5px, var(--op-paper) 5px 10px); pointer-events: none; }
+[data-ds-theme="optic"] .ds-card[data-variant="elevated"] > * { position: relative; }
+[data-ds-theme="optic"] .ds-card[data-variant="outlined"] { border: 10px solid transparent; background: linear-gradient(var(--op-paper), var(--op-paper)) padding-box, repeating-linear-gradient(45deg, var(--op-ink) 0 5px, var(--op-paper) 5px 10px) border-box; }
+[data-ds-theme="optic"] .ds-card[data-variant="filled"] { border: 0; background: var(--ds-color-surface-alt); box-shadow: inset 6px 0 0 var(--ds-color-accent); }
+[data-ds-theme="optic"] .ds-card[data-interactive]:hover { transform: none; box-shadow: none; border-color: var(--ds-color-accent); }
+[data-ds-theme="optic"] .ds-dialog__panel { border: 3px solid var(--op-ink); box-shadow: 12px 12px 0 -3px var(--ds-color-bg), 12px 12px 0 0 var(--op-ink); }
+[data-ds-theme="optic"] .ds-dialog__title { text-transform: uppercase; }
+[data-ds-theme="optic"] .ds-dialog[open] { animation-name: optic-zoom; }
+@keyframes optic-zoom { from { opacity: 0; transform: scale(0.6); } }
+
+[data-ds-theme="optic"] .ds-field__label,
+[data-ds-theme="optic"] .ds-radio-group legend { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.7rem; font-weight: 700; }
+[data-ds-theme="optic"] .ds-input,
+[data-ds-theme="optic"] .ds-select__control,
+[data-ds-theme="optic"] .ds-textarea { border-width: 2px; border-color: var(--op-ink); }
+[data-ds-theme="optic"] .ds-input,
+[data-ds-theme="optic"] .ds-select__control { border-radius: 999px; padding-left: var(--ds-space-4); }
+[data-ds-theme="optic"] .ds-input:focus-within,
+[data-ds-theme="optic"] .ds-select__control:focus,
+[data-ds-theme="optic"] .ds-textarea:focus { border-color: var(--op-ink); box-shadow: 0 0 0 3px var(--op-paper), 0 0 0 5px var(--ds-color-accent); }
+[data-ds-theme="optic"] .ds-choice__box { border-color: var(--op-ink); border-radius: 0; }
+[data-ds-theme="optic"] .ds-choice__input:checked + .ds-choice__box { background: var(--op-ink); border-color: var(--op-ink); color: var(--op-paper); }
+[data-ds-theme="optic"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 50%; }
+[data-ds-theme="optic"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { background: repeating-radial-gradient(circle, var(--op-ink) 0 2px, var(--op-paper) 2px 4px); box-shadow: none; }
+/* The switch track is a checkerboard. */
+[data-ds-theme="optic"] .ds-switch__track { border: 2px solid var(--op-ink); background: var(--op-paper); }
+[data-ds-theme="optic"] .ds-switch__track[data-state="on"] { background: var(--op-check) 0 0 / 8px 8px; border-color: var(--op-ink); }
+[data-ds-theme="optic"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--ds-color-accent); box-shadow: 0 0 0 2px var(--op-ink); }
+[data-ds-theme="optic"] .ds-switch__thumb { background: var(--op-ink); }
+
+/* Avatars are targets. */
+[data-ds-theme="optic"] .ds-avatar { background: radial-gradient(circle, var(--op-paper) 0 34%, var(--op-ink) 35% 40%, transparent 41%), repeating-radial-gradient(circle, var(--op-paper) 0 3px, var(--op-ink) 3px 6px); color: var(--op-ink); box-shadow: 0 0 0 2px var(--op-ink); }
+[data-ds-theme="optic"] .ds-badge { border-radius: 999px; border-width: 2px; font-size: 0.68rem; }
+[data-ds-theme="optic"] .ds-badge[data-variant="soft"] { background: var(--op-paper); border-color: var(--_tone); }
+[data-ds-theme="optic"] .ds-alert { border-radius: 0; border: 2px solid var(--op-ink); background: var(--op-paper); box-shadow: inset 8px 0 0 var(--_tone); padding-left: var(--ds-space-6); }
+/* Progress runs as moving zebra stripes. */
+[data-ds-theme="optic"] .ds-progress { height: 12px; border-radius: 999px; border: 2px solid var(--op-ink); background: var(--op-paper); }
+[data-ds-theme="optic"] .ds-progress__bar { background: repeating-linear-gradient(-60deg, var(--_tone) 0 6px, var(--op-paper) 6px 12px) 0 0 / 24px 100%; animation: optic-slide 0.8s linear infinite; border-right: 2px solid var(--op-ink); }
+[data-ds-theme="optic"] .ds-progress[data-indeterminate] .ds-progress__bar { animation: ds-indeterminate 1.4s var(--ds-easing) infinite; }
+[data-ds-theme="optic"] .ds-tabs__tab { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; font-weight: 700; }
+[data-ds-theme="optic"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom: 2px solid var(--op-ink); }
+[data-ds-theme="optic"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 6px; bottom: -2px; background: var(--op-zebra); background-size: 6px 100%; }
+[data-ds-theme="optic"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border: 2px solid var(--op-ink); background: var(--op-paper); }
+[data-ds-theme="optic"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--op-ink); color: var(--op-paper); box-shadow: none; }
+[data-ds-theme="optic"] .ds-tabs[data-variant="enclosed"] .ds-tabs__list { border-bottom: 2px solid var(--op-ink); }
+[data-ds-theme="optic"] .ds-tabs[data-variant="enclosed"] .ds-tabs__tab[data-state="active"] { border: 2px solid var(--op-ink); border-bottom: 0; }
+[data-ds-theme="optic"] .ds-accordion,
+[data-ds-theme="optic"] .ds-accordion__item { border-width: 2px; border-color: var(--op-ink); }
+[data-ds-theme="optic"] .ds-accordion__trigger { text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.9rem; }
+[data-ds-theme="optic"] .ds-divider { border: 0; height: 10px; background: repeating-linear-gradient(90deg, var(--op-ink) 0 3px, transparent 3px 6px); -webkit-mask: linear-gradient(90deg, transparent, #000 20% 80%, transparent); mask: linear-gradient(90deg, transparent, #000 20% 80%, transparent); }
+[data-ds-theme="optic"] .ds-slider__control::-webkit-slider-runnable-track { height: 8px; background: linear-gradient(to right, transparent var(--ds-slider-fill), var(--ds-color-surface-alt) var(--ds-slider-fill)), repeating-linear-gradient(90deg, var(--op-ink) 0 3px, var(--op-paper) 3px 6px); border: 2px solid var(--op-ink); }
+[data-ds-theme="optic"] .ds-slider__control::-webkit-slider-thumb { background: repeating-radial-gradient(circle, var(--op-ink) 0 2px, var(--op-paper) 2px 4px); border: 2px solid var(--op-ink); width: 22px; height: 22px; margin-top: -9px; }
+[data-ds-theme="optic"] .ds-tooltip__content { border-radius: 999px; background: var(--op-ink); color: var(--op-paper); padding: 4px 12px; }
+/* The spinner is a spinning checkerboard disc. */
+[data-ds-theme="optic"] .ds-spinner { border: 2px solid currentColor; background: repeating-conic-gradient(currentColor 0 30deg, transparent 0 60deg); animation-duration: 1.2s; }

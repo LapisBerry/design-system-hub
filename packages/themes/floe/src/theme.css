@@ -1,0 +1,67 @@
+/* Floe personality: polar ice. Faceted crystal highlights, hairline type, frost edges and quick, slick motion. */
+
+[data-ds-theme="floe"] {
+  --fl-glint: rgba(255, 255, 255, 0.85);
+  --fl-ice: color-mix(in srgb, var(--ds-color-primary) 10%, transparent);
+  --fl-facets:
+    linear-gradient(118deg, transparent 0 38%, var(--fl-ice) 38% 52%, transparent 52%),
+    linear-gradient(62deg, transparent 0 60%, color-mix(in srgb, var(--ds-color-accent) 16%, transparent) 60% 72%, transparent 72%),
+    linear-gradient(160deg, color-mix(in srgb, var(--ds-color-accent) 14%, transparent) 0 18%, transparent 18%);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ds-color-accent) 18%, transparent), transparent 240px),
+    var(--ds-color-bg);
+}
+[data-ds-theme="floe"][data-ds-mode="dark"] { --fl-glint: rgba(182, 243, 255, 0.4); }
+
+[data-ds-theme="floe"] .ds-heading[data-size="6"],
+[data-ds-theme="floe"] .ds-heading[data-size="5"] { background: linear-gradient(170deg, var(--ds-color-text) 0 55%, var(--ds-color-primary)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[data-ds-theme="floe"] .ds-heading[data-size="4"],
+[data-ds-theme="floe"] .ds-heading[data-size="3"] { font-weight: 300; }
+[data-ds-theme="floe"] .ds-heading[data-size="2"],
+[data-ds-theme="floe"] .ds-heading[data-size="1"] { font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; font-size: var(--ds-text-n1); color: var(--ds-color-primary); }
+
+/* Buttons: one corner sheared off like a cleaved block of ice, with a glint that slides across on hover. */
+[data-ds-theme="floe"] .ds-button { position: relative; overflow: hidden; font-size: 0.8rem; font-weight: 600; border-radius: 0 10px 0 10px; }
+[data-ds-theme="floe"] .ds-button::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 0 40%, var(--fl-glint) 48%, transparent 56%); transform: translateX(-120%); transition: transform var(--ds-duration-slow) var(--ds-easing); pointer-events: none; }
+[data-ds-theme="floe"] .ds-button:hover:not(:disabled)::after { transform: translateX(120%); }
+[data-ds-theme="floe"] .ds-button[data-variant="solid"] { background: linear-gradient(135deg, color-mix(in srgb, var(--_tone) 82%, #fff), var(--_tone) 45%); }
+[data-ds-theme="floe"] .ds-icon-button { border-radius: 0 10px 0 10px; }
+
+/* Panels: crisp edges with refracted facets and a frosted top edge. */
+[data-ds-theme="floe"] .ds-card { border: 1px solid var(--ds-color-border); border-radius: 0 18px 0 18px; }
+[data-ds-theme="floe"] .ds-card[data-variant="elevated"] { background: var(--fl-facets), var(--ds-color-surface); border-top: 1px solid var(--fl-glint); }
+[data-ds-theme="floe"] .ds-card[data-variant="filled"] { background: var(--fl-facets), var(--ds-color-surface-alt); border-color: transparent; }
+[data-ds-theme="floe"] .ds-card[data-variant="outlined"] { border-color: var(--ds-color-border-strong); }
+[data-ds-theme="floe"] .ds-card[data-interactive]:hover { transform: translateX(3px); }
+[data-ds-theme="floe"] .ds-dialog__panel { border-radius: 0 24px 0 24px; background: var(--fl-facets), var(--ds-color-surface); border-top: 2px solid var(--ds-color-accent); }
+[data-ds-theme="floe"] .ds-dialog[open] { animation-name: floe-slide; }
+@keyframes floe-slide { from { opacity: 0; transform: translateX(-24px) skewX(-4deg); } }
+
+[data-ds-theme="floe"] .ds-field__label,
+[data-ds-theme="floe"] .ds-radio-group legend { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.7rem; color: var(--ds-color-text-muted); }
+[data-ds-theme="floe"] .ds-input,
+[data-ds-theme="floe"] .ds-select__control,
+[data-ds-theme="floe"] .ds-textarea { border-radius: 0 8px 0 8px; background: linear-gradient(180deg, var(--ds-color-surface), color-mix(in srgb, var(--ds-color-surface-alt) 60%, var(--ds-color-surface))); }
+[data-ds-theme="floe"] .ds-input:focus-within,
+[data-ds-theme="floe"] .ds-select__control:focus,
+[data-ds-theme="floe"] .ds-textarea:focus { box-shadow: 0 0 0 1px var(--ds-color-primary), 0 6px 20px -10px var(--ds-color-primary); }
+[data-ds-theme="floe"] .ds-choice__box { border-width: 1.5px; border-radius: 0 5px 0 5px; }
+[data-ds-theme="floe"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 50%; }
+[data-ds-theme="floe"] .ds-switch__track { border-radius: 0 12px 0 12px; height: 22px; }
+[data-ds-theme="floe"] .ds-switch__thumb { border-radius: 0 6px 0 6px; }
+
+/* Avatars are hexagonal crystals cut on the diagonal. */
+[data-ds-theme="floe"] .ds-avatar { border-radius: 0 40% 0 40%; background: linear-gradient(135deg, var(--ds-color-accent), color-mix(in srgb, var(--ds-color-primary) 55%, var(--ds-color-accent))); color: var(--ds-color-on-accent); font-weight: 600; }
+[data-ds-theme="floe"] .ds-badge { border-radius: 0 6px 0 6px; font-weight: 600; font-size: 0.68rem; }
+[data-ds-theme="floe"] .ds-badge[data-variant="soft"] { background: color-mix(in srgb, var(--_tone) 10%, var(--ds-color-surface)); border-color: color-mix(in srgb, var(--_tone) 30%, transparent); }
+[data-ds-theme="floe"] .ds-alert { border-radius: 0 12px 0 12px; border-width: 0 0 0 2px; border-color: var(--_tone); background: linear-gradient(110deg, color-mix(in srgb, var(--_tone) 12%, var(--ds-color-surface)), var(--ds-color-surface) 70%); }
+[data-ds-theme="floe"] .ds-progress { height: 4px; border-radius: 0; }
+[data-ds-theme="floe"] .ds-progress__bar { border-radius: 0; background: linear-gradient(90deg, var(--ds-color-accent), var(--_tone)); box-shadow: 0 0 10px var(--_tone); }
+[data-ds-theme="floe"] .ds-tabs__tab { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; }
+[data-ds-theme="floe"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 1px; background: var(--ds-color-primary); box-shadow: 0 0 8px var(--ds-color-primary); transform-origin: left; }
+[data-ds-theme="floe"] .ds-tabs[data-variant="pill"] .ds-tabs__list,
+[data-ds-theme="floe"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 0 8px 0 8px; }
+[data-ds-theme="floe"] .ds-divider { border: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--ds-color-border-strong) 20% 80%, transparent); }
+[data-ds-theme="floe"] .ds-slider__control::-webkit-slider-runnable-track { height: 2px; border-radius: 0; }
+[data-ds-theme="floe"] .ds-slider__control::-webkit-slider-thumb { border-radius: 0 6px 0 6px; transform: rotate(45deg); width: 14px; height: 14px; margin-top: -6px; background: var(--ds-color-accent); border-color: var(--ds-color-primary); }
+[data-ds-theme="floe"] .ds-tooltip__content { border-radius: 0 8px 0 8px; background: var(--ds-color-primary); color: var(--ds-color-on-primary); letter-spacing: 0.04em; }

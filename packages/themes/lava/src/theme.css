@@ -1,0 +1,76 @@
+/* Lava personality: warm wax blobs that slowly morph, gooey overshoot and a soft glow. */
+
+[data-ds-theme="lava"] {
+  --lv-a: color-mix(in srgb, var(--ds-color-primary) 16%, transparent);
+  --lv-b: color-mix(in srgb, var(--ds-color-accent) 18%, transparent);
+  background:
+    radial-gradient(160px 200px at 8% 18%, var(--lv-b), transparent 70%),
+    radial-gradient(220px 180px at 92% 8%, var(--lv-a), transparent 70%),
+    radial-gradient(260px 220px at 75% 100%, var(--lv-b), transparent 70%),
+    var(--ds-color-bg);
+}
+
+@keyframes lava-morph {
+  0%, 100% { border-radius: 58% 42% 55% 45% / 45% 55% 45% 55%; }
+  33% { border-radius: 40% 60% 42% 58% / 58% 38% 62% 42%; }
+  66% { border-radius: 52% 48% 66% 34% / 40% 60% 40% 60%; }
+}
+@keyframes lava-card {
+  0%, 100% { border-radius: 48px 24px 56px 20px; }
+  50% { border-radius: 26px 54px 24px 52px; }
+}
+
+[data-ds-theme="lava"] .ds-heading[data-size="6"],
+[data-ds-theme="lava"] .ds-heading[data-size="5"] { color: var(--ds-color-primary); line-height: 0.98; text-shadow: 3px 4px 0 color-mix(in srgb, var(--ds-color-accent) 45%, transparent); }
+[data-ds-theme="lava"] .ds-heading[data-size="2"],
+[data-ds-theme="lava"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; }
+
+/* Buttons are rounded blobs that wobble when touched. */
+[data-ds-theme="lava"] .ds-button { font-weight: 700; }
+[data-ds-theme="lava"] .ds-button[data-variant="solid"][data-tone="primary"] { background: radial-gradient(120% 140% at 30% 20%, color-mix(in srgb, var(--ds-color-accent) 55%, var(--ds-color-primary)), var(--ds-color-primary) 60%); }
+[data-ds-theme="lava"] .ds-button:hover:not(:disabled) { border-radius: 26px 18px 30px 16px / 22px 26px 18px 28px; }
+[data-ds-theme="lava"] .ds-button { transition-property: background-color, border-color, color, box-shadow, transform, border-radius; transition-duration: var(--ds-duration-base); }
+[data-ds-theme="lava"] .ds-icon-button { border-radius: 58% 42% 55% 45% / 45% 55% 45% 55%; }
+
+/* Cards are big soft blobs; interactive ones slowly change shape on hover. */
+[data-ds-theme="lava"] .ds-card { border: 0; }
+[data-ds-theme="lava"] .ds-card[data-variant="elevated"] { background: radial-gradient(140px 120px at 100% 0%, var(--lv-b), transparent 70%), var(--ds-color-surface); }
+[data-ds-theme="lava"] .ds-card[data-variant="filled"] { background: radial-gradient(160px 140px at 0% 100%, var(--lv-a), transparent 70%), var(--ds-color-surface-alt); }
+[data-ds-theme="lava"] .ds-card[data-variant="outlined"] { border: 2px solid color-mix(in srgb, var(--ds-color-primary) 40%, transparent); }
+[data-ds-theme="lava"] .ds-card[data-interactive]:hover { animation: lava-card 3s var(--ds-easing) infinite; transform: translateY(-3px); }
+[data-ds-theme="lava"] .ds-dialog__panel { border: 0; border-radius: 56px 32px 60px 28px; }
+[data-ds-theme="lava"] .ds-dialog[open] { animation-name: lava-rise; }
+@keyframes lava-rise { 0% { opacity: 0; transform: translateY(40px) scale(0.9, 1.1); } 60% { opacity: 1; transform: translateY(-6px) scale(1.03, 0.97); } }
+
+[data-ds-theme="lava"] .ds-field__label,
+[data-ds-theme="lava"] .ds-radio-group legend { font-weight: 700; }
+[data-ds-theme="lava"] .ds-input,
+[data-ds-theme="lava"] .ds-select__control { border-radius: 999px; padding-left: var(--ds-space-4); border-width: 2px; }
+[data-ds-theme="lava"] .ds-textarea { border-radius: 24px; border-width: 2px; }
+[data-ds-theme="lava"] .ds-input:focus-within,
+[data-ds-theme="lava"] .ds-select__control:focus,
+[data-ds-theme="lava"] .ds-textarea:focus { box-shadow: 0 0 0 5px color-mix(in srgb, var(--ds-color-accent) 30%, transparent); border-color: var(--ds-color-primary); }
+[data-ds-theme="lava"] .ds-choice__box { border-radius: 45% 55% 50% 50% / 55% 45% 55% 45%; }
+[data-ds-theme="lava"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-primary); }
+[data-ds-theme="lava"] .ds-switch__track { width: 50px; height: 28px; }
+[data-ds-theme="lava"] .ds-switch__thumb { width: 20px; height: 20px; }
+[data-ds-theme="lava"] .ds-switch__track[data-state="on"] { background: linear-gradient(90deg, var(--ds-color-accent), var(--ds-color-primary)); border-color: transparent; }
+[data-ds-theme="lava"] .ds-switch__track[data-state="on"] .ds-switch__thumb { transform: translate(24px, -50%) scale(1.1, 0.9); }
+
+/* Avatars never stop morphing. */
+[data-ds-theme="lava"] .ds-avatar { background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--ds-color-accent) 80%, #fff), var(--ds-color-accent) 45%, var(--ds-color-primary)); color: #2b0f1f; animation: lava-morph 9s ease-in-out infinite; font-weight: 700; }
+[data-ds-theme="lava"] .ds-badge { border-radius: 999px; font-weight: 700; }
+[data-ds-theme="lava"] .ds-alert { border-radius: 24px 16px 28px 14px; border: 0; }
+/* Progress fills with rising wax bubbles. */
+[data-ds-theme="lava"] .ds-progress { height: 14px; }
+[data-ds-theme="lava"] .ds-progress__bar { background: radial-gradient(circle at 20% 60%, color-mix(in srgb, #fff 30%, transparent) 0 3px, transparent 3.5px) 0 0 / 24px 14px, radial-gradient(circle at 70% 30%, color-mix(in srgb, #fff 22%, transparent) 0 2px, transparent 2.5px) 0 0 / 18px 14px, linear-gradient(90deg, var(--ds-color-accent), var(--_tone)); animation: lava-bubbles 4s linear infinite; }
+[data-ds-theme="lava"] .ds-progress[data-indeterminate] .ds-progress__bar { animation: ds-indeterminate 2.2s var(--ds-easing) infinite; }
+@keyframes lava-bubbles { to { background-position: 24px -14px, -18px -14px, 0 0; } }
+[data-ds-theme="lava"] .ds-tabs__tab { font-weight: 700; }
+[data-ds-theme="lava"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 5px; border-radius: 999px; background: linear-gradient(90deg, var(--ds-color-accent), var(--ds-color-primary)); }
+[data-ds-theme="lava"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="lava"] .ds-divider { border: 0; height: 10px; background: radial-gradient(ellipse 12px 5px, var(--ds-color-border-strong) 0 98%, transparent) 0 50% / 34px 10px repeat-x; opacity: 0.5; }
+[data-ds-theme="lava"] .ds-slider__control::-webkit-slider-runnable-track { height: 10px; margin-top: 0; }
+[data-ds-theme="lava"] .ds-slider__control::-webkit-slider-thumb { width: 24px; height: 24px; margin-top: -7px; background: var(--ds-color-accent); border: 3px solid var(--ds-color-surface); animation: lava-morph 6s ease-in-out infinite; }
+[data-ds-theme="lava"] .ds-spinner { border: 0; background: radial-gradient(circle at 35% 35%, var(--ds-color-accent), var(--ds-color-primary)); animation: lava-morph 1.6s ease-in-out infinite, ds-spin 2.4s linear infinite; }
+[data-ds-theme="lava"] .ds-tooltip__content { border-radius: 14px 10px 16px 8px; background: var(--ds-color-primary); color: var(--ds-color-on-primary); }

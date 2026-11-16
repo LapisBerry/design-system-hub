@@ -1,0 +1,61 @@
+/* Dune personality: wind ripples in the sand, a low sun on the horizon and long shadows. */
+
+[data-ds-theme="dune"] {
+  --du-ripple: repeating-radial-gradient(ellipse 140% 40% at 50% 120%, transparent 0 14px, color-mix(in srgb, var(--ds-color-border-strong) 18%, transparent) 14px 15px, transparent 15px 22px);
+  --du-sun: radial-gradient(circle at 85% 0%, color-mix(in srgb, var(--ds-color-accent) 30%, transparent) 0 90px, transparent 260px);
+  background: var(--du-sun), var(--du-ripple), var(--ds-color-bg);
+}
+
+[data-ds-theme="dune"] .ds-heading { text-transform: uppercase; line-height: 1.1; }
+[data-ds-theme="dune"] .ds-heading[data-size="6"] { font-size: calc(var(--ds-text-6) * 0.68); }
+[data-ds-theme="dune"] .ds-heading[data-size="5"] { font-size: calc(var(--ds-text-5) * 0.74); }
+[data-ds-theme="dune"] .ds-heading[data-size="4"],
+[data-ds-theme="dune"] .ds-heading[data-size="3"] { font-size: calc(var(--ds-text-3) * 0.82); }
+[data-ds-theme="dune"] .ds-heading[data-size="6"]::after { content: ""; display: block; width: 72px; height: 36px; margin-top: 0.3em; background: radial-gradient(circle at 50% 100%, var(--ds-color-accent) 0 26px, transparent 27px), linear-gradient(var(--ds-color-border-strong) 0 0) 0 100% / 100% 2px no-repeat; }
+[data-ds-theme="dune"] .ds-heading[data-size="2"],
+[data-ds-theme="dune"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); text-transform: none; letter-spacing: 0.02em; font-style: italic; font-weight: 500; }
+
+/* Pill buttons with wide tracking and a long low shadow. */
+[data-ds-theme="dune"] .ds-button { font-size: 0.72rem; font-weight: 600; padding: 0 calc(var(--_px) + 8px); }
+[data-ds-theme="dune"] .ds-button[data-variant="solid"]:hover:not(:disabled) { box-shadow: 8px 8px 16px -6px rgba(90, 50, 20, 0.4); transform: translate(-1px, -1px); }
+[data-ds-theme="dune"][data-ds-mode="dark"] .ds-button[data-variant="solid"]:hover:not(:disabled) { box-shadow: 8px 8px 16px -6px rgba(0, 0, 0, 0.7); }
+[data-ds-theme="dune"] .ds-icon-button { padding: 0; }
+
+/* Panels: a dune ridge rises from the bottom edge. */
+[data-ds-theme="dune"] .ds-card { position: relative; overflow: hidden; }
+[data-ds-theme="dune"] .ds-card[data-variant="elevated"]::after { content: ""; position: absolute; inset: auto -10% -60px -10%; height: 110px; background: radial-gradient(ellipse 60% 100% at 30% 100%, color-mix(in srgb, var(--ds-color-accent) 18%, transparent) 0 60%, transparent 61%), radial-gradient(ellipse 55% 80% at 80% 100%, color-mix(in srgb, var(--ds-color-border-strong) 18%, transparent) 0 60%, transparent 61%); pointer-events: none; }
+[data-ds-theme="dune"] .ds-card > * { position: relative; z-index: 1; }
+[data-ds-theme="dune"] .ds-card[data-variant="filled"] { background: var(--du-ripple), var(--ds-color-surface-alt); }
+[data-ds-theme="dune"] .ds-card[data-variant="outlined"] { border-style: solid; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="dune"] .ds-card[data-interactive]:hover { transform: translate(-3px, -3px); }
+[data-ds-theme="dune"] .ds-dialog__panel { background: var(--du-sun), var(--ds-color-surface); border: 0; }
+[data-ds-theme="dune"] .ds-dialog__title { text-transform: uppercase; font-size: var(--ds-text-1); }
+[data-ds-theme="dune"] .ds-dialog[open] { animation-name: dune-haze; }
+@keyframes dune-haze { from { opacity: 0; filter: blur(6px); transform: translateY(14px); } }
+
+[data-ds-theme="dune"] .ds-field__label,
+[data-ds-theme="dune"] .ds-radio-group legend { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.68rem; color: var(--ds-color-text-muted); }
+[data-ds-theme="dune"] .ds-input,
+[data-ds-theme="dune"] .ds-select__control { border-radius: 999px; padding-left: var(--ds-space-5); }
+[data-ds-theme="dune"] .ds-textarea { border-radius: var(--ds-radius-lg); padding: var(--ds-space-3) var(--ds-space-5); }
+[data-ds-theme="dune"] .ds-input:focus-within,
+[data-ds-theme="dune"] .ds-select__control:focus,
+[data-ds-theme="dune"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: 4px 4px 0 color-mix(in srgb, var(--ds-color-accent) 30%, transparent); }
+[data-ds-theme="dune"] .ds-choice__box { border-radius: 50%; }
+[data-ds-theme="dune"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-accent); border-color: var(--ds-color-accent); color: var(--ds-color-on-accent); }
+[data-ds-theme="dune"] .ds-switch__track[data-state="on"] { background: linear-gradient(90deg, var(--ds-color-accent), var(--ds-color-primary)); border-color: transparent; }
+
+/* Avatars: a sun setting over a dune. */
+[data-ds-theme="dune"] .ds-avatar { background: radial-gradient(circle at 50% 72%, var(--ds-color-accent) 0 30%, transparent 31%), linear-gradient(180deg, color-mix(in srgb, var(--ds-color-accent) 30%, var(--ds-color-surface)) 0 62%, var(--ds-color-border-strong) 62%); color: var(--ds-color-text); text-shadow: 0 1px 0 var(--ds-color-surface); font-size: calc(var(--_s) * 0.3); letter-spacing: 0.1em; }
+[data-ds-theme="dune"] .ds-badge { border-radius: 999px; font-size: 0.62rem; padding: 0 1em; }
+[data-ds-theme="dune"] .ds-alert { border-radius: var(--ds-radius-lg); border: 0; box-shadow: var(--ds-shadow-sm); background: linear-gradient(90deg, color-mix(in srgb, var(--_tone) 14%, var(--ds-color-surface)), var(--ds-color-surface)); }
+[data-ds-theme="dune"] .ds-progress { height: 6px; }
+[data-ds-theme="dune"] .ds-progress__bar { background: linear-gradient(90deg, var(--ds-color-primary), var(--ds-color-accent)); }
+[data-ds-theme="dune"] .ds-progress[data-tone]:not([data-tone="primary"]) .ds-progress__bar { background: var(--_tone); }
+[data-ds-theme="dune"] .ds-tabs__tab { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.68rem; }
+[data-ds-theme="dune"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; border-radius: 3px; background: var(--ds-color-accent); }
+[data-ds-theme="dune"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="dune"] .ds-accordion__trigger { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.8rem; }
+[data-ds-theme="dune"] .ds-divider { border: 0; height: 14px; background: radial-gradient(ellipse 22px 9px at 50% 100%, transparent 0 7px, var(--ds-color-border-strong) 7.5px 8.5px, transparent 9px) 0 0 / 44px 14px repeat-x; opacity: 0.6; }
+[data-ds-theme="dune"] .ds-slider__control::-webkit-slider-thumb { background: var(--ds-color-accent); border-color: var(--ds-color-surface); box-shadow: 4px 4px 8px -2px rgba(90, 50, 20, 0.4); }
+[data-ds-theme="dune"] .ds-tooltip__content { border-radius: 999px; padding: 4px 12px; letter-spacing: 0.04em; }

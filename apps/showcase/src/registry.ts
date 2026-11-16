@@ -47,6 +47,30 @@ import { receipt } from "@dsh/theme-receipt";
 import { groove } from "@dsh/theme-groove";
 import { relief } from "@dsh/theme-relief";
 import { sprint } from "@dsh/theme-sprint";
+import { nouveau } from "@dsh/theme-nouveau";
+import { element } from "@dsh/theme-element";
+import { leadlight } from "@dsh/theme-leadlight";
+import { beton } from "@dsh/theme-beton";
+import { floe } from "@dsh/theme-floe";
+import { dune } from "@dsh/theme-dune";
+import { gazette } from "@dsh/theme-gazette";
+import { trace } from "@dsh/theme-trace";
+import { orbit } from "@dsh/theme-orbit";
+import { bezel } from "@dsh/theme-bezel";
+import { catalog } from "@dsh/theme-catalog";
+import { lava } from "@dsh/theme-lava";
+import { plain } from "@dsh/theme-plain";
+import { frontier } from "@dsh/theme-frontier";
+import { acid } from "@dsh/theme-acid";
+import { flap } from "@dsh/theme-flap";
+import { abyss } from "@dsh/theme-abyss";
+import { post } from "@dsh/theme-post";
+import { cork } from "@dsh/theme-cork";
+import { darkroom } from "@dsh/theme-darkroom";
+import { stud } from "@dsh/theme-stud";
+import { press } from "@dsh/theme-press";
+import { optic } from "@dsh/theme-optic";
+import { hive } from "@dsh/theme-hive";
 
 import "@dsh/core/styles.css";
 import "@dsh/theme-folio/theme.css";
@@ -97,6 +121,30 @@ import "@dsh/theme-receipt/theme.css";
 import "@dsh/theme-groove/theme.css";
 import "@dsh/theme-relief/theme.css";
 import "@dsh/theme-sprint/theme.css";
+import "@dsh/theme-nouveau/theme.css";
+import "@dsh/theme-element/theme.css";
+import "@dsh/theme-leadlight/theme.css";
+import "@dsh/theme-beton/theme.css";
+import "@dsh/theme-floe/theme.css";
+import "@dsh/theme-dune/theme.css";
+import "@dsh/theme-gazette/theme.css";
+import "@dsh/theme-trace/theme.css";
+import "@dsh/theme-orbit/theme.css";
+import "@dsh/theme-bezel/theme.css";
+import "@dsh/theme-catalog/theme.css";
+import "@dsh/theme-lava/theme.css";
+import "@dsh/theme-plain/theme.css";
+import "@dsh/theme-frontier/theme.css";
+import "@dsh/theme-acid/theme.css";
+import "@dsh/theme-flap/theme.css";
+import "@dsh/theme-abyss/theme.css";
+import "@dsh/theme-post/theme.css";
+import "@dsh/theme-cork/theme.css";
+import "@dsh/theme-darkroom/theme.css";
+import "@dsh/theme-stud/theme.css";
+import "@dsh/theme-press/theme.css";
+import "@dsh/theme-optic/theme.css";
+import "@dsh/theme-hive/theme.css";
 
 /** Every design system in the hub. Add a new theme package here to show it in the showcase. */
 export const THEMES: ThemeDefinition[] = [
@@ -148,6 +196,30 @@ export const THEMES: ThemeDefinition[] = [
   groove,
   relief,
   sprint,
+  nouveau,
+  element,
+  leadlight,
+  beton,
+  floe,
+  dune,
+  gazette,
+  trace,
+  orbit,
+  bezel,
+  catalog,
+  lava,
+  plain,
+  frontier,
+  acid,
+  flap,
+  abyss,
+  post,
+  cork,
+  darkroom,
+  stud,
+  press,
+  optic,
+  hive,
 ];
 
 export const themeById = (id: string) => THEMES.find((t) => t.meta.id === id);

@@ -1,0 +1,73 @@
+/* Bezel personality: watch dials. Guilloche engraving, minute-track ticks, polished cases and a sweeping second hand. */
+
+[data-ds-theme="bezel"] {
+  --bz-ink: color-mix(in srgb, var(--ds-color-text) 70%, transparent);
+  --bz-guilloche: repeating-radial-gradient(circle at 50% 120%, transparent 0 3px, color-mix(in srgb, var(--ds-color-text) 6%, transparent) 3px 4px);
+  --bz-minutes: repeating-linear-gradient(90deg, var(--bz-ink) 0 1px, transparent 1px calc(100% / 60));
+  --bz-hours: repeating-linear-gradient(90deg, var(--ds-color-text) 0 2px, transparent 2px calc(100% / 12));
+  --bz-steel: linear-gradient(180deg, #fafafa, #d9dadc 45%, #b9bbbe 55%, #eceded);
+}
+[data-ds-theme="bezel"][data-ds-mode="dark"] { --bz-steel: linear-gradient(180deg, #4a4d52, #2a2c30 45%, #1b1c1f 55%, #3a3d42); }
+
+[data-ds-theme="bezel"] .ds-heading { text-transform: uppercase; }
+[data-ds-theme="bezel"] .ds-heading[data-size="6"],
+[data-ds-theme="bezel"] .ds-heading[data-size="5"] { line-height: 1.05; }
+[data-ds-theme="bezel"] .ds-heading[data-size="6"]::after { content: ""; display: block; width: 180px; height: 10px; margin-top: 0.35em; background: var(--bz-hours) 0 0 / 100% 10px, var(--bz-minutes) 0 100% / 100% 5px no-repeat; }
+[data-ds-theme="bezel"] .ds-heading[data-size="2"],
+[data-ds-theme="bezel"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 500; letter-spacing: 0.24em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+[data-ds-theme="bezel"][data-ds-mode="dark"] .ds-heading[data-size="6"],
+[data-ds-theme="bezel"][data-ds-mode="dark"] .ds-heading[data-size="5"] { color: var(--ds-color-primary); text-shadow: 0 0 14px color-mix(in srgb, var(--ds-color-primary) 45%, transparent); }
+
+/* Buttons are polished case pieces; the solid one is blued steel (or lume at night). */
+[data-ds-theme="bezel"] .ds-button { font-size: 0.72rem; font-weight: 500; padding-inline: calc(var(--_px) + 8px); }
+[data-ds-theme="bezel"] .ds-button[data-variant="solid"] { background: linear-gradient(180deg, color-mix(in srgb, var(--_tone) 75%, #fff), var(--_tone) 50%, color-mix(in srgb, var(--_tone) 85%, #000)); }
+[data-ds-theme="bezel"] .ds-button[data-variant="outline"],
+[data-ds-theme="bezel"] .ds-button[data-variant="soft"] { background: var(--bz-steel); --_fg: var(--ds-color-text); border: 1px solid color-mix(in srgb, var(--ds-color-text) 25%, transparent); box-shadow: var(--ds-shadow-control); }
+[data-ds-theme="bezel"] .ds-button[data-variant="outline"]:hover:not(:disabled),
+[data-ds-theme="bezel"] .ds-button[data-variant="soft"]:hover:not(:disabled) { filter: brightness(1.05); }
+[data-ds-theme="bezel"] .ds-icon-button { background-image: var(--bz-steel); --_fg: var(--ds-color-text); }
+
+/* Dials: engraved guilloche, a chapter ring and an applied index at twelve. */
+[data-ds-theme="bezel"] .ds-card { border: 1px solid var(--ds-color-border); }
+[data-ds-theme="bezel"] .ds-card[data-variant="elevated"] { position: relative; background: var(--bz-guilloche), var(--ds-color-surface); }
+[data-ds-theme="bezel"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: 0; left: 50%; width: 3px; height: 14px; margin-left: -1.5px; background: var(--ds-color-accent); border-radius: 0 0 2px 2px; }
+[data-ds-theme="bezel"] .ds-card[data-variant="filled"] { background: repeating-conic-gradient(from 0deg at 50% 50%, color-mix(in srgb, var(--ds-color-text) 4%, transparent) 0 2deg, transparent 2deg 4deg), var(--ds-color-surface-alt); }
+[data-ds-theme="bezel"] .ds-card[data-variant="outlined"] { border: 1px solid var(--ds-color-border-strong); box-shadow: inset 0 0 0 4px var(--ds-color-surface), inset 0 0 0 5px var(--ds-color-border); }
+[data-ds-theme="bezel"] .ds-dialog__panel { border-radius: 28px; box-shadow: var(--ds-shadow-lg), 0 0 0 6px color-mix(in srgb, var(--ds-color-text) 8%, transparent); }
+[data-ds-theme="bezel"] .ds-dialog__title { text-transform: uppercase; text-align: center; }
+[data-ds-theme="bezel"] .ds-dialog__description { text-align: center; }
+
+[data-ds-theme="bezel"] .ds-field__label,
+[data-ds-theme="bezel"] .ds-radio-group legend { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.66rem; font-weight: 500; color: var(--ds-color-text-muted); }
+[data-ds-theme="bezel"] .ds-input,
+[data-ds-theme="bezel"] .ds-select__control { border-radius: 999px; padding-left: var(--ds-space-4); box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12); }
+[data-ds-theme="bezel"] .ds-textarea { border-radius: 14px; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12); }
+[data-ds-theme="bezel"] .ds-choice__box { border-radius: 50%; border-width: 1px; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
+/* The switch is a crown: a knurled thumb. */
+[data-ds-theme="bezel"] .ds-switch__track { box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+[data-ds-theme="bezel"] .ds-switch__thumb { background: repeating-linear-gradient(90deg, #8d9095 0 1px, #e8e9ea 1px 3px); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); }
+[data-ds-theme="bezel"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: repeating-linear-gradient(90deg, #8d9095 0 1px, #ffffff 1px 3px); }
+
+/* Avatars sit inside a bezel with a minute ring. */
+[data-ds-theme="bezel"] .ds-avatar { background: radial-gradient(circle, var(--ds-color-surface) 0 58%, transparent 59%), repeating-conic-gradient(var(--ds-color-text) 0 1.2deg, transparent 1.2deg 6deg), var(--ds-color-surface-alt); color: var(--ds-color-text); box-shadow: 0 0 0 2px var(--ds-color-border-strong); font-family: var(--ds-font-display); font-size: calc(var(--_s) * 0.32); }
+[data-ds-theme="bezel"] .ds-badge { border-radius: 999px; font-size: 0.62rem; padding: 0 1em; }
+[data-ds-theme="bezel"] .ds-alert { border-radius: 14px; }
+
+/* Progress and slider carry a minute track. */
+[data-ds-theme="bezel"] .ds-progress { height: 12px; border-radius: 999px; background: var(--bz-minutes) 0 100% / 100% 4px no-repeat, var(--ds-color-surface-alt); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15); }
+[data-ds-theme="bezel"] .ds-progress__bar { background: linear-gradient(180deg, color-mix(in srgb, var(--_tone) 70%, #fff), var(--_tone)); }
+[data-ds-theme="bezel"] .ds-slider { background: var(--bz-minutes) 0 100% / 100% 5px no-repeat; padding-bottom: 6px; }
+[data-ds-theme="bezel"] .ds-slider__control::-webkit-slider-runnable-track { height: 3px; }
+[data-ds-theme="bezel"] .ds-slider__control::-webkit-slider-thumb { background: var(--bz-steel); border: 1px solid color-mix(in srgb, var(--ds-color-text) 30%, transparent); margin-top: -8px; }
+[data-ds-theme="bezel"] .ds-slider__value { font-variant-numeric: tabular-nums; }
+[data-ds-theme="bezel"] .ds-tabs__tab { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.68rem; }
+[data-ds-theme="bezel"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 2px; background: var(--ds-color-accent); }
+[data-ds-theme="bezel"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--bz-steel); }
+[data-ds-theme="bezel"] .ds-divider { border: 0; height: 8px; background: var(--bz-minutes) 0 0 / 100% 4px no-repeat, var(--bz-hours) 0 0 / 100% 8px no-repeat; opacity: 0.7; }
+
+/* The spinner is a second hand that ticks round in sixty steps. */
+[data-ds-theme="bezel"] .ds-spinner { position: relative; border: 1.5px solid color-mix(in srgb, currentColor 40%, transparent); animation: none; }
+[data-ds-theme="bezel"] .ds-spinner::after { content: ""; position: absolute; left: 50%; bottom: 50%; width: 1.5px; height: 44%; margin-left: -0.75px; background: var(--ds-color-danger); transform-origin: 50% 100%; animation: ds-spin 6s steps(60) infinite; }
+[data-ds-theme="bezel"] .ds-tooltip__content { border-radius: 999px; padding: 4px 12px; letter-spacing: 0.04em; }
+[data-ds-theme="bezel"] .ds-code,
+[data-ds-theme="bezel"] .ds-kbd { font-variant-numeric: tabular-nums; }

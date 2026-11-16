@@ -1,0 +1,77 @@
+/* Stud personality: toy bricks. Studs on top, glossy plastic, bricks that click down when pressed. */
+
+[data-ds-theme="stud"] {
+  --sd-stud: radial-gradient(circle at 50% 55%, color-mix(in srgb, var(--_c, var(--ds-color-primary)) 80%, #000) 0 5px, transparent 5.5px), radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--_c, var(--ds-color-primary)) 70%, #fff) 0 4.5px, transparent 5px);
+  --sd-gloss: linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 40%);
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--ds-color-text) 6%, transparent) 0 6px, transparent 6.5px) 0 0 / 24px 24px,
+    var(--ds-color-bg);
+}
+
+[data-ds-theme="stud"] .ds-heading[data-size="6"],
+[data-ds-theme="stud"] .ds-heading[data-size="5"] { color: var(--ds-color-primary); text-shadow: 0 3px 0 color-mix(in srgb, var(--ds-color-primary) 60%, #000); line-height: 1; }
+[data-ds-theme="stud"] .ds-heading[data-size="6"]::after { content: ""; display: block; width: 96px; height: 16px; margin-top: 0.3em; border-radius: 3px; background: radial-gradient(circle at 50% 50%, color-mix(in srgb, #ffcd00 70%, #fff) 0 4px, transparent 4.5px) 0 0 / 16px 16px, #ffcd00; box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2); }
+[data-ds-theme="stud"] .ds-heading[data-size="2"],
+[data-ds-theme="stud"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; }
+
+/* Buttons are bricks with a row of studs on top; pressing clicks them down. */
+[data-ds-theme="stud"] .ds-button { position: relative; margin-top: 6px; font-weight: 700; font-size: 1.02rem; }
+[data-ds-theme="stud"] .ds-button[data-variant="solid"] { background: var(--sd-gloss), var(--_bg); }
+[data-ds-theme="stud"] .ds-button[data-variant="solid"]::before { content: ""; position: absolute; left: 6px; right: 6px; top: -6px; height: 7px; border-radius: 2px 2px 0 0; background: radial-gradient(ellipse 6px 7px at 50% 100%, var(--_tone) 0 98%, transparent) 0 0 / 18px 7px repeat-x; pointer-events: none; }
+[data-ds-theme="stud"] .ds-button[data-variant="solid"]:hover:not(:disabled) { --_bg: color-mix(in srgb, var(--_tone) 90%, #fff); }
+[data-ds-theme="stud"] .ds-button:active:not(:disabled) { transform: translateY(3px); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.22); }
+[data-ds-theme="stud"] .ds-button[data-variant="outline"] { border-width: 2px; }
+[data-ds-theme="stud"] .ds-button[data-variant="ghost"],
+[data-ds-theme="stud"] .ds-button[data-variant="outline"],
+[data-ds-theme="stud"] .ds-button[data-variant="soft"] { margin-top: 0; }
+[data-ds-theme="stud"] .ds-icon-button { margin-top: 0; }
+[data-ds-theme="stud"] .ds-icon-button::before { display: none; }
+
+/* Plates: raised cards carry a stud row along the top edge. */
+[data-ds-theme="stud"] .ds-card { border: 0; }
+[data-ds-theme="stud"] .ds-card[data-variant="elevated"] { position: relative; margin-top: 8px; }
+[data-ds-theme="stud"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; left: 10px; right: 10px; top: -8px; height: 9px; background: radial-gradient(ellipse 8px 9px at 50% 100%, var(--ds-color-surface) 0 98%, transparent) 0 0 / 24px 9px repeat-x; filter: drop-shadow(0 -1px 0 color-mix(in srgb, var(--ds-color-border) 80%, transparent)); }
+[data-ds-theme="stud"] .ds-card[data-variant="filled"] { background: radial-gradient(circle, color-mix(in srgb, var(--ds-color-text) 7%, transparent) 0 7px, transparent 7.5px) 6px 6px / 24px 24px, var(--ds-color-surface-alt); box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.08); }
+[data-ds-theme="stud"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); box-shadow: 0 4px 0 var(--ds-color-border-strong); }
+[data-ds-theme="stud"] .ds-card[data-interactive]:hover { transform: translateY(-4px); }
+[data-ds-theme="stud"] .ds-card[data-interactive]:active { transform: translateY(2px); box-shadow: var(--ds-shadow-sm); }
+[data-ds-theme="stud"] .ds-dialog__panel { border: 0; box-shadow: 0 8px 0 rgba(0, 0, 0, 0.18), var(--ds-shadow-lg); }
+[data-ds-theme="stud"] .ds-dialog[open] { animation-name: stud-snap; }
+@keyframes stud-snap { 0% { opacity: 0; transform: translateY(-40px); } 70% { opacity: 1; transform: translateY(4px); } }
+
+[data-ds-theme="stud"] .ds-field__label,
+[data-ds-theme="stud"] .ds-radio-group legend { font-weight: 700; }
+[data-ds-theme="stud"] .ds-input,
+[data-ds-theme="stud"] .ds-select__control,
+[data-ds-theme="stud"] .ds-textarea { border-width: 2px; box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.05); }
+[data-ds-theme="stud"] .ds-input:focus-within,
+[data-ds-theme="stud"] .ds-select__control:focus,
+[data-ds-theme="stud"] .ds-textarea:focus { border-color: var(--ds-color-info); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-color-info) 25%, transparent); }
+/* Checkboxes and radios are 1x1 studs seen from above. */
+[data-ds-theme="stud"] .ds-choice__box { border-radius: 4px; box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12); }
+[data-ds-theme="stud"] .ds-choice__input:checked + .ds-choice__box { background: var(--sd-gloss), var(--ds-color-primary); box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25); }
+[data-ds-theme="stud"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-primary); box-shadow: inset 0 0 0 4px var(--ds-color-primary), inset 0 0 0 10px color-mix(in srgb, var(--ds-color-primary) 75%, #fff); }
+[data-ds-theme="stud"] .ds-switch__track { border-radius: 6px; height: 26px; border-width: 2px; }
+[data-ds-theme="stud"] .ds-switch__thumb { border-radius: 4px; width: 18px; height: 18px; background: var(--sd-gloss), var(--ds-color-text-muted); }
+[data-ds-theme="stud"] .ds-switch__track[data-state="on"] { background: var(--ds-color-success); border-color: var(--ds-color-success); }
+[data-ds-theme="stud"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--sd-gloss), #ffffff; transform: translate(19px, -50%); }
+
+/* Avatars are round 1x1 studs from above: a raised ring and a highlight. */
+[data-ds-theme="stud"] .ds-avatar { background: radial-gradient(circle at 50% 50%, transparent 0 58%, rgba(0, 0, 0, 0.18) 60% 64%, transparent 66%), radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.45) 0 12%, transparent 30%), #ffcd00; color: #171717; box-shadow: 0 3px 0 #c9a200; font-weight: 700; }
+[data-ds-theme="stud"] .ds-badge { border-radius: 3px; font-weight: 700; }
+[data-ds-theme="stud"] .ds-badge[data-variant="solid"] { background: var(--sd-gloss), var(--_tone); box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2); }
+[data-ds-theme="stud"] .ds-alert { border-radius: 6px; border: 0; box-shadow: inset 0 -4px 0 color-mix(in srgb, var(--_tone) 40%, transparent); }
+/* Progress fills brick by brick. */
+[data-ds-theme="stud"] .ds-progress { height: 18px; border-radius: 4px; box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.08); }
+[data-ds-theme="stud"] .ds-progress__bar { border-radius: 4px 0 0 4px; background: linear-gradient(90deg, transparent 0 calc(100% - 2px), rgba(0, 0, 0, 0.22) calc(100% - 2px)) 0 0 / 32px 100%, var(--sd-gloss), var(--_tone); box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2); }
+[data-ds-theme="stud"] .ds-tabs__tab { font-weight: 700; font-size: 0.95rem; }
+[data-ds-theme="stud"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 5px; border-radius: 2px; }
+[data-ds-theme="stud"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 8px; }
+[data-ds-theme="stud"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 5px; }
+[data-ds-theme="stud"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--sd-gloss), #ffcd00; color: #171717; box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.18); }
+[data-ds-theme="stud"] .ds-accordion__trigger { font-weight: 700; }
+[data-ds-theme="stud"] .ds-divider { border: 0; height: 10px; border-radius: 3px; background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0 2.5px, transparent 3px) 0 0 / 10px 10px, var(--ds-color-border); }
+[data-ds-theme="stud"] .ds-slider__control::-webkit-slider-runnable-track { height: 10px; border-radius: 3px; }
+[data-ds-theme="stud"] .ds-slider__control::-webkit-slider-thumb { border-radius: 4px; width: 22px; height: 22px; margin-top: -6px; background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0 5px, transparent 5.5px), var(--ds-color-primary); border: 0; box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25); }
+[data-ds-theme="stud"] .ds-tooltip__content { border-radius: 4px; background: #ffcd00; color: #171717; font-weight: 600; box-shadow: 0 3px 0 #c9a200; }
+[data-ds-theme="stud"] .ds-kbd { border-radius: 4px; border-bottom-width: 4px; }

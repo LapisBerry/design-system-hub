@@ -1,0 +1,59 @@
+/* Element personality: periodic-table tiles, graduated measuring marks and a sodium-yellow highlight. */
+
+[data-ds-theme="element"] {
+  --el-ticks: repeating-linear-gradient(90deg, var(--ds-color-text-muted) 0 1px, transparent 1px 10%);
+  --el-ticks-fine: repeating-linear-gradient(90deg, color-mix(in srgb, var(--ds-color-text-muted) 60%, transparent) 0 1px, transparent 1px 2%);
+}
+
+/* Large headings set their first letter as an element symbol tile. */
+[data-ds-theme="element"] .ds-heading[data-size="6"]::first-letter,
+[data-ds-theme="element"] .ds-heading[data-size="5"]::first-letter { color: var(--ds-color-on-primary); background: var(--ds-color-primary); padding: 0 0.12em; margin-right: 0.06em; border-radius: var(--ds-radius-sm); }
+[data-ds-theme="element"] .ds-heading[data-size="2"],
+[data-ds-theme="element"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+[data-ds-theme="element"] .ds-text[data-size="sm"] { font-family: var(--ds-font-mono); }
+
+[data-ds-theme="element"] .ds-button { font-weight: 700; }
+[data-ds-theme="element"] .ds-button[data-variant="solid"] { box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.18); }
+[data-ds-theme="element"] .ds-button[data-variant="outline"] { border-width: 2px; }
+[data-ds-theme="element"] .ds-button[data-variant="soft"] { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--_tone) 30%, transparent); }
+
+/* Cards: a category color band across the top, like a group in the table. */
+[data-ds-theme="element"] .ds-card { border: 1px solid var(--ds-color-border); }
+[data-ds-theme="element"] .ds-card[data-variant="elevated"] { border-top: 4px solid var(--ds-color-primary); }
+[data-ds-theme="element"] .ds-card[data-variant="filled"] { border-top: 4px solid var(--ds-color-accent); }
+[data-ds-theme="element"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); }
+[data-ds-theme="element"] .ds-card[data-interactive]:hover { transform: none; border-color: var(--ds-color-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-color-primary) 18%, transparent); }
+[data-ds-theme="element"] .ds-dialog__panel { border-top: 4px solid var(--ds-color-primary); }
+
+/* Avatars are element tiles: square, bordered, with a small mass line underneath. */
+[data-ds-theme="element"] .ds-avatar { border-radius: var(--ds-radius-sm); border: 2px solid var(--ds-color-border-strong); background: var(--ds-color-accent); color: #1d1600; font-weight: 800; font-size: calc(var(--_s) * 0.42); box-shadow: inset 0 -5px 0 -3px color-mix(in srgb, #1d1600 40%, transparent); }
+[data-ds-theme="element"] .ds-badge { border-radius: 2px; font-family: var(--ds-font-mono); font-weight: 500; }
+[data-ds-theme="element"] .ds-badge[data-variant="soft"] { border-color: color-mix(in srgb, var(--_tone) 35%, transparent); }
+
+[data-ds-theme="element"] .ds-field__label,
+[data-ds-theme="element"] .ds-radio-group legend { font-family: var(--ds-font-mono); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.75rem; color: var(--ds-color-text-muted); }
+[data-ds-theme="element"] .ds-input,
+[data-ds-theme="element"] .ds-select__control,
+[data-ds-theme="element"] .ds-textarea { font-family: var(--ds-font-mono); }
+[data-ds-theme="element"] .ds-choice__box { border-radius: 1px; }
+
+/* Graduated measures: progress and slider tracks carry tick marks like a cylinder. */
+[data-ds-theme="element"] .ds-progress { height: 14px; border-radius: 0; background: var(--el-ticks) 0 100% / 100% 6px no-repeat, var(--ds-color-surface-alt); border: 1px solid var(--ds-color-border); }
+[data-ds-theme="element"] .ds-progress__bar { border-radius: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--_tone) 70%, #fff) 0 2px, var(--_tone) 2px); opacity: 0.92; }
+[data-ds-theme="element"] .ds-slider__control::-webkit-slider-runnable-track { border-radius: 0; height: 4px; }
+[data-ds-theme="element"] .ds-slider { background: var(--el-ticks-fine) 0 calc(100% - 0px) / 100% 5px no-repeat; padding-bottom: 6px; }
+[data-ds-theme="element"] .ds-slider__control::-webkit-slider-thumb { border-radius: 2px; width: 12px; height: 20px; margin-top: -8px; }
+[data-ds-theme="element"] .ds-slider__value { color: var(--ds-color-primary); font-weight: 600; }
+
+[data-ds-theme="element"] .ds-switch__track { border-radius: 4px; }
+[data-ds-theme="element"] .ds-switch__thumb { border-radius: 2px; }
+[data-ds-theme="element"] .ds-alert { border-radius: var(--ds-radius-sm); border-width: 0 0 0 4px; border-color: var(--_tone); }
+[data-ds-theme="element"] .ds-alert__title { font-family: var(--ds-font-mono); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.85rem; }
+[data-ds-theme="element"] .ds-tabs__tab { font-family: var(--ds-font-mono); font-weight: 500; }
+[data-ds-theme="element"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; }
+[data-ds-theme="element"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 4px; }
+[data-ds-theme="element"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 2px; }
+[data-ds-theme="element"] .ds-divider { border: 0; height: 6px; background: var(--el-ticks-fine), linear-gradient(var(--ds-color-border) 0 0) 0 100% / 100% 1px no-repeat; }
+[data-ds-theme="element"] .ds-code { color: var(--ds-color-primary); }
+[data-ds-theme="element"] .ds-tooltip__content { font-family: var(--ds-font-mono); border-radius: 2px; }
+[data-ds-theme="element"] .ds-spinner { border-radius: 50%; border-style: dotted; border-width: 3px; border-color: color-mix(in srgb, currentColor 30%, transparent); border-top-color: currentColor; border-top-style: solid; }

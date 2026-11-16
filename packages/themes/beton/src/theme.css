@@ -1,0 +1,79 @@
+/* Beton personality: raw concrete, board-formed panels, tie holes and controls that sink into the slab. */
+
+[data-ds-theme="beton"] {
+  --bt-dark: rgba(0, 0, 0, 0.07);
+  --bt-light: rgba(255, 255, 255, 0.35);
+  --bt-aggregate:
+    radial-gradient(circle at 20% 30%, var(--bt-dark) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 80%, var(--bt-dark) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 45% 60%, var(--bt-light) 0 1px, transparent 1.5px);
+  --bt-boards: repeating-linear-gradient(180deg, transparent 0 46px, var(--bt-dark) 46px 47px, var(--bt-light) 47px 48px);
+  --bt-ties:
+    radial-gradient(circle at 14px 14px, var(--bt-hole) 0 4px, transparent 4.5px),
+    radial-gradient(circle at calc(100% - 14px) 14px, var(--bt-hole) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 14px calc(100% - 14px), var(--bt-hole) 0 4px, transparent 4.5px),
+    radial-gradient(circle at calc(100% - 14px) calc(100% - 14px), var(--bt-hole) 0 4px, transparent 4.5px);
+  --bt-hole: #a9a59d;
+  background: var(--bt-aggregate) 0 0 / 7px 9px, var(--bt-aggregate) 3px 5px / 11px 13px, var(--ds-color-bg);
+}
+[data-ds-theme="beton"][data-ds-mode="dark"] { --bt-dark: rgba(0, 0, 0, 0.3); --bt-light: rgba(255, 255, 255, 0.04); --bt-hole: #111110; }
+
+[data-ds-theme="beton"] .ds-heading { text-transform: uppercase; line-height: 0.95; }
+[data-ds-theme="beton"] .ds-heading[data-size="6"] { font-size: calc(var(--ds-text-6) * 0.62); letter-spacing: -0.005em; }
+[data-ds-theme="beton"] .ds-heading[data-size="5"] { font-size: calc(var(--ds-text-5) * 0.72); }
+[data-ds-theme="beton"] .ds-heading[data-size="2"],
+[data-ds-theme="beton"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 400; letter-spacing: 0.1em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+
+/* Buttons are cast blocks: no squish, they sink a few millimeters into the slab. */
+[data-ds-theme="beton"] .ds-button { font-family: var(--ds-font-mono); font-weight: 400; font-size: 0.85rem; border-width: 1px; box-shadow: 0 3px 0 color-mix(in srgb, var(--ds-color-text) 55%, transparent); }
+[data-ds-theme="beton"] .ds-button[data-variant="outline"] { border-width: 3px; --_bd: var(--ds-color-border-strong); --_fg: var(--ds-color-text); }
+[data-ds-theme="beton"] .ds-button[data-variant="ghost"],
+[data-ds-theme="beton"] .ds-button[data-variant="soft"] { box-shadow: none; }
+[data-ds-theme="beton"] .ds-button[data-variant="solid"][data-tone="primary"]:hover:not(:disabled) { --_bg: var(--ds-color-accent); --_fg: var(--ds-color-on-accent); }
+[data-ds-theme="beton"] .ds-button:active:not(:disabled) { transform: translateY(3px); box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.35); }
+
+/* Panels: board-form lines and four tie holes. */
+[data-ds-theme="beton"] .ds-card { background: var(--bt-boards), var(--bt-aggregate) 0 0 / 9px 7px, var(--ds-color-surface); border: 0; }
+[data-ds-theme="beton"] .ds-card[data-variant="elevated"] { background: var(--bt-ties), var(--bt-boards), var(--bt-aggregate) 0 0 / 9px 7px, var(--ds-color-surface); padding-inline: calc(var(--ds-space-5) + 12px); }
+[data-ds-theme="beton"] .ds-card[data-variant="outlined"] { background: transparent; box-shadow: inset 0 0 0 3px var(--ds-color-border-strong); }
+[data-ds-theme="beton"] .ds-card[data-variant="filled"] { background: var(--ds-color-surface-alt); box-shadow: inset 0 6px 12px -6px rgba(0, 0, 0, 0.35), inset 0 -1px 0 var(--bt-light); }
+[data-ds-theme="beton"] .ds-card[data-interactive]:hover { transform: none; box-shadow: inset 0 0 0 3px var(--ds-color-accent); }
+[data-ds-theme="beton"] .ds-dialog__panel { border: 0; border-top: 10px solid var(--ds-color-text); background: var(--bt-ties), var(--bt-boards), var(--ds-color-surface); }
+[data-ds-theme="beton"] .ds-dialog__title { font-size: var(--ds-text-4); text-transform: uppercase; }
+
+/* Fields are recesses cast into the surface. */
+[data-ds-theme="beton"] .ds-input,
+[data-ds-theme="beton"] .ds-select__control,
+[data-ds-theme="beton"] .ds-textarea { background: var(--ds-color-surface-alt); border-color: transparent; box-shadow: inset 0 3px 6px -2px rgba(0, 0, 0, 0.35); }
+[data-ds-theme="beton"] .ds-input:focus-within,
+[data-ds-theme="beton"] .ds-select__control:focus,
+[data-ds-theme="beton"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: inset 0 3px 6px -2px rgba(0, 0, 0, 0.35), 0 0 0 2px var(--ds-color-accent); }
+[data-ds-theme="beton"] .ds-field__label,
+[data-ds-theme="beton"] .ds-radio-group legend { font-family: var(--ds-font-mono); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 400; font-size: 0.72rem; }
+[data-ds-theme="beton"] .ds-choice__box { border-width: 3px; background: var(--ds-color-surface-alt); }
+[data-ds-theme="beton"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 0; }
+[data-ds-theme="beton"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { box-shadow: inset 0 0 0 4px var(--ds-color-surface-alt), inset 0 0 0 10px var(--ds-color-accent); }
+[data-ds-theme="beton"] .ds-switch__track { border-radius: 0; height: 26px; border-width: 3px; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); }
+[data-ds-theme="beton"] .ds-switch__thumb { border-radius: 0; width: 18px; }
+[data-ds-theme="beton"] .ds-switch__track[data-state="on"] { background: var(--ds-color-accent); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="beton"] .ds-switch__track[data-state="on"] .ds-switch__thumb { transform: translate(17px, -50%); }
+
+[data-ds-theme="beton"] .ds-avatar { border-radius: 0; background: var(--ds-color-text); color: var(--ds-color-bg); font-family: var(--ds-font-display); font-weight: 400; font-size: calc(var(--_s) * 0.48); }
+[data-ds-theme="beton"] .ds-badge { border-radius: 0; font-family: var(--ds-font-mono); font-weight: 400; }
+[data-ds-theme="beton"] .ds-badge[data-variant="soft"] { background: var(--ds-color-surface-alt); color: var(--ds-color-text); box-shadow: inset 3px 0 0 var(--_tone); }
+[data-ds-theme="beton"] .ds-alert { border-radius: 0; border: 0; background: var(--ds-color-surface-alt); box-shadow: inset 8px 0 0 var(--_tone), inset 0 3px 6px -3px rgba(0, 0, 0, 0.3); padding-left: var(--ds-space-6); }
+[data-ds-theme="beton"] .ds-alert__title { font-family: var(--ds-font-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.1rem; }
+[data-ds-theme="beton"] .ds-progress { height: 14px; border-radius: 0; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.35); }
+[data-ds-theme="beton"] .ds-progress__bar { border-radius: 0; background: repeating-linear-gradient(90deg, var(--_tone) 0 18px, color-mix(in srgb, var(--_tone) 75%, #000) 18px 20px); }
+[data-ds-theme="beton"] .ds-tabs__tab { font-family: var(--ds-font-mono); font-weight: 400; text-transform: uppercase; letter-spacing: 0.1em; }
+[data-ds-theme="beton"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom-width: 3px; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="beton"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 8px; bottom: -3px; background: var(--ds-color-accent); left: 0; right: 0; }
+[data-ds-theme="beton"] .ds-tabs[data-variant="pill"] .ds-tabs__list { box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3); }
+[data-ds-theme="beton"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-text); color: var(--ds-color-bg); box-shadow: none; }
+[data-ds-theme="beton"] .ds-accordion__trigger { font-family: var(--ds-font-display); font-weight: 400; text-transform: uppercase; font-size: 1.2rem; }
+[data-ds-theme="beton"] .ds-divider { border: 0; height: 12px; background: var(--ds-color-text); box-shadow: inset 0 -4px 0 var(--ds-color-bg), inset 0 -6px 0 var(--ds-color-text); }
+[data-ds-theme="beton"] .ds-slider__control::-webkit-slider-runnable-track { border-radius: 0; height: 8px; }
+[data-ds-theme="beton"] .ds-slider__control::-webkit-slider-thumb { border-radius: 0; width: 14px; height: 26px; margin-top: -9px; background: var(--ds-color-text); border: 0; }
+[data-ds-theme="beton"] .ds-tooltip__content { border-radius: 0; font-family: var(--ds-font-mono); text-transform: uppercase; letter-spacing: 0.06em; }
+[data-ds-theme="beton"] .ds-kbd,
+[data-ds-theme="beton"] .ds-code { border-radius: 0; }

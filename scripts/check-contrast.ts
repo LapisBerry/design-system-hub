@@ -51,11 +51,37 @@ import { receipt } from "@dsh/theme-receipt";
 import { groove } from "@dsh/theme-groove";
 import { relief } from "@dsh/theme-relief";
 import { sprint } from "@dsh/theme-sprint";
+import { nouveau } from "@dsh/theme-nouveau";
+import { element } from "@dsh/theme-element";
+import { leadlight } from "@dsh/theme-leadlight";
+import { beton } from "@dsh/theme-beton";
+import { floe } from "@dsh/theme-floe";
+import { dune } from "@dsh/theme-dune";
+import { gazette } from "@dsh/theme-gazette";
+import { trace } from "@dsh/theme-trace";
+import { orbit } from "@dsh/theme-orbit";
+import { bezel } from "@dsh/theme-bezel";
+import { catalog } from "@dsh/theme-catalog";
+import { lava } from "@dsh/theme-lava";
+import { plain } from "@dsh/theme-plain";
+import { frontier } from "@dsh/theme-frontier";
+import { acid } from "@dsh/theme-acid";
+import { flap } from "@dsh/theme-flap";
+import { abyss } from "@dsh/theme-abyss";
+import { post } from "@dsh/theme-post";
+import { cork } from "@dsh/theme-cork";
+import { darkroom } from "@dsh/theme-darkroom";
+import { stud } from "@dsh/theme-stud";
+import { press } from "@dsh/theme-press";
+import { optic } from "@dsh/theme-optic";
+import { hive } from "@dsh/theme-hive";
 
 const themes: ThemeDefinition[] = [folio, grit, mist, phosphor, terra, grid, konstrukt, sorbet, noir, blueprint, riso, dial,
   kumo, arcade, clarity, pow, origami, aurora, sketch, deco, graphite, harbor, puff, cyber,
   vapor, bevel, botanica, ledger, tube, vesper, squiggle, kraft, wash, tropic, fjord, tile,
   atomic, rivet, marquee, holo, wire, bento, contour, transit, receipt, groove, relief, sprint,
+  nouveau, element, leadlight, beton, floe, dune, gazette, trace, orbit, bezel, catalog, lava,
+  plain, frontier, acid, flap, abyss, post, cork, darkroom, stud, press, optic, hive,
 ];
 let failures = 0;
 

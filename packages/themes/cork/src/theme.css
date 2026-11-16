@@ -1,0 +1,72 @@
+/* Cork personality: a corkboard. Pinned paper slightly askew, sticky notes, tape strips and polaroid avatars. */
+
+[data-ds-theme="cork"] {
+  --ck-pin: radial-gradient(circle at 40% 35%, #ff8a8a 0 1.5px, #c8243c 3px 6px, transparent 6.5px);
+  --ck-tape: color-mix(in srgb, #f4ead0 78%, transparent);
+  --ck-note: #fbf0b8;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(60, 35, 10, 0.28) 0 1px, transparent 1.6px) 0 0 / 7px 6px,
+    radial-gradient(circle at 70% 20%, rgba(255, 230, 190, 0.3) 0 1px, transparent 1.6px) 0 0 / 9px 11px,
+    radial-gradient(circle at 50% 80%, rgba(90, 55, 20, 0.22) 0 1.5px, transparent 2px) 0 0 / 13px 10px,
+    var(--ds-color-bg);
+}
+
+/* Marker headlines. On the cork itself they get a paper label behind them. */
+[data-ds-theme="cork"] .ds-heading[data-size="6"],
+[data-ds-theme="cork"] .ds-heading[data-size="5"] { line-height: 1.05; transform: rotate(-1.2deg); }
+[data-ds-theme="cork"] .ds-heading[data-size="2"],
+[data-ds-theme="cork"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--ds-text-n1); }
+
+[data-ds-theme="cork"] .ds-button { font-weight: 700; }
+[data-ds-theme="cork"] .ds-button[data-variant="ghost"] { --_fg: var(--ds-color-text); }
+[data-ds-theme="cork"] .ds-button[data-variant="outline"],
+[data-ds-theme="cork"] .ds-button[data-variant="soft"] { --_bg: var(--ds-color-surface); box-shadow: var(--ds-shadow-sm); }
+[data-ds-theme="cork"] .ds-button[data-variant="outline"]:hover:not(:disabled),
+[data-ds-theme="cork"] .ds-button[data-variant="soft"]:hover:not(:disabled) { --_bg: color-mix(in srgb, var(--_tone) 10%, var(--ds-color-surface)); }
+
+/* Cards are pinned paper; they straighten up when you reach for them. */
+[data-ds-theme="cork"] .ds-card { position: relative; border: 0; box-shadow: var(--ds-shadow-sm); transform: rotate(-0.8deg); }
+[data-ds-theme="cork"] .ds-card:nth-child(even) { transform: rotate(0.9deg); }
+[data-ds-theme="cork"] .ds-card[data-variant="elevated"] { box-shadow: var(--ds-shadow-md); }
+[data-ds-theme="cork"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: -4px; left: 50%; width: 16px; height: 16px; margin-left: -8px; background: var(--ck-pin); filter: drop-shadow(1px 3px 1px rgba(40, 25, 10, 0.45)); }
+[data-ds-theme="cork"] .ds-card[data-variant="filled"] { background: linear-gradient(180deg, rgba(0, 0, 0, 0.035), transparent 30%), var(--ck-note); box-shadow: 0 1px 1px rgba(40, 25, 10, 0.2), 2px 10px 12px -8px rgba(40, 25, 10, 0.5); border-bottom-right-radius: 18px 6px; }
+[data-ds-theme="cork"] .ds-card[data-variant="outlined"] { background: var(--ds-color-surface); }
+[data-ds-theme="cork"] .ds-card[data-variant="outlined"]::before { content: ""; position: absolute; top: -10px; left: 50%; width: 80px; height: 22px; margin-left: -40px; background: var(--ck-tape); transform: rotate(-3deg); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+[data-ds-theme="cork"] .ds-card[data-interactive]:hover { transform: rotate(0) translateY(-3px); box-shadow: var(--ds-shadow-lg); }
+[data-ds-theme="cork"] .ds-dialog__panel { border: 0; border-radius: 2px; position: relative; }
+[data-ds-theme="cork"] .ds-dialog__panel::before { content: ""; position: absolute; top: -6px; left: 50%; width: 18px; height: 18px; margin-left: -9px; background: var(--ck-pin); filter: drop-shadow(1px 3px 1px rgba(40, 25, 10, 0.45)); }
+[data-ds-theme="cork"] .ds-dialog[open] { animation-name: cork-pin; }
+@keyframes cork-pin { from { opacity: 0; transform: translateY(-20px) rotate(-4deg); } }
+
+/* Labels placed on the cork read on a strip of tape. */
+[data-ds-theme="cork"] .ds-field__label,
+[data-ds-theme="cork"] .ds-radio-group legend { font-weight: 700; }
+[data-ds-theme="cork"] .ds-input,
+[data-ds-theme="cork"] .ds-select__control,
+[data-ds-theme="cork"] .ds-textarea { border-color: var(--ds-color-border); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08); }
+[data-ds-theme="cork"] .ds-textarea { background: repeating-linear-gradient(180deg, transparent 0 calc(1.55em - 1px), color-mix(in srgb, #1f6aa8 18%, transparent) calc(1.55em - 1px) 1.55em) 0 calc(var(--ds-space-2) - 1px), var(--ds-color-surface); }
+[data-ds-theme="cork"] .ds-choice__box { border-radius: 2px; }
+[data-ds-theme="cork"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-surface); color: var(--ds-color-primary); border-color: var(--ds-color-primary); }
+[data-ds-theme="cork"] .ds-choice__input:checked + .ds-choice__box svg { stroke-width: 4; transform: rotate(-8deg) scale(1.2); }
+
+/* Avatars are polaroids, badges are strips of tape. */
+[data-ds-theme="cork"] .ds-avatar { border-radius: 1px; border: 3px solid #fff; border-bottom-width: 9px; background: linear-gradient(160deg, #8fb7d6, #5e8a5a); color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); box-shadow: 0 2px 4px rgba(40, 25, 10, 0.35); transform: rotate(-3deg); }
+[data-ds-theme="cork"] .ds-badge { border-radius: 0; font-weight: 600; }
+[data-ds-theme="cork"] .ds-badge[data-variant="soft"] { background: var(--ck-tape); color: var(--ds-color-text); box-shadow: inset 3px 0 0 color-mix(in srgb, var(--_tone) 70%, transparent), 0 1px 1px rgba(0, 0, 0, 0.15); transform: rotate(-2deg); }
+[data-ds-theme="cork"] .ds-badge[data-variant="outline"] { background: var(--ds-color-surface); }
+[data-ds-theme="cork"] .ds-alert { border: 0; border-radius: 0 0 14px 0 / 0 0 4px 0; background: var(--ck-note); box-shadow: inset 4px 0 0 var(--_tone), 2px 8px 10px -8px rgba(40, 25, 10, 0.5); }
+[data-ds-theme="cork"] .ds-alert__content { color: #4a3d2c; }
+[data-ds-theme="cork"] .ds-progress { height: 12px; border-radius: 0; background: var(--ds-color-surface); box-shadow: var(--ds-shadow-sm); }
+[data-ds-theme="cork"] .ds-progress__bar { border-radius: 0; background: repeating-linear-gradient(-45deg, var(--_tone) 0 6px, color-mix(in srgb, var(--_tone) 80%, #fff) 6px 9px); }
+[data-ds-theme="cork"] .ds-tabs[data-variant="line"] .ds-tabs__list { background: var(--ds-color-surface); box-shadow: var(--ds-shadow-sm); padding: 0 4px; }
+[data-ds-theme="cork"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; background: var(--ds-color-primary); }
+[data-ds-theme="cork"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: var(--ds-color-surface); box-shadow: var(--ds-shadow-sm); border-radius: 3px; }
+[data-ds-theme="cork"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ck-note); border-radius: 2px; }
+[data-ds-theme="cork"] .ds-tabs[data-variant="enclosed"] .ds-tabs__tab { background: color-mix(in srgb, var(--ds-color-surface) 70%, transparent); margin-right: 3px; }
+[data-ds-theme="cork"] .ds-accordion { background: var(--ds-color-surface); padding: 0 var(--ds-space-3); box-shadow: var(--ds-shadow-sm); border-top: 0; }
+/* The divider is a strand of red yarn between two pins. */
+[data-ds-theme="cork"] .ds-divider { border: 0; height: 14px; background: var(--ck-pin) 0 50% / 14px 14px no-repeat, var(--ck-pin) 100% 50% / 14px 14px no-repeat, linear-gradient(var(--ds-color-primary) 0 0) center / calc(100% - 14px) 2px no-repeat; }
+[data-ds-theme="cork"] .ds-slider__control::-webkit-slider-thumb { background: var(--ck-pin); border: 0; width: 20px; height: 20px; margin-top: -7px; box-shadow: none; filter: drop-shadow(1px 2px 1px rgba(40, 25, 10, 0.4)); }
+[data-ds-theme="cork"] .ds-tooltip__content { border-radius: 0; background: var(--ck-note); color: var(--ds-color-text); box-shadow: 1px 4px 6px -2px rgba(40, 25, 10, 0.4); transform: translate(-50%, 4px) rotate(-2deg); }
+[data-ds-theme="cork"] .ds-tooltip:hover .ds-tooltip__content,
+[data-ds-theme="cork"] .ds-tooltip:focus-within .ds-tooltip__content { transform: translate(-50%, 0) rotate(-2deg); }
