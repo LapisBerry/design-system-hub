@@ -56,6 +56,30 @@ packages/
     groove/             1970s: stacked stripes, fat type
     relief/             Soft UI: shapes pressed out of one surface
     sprint/             Sports: slanted italics, speed stripes
+    nouveau/            Art Nouveau: arches, whiplash vines, peacock and gilt
+    element/            Laboratory: periodic-table tiles, graduated measures
+    leadlight/          Stained glass: jewel panes in thick lead lines
+    beton/              Concrete brutalism: board-formed panels, tie holes
+    floe/               Polar ice: faceted highlights, hairline type
+    dune/               Desert: sand ripples, wide caps, long shadows
+    gazette/            Tabloid newsprint: banner heads, column rules (light only)
+    trace/              Circuit board: copper traces, gold pads (dark only)
+    orbit/              Space age: orbital rings, mission patches
+    bezel/              Watchmaking: guilloche, minute tracks, lume
+    catalog/            Library cards: ruled cards, typewriter, stamps (light only)
+    lava/               Lava lamp: morphing blobs, gooey motion
+    plain/              Plain text: visible Markdown syntax, one mono
+    frontier/           Wanted poster: wood type, nails, tin stars (light only)
+    acid/               Blacklight rave: lime and UV, marching ants (dark only)
+    flap/               Split-flap board: hinged tiles, flip-in (dark only)
+    abyss/              Deep sea: bioluminescence, sonar pings (dark only)
+    post/               Postal: perforated stamps, airmail borders
+    cork/               Corkboard: pinned notes, tape, polaroids (light only)
+    darkroom/           Photo darkroom: safelight, film sprockets (dark only)
+    stud/               Toy bricks: studs on top, click-down presses
+    press/              Letterpress: debossed type on cotton paper (light only)
+    optic/              Op art: concentric rings, zebra stripes, one red
+    hive/               Honeycomb: hexagon cells, honey drips
 apps/
   showcase/             Vite + React gallery, compare view, token docs
 scripts/
@@ -124,6 +148,30 @@ pnpm check:contrast
 | **Groove** | Orange, mustard and brown stacked stripes, fat swash type | Coffee and food, record shops, vintage fashion | Light, dark |
 | **Relief** | Soft UI: raised and pressed shapes from one matte surface | Smart home, music players, calm dashboards | Light, dark |
 | **Sprint** | Forward slant, heavy italics, speed stripes, jersey avatars | Fitness, leagues, live scores, energetic launches | Light, dark |
+| **Nouveau** | Arched panels and buttons, whiplash vine rules, peacock teal with gilt keylines | Florists, perfumers, galleries, boutique hotels, weddings | Light, dark |
+| **Element** | Periodic-table tiles, graduated ticks on progress and sliders, cobalt and sodium yellow | Science education, lab notebooks, health data, biotech | Light, dark |
+| **Leadlight** | Thick lead lines, jewel-tone glass panes, buttons lit from behind, rose-window avatars | Heritage sites, fantasy and puzzle games, craft studios | Light, dark |
+| **Beton** | Raw concrete grain, board-formed panels with tie holes, controls that sink into the slab | Architecture, galleries, urban projects, serious editorial | Light, dark |
+| **Floe** | Faceted crystal highlights, cleaved corners, hairline type, a glint sweep on hover | Weather and climate, winter sports, clean fintech | Light, dark |
+| **Dune** | Wind ripples, ultra-wide caps, a setting sun, long low shadows, heat-haze motion | Travel, retreats, film festivals, slow-living brands | Light, dark |
+| **Gazette** | Banner headlines over thick-and-thin rules, halftone, drop caps, red EXTRA flash | News, newsletters, bulletins, campaign pages | Light only |
+| **Trace** | Solder-mask green, copper traces and vias, gold pads, chip avatars, silkscreen labels | Electronics, IoT dashboards, hardware startups | Dark only |
+| **Orbit** | Orbital ellipses, mission-patch avatars, a satellite spinner, rocket orange | Astronomy, launches, travel booking, product pages | Light, dark |
+| **Bezel** | Guilloche dials, minute-track ticks, knurled crown switch, sweeping second hand | Luxury goods, wealth, time tracking, premium hardware | Light, dark |
+| **Catalog** | Ruled index cards with a rod hole, typewriter heads, drawer tabs, due-date stamps | Libraries, archives, reading trackers, research notes | Light only |
+| **Lava** | Morphing blob shapes, magenta and tangerine wax, gooey overshoot, rising bubbles | Music and mood apps, drinks, playful portfolios | Light, dark |
+| **Plain** | One monospace, visible Markdown (# headings, [x] boxes, > quotes), no shadows | Developer docs, writing apps, README-style sites | Light, dark |
+| **Frontier** | Wood-type headlines with inline shadow, nailed posters, tin-star avatars | Barbecue and whiskey, rodeos, western games | Light only |
+| **Acid** | Acid lime and UV on black, outlined echo type, marching ants, strobe steps | Club nights, festivals, streetwear drops | Dark only |
+| **Flap** | Split-flap tiles with a hinge line, flip-in motion, segmented progress cells | Transport, schedules, queues, status boards | Dark only |
+| **Abyss** | Depth gradient, drifting particles, bioluminescent glow, bubble avatars, sonar spinner | Sleep and meditation, ocean causes, ambient music | Dark only |
+| **Post** | Perforated stamp edges, airmail borders, postmark badges, cancellation-wave rules | Messaging, stationery, travel journals, greetings | Light, dark |
+| **Cork** | Speckled cork, pinned crooked cards, sticky notes, tape badges, polaroid avatars | Team boards, retros, classrooms, family planners | Light only |
+| **Darkroom** | Safelight red, film-strip sprockets and edge codes, dialogs that develop | Photography, film festivals, editing tools | Dark only |
+| **Stud** | Studs on buttons and panels, glossy primaries, bricks that click down, brick progress | Kids and families, STEM, games, product tours | Light, dark |
+| **Press** | Debossed type and controls in cotton paper, blind impressions, one spot red | Invitations, stationers, wine and spirits | Light only |
+| **Optic** | Concentric rings, zebra stripes, checker switch, target avatars, one red | Galleries, fashion, record labels, campaigns | Light, dark |
+| **Hive** | Hexagon avatars and badges, honeycomb backdrop, honey drips, a little buzz | Food and farm, co-ops, team tools, kids' learning | Light, dark |
 
 Every theme passes the contrast checks in `packages/core/src/tokens/contrast.ts` (4.5:1 for body text and primary button labels, 3:1 for large text and UI parts) in every mode it supports.
 

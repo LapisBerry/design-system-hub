@@ -1,0 +1,70 @@
+/* Catalog personality: ruled index cards with a red top line and rod hole, typewriter headings, due-date stamps. */
+
+[data-ds-theme="catalog"] {
+  --ct-line: color-mix(in srgb, #2c4f7c 22%, transparent);
+  --ct-ruled: repeating-linear-gradient(180deg, transparent 0 calc(1.7em - 1px), var(--ct-line) calc(1.7em - 1px) 1.7em);
+  --ct-hole: radial-gradient(circle at 50% calc(100% - 14px), var(--ds-color-bg) 0 6px, color-mix(in srgb, #000 20%, var(--ds-color-bg)) 6.5px 7px, transparent 7.5px);
+  background:
+    repeating-linear-gradient(90deg, rgba(90, 60, 30, 0.04) 0 2px, transparent 2px 7px),
+    var(--ds-color-bg);
+}
+
+/* Typewritten headings with uneven ink. */
+[data-ds-theme="catalog"] .ds-heading { text-shadow: 0.4px 0.3px 0 color-mix(in srgb, var(--ds-color-text) 55%, transparent); }
+[data-ds-theme="catalog"] .ds-heading[data-size="6"],
+[data-ds-theme="catalog"] .ds-heading[data-size="5"] { letter-spacing: -0.01em; }
+[data-ds-theme="catalog"] .ds-heading[data-size="2"],
+[data-ds-theme="catalog"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 700; color: var(--ds-color-primary); }
+[data-ds-theme="catalog"] .ds-text[data-size="sm"] { font-family: var(--ds-font-mono); }
+
+[data-ds-theme="catalog"] .ds-button { font-family: var(--ds-font-mono); font-weight: 700; }
+[data-ds-theme="catalog"] .ds-button[data-variant="outline"] { border-width: 1.5px; }
+[data-ds-theme="catalog"] .ds-button[data-variant="solid"] { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 1px 0 rgba(0, 0, 0, 0.25); }
+
+/* Index cards: red top rule, blue ruling, a rod hole near the bottom. */
+[data-ds-theme="catalog"] .ds-card { position: relative; border: 1px solid var(--ds-color-border); }
+[data-ds-theme="catalog"] .ds-card[data-variant="elevated"] { border-top: 0; background: linear-gradient(var(--ds-color-primary) 0 0) 0 2.2em / 100% 1.5px no-repeat, var(--ct-hole), var(--ct-ruled) 0 calc(2.2em + 1px), var(--ds-color-surface); padding-bottom: calc(var(--ds-space-5) + 24px); }
+[data-ds-theme="catalog"] .ds-card[data-variant="filled"] { background: #e9d6a8; border-color: #cdb47a; color: #1d1a16; }
+[data-ds-theme="catalog"] .ds-card[data-variant="filled"] .ds-text[data-muted] { color: #4d4330; }
+[data-ds-theme="catalog"] .ds-card[data-variant="outlined"] { border-style: dashed; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="catalog"] .ds-card[data-interactive]:hover { transform: translateY(-6px); }
+[data-ds-theme="catalog"] .ds-dialog__panel { border-radius: 4px; background: linear-gradient(var(--ds-color-primary) 0 0) 0 56px / 100% 1.5px no-repeat, var(--ct-ruled) 0 58px, var(--ds-color-surface); }
+
+[data-ds-theme="catalog"] .ds-field__label,
+[data-ds-theme="catalog"] .ds-radio-group legend { font-family: var(--ds-font-mono); font-weight: 700; font-size: 0.82rem; }
+/* Fields are typed onto a line. */
+[data-ds-theme="catalog"] .ds-input,
+[data-ds-theme="catalog"] .ds-select__control { border-width: 0 0 1.5px; border-radius: 0; background: transparent; border-color: var(--ds-color-border-strong); padding-left: 2px; font-family: var(--ds-font-mono); }
+[data-ds-theme="catalog"] .ds-textarea { background: var(--ct-ruled) 0 calc(var(--ds-space-2) - 2px), var(--ds-color-surface); font-family: var(--ds-font-mono); line-height: 1.7; }
+[data-ds-theme="catalog"] .ds-input:focus-within,
+[data-ds-theme="catalog"] .ds-select__control:focus { box-shadow: 0 1.5px 0 var(--ds-color-accent); border-color: var(--ds-color-accent); }
+[data-ds-theme="catalog"] .ds-choice__box { border-width: 1.5px; border-radius: 1px; }
+[data-ds-theme="catalog"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-surface); border-color: var(--ds-color-text); color: var(--ds-color-text); }
+[data-ds-theme="catalog"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { box-shadow: inset 0 0 0 4px var(--ds-color-surface), inset 0 0 0 10px var(--ds-color-text); }
+[data-ds-theme="catalog"] .ds-switch__track { border-radius: 3px; }
+[data-ds-theme="catalog"] .ds-switch__thumb { border-radius: 2px; }
+
+/* Badges are rubber stamps. */
+[data-ds-theme="catalog"] .ds-badge { font-family: var(--ds-font-mono); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 3px; }
+[data-ds-theme="catalog"] .ds-badge[data-variant="outline"] { border-width: 2px; box-shadow: inset 0 0 0 1px var(--ds-color-surface), inset 0 0 0 2px var(--_tone); transform: rotate(-4deg); opacity: 0.85; }
+[data-ds-theme="catalog"] .ds-badge[data-variant="solid"] { transform: rotate(2deg); }
+/* Avatars are spine labels. */
+[data-ds-theme="catalog"] .ds-avatar { border-radius: 2px; background: var(--ds-color-surface); color: var(--ds-color-text); border: 1px solid var(--ds-color-border-strong); font-family: var(--ds-font-mono); font-weight: 700; box-shadow: inset 0 3px 0 var(--ds-color-primary); }
+[data-ds-theme="catalog"] .ds-alert { border-radius: 2px; border-left: 4px solid var(--_tone); background: var(--ct-ruled), var(--ds-color-surface); }
+[data-ds-theme="catalog"] .ds-alert__title { font-family: var(--ds-font-display); font-weight: 400; }
+[data-ds-theme="catalog"] .ds-progress { height: 12px; border-radius: 2px; border: 1px solid var(--ds-color-border-strong); background: var(--ds-color-surface); }
+[data-ds-theme="catalog"] .ds-progress__bar { border-radius: 0; background: repeating-linear-gradient(90deg, var(--_tone) 0 6px, transparent 6px 9px); }
+
+/* Tabs are drawer guide cards with cut tabs. */
+[data-ds-theme="catalog"] .ds-tabs__tab { font-family: var(--ds-font-mono); font-weight: 700; }
+[data-ds-theme="catalog"] .ds-tabs[data-variant="enclosed"] .ds-tabs__tab { border-radius: 10px 10px 0 0; background: color-mix(in srgb, var(--ds-color-surface-alt) 70%, transparent); margin-right: 4px; border: 1px solid var(--ds-color-border); border-bottom: 0; }
+[data-ds-theme="catalog"] .ds-tabs[data-variant="enclosed"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-surface); box-shadow: inset 0 3px 0 var(--ds-color-primary); }
+[data-ds-theme="catalog"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 2px; background: var(--ds-color-primary); }
+[data-ds-theme="catalog"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 4px; }
+[data-ds-theme="catalog"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 3px; }
+[data-ds-theme="catalog"] .ds-accordion__trigger { font-family: var(--ds-font-display); font-weight: 400; }
+[data-ds-theme="catalog"] .ds-divider { border: 0; height: 3px; border-top: 1.5px solid var(--ds-color-primary); border-bottom: 1px solid var(--ct-line); }
+[data-ds-theme="catalog"] .ds-slider__control::-webkit-slider-runnable-track { border-radius: 0; height: 3px; }
+[data-ds-theme="catalog"] .ds-slider__control::-webkit-slider-thumb { border-radius: 2px; background: var(--ds-color-surface); border: 1.5px solid var(--ds-color-text); }
+[data-ds-theme="catalog"] .ds-tooltip__content { font-family: var(--ds-font-mono); border-radius: 2px; background: #e9d6a8; color: #1d1a16; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); }
+[data-ds-theme="catalog"] .ds-code { font-family: var(--ds-font-mono); color: var(--ds-color-primary); background: transparent; border-bottom: 1px dotted currentColor; border-radius: 0; }

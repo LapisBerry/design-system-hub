@@ -1,0 +1,80 @@
+/* Hive personality: honeycomb. Hexagon cells for avatars, badges and progress; honey drips; a comb behind the page. */
+
+[data-ds-theme="hive"] {
+  --hv-honey: var(--ds-color-accent);
+  --hv-black: #1c1406;
+  --hv-hex: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%);
+  --hv-hex-tall: polygon(50% 0%, 97% 25%, 97% 75%, 50% 100%, 3% 75%, 3% 25%);
+  --hv-pill: polygon(0.6em 0, calc(100% - 0.6em) 0, 100% 50%, calc(100% - 0.6em) 100%, 0.6em 100%, 0 50%);
+  --hv-comb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0 L56 16 L56 48 L28 64 L0 48 L0 16 Z M28 64 L28 97 M0 48 L0 81 L28 97 L56 81 L56 48' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3C/svg%3E");
+  position: relative;
+  isolation: isolate;
+}
+[data-ds-theme="hive"]::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--hv-honey); opacity: 0.12; -webkit-mask: var(--hv-comb) 0 0 / 42px 73px; mask: var(--hv-comb) 0 0 / 42px 73px; pointer-events: none; }
+[data-ds-theme="hive"][data-ds-mode="dark"] { --hv-black: #15110a; }
+
+@keyframes hive-buzz { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-1px, 0.5px); } 75% { transform: translate(1px, -0.5px); } }
+
+[data-ds-theme="hive"] .ds-heading { line-height: 1.05; }
+[data-ds-theme="hive"] .ds-heading[data-size="6"] { font-size: calc(var(--ds-text-6) * 0.8); }
+[data-ds-theme="hive"] .ds-heading[data-size="5"] { font-size: calc(var(--ds-text-5) * 0.85); }
+/* Honey drips under the big headings. */
+[data-ds-theme="hive"] .ds-heading[data-size="6"]::after,
+[data-ds-theme="hive"] .ds-heading[data-size="5"]::after { content: ""; display: block; width: 150px; height: 22px; margin-top: 0.2em; background:
+  radial-gradient(circle at 18px 15px, var(--hv-honey) 0 5px, transparent 5.5px),
+  radial-gradient(circle at 62px 18px, var(--hv-honey) 0 4px, transparent 4.5px),
+  radial-gradient(circle at 104px 12px, var(--hv-honey) 0 4.5px, transparent 5px),
+  linear-gradient(var(--hv-honey) 0 0) 14px 0 / 9px 15px no-repeat,
+  linear-gradient(var(--hv-honey) 0 0) 59px 0 / 7px 18px no-repeat,
+  linear-gradient(var(--hv-honey) 0 0) 100px 0 / 8px 12px no-repeat,
+  linear-gradient(var(--hv-honey) 0 0) 0 0 / 100% 6px no-repeat; border-radius: 0 0 3px 3px; }
+[data-ds-theme="hive"] .ds-heading[data-size="2"],
+[data-ds-theme="hive"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--ds-text-n1); }
+
+/* Buttons: bee black with honey text, or honey with black, and a little buzz on hover. */
+[data-ds-theme="hive"] .ds-button { font-family: var(--ds-font-display); font-weight: 400; font-size: 0.85rem; letter-spacing: 0.04em; }
+[data-ds-theme="hive"] .ds-button[data-variant="solid"][data-tone="accent"] { box-shadow: 0 3px 0 color-mix(in srgb, var(--hv-honey) 60%, #000); }
+[data-ds-theme="hive"] .ds-button[data-variant="outline"] { border-width: 2px; }
+[data-ds-theme="hive"] .ds-button:hover:not(:disabled) { animation: hive-buzz 0.18s linear 2; }
+
+/* Cards: honey-filled cells carry the comb; raised ones have a black-and-amber stripe like a bee. */
+[data-ds-theme="hive"] .ds-card { border: 1px solid var(--ds-color-border); }
+[data-ds-theme="hive"] .ds-card[data-variant="elevated"] { border-top: 0; background: repeating-linear-gradient(90deg, var(--ds-color-border-strong) 0 14px, var(--hv-honey) 14px 28px) 0 0 / 100% 6px no-repeat, var(--ds-color-surface); padding-top: calc(var(--ds-space-5) + 6px); }
+[data-ds-theme="hive"] .ds-card[data-variant="filled"] { position: relative; isolation: isolate; overflow: hidden; background: var(--ds-color-surface-alt); }
+[data-ds-theme="hive"] .ds-card[data-variant="filled"]::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--hv-honey); opacity: 0.3; -webkit-mask: var(--hv-comb) 0 0 / 28px 48.5px; mask: var(--hv-comb) 0 0 / 28px 48.5px; }
+[data-ds-theme="hive"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); }
+[data-ds-theme="hive"] .ds-card[data-interactive]:hover { transform: translateY(-2px); border-color: var(--hv-honey); }
+[data-ds-theme="hive"] .ds-dialog__panel { border: 0; border-top: 8px solid transparent; border-image: repeating-linear-gradient(90deg, var(--ds-color-border-strong) 0 16px, var(--hv-honey) 16px 32px) 8 0 0 0; }
+
+[data-ds-theme="hive"] .ds-field__label,
+[data-ds-theme="hive"] .ds-radio-group legend { font-weight: 700; }
+[data-ds-theme="hive"] .ds-input,
+[data-ds-theme="hive"] .ds-select__control,
+[data-ds-theme="hive"] .ds-textarea { border-width: 2px; }
+[data-ds-theme="hive"] .ds-input:focus-within,
+[data-ds-theme="hive"] .ds-select__control:focus,
+[data-ds-theme="hive"] .ds-textarea:focus { border-color: var(--hv-honey); box-shadow: 0 0 0 3px color-mix(in srgb, var(--hv-honey) 35%, transparent); }
+[data-ds-theme="hive"] .ds-choice__input:checked + .ds-choice__box { background: var(--hv-honey); border-color: var(--ds-color-border-strong); color: var(--hv-black); }
+[data-ds-theme="hive"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { background: var(--ds-color-surface); box-shadow: inset 0 0 0 4px var(--ds-color-surface), inset 0 0 0 10px var(--hv-honey); }
+[data-ds-theme="hive"] .ds-switch__track[data-state="on"] { background: var(--hv-honey); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="hive"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--hv-black); }
+
+/* Hexagons: avatars, badges and progress cells. */
+[data-ds-theme="hive"] .ds-avatar { clip-path: var(--hv-hex-tall); border-radius: 0; background: var(--hv-honey); color: var(--hv-black); font-family: var(--ds-font-display); font-weight: 400; }
+[data-ds-theme="hive"] .ds-badge { clip-path: var(--hv-pill); border-radius: 0; padding: 0 0.95em; font-weight: 700; border: 0; }
+[data-ds-theme="hive"] .ds-badge[data-variant="outline"] { background: color-mix(in srgb, var(--_tone) 12%, var(--ds-color-surface)); }
+[data-ds-theme="hive"] .ds-alert { border-width: 2px; border-left-width: 8px; border-color: var(--_tone); }
+[data-ds-theme="hive"] .ds-progress { height: 16px; border-radius: 3px; background: var(--ds-color-surface-alt); }
+[data-ds-theme="hive"] .ds-progress__bar { border-radius: 0; background: radial-gradient(circle, color-mix(in srgb, #fff 25%, transparent) 0 3px, transparent 3.5px) 0 0 / 14px 16px, var(--_tone); }
+[data-ds-theme="hive"] .ds-tabs__tab { font-weight: 700; }
+[data-ds-theme="hive"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; background: var(--hv-honey); }
+[data-ds-theme="hive"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--hv-honey); color: var(--hv-black); }
+[data-ds-theme="hive"] .ds-accordion__trigger { font-weight: 700; }
+[data-ds-theme="hive"] .ds-accordion__item[open] { box-shadow: inset 4px 0 0 var(--hv-honey); }
+[data-ds-theme="hive"] .ds-accordion__item[open] .ds-accordion__trigger,
+[data-ds-theme="hive"] .ds-accordion__item[open] .ds-accordion__content { padding-left: var(--ds-space-3); }
+[data-ds-theme="hive"] .ds-divider { border: 0; height: 12px; background: var(--hv-honey); opacity: 0.7; -webkit-mask: var(--hv-comb) 0 -2px / 14px 24px repeat-x; mask: var(--hv-comb) 0 -2px / 14px 24px repeat-x; }
+[data-ds-theme="hive"] .ds-slider__control::-webkit-slider-thumb { clip-path: var(--hv-hex); border-radius: 0; background: var(--hv-honey); border: 0; width: 24px; height: 22px; margin-top: -8px; }
+[data-ds-theme="hive"] .ds-slider__control:focus-visible::-webkit-slider-thumb { clip-path: none; border-radius: 4px; }
+[data-ds-theme="hive"] .ds-tooltip__content { background: var(--hv-black); color: #ffc21a; }
+[data-ds-theme="hive"] .ds-spinner { border-radius: 0; clip-path: var(--hv-hex); border: 0; background: conic-gradient(currentColor 0 30%, color-mix(in srgb, currentColor 20%, transparent) 30%); }

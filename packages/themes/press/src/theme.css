@@ -1,0 +1,76 @@
+/* Press personality: letterpress. Type and controls debossed into thick cotton paper; quiet controls are blind impressions. */
+
+[data-ds-theme="press"] {
+  --pr-hi: rgba(255, 255, 255, 0.85);
+  --pr-lo: rgba(60, 45, 25, 0.22);
+  --pr-deboss: inset 0 1px 2px var(--pr-lo), inset 0 -1px 0 var(--pr-hi);
+  --pr-deboss-deep: inset 0 2px 4px rgba(60, 45, 25, 0.3), inset 0 -1px 0 var(--pr-hi);
+  --pr-cotton:
+    radial-gradient(circle at 20% 30%, rgba(120, 100, 70, 0.05) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1.5px);
+  background: var(--pr-cotton) 0 0 / 5px 6px, var(--pr-cotton) 2px 3px / 9px 7px, var(--ds-color-bg);
+}
+
+/* Debossed type: a highlight below, a shadow above, ink sitting slightly into the fibers. */
+[data-ds-theme="press"] .ds-heading { text-shadow: 0 1px 0 var(--pr-hi), 0 -1px 0 rgba(60, 45, 25, 0.18); }
+[data-ds-theme="press"] .ds-heading[data-size="6"],
+[data-ds-theme="press"] .ds-heading[data-size="5"] { letter-spacing: -0.02em; line-height: 1.02; }
+[data-ds-theme="press"] .ds-heading[data-size="6"]::after { content: ""; display: block; width: 64px; height: 3px; margin-top: 0.35em; background: var(--ds-color-primary); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25); }
+[data-ds-theme="press"] .ds-heading[data-size="2"],
+[data-ds-theme="press"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 500; text-transform: uppercase; letter-spacing: 0.22em; font-size: var(--ds-text-n1); color: var(--ds-color-primary); }
+[data-ds-theme="press"] .ds-text { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); }
+
+/* Solid buttons are an inked impression; outline buttons are a blind deboss with no ink. */
+[data-ds-theme="press"] .ds-button { font-family: var(--ds-font-body); font-weight: 600; font-size: 0.82rem; }
+[data-ds-theme="press"] .ds-button[data-variant="solid"] { box-shadow: var(--pr-deboss-deep); background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1.5px) 0 0 / 4px 4px, var(--_bg); }
+[data-ds-theme="press"] .ds-button[data-variant="outline"] { --_bd: transparent; --_bg: transparent; --_fg: var(--ds-color-text); box-shadow: var(--pr-deboss-deep); text-shadow: 0 1px 0 var(--pr-hi); }
+[data-ds-theme="press"] .ds-button[data-variant="outline"]:hover:not(:disabled) { --_bg: color-mix(in srgb, var(--ds-color-text) 4%, transparent); }
+[data-ds-theme="press"] .ds-button[data-variant="soft"] { box-shadow: var(--pr-deboss); }
+[data-ds-theme="press"] .ds-button:active:not(:disabled) { box-shadow: inset 0 3px 6px rgba(60, 45, 25, 0.4), inset 0 -1px 0 var(--pr-hi); }
+
+/* Cards: thick cotton stock with a deckled edge, or a blind-embossed frame. */
+[data-ds-theme="press"] .ds-card { border: 0; background: var(--pr-cotton) 0 0 / 5px 6px, var(--ds-color-surface); }
+[data-ds-theme="press"] .ds-card[data-variant="elevated"] { box-shadow: 0 1px 0 rgba(60, 45, 25, 0.1), 0 2px 0 rgba(255, 255, 255, 0.8) inset, var(--ds-shadow-md); }
+[data-ds-theme="press"] .ds-card[data-variant="outlined"] { box-shadow: inset 0 0 0 10px var(--ds-color-surface), inset 1px 1px 0 10px var(--pr-lo), inset -1px -1px 0 10px var(--pr-hi), inset 0 0 0 11px transparent; padding: calc(var(--ds-space-5) + 10px); }
+[data-ds-theme="press"] .ds-card[data-variant="filled"] { background: var(--ds-color-surface-alt); box-shadow: var(--pr-deboss-deep); }
+[data-ds-theme="press"] .ds-card[data-interactive]:hover { transform: none; box-shadow: var(--ds-shadow-lg); }
+[data-ds-theme="press"] .ds-dialog__panel { border: 0; background: var(--pr-cotton) 0 0 / 5px 6px, var(--ds-color-surface); box-shadow: var(--ds-shadow-lg), inset 0 0 0 14px var(--ds-color-surface), inset 1px 1px 0 14px var(--pr-lo), inset -1px -1px 0 14px var(--pr-hi); padding: calc(var(--ds-space-6) + 12px); }
+[data-ds-theme="press"] .ds-dialog__title { text-align: center; }
+[data-ds-theme="press"] .ds-dialog__description { text-align: center; font-style: italic; }
+[data-ds-theme="press"] .ds-dialog__footer { justify-content: center; }
+
+[data-ds-theme="press"] .ds-field__label,
+[data-ds-theme="press"] .ds-radio-group legend { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.72rem; font-weight: 600; }
+[data-ds-theme="press"] .ds-input,
+[data-ds-theme="press"] .ds-select__control,
+[data-ds-theme="press"] .ds-textarea { border-color: transparent; background: var(--ds-color-surface); box-shadow: var(--pr-deboss-deep); }
+[data-ds-theme="press"] .ds-input:focus-within,
+[data-ds-theme="press"] .ds-select__control:focus,
+[data-ds-theme="press"] .ds-textarea:focus { border-color: var(--ds-color-focus); box-shadow: var(--pr-deboss-deep), 0 0 0 2px color-mix(in srgb, var(--ds-color-focus) 40%, transparent); }
+[data-ds-theme="press"] .ds-choice__box { border-color: transparent; box-shadow: var(--pr-deboss-deep); }
+[data-ds-theme="press"] .ds-choice__input:checked + .ds-choice__box { box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35); }
+[data-ds-theme="press"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { box-shadow: var(--pr-deboss-deep), inset 0 0 0 5px var(--ds-color-surface), inset 0 0 0 10px var(--ds-color-primary); }
+[data-ds-theme="press"] .ds-switch__track { border-color: transparent; box-shadow: var(--pr-deboss-deep); }
+[data-ds-theme="press"] .ds-switch__track[data-state="on"] { box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3); }
+
+[data-ds-theme="press"] .ds-avatar { border-radius: 50%; background: var(--ds-color-surface); color: var(--ds-color-primary); box-shadow: var(--pr-deboss-deep); font-family: var(--ds-font-display); text-shadow: 0 1px 0 var(--pr-hi); }
+[data-ds-theme="press"] .ds-badge { border-radius: 1px; font-size: 0.68rem; }
+[data-ds-theme="press"] .ds-badge[data-variant="outline"] { border-color: transparent; box-shadow: var(--pr-deboss); color: var(--ds-color-text); }
+[data-ds-theme="press"] .ds-badge[data-variant="solid"] { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3); }
+[data-ds-theme="press"] .ds-alert { border: 0; border-radius: 2px; background: var(--ds-color-surface); box-shadow: var(--pr-deboss), inset 3px 0 0 var(--_tone); }
+[data-ds-theme="press"] .ds-progress { height: 8px; border-radius: 1px; box-shadow: var(--pr-deboss-deep); }
+[data-ds-theme="press"] .ds-progress__bar { border-radius: 1px; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3); }
+[data-ds-theme="press"] .ds-tabs__tab { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.7rem; }
+[data-ds-theme="press"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom: 0; box-shadow: 0 1px 0 var(--pr-hi), 0 0 0 transparent, inset 0 -1px 0 var(--pr-lo); }
+[data-ds-theme="press"] .ds-tabs[data-variant="pill"] .ds-tabs__list { box-shadow: var(--pr-deboss-deep); background: transparent; border-radius: 3px; }
+[data-ds-theme="press"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 2px; }
+[data-ds-theme="press"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-surface); box-shadow: 0 1px 2px rgba(60, 45, 25, 0.2); }
+[data-ds-theme="press"] .ds-accordion,
+[data-ds-theme="press"] .ds-accordion__item { border-color: transparent; box-shadow: 0 1px 0 var(--pr-hi), inset 0 -1px 0 var(--pr-lo); }
+[data-ds-theme="press"] .ds-accordion { box-shadow: inset 0 1px 0 var(--pr-lo), 0 -1px 0 var(--pr-hi); }
+[data-ds-theme="press"] .ds-accordion__trigger { font-family: var(--ds-font-display); font-weight: 400; font-size: 1.1rem; }
+/* Blind-debossed rule with an inked center dot. */
+[data-ds-theme="press"] .ds-divider { border: 0; height: 9px; background: radial-gradient(circle, var(--ds-color-primary) 0 3px, transparent 3.5px) center / 9px 9px no-repeat, linear-gradient(var(--pr-lo) 0 0) 0 4px / 100% 1px no-repeat, linear-gradient(var(--pr-hi) 0 0) 0 5px / 100% 1px no-repeat; }
+[data-ds-theme="press"] .ds-slider__control::-webkit-slider-runnable-track { border-radius: 1px; height: 4px; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25); }
+[data-ds-theme="press"] .ds-slider__control::-webkit-slider-thumb { border-radius: 50%; background: var(--ds-color-surface); border: 0; box-shadow: 0 1px 3px rgba(60, 45, 25, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.1); }
+[data-ds-theme="press"] .ds-tooltip__content { border-radius: 1px; font-style: italic; }

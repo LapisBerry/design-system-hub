@@ -1,0 +1,73 @@
+/* Abyss personality: the deep sea. Light fading with depth, drifting particles, bioluminescent glow, sonar pings. */
+
+[data-ds-theme="abyss"] {
+  --ab-glow: var(--ds-color-primary);
+  --ab-jelly: var(--ds-color-accent);
+  --ab-snow:
+    radial-gradient(circle at 10% 20%, rgba(180, 240, 255, 0.35) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 60% 70%, rgba(63, 242, 208, 0.4) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 85% 35%, rgba(185, 139, 255, 0.35) 0 1px, transparent 1.6px);
+  background:
+    var(--ab-snow) 0 0 / 140px 160px,
+    var(--ab-snow) 40px 70px / 220px 200px,
+    linear-gradient(180deg, #08304a 0%, #041a2c 35%, var(--ds-color-bg) 80%);
+  animation: abyss-drift 60s linear infinite;
+}
+@keyframes abyss-drift { to { background-position: 0 -160px, 40px -130px, 0 0; } }
+@keyframes abyss-ping { 0% { transform: scale(0.3); opacity: 1; } 100% { transform: scale(1.6); opacity: 0; } }
+@keyframes abyss-pulse { 0%, 100% { box-shadow: 0 0 14px -4px var(--ab-glow); } 50% { box-shadow: 0 0 26px 0 var(--ab-glow); } }
+@keyframes abyss-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+[data-ds-theme="abyss"] .ds-heading[data-size="6"],
+[data-ds-theme="abyss"] .ds-heading[data-size="5"] { color: var(--ab-glow); text-shadow: 0 0 22px color-mix(in srgb, var(--ab-glow) 55%, transparent); }
+[data-ds-theme="abyss"] .ds-heading[data-size="2"],
+[data-ds-theme="abyss"] .ds-heading[data-size="1"] { color: var(--ab-jelly); font-family: var(--ds-font-body); font-weight: 700; letter-spacing: 0.06em; }
+
+/* Glowing buttons pulse slowly while hovered. */
+[data-ds-theme="abyss"] .ds-button { font-weight: 700; }
+[data-ds-theme="abyss"] .ds-button[data-variant="solid"]:hover:not(:disabled) { animation: abyss-pulse 2.4s ease-in-out infinite; }
+[data-ds-theme="abyss"] .ds-button[data-variant="solid"][data-tone="accent"] { box-shadow: 0 0 18px -2px color-mix(in srgb, var(--ab-jelly) 60%, transparent); }
+[data-ds-theme="abyss"] .ds-button[data-variant="outline"] { box-shadow: 0 0 12px -4px var(--_tone), inset 0 0 12px -6px var(--_tone); }
+[data-ds-theme="abyss"] .ds-button[data-variant="soft"] { --_bg: color-mix(in srgb, var(--_tone) 14%, transparent); }
+
+/* Panels are lit from above like a submersible's lamp. */
+[data-ds-theme="abyss"] .ds-card { border: 1px solid color-mix(in srgb, var(--ab-glow) 12%, transparent); background: radial-gradient(120% 70% at 50% -20%, color-mix(in srgb, var(--ab-glow) 10%, transparent), transparent 60%), color-mix(in srgb, var(--ds-color-surface) 88%, transparent); backdrop-filter: blur(4px); }
+[data-ds-theme="abyss"] .ds-card[data-variant="filled"] { background: radial-gradient(80% 60% at 80% 120%, color-mix(in srgb, var(--ab-jelly) 18%, transparent), transparent 70%), var(--ds-color-surface-alt); }
+[data-ds-theme="abyss"] .ds-card[data-variant="outlined"] { background: transparent; border-color: var(--ds-color-border-strong); }
+[data-ds-theme="abyss"] .ds-card[data-interactive]:hover { border-color: color-mix(in srgb, var(--ab-glow) 50%, transparent); box-shadow: 0 0 40px -12px var(--ab-glow); transform: translateY(-3px); }
+[data-ds-theme="abyss"] .ds-dialog__panel { border-color: color-mix(in srgb, var(--ab-glow) 25%, transparent); background: radial-gradient(100% 60% at 50% 0%, color-mix(in srgb, var(--ab-glow) 10%, transparent), transparent 70%), var(--ds-color-surface); }
+[data-ds-theme="abyss"] .ds-dialog[open] { animation-name: abyss-rise; }
+@keyframes abyss-rise { from { opacity: 0; transform: translateY(30px); filter: blur(4px); } }
+
+[data-ds-theme="abyss"] .ds-input,
+[data-ds-theme="abyss"] .ds-select__control { border-radius: 999px; padding-left: var(--ds-space-4); background: color-mix(in srgb, var(--ds-color-bg) 70%, var(--ds-color-surface)); }
+[data-ds-theme="abyss"] .ds-textarea { border-radius: 18px; background: color-mix(in srgb, var(--ds-color-bg) 70%, var(--ds-color-surface)); }
+[data-ds-theme="abyss"] .ds-input:focus-within,
+[data-ds-theme="abyss"] .ds-select__control:focus,
+[data-ds-theme="abyss"] .ds-textarea:focus { border-color: var(--ab-glow); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ab-glow) 25%, transparent), 0 0 24px -6px var(--ab-glow); }
+[data-ds-theme="abyss"] .ds-choice__box { border-radius: 50%; border-width: 1.5px; }
+[data-ds-theme="abyss"] .ds-choice__input:checked + .ds-choice__box { box-shadow: 0 0 12px var(--ab-glow); }
+[data-ds-theme="abyss"] .ds-switch__track[data-state="on"] { box-shadow: 0 0 16px -2px var(--ab-glow); }
+
+/* Avatars are bubbles with a highlight, bobbing gently. */
+[data-ds-theme="abyss"] .ds-avatar { background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.55) 0 8%, transparent 22%), radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--ab-glow) 18%, transparent), color-mix(in srgb, var(--ab-glow) 35%, transparent) 70%, var(--ab-glow) 100%); color: var(--ds-color-text); box-shadow: 0 0 16px -4px var(--ab-glow), inset 0 0 0 1px color-mix(in srgb, var(--ab-glow) 60%, transparent); animation: abyss-bob 4s ease-in-out infinite; }
+[data-ds-theme="abyss"] .ds-badge { border-radius: 999px; }
+[data-ds-theme="abyss"] .ds-badge[data-variant="solid"] { box-shadow: 0 0 10px -2px var(--_tone); }
+[data-ds-theme="abyss"] .ds-alert { border-radius: 18px; box-shadow: 0 0 22px -12px var(--_tone); }
+[data-ds-theme="abyss"] .ds-progress { height: 8px; background: color-mix(in srgb, var(--ds-color-bg) 60%, var(--ds-color-surface-alt)); }
+[data-ds-theme="abyss"] .ds-progress__bar { background: linear-gradient(90deg, color-mix(in srgb, var(--_tone) 40%, transparent), var(--_tone)); box-shadow: 0 0 14px var(--_tone); }
+[data-ds-theme="abyss"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; border-radius: 3px; box-shadow: 0 0 10px var(--ab-glow); }
+[data-ds-theme="abyss"] .ds-tabs__tab[data-state="active"] { text-shadow: 0 0 12px color-mix(in srgb, var(--ab-glow) 60%, transparent); }
+[data-ds-theme="abyss"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: color-mix(in srgb, var(--ds-color-bg) 60%, var(--ds-color-surface)); }
+[data-ds-theme="abyss"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: color-mix(in srgb, var(--ab-glow) 16%, var(--ds-color-surface)); box-shadow: 0 0 14px -4px var(--ab-glow); }
+[data-ds-theme="abyss"] .ds-accordion,
+[data-ds-theme="abyss"] .ds-accordion__item { border-color: color-mix(in srgb, var(--ab-glow) 14%, transparent); }
+[data-ds-theme="abyss"] .ds-divider { border: 0; height: 8px; background: radial-gradient(circle, color-mix(in srgb, var(--ab-glow) 70%, transparent) 0 1.5px, transparent 2px) 0 50% / 14px 8px repeat-x; filter: drop-shadow(0 0 3px var(--ab-glow)); }
+[data-ds-theme="abyss"] .ds-slider__control::-webkit-slider-thumb { background: radial-gradient(circle at 35% 30%, #fff 0 15%, var(--ab-glow) 60%); border: 0; box-shadow: 0 0 12px var(--ab-glow); }
+[data-ds-theme="abyss"] .ds-tooltip__content { border-radius: 12px; background: var(--ds-color-surface-alt); color: var(--ds-color-text); box-shadow: 0 0 18px -6px var(--ab-glow); border: 1px solid color-mix(in srgb, var(--ab-glow) 30%, transparent); }
+
+/* The spinner is a sonar ping. */
+[data-ds-theme="abyss"] .ds-spinner { position: relative; border: 0; animation: none; background: radial-gradient(circle, currentColor 0 18%, transparent 20%); }
+[data-ds-theme="abyss"] .ds-spinner::before,
+[data-ds-theme="abyss"] .ds-spinner::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid currentColor; animation: abyss-ping 1.6s ease-out infinite; }
+[data-ds-theme="abyss"] .ds-spinner::after { animation-delay: 0.8s; }

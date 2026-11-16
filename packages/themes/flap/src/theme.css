@@ -1,0 +1,78 @@
+/* Flap personality: split-flap departure board. Charcoal tiles with a hinge line, flip-in motion, segmented cells. */
+
+[data-ds-theme="flap"] {
+  --fp-hinge: linear-gradient(180deg, transparent calc(50% - 0.5px), rgba(0, 0, 0, 0.55) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+  --fp-tile: linear-gradient(180deg, #2a2b2f 0 50%, #222327 50%);
+  --fp-cells: repeating-linear-gradient(90deg, transparent 0 calc(1.15ch - 2px), var(--ds-color-bg) calc(1.15ch - 2px) 1.15ch);
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0 2px, transparent 2px 4px),
+    var(--ds-color-bg);
+}
+
+@keyframes flap-flip {
+  0% { transform: perspective(400px) rotateX(-90deg); opacity: 0.2; }
+  60% { transform: perspective(400px) rotateX(12deg); opacity: 1; }
+  100% { transform: none; }
+}
+
+/* Headings sit on a row of tiles, each character in its own cell. */
+[data-ds-theme="flap"] .ds-heading { text-transform: uppercase; }
+[data-ds-theme="flap"] .ds-heading[data-size="6"],
+[data-ds-theme="flap"] .ds-heading[data-size="5"] { display: inline-block; padding: 0.08em 0.18em; color: var(--ds-color-primary); background: var(--fp-hinge), var(--fp-cells), var(--fp-tile); letter-spacing: 0.15ch; line-height: 1.05; border-radius: 4px; box-shadow: var(--ds-shadow-md); animation: flap-flip 520ms var(--ds-easing-enter) both; transform-origin: 50% 50%; }
+[data-ds-theme="flap"] .ds-heading[data-size="2"],
+[data-ds-theme="flap"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); color: var(--ds-color-primary); letter-spacing: 0.1em; font-size: var(--ds-text-n1); }
+
+/* Buttons are flaps: a hinge across the middle; they flip a little when pressed. */
+[data-ds-theme="flap"] .ds-button { font-family: var(--ds-font-display); font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em; }
+[data-ds-theme="flap"] .ds-button[data-variant="solid"] { background: var(--fp-hinge), linear-gradient(180deg, color-mix(in srgb, var(--_tone) 100%, #fff) 0 50%, color-mix(in srgb, var(--_tone) 88%, #000) 50%); }
+[data-ds-theme="flap"] .ds-button[data-variant="solid"][data-tone="neutral"] { background: var(--fp-hinge), linear-gradient(180deg, #f2f2ee 0 50%, #dcdcd6 50%); }
+[data-ds-theme="flap"] .ds-button[data-variant="soft"],
+[data-ds-theme="flap"] .ds-button[data-variant="outline"] { background: var(--fp-hinge), var(--fp-tile); --_fg: color-mix(in srgb, var(--_tone) 90%, #fff); }
+[data-ds-theme="flap"] .ds-button[data-variant="outline"] { border-color: color-mix(in srgb, var(--_tone) 60%, transparent); }
+[data-ds-theme="flap"] .ds-button:active:not(:disabled) { transform: perspective(300px) rotateX(18deg); }
+
+/* Panels are board housings: a dark frame and a header strip. */
+[data-ds-theme="flap"] .ds-card { border: 1px solid var(--ds-color-border); }
+[data-ds-theme="flap"] .ds-card[data-variant="elevated"] { border-top: 6px solid #000; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), var(--ds-shadow-md); }
+[data-ds-theme="flap"] .ds-card[data-variant="filled"] { background: var(--fp-hinge), var(--fp-tile); }
+[data-ds-theme="flap"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); background: transparent; }
+[data-ds-theme="flap"] .ds-card[data-interactive]:hover { transform: none; border-color: var(--ds-color-primary); }
+[data-ds-theme="flap"] .ds-dialog__panel { border: 1px solid var(--ds-color-border-strong); border-top: 8px solid var(--ds-color-primary); }
+[data-ds-theme="flap"] .ds-dialog__title { text-transform: uppercase; color: var(--ds-color-primary); font-size: var(--ds-text-3); }
+[data-ds-theme="flap"] .ds-dialog[open] { animation: flap-flip 420ms var(--ds-easing-enter); }
+
+[data-ds-theme="flap"] .ds-field__label,
+[data-ds-theme="flap"] .ds-radio-group legend { font-family: var(--ds-font-mono); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.7rem; color: var(--ds-color-text-muted); }
+[data-ds-theme="flap"] .ds-input,
+[data-ds-theme="flap"] .ds-select__control,
+[data-ds-theme="flap"] .ds-textarea { background: #0b0b0c; font-family: var(--ds-font-mono); text-transform: uppercase; color: var(--ds-color-primary); }
+[data-ds-theme="flap"] .ds-input__control::placeholder { text-transform: none; }
+[data-ds-theme="flap"] .ds-choice__box { background: var(--fp-tile); border-color: var(--ds-color-border-strong); border-radius: 2px; }
+[data-ds-theme="flap"] .ds-choice__input:checked + .ds-choice__box { background: var(--fp-hinge), var(--ds-color-primary); }
+[data-ds-theme="flap"] .ds-choice[data-kind="radio"] .ds-choice__box { border-radius: 50%; }
+[data-ds-theme="flap"] .ds-switch__track { border-radius: 3px; background: #0b0b0c; }
+[data-ds-theme="flap"] .ds-switch__thumb { border-radius: 2px; background: var(--fp-hinge), #5a5b60; }
+[data-ds-theme="flap"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--fp-hinge), #111214; }
+
+/* Avatars are single flap tiles that flip into place. */
+[data-ds-theme="flap"] .ds-avatar { border-radius: 4px; background: var(--fp-hinge), var(--fp-tile); color: var(--ds-color-primary); font-family: var(--ds-font-display); font-weight: 800; font-size: calc(var(--_s) * 0.5); animation: flap-flip 600ms var(--ds-easing-enter) both; }
+[data-ds-theme="flap"] .ds-badge { border-radius: 2px; font-family: var(--ds-font-display); font-weight: 800; letter-spacing: 0.1em; font-size: 0.82rem; }
+[data-ds-theme="flap"] .ds-badge[data-variant="solid"] { background: var(--fp-hinge), var(--_tone); }
+[data-ds-theme="flap"] .ds-badge[data-variant="soft"] { background: var(--fp-hinge), var(--fp-tile); color: var(--_tone); }
+[data-ds-theme="flap"] .ds-alert { border-radius: 4px; border: 0; border-left: 6px solid var(--_tone); background: var(--ds-color-surface-alt); }
+[data-ds-theme="flap"] .ds-alert__title { font-family: var(--ds-font-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.05rem; color: var(--_tone); }
+
+/* Progress is a row of cells that turn yellow one by one. */
+[data-ds-theme="flap"] .ds-progress { height: 16px; border-radius: 2px; background: var(--fp-hinge), repeating-linear-gradient(90deg, #2a2b2f 0 12px, transparent 12px 14px); }
+[data-ds-theme="flap"] .ds-progress__bar { border-radius: 0; background: var(--fp-hinge), repeating-linear-gradient(90deg, var(--_tone) 0 12px, transparent 12px 14px); }
+[data-ds-theme="flap"] .ds-tabs__tab { font-family: var(--ds-font-display); font-weight: 800; letter-spacing: 0.08em; font-size: 1rem; }
+[data-ds-theme="flap"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; background: var(--ds-color-primary); }
+[data-ds-theme="flap"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 4px; background: #0b0b0c; }
+[data-ds-theme="flap"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 3px; }
+[data-ds-theme="flap"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--fp-hinge), var(--fp-tile); color: var(--ds-color-primary); animation: flap-flip 360ms var(--ds-easing-enter); }
+[data-ds-theme="flap"] .ds-accordion__trigger { font-family: var(--ds-font-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.05rem; }
+[data-ds-theme="flap"] .ds-divider { border: 0; height: 4px; background: repeating-linear-gradient(90deg, var(--ds-color-border-strong) 0 12px, transparent 12px 14px); }
+[data-ds-theme="flap"] .ds-slider__control::-webkit-slider-runnable-track { border-radius: 0; height: 8px; }
+[data-ds-theme="flap"] .ds-slider__control::-webkit-slider-thumb { border-radius: 2px; width: 14px; height: 24px; margin-top: -8px; background: var(--fp-hinge), #f2f2ee; border: 0; }
+[data-ds-theme="flap"] .ds-tooltip__content { border-radius: 3px; background: var(--fp-hinge), var(--ds-color-primary); color: #111214; font-family: var(--ds-font-mono); text-transform: uppercase; }
+[data-ds-theme="flap"] .ds-kbd { background: var(--fp-hinge), var(--fp-tile); color: var(--ds-color-primary); }
