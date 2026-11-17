@@ -1,0 +1,67 @@
+/* Mixtape personality: cassette tapes. Striped J-card labels with ruled lines, felt-tip titles, spinning reels. */
+
+[data-ds-theme="mixtape"] {
+  --mx-stripes: linear-gradient(180deg, #e8452b 0 33%, #f08a2c 33% 66%, #f2b33d 66%);
+  --mx-rule: color-mix(in srgb, var(--ds-color-text) 12%, transparent);
+  --mx-tape: #4a3020;
+  --mx-reel: radial-gradient(circle, var(--ds-color-surface) 0 18%, transparent 19%), repeating-conic-gradient(from 0deg, #e9dfcb 0 30deg, #3b2c1e 30deg 60deg);
+  --mx-hub: radial-gradient(circle, var(--ds-color-surface) 0 42%, #3b2c1e 43% 47%, transparent 48%), repeating-conic-gradient(from 0deg, #e9dfcb 0 30deg, #3b2c1e 30deg 60deg);
+}
+[data-ds-theme="mixtape"][data-ds-mode="dark"] { --mx-tape: #2a1a10; --mx-reel: radial-gradient(circle, var(--ds-color-surface) 0 18%, transparent 19%), repeating-conic-gradient(from 0deg, #d9cdb6 0 30deg, #120e0a 30deg 60deg); }
+
+/* Titles in felt-tip, as if written on the label. */
+[data-ds-theme="mixtape"] .ds-heading[data-size="6"],
+[data-ds-theme="mixtape"] .ds-heading[data-size="5"] { font-size: calc(var(--ds-text-6) * 1.08); line-height: 1; transform: rotate(-1.5deg); transform-origin: left; }
+[data-ds-theme="mixtape"] .ds-heading[data-size="5"] { font-size: var(--ds-text-5); }
+[data-ds-theme="mixtape"] .ds-heading[data-size="4"],
+[data-ds-theme="mixtape"] .ds-heading[data-size="3"] { font-size: calc(var(--ds-text-4) * 1.05); }
+[data-ds-theme="mixtape"] .ds-heading[data-size="2"],
+[data-ds-theme="mixtape"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--ds-text-n1); }
+
+/* Buttons: chunky transport keys. */
+[data-ds-theme="mixtape"] .ds-button { font-size: 0.82rem; font-weight: 700; }
+[data-ds-theme="mixtape"] .ds-button:active:not(:disabled) { transform: translateY(2px); box-shadow: none; }
+[data-ds-theme="mixtape"] .ds-button[data-variant="outline"] { border-width: 2px; }
+
+/* Cards: the J-card. Raised cards carry the sunset stripes and ruled writing lines. */
+[data-ds-theme="mixtape"] .ds-card[data-variant="elevated"] { position: relative; border: 1px solid var(--ds-color-border); padding-top: calc(var(--ds-space-5) + 20px); background:
+  var(--mx-stripes) 0 0 / 100% 12px no-repeat,
+  repeating-linear-gradient(180deg, transparent 0 calc(1.55em - 1px), var(--mx-rule) calc(1.55em - 1px) 1.55em) 0 26px / 100% 100% no-repeat,
+  var(--ds-color-surface); }
+[data-ds-theme="mixtape"] .ds-card[data-variant="filled"] { position: relative; background: linear-gradient(90deg, var(--mx-stripes)) 0 0 / 8px 100% no-repeat, var(--ds-color-surface-alt); padding-left: calc(var(--ds-space-5) + 8px); }
+[data-ds-theme="mixtape"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); border-radius: 10px 10px 18px 18px; }
+[data-ds-theme="mixtape"] .ds-card[data-interactive]:hover { transform: translateY(-2px) rotate(-0.4deg); }
+[data-ds-theme="mixtape"] .ds-dialog__panel { background: var(--mx-stripes) 0 0 / 100% 10px no-repeat, var(--ds-color-surface); padding-top: calc(var(--ds-space-6) + 10px); }
+[data-ds-theme="mixtape"] .ds-dialog__title { font-size: var(--ds-text-3); }
+
+/* Reels: avatars and the spinner. */
+[data-ds-theme="mixtape"] .ds-avatar { background: var(--mx-hub); color: var(--ds-color-text); box-shadow: 0 0 0 calc(var(--_s) * 0.1) var(--mx-tape); margin: calc(var(--_s) * 0.1); font-family: var(--ds-font-display); font-weight: 400; font-size: calc(var(--_s) * 0.3); }
+[data-ds-theme="mixtape"] .ds-avatar img { border-radius: 50%; }
+[data-ds-theme="mixtape"] .ds-spinner { border: 0; background: var(--mx-reel); box-shadow: 0 0 0 3px var(--mx-tape); animation-duration: 1.4s; }
+
+/* Badges: little "SIDE A" stickers. */
+[data-ds-theme="mixtape"] .ds-badge { font-family: var(--ds-font-mono); font-weight: 400; letter-spacing: 0.1em; border-radius: 3px; }
+[data-ds-theme="mixtape"] .ds-badge[data-variant="solid"] { box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15); }
+
+/* Tape window progress: brown tape running between two spools. */
+[data-ds-theme="mixtape"] .ds-progress { height: 14px; border-radius: 7px; background: radial-gradient(circle, var(--mx-tape) 0 4px, transparent 4.5px) 3px 50% / 10px 10px no-repeat, radial-gradient(circle, var(--mx-tape) 0 4px, transparent 4.5px) calc(100% - 3px) 50% / 10px 10px no-repeat, var(--ds-color-surface-alt); box-shadow: inset 0 0 0 2px var(--ds-color-border); }
+[data-ds-theme="mixtape"] .ds-progress__bar { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 2px, transparent 2px 9px), var(--_tone); }
+[data-ds-theme="mixtape"] .ds-divider { border: 0; height: 6px; background: var(--mx-stripes); border-radius: 3px; opacity: 0.9; }
+
+/* Tabs: Side A / Side B. */
+[data-ds-theme="mixtape"] .ds-tabs__tab { font-family: var(--ds-font-mono); font-weight: 400; letter-spacing: 0.1em; }
+[data-ds-theme="mixtape"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-text); color: var(--ds-color-bg); }
+[data-ds-theme="mixtape"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; background: var(--mx-stripes); }
+
+[data-ds-theme="mixtape"] .ds-input,
+[data-ds-theme="mixtape"] .ds-select__control { border-width: 0 0 2px; border-radius: 0; background: transparent; }
+[data-ds-theme="mixtape"] .ds-input__control,
+[data-ds-theme="mixtape"] .ds-textarea { font-family: var(--ds-font-display); font-size: 1.2rem; }
+[data-ds-theme="mixtape"] .ds-textarea { background: repeating-linear-gradient(180deg, transparent 0 calc(1.6em - 1px), var(--mx-rule) calc(1.6em - 1px) 1.6em) 0 0.4em / 100% 1.6em, var(--ds-color-surface); line-height: 1.6em; }
+[data-ds-theme="mixtape"] .ds-switch__track[data-state="on"] { background: var(--mx-stripes); border-color: var(--ds-color-border-strong); }
+[data-ds-theme="mixtape"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: #221b14; }
+[data-ds-theme="mixtape"] .ds-alert { border-width: 0; border-left: 6px solid var(--_tone); border-radius: 2px; }
+[data-ds-theme="mixtape"] .ds-tooltip__content { font-family: var(--ds-font-display); font-size: 1rem; background: #fffaf1; color: #221b14; border: 1px solid #ddd0b8; transform: translate(-50%, 4px) rotate(-2deg); }
+[data-ds-theme="mixtape"] .ds-tooltip:hover .ds-tooltip__content,
+[data-ds-theme="mixtape"] .ds-tooltip:focus-within .ds-tooltip__content { transform: translate(-50%, 0) rotate(-2deg); }
+[data-ds-theme="mixtape"] .ds-slider__control::-webkit-slider-thumb { background: var(--mx-reel); border: 3px solid var(--mx-tape); width: 22px; height: 22px; margin-top: -8px; }

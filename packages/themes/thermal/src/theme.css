@@ -1,0 +1,68 @@
+/* Thermal personality: thermal camera. Ironbow heat gradients, heat-bloom hovers, temperature scales and spot meters. */
+
+[data-ds-theme="thermal"] {
+  --th-iron: linear-gradient(90deg, #1a0b4a, #5b0f8a 18%, #b5177a 36%, #ff3b3b 52%, #ff8a00 68%, #ffd23f 84%, #fff6d0);
+  --th-iron-v: linear-gradient(0deg, #1a0b4a, #5b0f8a 18%, #b5177a 36%, #ff3b3b 52%, #ff8a00 68%, #ffd23f 84%, #fff6d0);
+  --th-hot: linear-gradient(90deg, #ff3b3b, #ff8a00 40%, #ffd23f 75%, #fff6d0);
+  --th-cross: linear-gradient(var(--ds-color-text) 0 0) 50% 50% / 1px 22px no-repeat, linear-gradient(var(--ds-color-text) 0 0) 50% 50% / 22px 1px no-repeat;
+  background:
+    radial-gradient(ellipse at 18% 25%, rgba(91, 15, 138, 0.28), transparent 45%),
+    radial-gradient(ellipse at 85% 70%, rgba(181, 23, 122, 0.16), transparent 45%),
+    var(--ds-color-bg);
+}
+
+@keyframes thermal-pulse { 50% { filter: brightness(1.25) saturate(1.2); } }
+
+/* White-hot headings. */
+[data-ds-theme="thermal"] .ds-heading[data-size="6"],
+[data-ds-theme="thermal"] .ds-heading[data-size="5"] { background: var(--th-hot); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 14px rgba(255, 106, 0, 0.35)); }
+[data-ds-theme="thermal"] .ds-heading[data-size="2"],
+[data-ds-theme="thermal"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+[data-ds-theme="thermal"] .ds-heading[data-size="2"]::after,
+[data-ds-theme="thermal"] .ds-heading[data-size="1"]::after { content: "  \00B0C"; color: #ff8a00; }
+
+/* Buttons glow with the heat of their tone. */
+[data-ds-theme="thermal"] .ds-button { font-size: 0.82rem; font-weight: 700; }
+[data-ds-theme="thermal"] .ds-button[data-variant="solid"] { box-shadow: 0 0 14px -3px color-mix(in srgb, var(--_tone) 75%, transparent); }
+[data-ds-theme="thermal"] .ds-button[data-variant="solid"]:hover:not(:disabled) { box-shadow: 0 0 22px 0 color-mix(in srgb, var(--_tone) 70%, transparent); }
+[data-ds-theme="thermal"] .ds-button[data-variant="solid"][data-tone="primary"] { background: linear-gradient(90deg, #ff8a00, #ffb627 40%, #ffd23f); }
+
+/* Raised cards carry a temperature scale strip; interactive cards bloom with heat and show a spot meter. */
+[data-ds-theme="thermal"] .ds-card { position: relative; border: 1px solid var(--ds-color-border); }
+[data-ds-theme="thermal"] .ds-card[data-variant="elevated"] { padding-right: calc(var(--ds-space-5) + 16px); }
+[data-ds-theme="thermal"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; top: 12px; bottom: 12px; right: 10px; width: 6px; border-radius: 3px; background: var(--th-iron-v); }
+[data-ds-theme="thermal"] .ds-card[data-variant="elevated"]::after { content: ""; position: absolute; top: 12px; bottom: 12px; right: 18px; width: 4px; background: repeating-linear-gradient(180deg, var(--ds-color-text-muted) 0 1px, transparent 1px 10px); opacity: 0.6; }
+[data-ds-theme="thermal"] .ds-card[data-variant="filled"] { background: radial-gradient(ellipse at 70% 30%, rgba(181, 23, 122, 0.22), transparent 60%), var(--ds-color-surface-alt); }
+[data-ds-theme="thermal"] .ds-card[data-interactive] { transition: background var(--ds-duration-slow) var(--ds-easing), box-shadow var(--ds-duration-base) var(--ds-easing), transform var(--ds-duration-base) var(--ds-easing); }
+[data-ds-theme="thermal"] .ds-card[data-interactive]:hover { border-color: #ff8a00; background: radial-gradient(circle at 50% 50%, rgba(255, 210, 63, 0.18), rgba(255, 59, 59, 0.14) 30%, rgba(91, 15, 138, 0.12) 60%, transparent 80%), var(--ds-color-surface); box-shadow: 0 0 30px -8px rgba(255, 106, 0, 0.6); }
+[data-ds-theme="thermal"] .ds-card[data-interactive]:not([data-variant="elevated"]):hover::after { content: ""; position: absolute; left: 50%; top: 50%; width: 30px; height: 30px; transform: translate(-50%, -50%); background: var(--th-cross); border: 1px solid var(--ds-color-text); border-radius: 50%; opacity: 0.7; pointer-events: none; }
+[data-ds-theme="thermal"] .ds-dialog__panel { border-color: #ff8a00; box-shadow: 0 0 40px -10px rgba(255, 106, 0, 0.5), var(--ds-shadow-lg); }
+
+/* Heat-signature avatars: a white-hot core cooling to violet. */
+[data-ds-theme="thermal"] .ds-avatar { background: radial-gradient(circle at 50% 45%, #fff6d0 0 12%, #ffd23f 22%, #ff8a00 36%, #ff3b3b 50%, #b5177a 66%, #5b0f8a 82%, #1a0b4a); color: #07060d; font-weight: 800; animation: thermal-pulse 3s ease-in-out infinite; }
+[data-ds-theme="thermal"] .ds-avatar:nth-child(even) { animation-delay: -1.5s; }
+[data-ds-theme="thermal"] .ds-badge { font-family: var(--ds-font-mono); font-weight: 500; border-radius: 2px; }
+[data-ds-theme="thermal"] .ds-badge[data-variant="solid"] { box-shadow: 0 0 10px -2px var(--_tone); }
+
+[data-ds-theme="thermal"] .ds-input,
+[data-ds-theme="thermal"] .ds-select__control,
+[data-ds-theme="thermal"] .ds-textarea { background: #0b0915; }
+[data-ds-theme="thermal"] .ds-input:focus-within,
+[data-ds-theme="thermal"] .ds-select__control:focus,
+[data-ds-theme="thermal"] .ds-textarea:focus { border-color: #ff8a00; box-shadow: 0 0 14px -3px rgba(255, 138, 0, 0.7); }
+[data-ds-theme="thermal"] .ds-switch__track[data-state="on"] { background: var(--th-hot); border-color: #ff8a00; box-shadow: 0 0 10px -2px rgba(255, 138, 0, 0.7); }
+[data-ds-theme="thermal"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: #07060d; }
+
+/* Ironbow fills for progress, sliders and dividers. */
+[data-ds-theme="thermal"] .ds-progress { height: 10px; background: #1a0b4a; }
+[data-ds-theme="thermal"] .ds-progress:not([data-tone]) .ds-progress__bar { background: var(--th-iron); box-shadow: 0 0 10px rgba(255, 106, 0, 0.5); }
+[data-ds-theme="thermal"] .ds-slider__control::-webkit-slider-runnable-track { background: linear-gradient(90deg, transparent var(--ds-slider-fill), rgba(7, 6, 13, 0.75) var(--ds-slider-fill)), var(--th-iron); }
+[data-ds-theme="thermal"] .ds-slider__control::-webkit-slider-thumb { background: var(--th-cross), #07060d; border-color: #fff6d0; }
+[data-ds-theme="thermal"] .ds-divider { border: 0; height: 2px; background: var(--th-iron); opacity: 0.9; }
+[data-ds-theme="thermal"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; background: var(--th-hot); box-shadow: 0 0 8px rgba(255, 138, 0, 0.6); }
+[data-ds-theme="thermal"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ds-color-surface-alt); box-shadow: inset 0 -2px 0 #ff8a00; }
+[data-ds-theme="thermal"] .ds-alert { background: #0b0915; border-color: color-mix(in srgb, var(--_tone) 55%, transparent); box-shadow: 0 0 16px -8px var(--_tone); }
+[data-ds-theme="thermal"] .ds-tooltip__content { background: #f4f2ff; color: #07060d; font-family: var(--ds-font-mono); font-size: 0.72rem; }
+[data-ds-theme="thermal"] .ds-spinner { border: 0; background: conic-gradient(#1a0b4a, #5b0f8a, #b5177a, #ff3b3b, #ff8a00, #ffd23f, #fff6d0); -webkit-mask: radial-gradient(circle, transparent 42%, #000 44%); mask: radial-gradient(circle, transparent 42%, #000 44%); }
+[data-ds-theme="thermal"] .ds-code,
+[data-ds-theme="thermal"] .ds-kbd { color: #ffd23f; }

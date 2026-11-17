@@ -1,0 +1,64 @@
+/* Swatch personality: paint chips. Color-block cards with a label strip, fan-deck tints, square chips and chip codes. */
+
+[data-ds-theme="swatch"] {
+  --sw-a: var(--ds-color-primary);
+  --sw-b: var(--ds-color-accent);
+  --sw-spectrum: linear-gradient(90deg, #2348c8 0 10%, #3f8fd8 10% 20%, #2fa48a 20% 30%, #8dbb3a 30% 40%, #ffb000 40% 50%, #ff7a1f 50% 60%, #e2462b 60% 70%, #d63f8c 70% 80%, #8a4fd0 80% 90%, #1a1a1a 90%);
+  --sw-ladder: linear-gradient(180deg, color-mix(in srgb, var(--_c, var(--sw-a)) 25%, #fff) 0 20%, color-mix(in srgb, var(--_c, var(--sw-a)) 45%, #fff) 20% 40%, color-mix(in srgb, var(--_c, var(--sw-a)) 65%, #fff) 40% 60%, color-mix(in srgb, var(--_c, var(--sw-a)) 85%, #fff) 60% 80%, var(--_c, var(--sw-a)) 80%);
+  background: var(--ds-color-bg);
+}
+
+[data-ds-theme="swatch"] .ds-heading[data-size="6"],
+[data-ds-theme="swatch"] .ds-heading[data-size="5"] { line-height: 0.98; }
+[data-ds-theme="swatch"] .ds-heading[data-size="6"]::after { content: ""; display: block; width: 200px; height: 12px; margin-top: 0.35em; background: var(--sw-spectrum); }
+[data-ds-theme="swatch"] .ds-heading[data-size="2"],
+[data-ds-theme="swatch"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+
+/* Buttons: crisp blocks with a chip tab of color at the left edge on quiet variants. */
+[data-ds-theme="swatch"] .ds-button[data-variant="outline"],
+[data-ds-theme="swatch"] .ds-button[data-variant="soft"] { box-shadow: inset 6px 0 0 var(--_tone); padding-left: calc(var(--_px) + 4px); }
+[data-ds-theme="swatch"] .ds-icon-button[data-variant="outline"],
+[data-ds-theme="swatch"] .ds-icon-button[data-variant="soft"] { box-shadow: inset 0 -4px 0 var(--_tone); padding-left: 0; }
+[data-ds-theme="swatch"] .ds-button[data-variant="outline"] { border-width: 1px; border-color: var(--ds-color-border-strong); }
+
+/* Raised cards are paint chips: a block of color on top, a white label strip with a code below. */
+[data-ds-theme="swatch"] .ds-card { position: relative; border: 1px solid var(--ds-color-border); }
+[data-ds-theme="swatch"] .ds-card[data-variant="elevated"] { padding-top: calc(var(--ds-space-5) + 72px); background: linear-gradient(var(--sw-a) 0 0) 0 0 / 100% 72px no-repeat, var(--ds-color-surface); }
+[data-ds-theme="swatch"] .ds-card[data-variant="elevated"]::before { content: "No. 2348-C"; position: absolute; top: 52px; right: 10px; font-family: var(--ds-font-mono); font-size: 0.68rem; letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.85); }
+[data-ds-theme="swatch"][data-ds-mode="dark"] .ds-card[data-variant="elevated"]::before { color: rgba(20, 20, 20, 0.75); }
+[data-ds-theme="swatch"] .ds-card[data-variant="elevated"]:nth-child(3n + 2) { --sw-a: var(--sw-b); }
+[data-ds-theme="swatch"] .ds-card[data-variant="elevated"]:nth-child(3n + 2)::before { content: "No. 1665-M"; color: rgba(26, 26, 26, 0.7); }
+[data-ds-theme="swatch"] .ds-card[data-variant="elevated"]:nth-child(3n) { --sw-a: #2fa48a; }
+[data-ds-theme="swatch"] .ds-card[data-variant="elevated"]:nth-child(3n)::before { content: "No. 0342-G"; }
+[data-ds-theme="swatch"] .ds-card[data-variant="filled"] { padding-left: calc(var(--ds-space-5) + 22px); background: var(--sw-ladder) 0 0 / 22px 100% no-repeat, var(--ds-color-surface-alt); border: 0; }
+[data-ds-theme="swatch"] .ds-card[data-variant="outlined"] { border-color: var(--ds-color-border-strong); }
+[data-ds-theme="swatch"] .ds-card[data-interactive]:hover { transform: translateY(-3px); }
+[data-ds-theme="swatch"] .ds-dialog__panel { padding-top: calc(var(--ds-space-6) + 10px); background: var(--sw-spectrum) 0 0 / 100% 10px no-repeat, var(--ds-color-surface); }
+
+/* Chips: square avatars with a label strip, badges with a color square. */
+[data-ds-theme="swatch"] .ds-avatar { border-radius: 2px; background: linear-gradient(180deg, transparent 68%, #ffffff 68%), var(--ds-color-primary); color: #ffffff; align-items: start; padding-top: calc(var(--_s) * 0.1); font-family: var(--ds-font-display); font-weight: 800; font-size: calc(var(--_s) * 0.3); box-shadow: 0 0 0 1px var(--ds-color-border); }
+[data-ds-theme="swatch"] .ds-avatar:nth-child(3n + 2) { background: linear-gradient(180deg, transparent 68%, #ffffff 68%), #ffb000; color: #1a1a1a; }
+[data-ds-theme="swatch"] .ds-avatar:nth-child(3n) { background: linear-gradient(180deg, transparent 68%, #ffffff 68%), #d63f8c; }
+[data-ds-theme="swatch"][data-ds-mode="dark"] .ds-avatar { color: #141414; }
+[data-ds-theme="swatch"] .ds-badge { border-radius: 1px; font-family: var(--ds-font-mono); font-weight: 500; }
+[data-ds-theme="swatch"] .ds-badge[data-variant="soft"]::before,
+[data-ds-theme="swatch"] .ds-badge[data-variant="outline"]::before { content: ""; width: 0.75em; height: 0.75em; background: var(--_tone); }
+
+[data-ds-theme="swatch"] .ds-input:focus-within,
+[data-ds-theme="swatch"] .ds-select__control:focus,
+[data-ds-theme="swatch"] .ds-textarea:focus { box-shadow: inset 4px 0 0 var(--ds-color-primary); }
+[data-ds-theme="swatch"] .ds-choice__box { border-radius: 1px; }
+[data-ds-theme="swatch"] .ds-switch__track,
+[data-ds-theme="swatch"] .ds-switch__thumb { border-radius: 1px; }
+
+/* Tint ladder progress; a strip of swatches for dividers. */
+[data-ds-theme="swatch"] .ds-progress { height: 14px; border-radius: 0; }
+[data-ds-theme="swatch"] .ds-progress__bar { border-radius: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--_tone) 30%, var(--ds-color-surface)) 0 20%, color-mix(in srgb, var(--_tone) 50%, var(--ds-color-surface)) 20% 40%, color-mix(in srgb, var(--_tone) 70%, var(--ds-color-surface)) 40% 60%, color-mix(in srgb, var(--_tone) 85%, var(--ds-color-surface)) 60% 80%, var(--_tone) 80%); }
+[data-ds-theme="swatch"] .ds-divider { border: 0; height: 8px; background: var(--sw-spectrum); }
+[data-ds-theme="swatch"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 6px; left: 0; right: 0; }
+[data-ds-theme="swatch"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 2px; }
+[data-ds-theme="swatch"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { box-shadow: inset 0 -3px 0 var(--ds-color-primary); }
+[data-ds-theme="swatch"] .ds-alert { border-width: 0; border-radius: 0; border-left: 14px solid var(--_tone); }
+[data-ds-theme="swatch"] .ds-tooltip__content { border-radius: 0; font-family: var(--ds-font-mono); font-size: 0.72rem; }
+[data-ds-theme="swatch"] .ds-spinner { border: 0; border-radius: 0; background: conic-gradient(#2348c8 0 25%, #ffb000 25% 50%, #d63f8c 50% 75%, #2fa48a 75%); animation-timing-function: steps(4); animation-duration: 1.2s; }
+[data-ds-theme="swatch"] .ds-slider__control::-webkit-slider-thumb { border-radius: 1px; width: 14px; height: 24px; margin-top: -9px; }

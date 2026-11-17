@@ -1,0 +1,70 @@
+/* Sticker personality: die-cut vinyl. A thick white edge around everything, peeling corners, slapped-on tilt and a bounce. */
+
+[data-ds-theme="sticker"] {
+  --st-edge: #ffffff;
+  --st-cut: 0 0 0 4px var(--st-edge);
+  --st-drop: 0 4px 10px -2px rgba(29, 21, 51, 0.35);
+  --st-dots: radial-gradient(circle, color-mix(in srgb, var(--ds-color-primary) 12%, transparent) 0 1.5px, transparent 2px);
+  background: var(--st-dots) 0 0 / 22px 22px, var(--ds-color-bg);
+}
+[data-ds-theme="sticker"][data-ds-mode="dark"] { --st-edge: #f3eeff; --st-drop: 0 4px 12px -2px rgba(0, 0, 0, 0.7); }
+
+@keyframes sticker-slap { 0% { opacity: 0; transform: scale(1.25) rotate(-6deg); } 60% { opacity: 1; transform: scale(0.96) rotate(1deg); } 100% { transform: none; } }
+
+/* Headings: chunky rounded letters with their own die-cut outline. */
+[data-ds-theme="sticker"] .ds-heading[data-size="6"],
+[data-ds-theme="sticker"] .ds-heading[data-size="5"] { color: var(--ds-color-primary); line-height: 1; paint-order: stroke fill; -webkit-text-stroke: 8px var(--st-edge); text-shadow: 0 5px 8px rgba(29, 21, 51, 0.25); }
+[data-ds-theme="sticker"][data-ds-mode="dark"] .ds-heading[data-size="6"],
+[data-ds-theme="sticker"][data-ds-mode="dark"] .ds-heading[data-size="5"] { color: #6b2bd9; }
+[data-ds-theme="sticker"] .ds-heading[data-size="2"],
+[data-ds-theme="sticker"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; }
+
+/* Buttons: pill stickers with a white cut line and a drop shadow; they bounce down when pressed. */
+[data-ds-theme="sticker"] .ds-button[data-variant="solid"] { box-shadow: var(--st-cut), var(--st-drop); margin: 4px; }
+[data-ds-theme="sticker"] .ds-button[data-variant="solid"]:hover:not(:disabled) { transform: rotate(-2deg) scale(1.03); }
+[data-ds-theme="sticker"] .ds-button[data-variant="solid"]:active:not(:disabled) { transform: scale(var(--ds-press-scale)); box-shadow: var(--st-cut), 0 1px 3px rgba(29, 21, 51, 0.3); }
+[data-ds-theme="sticker"] .ds-button[data-variant="outline"] { border-width: 2px; border-style: dashed; }
+[data-ds-theme="sticker"] .ds-button { transition-timing-function: var(--ds-easing-enter); }
+
+/* Cards: stuck down with a cut edge; raised ones peel up at the bottom-right corner. */
+[data-ds-theme="sticker"] .ds-card { box-shadow: var(--st-cut), var(--st-drop); border: 0; margin: 4px; }
+[data-ds-theme="sticker"] .ds-card[data-variant="outlined"] { box-shadow: var(--st-cut), 0 0 0 6px var(--ds-color-border); }
+[data-ds-theme="sticker"] .ds-card[data-variant="filled"] { box-shadow: var(--st-cut), var(--st-drop); }
+[data-ds-theme="sticker"] .ds-card[data-variant="elevated"] { position: relative; box-shadow: var(--st-cut), var(--ds-shadow-md); }
+[data-ds-theme="sticker"] .ds-card[data-variant="elevated"]::after { content: ""; position: absolute; right: -4px; bottom: -4px; width: 34px; height: 34px; border-radius: 0 0 var(--ds-radius-lg) 0; background: linear-gradient(135deg, var(--ds-color-bg) 0 50%, #e6e1f3 50% 60%, var(--st-edge) 75%); box-shadow: -3px -3px 6px -2px rgba(29, 21, 51, 0.25); transition: width var(--ds-duration-base) var(--ds-easing-enter), height var(--ds-duration-base) var(--ds-easing-enter); pointer-events: none; }
+[data-ds-theme="sticker"][data-ds-mode="dark"] .ds-card[data-variant="elevated"]::after { background: linear-gradient(135deg, var(--ds-color-bg) 0 50%, #cfc6e6 50% 60%, var(--st-edge) 75%); }
+[data-ds-theme="sticker"] .ds-card[data-interactive]:hover { transform: rotate(-1deg) translateY(-3px); box-shadow: var(--st-cut), var(--ds-shadow-lg); }
+[data-ds-theme="sticker"] .ds-card[data-interactive]:hover::after { width: 48px; height: 48px; }
+[data-ds-theme="sticker"] .ds-dialog__panel { border: 0; box-shadow: 0 0 0 6px var(--st-edge), var(--ds-shadow-lg); }
+[data-ds-theme="sticker"] .ds-dialog[open] { animation-name: sticker-slap; }
+
+/* Badges and avatars are little stickers slapped on at an angle. */
+[data-ds-theme="sticker"] .ds-badge { border-radius: 999px; box-shadow: 0 0 0 2.5px var(--st-edge), 0 2px 4px rgba(29, 21, 51, 0.3); transform: rotate(-3deg); margin: 3px; font-weight: 700; }
+[data-ds-theme="sticker"] .ds-badge:nth-child(even) { transform: rotate(2.5deg); }
+[data-ds-theme="sticker"] .ds-badge[data-variant="outline"] { background: var(--ds-color-surface); border-width: 2px; }
+[data-ds-theme="sticker"] .ds-avatar { box-shadow: 0 0 0 3px var(--st-edge), var(--st-drop); background: var(--ds-color-accent); color: #1d1533; font-family: var(--ds-font-display); font-weight: 800; margin: 3px; }
+[data-ds-theme="sticker"] .ds-avatar:nth-child(3n + 2) { background: #ff8fc2; }
+[data-ds-theme="sticker"] .ds-avatar:nth-child(3n) { background: #8fe3c8; }
+
+/* Form controls: chunky and rounded, focus pops with a colored cut line. */
+[data-ds-theme="sticker"] .ds-input,
+[data-ds-theme="sticker"] .ds-select__control,
+[data-ds-theme="sticker"] .ds-textarea { border-width: 2px; border-radius: 16px; }
+[data-ds-theme="sticker"] .ds-input:focus-within,
+[data-ds-theme="sticker"] .ds-select__control:focus,
+[data-ds-theme="sticker"] .ds-textarea:focus { box-shadow: 0 0 0 4px var(--st-edge), 0 0 0 7px var(--ds-color-primary); }
+[data-ds-theme="sticker"] .ds-choice__box { border-radius: 7px; }
+[data-ds-theme="sticker"] .ds-choice__input:checked + .ds-choice__box { box-shadow: 0 0 0 2px var(--st-edge), 0 2px 4px rgba(29, 21, 51, 0.3); animation: sticker-slap var(--ds-duration-slow) var(--ds-easing-enter); }
+[data-ds-theme="sticker"] .ds-switch__track { height: 28px; width: 50px; border-width: 2px; }
+[data-ds-theme="sticker"] .ds-switch__thumb { width: 18px; height: 18px; background: var(--ds-color-surface); box-shadow: 0 0 0 2px var(--ds-color-border-strong); }
+[data-ds-theme="sticker"] .ds-switch__track[data-state="on"] .ds-switch__thumb { transform: translate(22px, -50%); background: #ffffff; box-shadow: none; }
+
+[data-ds-theme="sticker"] .ds-alert { border-width: 2px; border-radius: 16px; box-shadow: 0 0 0 3px var(--st-edge); }
+[data-ds-theme="sticker"] .ds-progress { height: 14px; box-shadow: 0 0 0 3px var(--st-edge), 0 2px 5px rgba(29, 21, 51, 0.25); }
+[data-ds-theme="sticker"] .ds-progress__bar { background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.28) 0 6px, transparent 6px 12px), var(--_tone); }
+[data-ds-theme="sticker"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { box-shadow: 0 0 0 3px var(--st-edge), var(--st-drop); background: var(--ds-color-accent); color: #1d1533; }
+[data-ds-theme="sticker"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; border-radius: 4px; }
+[data-ds-theme="sticker"] .ds-tooltip__content { border-radius: 12px; box-shadow: 0 0 0 3px var(--st-edge), var(--st-drop); font-weight: 600; }
+[data-ds-theme="sticker"] .ds-divider { border: 0; height: 6px; border-radius: 6px; background: radial-gradient(circle, var(--ds-color-border) 0 3px, transparent 3.5px) 0 0 / 14px 6px repeat-x; }
+[data-ds-theme="sticker"] .ds-kbd { border-radius: 8px; border-width: 2px; border-bottom-width: 4px; }
+[data-ds-theme="sticker"] .ds-slider__control::-webkit-slider-thumb { width: 22px; height: 22px; margin-top: -8px; background: var(--ds-color-accent); border: 0; box-shadow: 0 0 0 3px var(--st-edge), var(--st-drop); }

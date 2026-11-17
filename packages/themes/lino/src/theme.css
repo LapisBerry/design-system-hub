@@ -1,0 +1,73 @@
+/* Lino personality: linocut print. Rough hand-carved edges, gouge-mark hatching, speckled ink, black and one red. */
+
+[data-ds-theme="lino"] {
+  --ln-ink: #16120d;
+  --ln-red: var(--ds-color-accent);
+  --ln-rough: polygon(0.5% 3%, 12% 0.5%, 28% 2%, 45% 0%, 63% 1.5%, 80% 0.3%, 99% 2.5%, 100% 22%, 98.8% 45%, 100% 70%, 99% 97%, 82% 99.5%, 60% 98%, 41% 100%, 22% 98.5%, 4% 100%, 0.3% 78%, 1.5% 52%, 0% 27%);
+  --ln-speckle: radial-gradient(circle at 30% 40%, rgba(247, 241, 227, 0.22) 0 0.8px, transparent 1.2px) 0 0 / 7px 6px, radial-gradient(circle at 70% 80%, rgba(247, 241, 227, 0.16) 0 0.7px, transparent 1.1px) 0 0 / 11px 9px;
+  --ln-gouge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='24' viewBox='0 0 40 24'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M2 6 Q10 3 18 6'/%3E%3Cpath d='M22 9 Q30 6 38 9'/%3E%3Cpath d='M6 17 Q14 14 22 17'/%3E%3Cpath d='M26 20 Q32 18 37 20'/%3E%3C/g%3E%3C/svg%3E");
+  --ln-wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='12' viewBox='0 0 60 12'%3E%3Cpath d='M0 6 Q7.5 1 15 6 T30 6 T45 6 T60 6' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background: var(--ds-color-bg);
+}
+
+/* Headings carved out of the block, with a gouged red underline on the big ones. */
+[data-ds-theme="lino"] .ds-heading[data-size="6"],
+[data-ds-theme="lino"] .ds-heading[data-size="5"] { line-height: 1; }
+[data-ds-theme="lino"] .ds-heading[data-size="6"]::after,
+[data-ds-theme="lino"] .ds-heading[data-size="5"]::after { content: ""; display: block; width: min(100%, 220px); height: 12px; margin-top: 0.25em; background: var(--ln-red); -webkit-mask: var(--ln-wave) 0 0 / 60px 12px repeat-x; mask: var(--ln-wave) 0 0 / 60px 12px repeat-x; }
+[data-ds-theme="lino"] .ds-heading[data-size="2"],
+[data-ds-theme="lino"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; font-style: italic; }
+
+/* Buttons are inked blocks with rough edges and speckle. */
+[data-ds-theme="lino"] .ds-button { clip-path: var(--ln-rough); border-radius: 0; font-weight: 700; }
+[data-ds-theme="lino"] .ds-button[data-variant="solid"] { background: var(--ln-speckle), var(--_bg); }
+[data-ds-theme="lino"] .ds-button[data-variant="outline"],
+[data-ds-theme="lino"] .ds-button[data-variant="ghost"],
+[data-ds-theme="lino"] .ds-button[data-variant="soft"] { clip-path: none; }
+[data-ds-theme="lino"] .ds-button[data-variant="outline"] { border-width: 2px; }
+
+/* Cards: carved paper blocks. Raised cards are printed in a rough black frame; filled cards are gouged. */
+[data-ds-theme="lino"] .ds-card { border: 0; border-radius: 0; }
+[data-ds-theme="lino"] .ds-card[data-variant="elevated"] { position: relative; isolation: isolate; background: transparent; padding: calc(var(--ds-space-5) + 4px); }
+[data-ds-theme="lino"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--ln-ink); clip-path: var(--ln-rough); }
+[data-ds-theme="lino"] .ds-card[data-variant="elevated"]::after { content: ""; position: absolute; inset: 5px; z-index: -1; background: var(--ds-color-surface); clip-path: var(--ln-rough); }
+[data-ds-theme="lino"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ln-ink); }
+[data-ds-theme="lino"] .ds-card[data-variant="filled"] { position: relative; isolation: isolate; overflow: hidden; }
+[data-ds-theme="lino"] .ds-card[data-variant="filled"]::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--ln-ink); opacity: 0.09; -webkit-mask: var(--ln-gouge) 0 0 / 40px 24px; mask: var(--ln-gouge) 0 0 / 40px 24px; }
+[data-ds-theme="lino"] .ds-card[data-interactive]:hover { transform: rotate(-0.5deg); }
+[data-ds-theme="lino"] .ds-dialog__panel { border: 0; border-radius: 0; box-shadow: none; outline: 3px solid var(--ln-ink); outline-offset: -3px; clip-path: var(--ln-rough); }
+
+/* Avatars carved with concentric gouges; badges are rough stamps. */
+[data-ds-theme="lino"] .ds-avatar { background: repeating-radial-gradient(circle, var(--ln-ink) 0 2px, #2c241a 2px 3.5px); color: #f7f1e3; font-family: var(--ds-font-display); font-weight: 400; clip-path: polygon(50% 0, 80% 8%, 98% 32%, 96% 66%, 78% 94%, 46% 100%, 16% 90%, 1% 62%, 4% 28%, 22% 6%); border-radius: 0; }
+[data-ds-theme="lino"] .ds-badge { clip-path: var(--ln-rough); border-radius: 0; }
+[data-ds-theme="lino"] .ds-badge[data-variant="solid"] { background: var(--ln-speckle), var(--_tone); }
+[data-ds-theme="lino"] .ds-badge[data-variant="outline"] { clip-path: none; border-width: 2px; }
+
+[data-ds-theme="lino"] .ds-input,
+[data-ds-theme="lino"] .ds-select__control,
+[data-ds-theme="lino"] .ds-textarea { border-color: var(--ln-ink); border-radius: 0; }
+[data-ds-theme="lino"] .ds-input:focus-within,
+[data-ds-theme="lino"] .ds-select__control:focus,
+[data-ds-theme="lino"] .ds-textarea:focus { border-color: var(--ln-red); box-shadow: 3px 3px 0 var(--ln-red); }
+[data-ds-theme="lino"] .ds-choice__box { border-radius: 0; }
+[data-ds-theme="lino"] .ds-choice__input:checked + .ds-choice__box { background: var(--ln-red); border-color: var(--ln-ink); color: #ffffff; }
+[data-ds-theme="lino"] .ds-switch__track,
+[data-ds-theme="lino"] .ds-switch__thumb { border-radius: 2px; }
+[data-ds-theme="lino"] .ds-switch__track[data-state="on"] { background: var(--ln-speckle), var(--ln-red); border-color: var(--ln-ink); }
+
+/* Gouged track; inked progress. */
+[data-ds-theme="lino"] .ds-progress { height: 14px; border-radius: 0; background: var(--ds-color-surface-alt); border: 2px solid var(--ln-ink); }
+[data-ds-theme="lino"] .ds-progress__bar { border-radius: 0; background: var(--ln-speckle), var(--_tone); }
+[data-ds-theme="lino"] .ds-progress:not([data-tone]) .ds-progress__bar { background: var(--ln-speckle), var(--ln-red); }
+[data-ds-theme="lino"] .ds-divider { border: 0; height: 12px; background: var(--ln-ink); -webkit-mask: var(--ln-wave) 0 0 / 60px 12px repeat-x; mask: var(--ln-wave) 0 0 / 60px 12px repeat-x; }
+[data-ds-theme="lino"] .ds-tabs[data-variant="line"] .ds-tabs__list { border-bottom-width: 2px; border-color: var(--ln-ink); }
+[data-ds-theme="lino"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 5px; background: var(--ln-red); clip-path: var(--ln-rough); }
+[data-ds-theme="lino"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ln-ink); color: #f7f1e3; clip-path: var(--ln-rough); }
+[data-ds-theme="lino"] .ds-alert { border: 2px solid var(--ln-ink); border-left-width: 8px; border-radius: 0; border-left-color: var(--_tone); }
+[data-ds-theme="lino"] .ds-tooltip__content { border-radius: 0; background: var(--ln-speckle), var(--ln-ink); clip-path: var(--ln-rough); }
+[data-ds-theme="lino"] .ds-spinner { border-radius: 0; border: 0; background: var(--ln-ink); -webkit-mask: var(--ln-gouge) 0 0 / 100% 100%; mask: var(--ln-gouge) 0 0 / 100% 100%; animation-timing-function: steps(8); }
+[data-ds-theme="lino"] .ds-kbd { border: 2px solid var(--ln-ink); border-radius: 0; }
+[data-ds-theme="lino"] .ds-slider__control::-webkit-slider-thumb { border-radius: 0; background: var(--ln-red); border-color: var(--ln-ink); clip-path: var(--ln-rough); }
+/* Keep the focus ring visible: carved clips would cut it off. */
+[data-ds-theme="lino"] .ds-button:focus-visible,
+[data-ds-theme="lino"] .ds-tabs__tab:focus-visible { clip-path: none; }

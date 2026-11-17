@@ -1,0 +1,60 @@
+/* Marble personality: classical stone. Veined slabs, inscribed capitals, fluted-column dividers, cameo avatars. */
+
+[data-ds-theme="marble"] {
+  --mb-veins: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Cg fill='none' stroke='%23857b6e' stroke-linecap='round'%3E%3Cpath d='M-20 80 C80 60 120 140 220 120 S360 40 460 90 S580 160 640 130' stroke-width='1.2' opacity='.35'/%3E%3Cpath d='M220 120 C240 180 200 230 260 290 S300 380 280 420' stroke-width='.7' opacity='.3'/%3E%3Cpath d='M-20 300 C60 280 140 330 230 310 S400 250 470 300 S560 360 640 340' stroke-width='1' opacity='.28'/%3E%3Cpath d='M460 90 C470 150 520 170 510 230' stroke-width='.6' opacity='.3'/%3E%3C/g%3E%3C/svg%3E");
+  --mb-flute: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0 1px, rgba(255, 255, 255, 0.7) 1px 2px, rgba(0, 0, 0, 0.03) 2px 7px, rgba(0, 0, 0, 0.1) 7px 9px);
+  background: var(--mb-veins) 0 0 / 600px 400px, radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.6), transparent 60%), var(--ds-color-bg);
+}
+[data-ds-theme="marble"][data-ds-mode="dark"] {
+  --mb-veins: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Cg fill='none' stroke='%23e9e4da' stroke-linecap='round'%3E%3Cpath d='M-20 80 C80 60 120 140 220 120 S360 40 460 90 S580 160 640 130' stroke-width='1.2' opacity='.22'/%3E%3Cpath d='M220 120 C240 180 200 230 260 290 S300 380 280 420' stroke-width='.7' opacity='.18'/%3E%3Cpath d='M-20 300 C60 280 140 330 230 310 S400 250 470 300 S560 360 640 340' stroke-width='1' opacity='.16'/%3E%3Cpath d='M460 90 C470 150 520 170 510 230' stroke-width='.6' opacity='.18'/%3E%3C/g%3E%3C/svg%3E");
+  --mb-flute: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0 1px, rgba(255, 255, 255, 0.18) 1px 2px, rgba(255, 255, 255, 0.04) 2px 7px, rgba(0, 0, 0, 0.4) 7px 9px);
+  background: var(--mb-veins) 0 0 / 600px 400px, var(--ds-color-bg);
+}
+
+/* Inscriptions: wide Roman capitals, with an engraved shadow. */
+[data-ds-theme="marble"] .ds-heading { text-transform: uppercase; }
+[data-ds-theme="marble"] .ds-heading[data-size="6"],
+[data-ds-theme="marble"] .ds-heading[data-size="5"] { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 -1px 0 rgba(0, 0, 0, 0.15); }
+[data-ds-theme="marble"][data-ds-mode="dark"] .ds-heading[data-size="6"],
+[data-ds-theme="marble"][data-ds-mode="dark"] .ds-heading[data-size="5"] { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.08); }
+[data-ds-theme="marble"] .ds-heading[data-size="2"],
+[data-ds-theme="marble"] .ds-heading[data-size="1"] { letter-spacing: 0.2em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+[data-ds-theme="marble"] .ds-dialog__title { text-transform: uppercase; }
+
+/* Buttons: square stone with a plinth line below. */
+[data-ds-theme="marble"] .ds-button { font-family: var(--ds-font-display); font-size: 0.9rem; letter-spacing: 0.16em; }
+[data-ds-theme="marble"] .ds-button[data-variant="solid"] { box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25); }
+[data-ds-theme="marble"] .ds-button[data-variant="outline"] { border-width: 1px; box-shadow: inset 0 0 0 3px var(--ds-color-bg), inset 0 0 0 4px color-mix(in srgb, var(--_tone) 50%, transparent); }
+
+/* Cards are slabs of the same stone. Raised ones sit under an entablature: a thick rule over a thin one. */
+[data-ds-theme="marble"] .ds-card { background: var(--mb-veins) -120px -60px / 600px 400px, var(--ds-color-surface); }
+[data-ds-theme="marble"] .ds-card[data-variant="elevated"] { border: 1px solid var(--ds-color-border); border-top: 0; padding-top: calc(var(--ds-space-5) + 12px); background: linear-gradient(var(--ds-color-border-strong) 0 0) 0 0 / 100% 5px no-repeat, linear-gradient(var(--ds-color-border-strong) 0 0) 0 8px / 100% 1px no-repeat, var(--mb-veins) -120px -60px / 600px 400px, var(--ds-color-surface); }
+[data-ds-theme="marble"] .ds-card[data-variant="filled"] { background: var(--mb-veins) -300px -200px / 600px 400px, var(--ds-color-surface-alt); }
+[data-ds-theme="marble"] .ds-card[data-variant="outlined"] { border: 1px solid var(--ds-color-border-strong); box-shadow: inset 0 0 0 4px var(--ds-color-surface), inset 0 0 0 5px var(--ds-color-border); }
+[data-ds-theme="marble"] .ds-dialog__panel { border: 1px solid var(--ds-color-border-strong); background: var(--mb-veins) 0 0 / 600px 400px, var(--ds-color-surface); }
+
+/* Fluted dividers, like a column shaft. */
+[data-ds-theme="marble"] .ds-divider { border: 0; height: 14px; background: linear-gradient(var(--ds-color-border-strong) 0 0) 0 0 / 100% 1px no-repeat, linear-gradient(var(--ds-color-border-strong) 0 0) 0 100% / 100% 1px no-repeat, var(--mb-flute), var(--ds-color-surface-alt); opacity: 0.75; }
+[data-ds-theme="marble"] .ds-progress { height: 12px; border-radius: 0; background: var(--mb-flute), var(--ds-color-surface-alt); }
+[data-ds-theme="marble"] .ds-progress__bar { background: var(--mb-flute), var(--_tone); }
+
+/* Cameo avatars: a carved profile medallion in a double frame. */
+[data-ds-theme="marble"] .ds-avatar { background: radial-gradient(circle at 40% 35%, color-mix(in srgb, var(--ds-color-primary) 70%, #fff), var(--ds-color-primary)); color: #f6f1e8; font-family: var(--ds-font-display); box-shadow: 0 0 0 2px var(--ds-color-surface), 0 0 0 3px var(--ds-color-accent), 0 0 0 5px var(--ds-color-surface), 0 0 0 6px var(--ds-color-accent); margin: 6px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
+[data-ds-theme="marble"][data-ds-mode="dark"] .ds-avatar { color: #121212; text-shadow: none; }
+[data-ds-theme="marble"] .ds-badge { font-family: var(--ds-font-display); font-weight: 400; border-radius: 0; letter-spacing: 0.16em; }
+
+[data-ds-theme="marble"] .ds-input,
+[data-ds-theme="marble"] .ds-select__control,
+[data-ds-theme="marble"] .ds-textarea { border-color: var(--ds-color-border-strong); background: color-mix(in srgb, var(--ds-color-surface) 85%, transparent); }
+[data-ds-theme="marble"] .ds-input:focus-within,
+[data-ds-theme="marble"] .ds-select__control:focus,
+[data-ds-theme="marble"] .ds-textarea:focus { border-color: var(--ds-color-accent); box-shadow: inset 0 0 0 1px var(--ds-color-accent); }
+[data-ds-theme="marble"] .ds-switch__track { border-radius: 1px; }
+[data-ds-theme="marble"] .ds-switch__thumb { border-radius: 0; }
+[data-ds-theme="marble"] .ds-tabs__tab { font-family: var(--ds-font-display); letter-spacing: 0.16em; }
+[data-ds-theme="marble"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; background: var(--ds-color-accent); }
+[data-ds-theme="marble"] .ds-alert { border-width: 1px 1px 1px 4px; border-color: var(--_tone); border-radius: 0; }
+[data-ds-theme="marble"] .ds-accordion__trigger { font-family: var(--ds-font-display); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; }
+[data-ds-theme="marble"] .ds-tooltip__content { border-radius: 0; letter-spacing: 0.04em; }
+[data-ds-theme="marble"] .ds-spinner { border-color: color-mix(in srgb, var(--ds-color-accent) 25%, transparent); border-top-color: var(--ds-color-accent); }
+[data-ds-theme="marble"] .ds-slider__control::-webkit-slider-thumb { border-radius: 1px; width: 12px; height: 22px; margin-top: -8px; background: var(--mb-flute), var(--ds-color-surface); }

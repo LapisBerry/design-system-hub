@@ -1,0 +1,68 @@
+/* Peg personality: felt letter board. Ribbed black felt, white plastic letters pressed into the grooves, an oak frame. */
+
+[data-ds-theme="peg"] {
+  --pg-ribs: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0 6px, rgba(0, 0, 0, 0.55) 6px 8px);
+  --pg-oak: linear-gradient(90deg, #a57a4c, #c9a06e 20%, #b18556 45%, #d2ab79 70%, #a97d4e);
+  --pg-letter: 0 2px 0 rgba(0, 0, 0, 0.75), 0 3px 4px rgba(0, 0, 0, 0.5);
+  background: var(--pg-ribs), var(--ds-color-bg);
+}
+
+@keyframes peg-place { from { opacity: 0; transform: translateY(-6px) rotate(-3deg); } }
+
+/* Headings: white plastic letters sitting in the grooves, each word a touch uneven. */
+[data-ds-theme="peg"] .ds-heading { text-transform: uppercase; text-shadow: var(--pg-letter); }
+[data-ds-theme="peg"] .ds-heading[data-size="6"],
+[data-ds-theme="peg"] .ds-heading[data-size="5"] { line-height: 1.12; letter-spacing: 0.1em; word-spacing: 0.2em; }
+[data-ds-theme="peg"] .ds-heading[data-size="6"] { transform: rotate(-0.6deg); }
+[data-ds-theme="peg"] .ds-heading[data-size="2"],
+[data-ds-theme="peg"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 600; letter-spacing: 0.16em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+[data-ds-theme="peg"] .ds-dialog__title { text-transform: uppercase; font-size: var(--ds-text-3); text-shadow: var(--pg-letter); }
+
+/* Buttons: letters on a plastic tile; quiet variants are bare letters on the felt. */
+[data-ds-theme="peg"] .ds-button { font-family: var(--ds-font-display); font-weight: 400; font-size: 1.15rem; letter-spacing: 0.12em; }
+[data-ds-theme="peg"] .ds-button[data-size="sm"] { font-size: 0.95rem; }
+[data-ds-theme="peg"] .ds-button[data-size="lg"] { font-size: 1.35rem; }
+[data-ds-theme="peg"] .ds-button[data-variant="solid"] { background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 50%, rgba(0, 0, 0, 0.12)), var(--_bg); }
+[data-ds-theme="peg"] .ds-button[data-variant="ghost"],
+[data-ds-theme="peg"] .ds-button[data-variant="outline"] { text-shadow: var(--pg-letter); }
+[data-ds-theme="peg"] .ds-button[data-variant="outline"] { border-width: 2px; border-style: dashed; }
+[data-ds-theme="peg"] .ds-button:active:not(:disabled) { transform: translateY(2px); box-shadow: none; }
+
+/* Cards: felt panels; raised ones hang in an oak frame. */
+[data-ds-theme="peg"] .ds-card { background: var(--pg-ribs), var(--ds-color-surface); border: 1px solid var(--ds-color-border); }
+[data-ds-theme="peg"] .ds-card[data-variant="elevated"] { border: 10px solid transparent; border-radius: 4px; background: var(--pg-ribs) padding-box, linear-gradient(var(--ds-color-surface) 0 0) padding-box, var(--pg-oak) border-box; box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8), var(--ds-shadow-md); }
+[data-ds-theme="peg"] .ds-card[data-variant="filled"] { background: var(--pg-ribs), var(--ds-color-surface-alt); }
+[data-ds-theme="peg"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); }
+[data-ds-theme="peg"] .ds-card[data-interactive]:hover { border-color: var(--ds-color-border-strong); }
+[data-ds-theme="peg"] .ds-dialog__panel { border: 12px solid transparent; background: var(--pg-ribs) padding-box, linear-gradient(var(--ds-color-surface) 0 0) padding-box, var(--pg-oak) border-box; box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8), var(--ds-shadow-lg); }
+[data-ds-theme="peg"] .ds-dialog[open] { animation-name: peg-place; }
+
+/* Badges are spare letter tiles; avatars are a single letter pressed into a felt square. */
+[data-ds-theme="peg"] .ds-badge { font-family: var(--ds-font-display); font-weight: 400; font-size: 0.95rem; letter-spacing: 0.14em; border-radius: 1px; }
+[data-ds-theme="peg"] .ds-badge[data-variant="soft"],
+[data-ds-theme="peg"] .ds-badge[data-variant="outline"] { text-shadow: var(--pg-letter); }
+[data-ds-theme="peg"] .ds-avatar { border-radius: 2px; background: var(--pg-ribs), #222; color: #f5f5f2; font-family: var(--ds-font-display); font-weight: 400; font-size: calc(var(--_s) * 0.55); text-shadow: var(--pg-letter); box-shadow: 0 0 0 3px #b18556; }
+[data-ds-theme="peg"] .ds-avatar:nth-child(3n + 2) { color: #ff6f91; }
+[data-ds-theme="peg"] .ds-avatar:nth-child(3n) { color: #ffd166; }
+
+[data-ds-theme="peg"] .ds-field__label { text-transform: uppercase; letter-spacing: 0.12em; }
+[data-ds-theme="peg"] .ds-input,
+[data-ds-theme="peg"] .ds-select__control,
+[data-ds-theme="peg"] .ds-textarea { background: var(--pg-ribs), #161616; }
+[data-ds-theme="peg"] .ds-input:focus-within,
+[data-ds-theme="peg"] .ds-select__control:focus,
+[data-ds-theme="peg"] .ds-textarea:focus { border-color: #c49a6c; box-shadow: 0 0 0 3px rgba(196, 154, 108, 0.3); }
+[data-ds-theme="peg"] .ds-switch__track { border-radius: 2px; background: var(--pg-ribs), #161616; }
+[data-ds-theme="peg"] .ds-switch__thumb { border-radius: 1px; background: #b8b8b2; }
+
+/* Progress and dividers are just more grooves. */
+[data-ds-theme="peg"] .ds-divider { border: 0; height: 3px; background: rgba(0, 0, 0, 0.7); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06); }
+[data-ds-theme="peg"] .ds-progress { height: 10px; border-radius: 1px; background: #070707; box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.9); }
+[data-ds-theme="peg"] .ds-progress__bar { border-radius: 1px; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.6); }
+[data-ds-theme="peg"] .ds-tabs__tab { font-family: var(--ds-font-display); font-weight: 400; font-size: 1.05rem; letter-spacing: 0.12em; text-shadow: var(--pg-letter); }
+[data-ds-theme="peg"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: #070707; }
+[data-ds-theme="peg"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: #f5f5f2; color: #121212; text-shadow: none; }
+[data-ds-theme="peg"] .ds-alert { border-width: 0; border-left: 4px solid var(--_tone); border-radius: 1px; background: var(--pg-ribs), color-mix(in srgb, var(--_tone) 10%, var(--ds-color-surface)); }
+[data-ds-theme="peg"] .ds-tooltip__content { background: #f5f5f2; color: #121212; font-family: var(--ds-font-display); font-size: 0.95rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 1px; }
+[data-ds-theme="peg"] .ds-spinner { border-radius: 1px; animation-timing-function: steps(4); }
+[data-ds-theme="peg"] .ds-slider__control::-webkit-slider-thumb { border-radius: 1px; background: #f5f5f2; border: 0; height: 22px; width: 10px; margin-top: -8px; box-shadow: var(--pg-letter); }

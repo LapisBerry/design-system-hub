@@ -1,0 +1,64 @@
+/* Tarot personality: a tarot deck under a starry sky. Gilt card frames, star cartouches, sun medallions, moon phases. */
+
+[data-ds-theme="tarot"] {
+  --ta-gold: #d8b35a;
+  --ta-gilt: linear-gradient(135deg, #f5dd9a, #d8b35a 40%, #9c7a2c 70%, #f0d58a);
+  --ta-stars:
+    radial-gradient(circle 1px at 12% 18%, #f3ecd8 98%, transparent) 0 0 / 170px 130px,
+    radial-gradient(circle 1.4px at 64% 42%, #d8b35a 98%, transparent) 0 0 / 230px 190px,
+    radial-gradient(circle 0.8px at 38% 76%, #f3ecd8 98%, transparent) 0 0 / 110px 90px,
+    radial-gradient(circle 1px at 86% 8%, #b993ff 98%, transparent) 0 0 / 290px 210px;
+  background: var(--ta-stars), radial-gradient(ellipse at 50% 0%, #241c4a, transparent 70%), var(--ds-color-bg);
+}
+
+@keyframes tarot-turn { from { opacity: 0; transform: perspective(800px) rotateY(-80deg); } }
+@keyframes tarot-phase { 0% { box-shadow: inset 0 0 0 0 var(--ds-color-bg); } 50% { box-shadow: inset calc(var(--_s) * 0.6) 0 0 0 var(--ds-color-bg); } 100% { box-shadow: inset 0 0 0 0 var(--ds-color-bg); } }
+
+[data-ds-theme="tarot"] .ds-heading[data-size="6"],
+[data-ds-theme="tarot"] .ds-heading[data-size="5"] { color: var(--ta-gold); text-shadow: 0 0 18px rgba(216, 179, 90, 0.35); }
+[data-ds-theme="tarot"] .ds-heading[data-size="6"]::before { content: "\2726  \263D  \2726"; display: block; font-family: var(--ds-font-body); font-size: 0.3em; letter-spacing: 0.5em; margin-bottom: 0.4em; color: var(--ds-color-accent); }
+[data-ds-theme="tarot"] .ds-heading[data-size="2"],
+[data-ds-theme="tarot"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+
+/* Buttons: gilt plaques; outline buttons are fine gold rules. */
+[data-ds-theme="tarot"] .ds-button { font-size: 0.82rem; }
+[data-ds-theme="tarot"] .ds-button[data-variant="solid"][data-tone="primary"] { background: var(--ta-gilt); }
+[data-ds-theme="tarot"] .ds-button[data-variant="outline"] { box-shadow: inset 0 0 0 3px var(--ds-color-bg), inset 0 0 0 4px color-mix(in srgb, var(--_tone) 50%, transparent); }
+
+/* Raised cards are tarot cards: double gilt frame, a star cartouche at the head and a name plate at the foot. */
+[data-ds-theme="tarot"] .ds-card { position: relative; border: 1px solid var(--ds-color-border); }
+[data-ds-theme="tarot"] .ds-card[data-variant="elevated"] { border: 2px solid var(--ta-gold); padding: calc(var(--ds-space-5) + 18px) calc(var(--ds-space-5) + 6px) calc(var(--ds-space-5) + 22px); box-shadow: inset 0 0 0 5px var(--ds-color-surface), inset 0 0 0 6px color-mix(in srgb, var(--ta-gold) 60%, transparent), var(--ds-shadow-lg); background: var(--ta-stars), var(--ds-color-surface); }
+[data-ds-theme="tarot"] .ds-card[data-variant="elevated"]::before { content: "\2726"; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); padding: 2px 14px 4px; font-size: 0.8rem; line-height: 1; color: #120f24; background: var(--ta-gilt); clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%); }
+[data-ds-theme="tarot"] .ds-card[data-variant="elevated"]::after { content: ""; position: absolute; left: 22%; right: 22%; bottom: 9px; height: 10px; border: 1px solid color-mix(in srgb, var(--ta-gold) 70%, transparent); border-radius: 2px; background: linear-gradient(90deg, transparent 10%, rgba(216, 179, 90, 0.25) 50%, transparent 90%); }
+[data-ds-theme="tarot"] .ds-card[data-variant="filled"] { background: var(--ta-stars), var(--ds-color-surface-alt); }
+[data-ds-theme="tarot"] .ds-card[data-variant="outlined"] { border-color: color-mix(in srgb, var(--ta-gold) 60%, transparent); }
+[data-ds-theme="tarot"] .ds-card[data-interactive]:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 5px var(--ds-color-surface), inset 0 0 0 6px var(--ta-gold), 0 0 30px -6px rgba(216, 179, 90, 0.45); }
+[data-ds-theme="tarot"] .ds-dialog__panel { border: 2px solid var(--ta-gold); box-shadow: inset 0 0 0 5px var(--ds-color-surface), inset 0 0 0 6px color-mix(in srgb, var(--ta-gold) 60%, transparent), var(--ds-shadow-lg); }
+[data-ds-theme="tarot"] .ds-dialog[open] { animation-name: tarot-turn; }
+
+/* Sun medallions for avatars; badges are arcana labels. */
+[data-ds-theme="tarot"] .ds-avatar { background: radial-gradient(circle, #f5dd9a 0 38%, #d8b35a 40% 46%, transparent 48%), repeating-conic-gradient(rgba(216, 179, 90, 0.9) 0 6deg, transparent 6deg 15deg); color: #120f24; font-family: var(--ds-font-display); font-weight: 700; font-size: calc(var(--_s) * 0.3); }
+[data-ds-theme="tarot"] .ds-badge { border-radius: 2px; font-family: var(--ds-font-body); letter-spacing: 0.16em; }
+[data-ds-theme="tarot"] .ds-badge[data-variant="outline"]::before { content: "\2726"; font-size: 0.8em; }
+
+/* Moon-phase spinner. */
+[data-ds-theme="tarot"] .ds-spinner { border: 0; border-radius: 50%; background: #f3ecd8; animation: tarot-phase 2.4s ease-in-out infinite; box-shadow: inset 0 0 0 0 var(--ds-color-bg); }
+
+[data-ds-theme="tarot"] .ds-input,
+[data-ds-theme="tarot"] .ds-select__control,
+[data-ds-theme="tarot"] .ds-textarea { background: rgba(0, 0, 0, 0.25); }
+[data-ds-theme="tarot"] .ds-input:focus-within,
+[data-ds-theme="tarot"] .ds-select__control:focus,
+[data-ds-theme="tarot"] .ds-textarea:focus { border-color: var(--ta-gold); box-shadow: 0 0 12px -2px rgba(216, 179, 90, 0.5); }
+[data-ds-theme="tarot"] .ds-choice__input:checked + .ds-choice__box { background: var(--ta-gilt); border-color: var(--ta-gold); }
+[data-ds-theme="tarot"] .ds-switch__track[data-state="on"] { background: var(--ta-gilt); }
+[data-ds-theme="tarot"] .ds-progress { height: 8px; background: rgba(0, 0, 0, 0.35); box-shadow: inset 0 0 0 1px var(--ds-color-border); }
+[data-ds-theme="tarot"] .ds-progress:not([data-tone]) .ds-progress__bar { background: var(--ta-gilt); box-shadow: 0 0 10px rgba(216, 179, 90, 0.5); }
+[data-ds-theme="tarot"] .ds-divider { border: 0; height: 16px; background:
+  linear-gradient(45deg, transparent 42%, var(--ta-gold) 42% 58%, transparent 58%) 50% 50% / 10px 10px no-repeat,
+  linear-gradient(90deg, transparent, color-mix(in srgb, var(--ta-gold) 70%, transparent) 20% calc(50% - 14px), transparent calc(50% - 14px) calc(50% + 14px), color-mix(in srgb, var(--ta-gold) 70%, transparent) calc(50% + 14px) 80%, transparent) 0 50% / 100% 1px no-repeat; }
+[data-ds-theme="tarot"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { background: var(--ta-gilt); }
+[data-ds-theme="tarot"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--ta-gilt); color: #120f24; }
+[data-ds-theme="tarot"] .ds-alert { background: rgba(0, 0, 0, 0.25); }
+[data-ds-theme="tarot"] .ds-tooltip__content { background: #f3ecd8; color: #120f24; border: 1px solid var(--ta-gold); font-style: italic; }
+[data-ds-theme="tarot"] .ds-slider__control::-webkit-slider-thumb { background: var(--ta-gilt); border: 0; box-shadow: 0 0 10px rgba(216, 179, 90, 0.6); }

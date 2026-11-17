@@ -1,0 +1,70 @@
+/* Casino personality: card table. Green baize, playing-card corners, poker-chip avatars, a roulette spinner, gold trim. */
+
+[data-ds-theme="casino"] {
+  --cs-gold: #d4af37;
+  --cs-gold-grad: linear-gradient(180deg, #f2d77a, #d4af37 45%, #a8841f);
+  --cs-red: #c8102e;
+  --cs-felt:
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.025) 0 1px, transparent 1.5px) 0 0 / 4px 4px,
+    radial-gradient(ellipse at 50% 30%, rgba(60, 160, 110, 0.25), transparent 65%);
+  background: var(--cs-felt), var(--ds-color-bg);
+}
+
+@keyframes casino-deal { from { opacity: 0; transform: translateY(-30px) rotate(-8deg); } }
+
+[data-ds-theme="casino"] .ds-heading[data-size="6"],
+[data-ds-theme="casino"] .ds-heading[data-size="5"] { color: var(--cs-gold); text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35); }
+[data-ds-theme="casino"] .ds-heading[data-size="6"]::before { content: "\2660\00A0\2665\00A0\2666\00A0\2663"; display: block; font-size: 0.28em; letter-spacing: 0.3em; margin-bottom: 0.3em; color: var(--ds-color-text-muted); }
+[data-ds-theme="casino"] .ds-heading[data-size="2"],
+[data-ds-theme="casino"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+
+/* Buttons: gold plaques; outline buttons are table lines. */
+[data-ds-theme="casino"] .ds-button { font-size: 0.82rem; }
+[data-ds-theme="casino"] .ds-button[data-variant="solid"][data-tone="primary"] { background: var(--cs-gold-grad); }
+[data-ds-theme="casino"] .ds-button[data-variant="solid"][data-tone="primary"]:hover:not(:disabled) { background: linear-gradient(180deg, #f7e39b, #ddba45 45%, #b08d26); }
+[data-ds-theme="casino"] .ds-button[data-variant="outline"] { border-width: 2px; }
+
+/* Raised cards are playing cards: a gold inner frame and corner indices. */
+[data-ds-theme="casino"] .ds-card { position: relative; border: 1px solid var(--ds-color-border); }
+[data-ds-theme="casino"] .ds-card[data-variant="elevated"] { padding: calc(var(--ds-space-5) + 10px) calc(var(--ds-space-5) + 18px); box-shadow: inset 0 0 0 6px var(--ds-color-surface), inset 0 0 0 7px color-mix(in srgb, var(--cs-gold) 70%, transparent), var(--ds-shadow-md); }
+[data-ds-theme="casino"] .ds-card[data-variant="elevated"]::before,
+[data-ds-theme="casino"] .ds-card[data-variant="elevated"]::after { content: "A\A\2660"; white-space: pre; position: absolute; font-family: var(--ds-font-display); font-weight: 700; font-size: 0.8rem; line-height: 1; text-align: center; color: var(--cs-gold); }
+[data-ds-theme="casino"] .ds-card[data-variant="elevated"]::before { top: 12px; left: 12px; }
+[data-ds-theme="casino"] .ds-card[data-variant="elevated"]::after { bottom: 12px; right: 12px; transform: rotate(180deg); }
+[data-ds-theme="casino"] .ds-card[data-variant="filled"] { background: var(--cs-felt), var(--ds-color-surface-alt); }
+[data-ds-theme="casino"] .ds-card[data-variant="outlined"] { border: 2px solid var(--cs-gold); border-radius: 999px / 60px; }
+[data-ds-theme="casino"] .ds-card[data-interactive]:hover { transform: translateY(-3px) rotate(-0.6deg); border-color: var(--cs-gold); }
+[data-ds-theme="casino"] .ds-dialog__panel { border: 1px solid var(--cs-gold); box-shadow: inset 0 0 0 6px var(--ds-color-surface), inset 0 0 0 7px color-mix(in srgb, var(--cs-gold) 60%, transparent), var(--ds-shadow-lg); }
+[data-ds-theme="casino"] .ds-dialog[open] { animation-name: casino-deal; }
+
+/* Poker chips: striped edge spots around a dashed inlay. */
+[data-ds-theme="casino"] .ds-avatar { background: radial-gradient(circle, var(--cs-red) 0 52%, transparent 53%), repeating-conic-gradient(var(--cs-red) 0 22.5deg, #f6f1e1 22.5deg 45deg); color: #ffffff; box-shadow: inset 0 0 0 calc(var(--_s) * 0.2) transparent, 0 2px 0 rgba(0, 0, 0, 0.4); font-family: var(--ds-font-display); font-weight: 700; outline: 1.5px dashed rgba(255, 255, 255, 0.7); outline-offset: calc(var(--_s) * -0.24); }
+[data-ds-theme="casino"] .ds-avatar:nth-child(3n + 2) { background: radial-gradient(circle, #1b1b1b 0 52%, transparent 53%), repeating-conic-gradient(#1b1b1b 0 22.5deg, #f6f1e1 22.5deg 45deg); }
+[data-ds-theme="casino"] .ds-avatar:nth-child(3n) { background: radial-gradient(circle, #1f4fa0 0 52%, transparent 53%), repeating-conic-gradient(#1f4fa0 0 22.5deg, #f6f1e1 22.5deg 45deg); }
+[data-ds-theme="casino"] .ds-badge { border-radius: 999px; letter-spacing: 0.12em; }
+[data-ds-theme="casino"] .ds-badge[data-variant="solid"] { outline: 1px dashed color-mix(in srgb, var(--_on) 50%, transparent); outline-offset: -3px; }
+
+/* Roulette spinner. */
+[data-ds-theme="casino"] .ds-spinner { border: 0; background: radial-gradient(circle, var(--cs-gold) 0 18%, #0b3b2a 20% 34%, transparent 36%), repeating-conic-gradient(var(--cs-red) 0 20deg, #111 20deg 40deg); box-shadow: 0 0 0 2px var(--cs-gold); animation-duration: 1.1s; }
+
+[data-ds-theme="casino"] .ds-input,
+[data-ds-theme="casino"] .ds-select__control,
+[data-ds-theme="casino"] .ds-textarea { background: rgba(0, 0, 0, 0.2); }
+[data-ds-theme="casino"] .ds-input:focus-within,
+[data-ds-theme="casino"] .ds-select__control:focus,
+[data-ds-theme="casino"] .ds-textarea:focus { border-color: var(--cs-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3); }
+[data-ds-theme="casino"] .ds-choice__input:checked + .ds-choice__box { background: var(--cs-gold-grad); border-color: var(--cs-gold); color: #0b2a1e; }
+[data-ds-theme="casino"] .ds-switch__track { background: rgba(0, 0, 0, 0.3); }
+[data-ds-theme="casino"] .ds-switch__track[data-state="on"] { background: var(--cs-red); border-color: var(--cs-gold); }
+[data-ds-theme="casino"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: var(--cs-gold-grad); }
+[data-ds-theme="casino"] .ds-progress { height: 10px; background: rgba(0, 0, 0, 0.3); box-shadow: inset 0 0 0 1px var(--ds-color-border); }
+[data-ds-theme="casino"] .ds-progress__bar { background: repeating-linear-gradient(90deg, transparent 0 10px, rgba(0, 0, 0, 0.25) 10px 12px), var(--_tone); }
+[data-ds-theme="casino"] .ds-progress:not([data-tone]) .ds-progress__bar { background: repeating-linear-gradient(90deg, transparent 0 10px, rgba(0, 0, 0, 0.25) 10px 12px), var(--cs-gold-grad); }
+[data-ds-theme="casino"] .ds-divider { border: 0; height: 12px; background: linear-gradient(45deg, transparent 30%, var(--cs-gold) 30% 70%, transparent 70%) 50% 50% / 9px 9px no-repeat, linear-gradient(90deg, transparent, var(--cs-gold) 15% calc(50% - 12px), transparent calc(50% - 12px) calc(50% + 12px), var(--cs-gold) calc(50% + 12px) 85%, transparent) 0 50% / 100% 1px no-repeat; }
+[data-ds-theme="casino"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: rgba(0, 0, 0, 0.25); border-radius: 999px; }
+[data-ds-theme="casino"] .ds-tabs[data-variant="pill"] .ds-tabs__tab { border-radius: 999px; }
+[data-ds-theme="casino"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--cs-gold-grad); color: #0b2a1e; }
+[data-ds-theme="casino"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { background: var(--cs-gold); }
+[data-ds-theme="casino"] .ds-alert { background: rgba(0, 0, 0, 0.22); border-color: color-mix(in srgb, var(--_tone) 50%, transparent); }
+[data-ds-theme="casino"] .ds-tooltip__content { background: #f6f1e1; color: #0b2a1e; border: 1px solid var(--cs-gold); }
+[data-ds-theme="casino"] .ds-slider__control::-webkit-slider-thumb { background: radial-gradient(circle, var(--cs-red) 0 45%, transparent 46%), repeating-conic-gradient(var(--cs-red) 0 30deg, #f6f1e1 30deg 60deg); border: 0; width: 22px; height: 22px; margin-top: -8px; }
