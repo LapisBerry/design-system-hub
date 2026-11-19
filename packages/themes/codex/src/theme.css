@@ -1,0 +1,68 @@
+/* Codex personality: illuminated manuscript. Vellum, gold-leaf initials boxed in lapis, rubric red, knotwork interlace. */
+
+[data-ds-theme="codex"] {
+  --cx-gold: linear-gradient(135deg, #f3d98a, #c89a2c 45%, #9a7218 70%, #e8c66a);
+  --cx-lapis: #23507a;
+  --cx-rubric: var(--ds-color-primary);
+  --cx-knot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Cpath d='M0 8 C8 0 8 0 16 8 S24 16 32 8 M0 8 C8 16 8 16 16 8 S24 0 32 8' fill='none' stroke='%23000' stroke-width='2.4'/%3E%3C/svg%3E");
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(160, 120, 60, 0.08), transparent 45%),
+    radial-gradient(ellipse at 85% 75%, rgba(160, 120, 60, 0.1), transparent 50%),
+    var(--ds-color-bg);
+}
+
+/* Big headings open with a gilded initial in a lapis box. */
+[data-ds-theme="codex"] .ds-heading[data-size="6"]::first-letter,
+[data-ds-theme="codex"] .ds-heading[data-size="5"]::first-letter { float: left; font-size: 1.6em; line-height: 1; padding: 0.08em 0.14em 0.04em; margin: 0.02em 0.1em 0 0; color: var(--cx-rubric); background: var(--cx-gold); border: 3px double var(--cx-lapis); box-shadow: inset 0 0 0 2px #f8eccb; }
+[data-ds-theme="codex"] .ds-heading[data-size="4"],
+[data-ds-theme="codex"] .ds-heading[data-size="3"] { color: var(--cx-rubric); }
+[data-ds-theme="codex"] .ds-heading[data-size="2"],
+[data-ds-theme="codex"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; font-variant: small-caps; letter-spacing: 0.06em; color: var(--cx-rubric); }
+[data-ds-theme="codex"] .ds-text[data-muted] { font-style: italic; }
+
+/* Buttons: rubric red with a gold hairline inside; outline buttons are ruled in red. */
+[data-ds-theme="codex"] .ds-button { font-variant: small-caps; letter-spacing: 0.05em; font-size: 1.05rem; }
+[data-ds-theme="codex"] .ds-button[data-variant="solid"] { box-shadow: inset 0 0 0 2px var(--_tone), inset 0 0 0 3px #e3c06a; }
+[data-ds-theme="codex"] .ds-button[data-variant="solid"][data-tone="accent"] { background: var(--cx-gold); box-shadow: inset 0 0 0 1px #8a6512; }
+[data-ds-theme="codex"] .ds-button[data-variant="outline"] { border-style: double; border-width: 3px; }
+
+/* Folios: ruled double frames in red; raised leaves carry an interlace band at the head. */
+[data-ds-theme="codex"] .ds-card { border: 0; }
+[data-ds-theme="codex"] .ds-card[data-variant="outlined"] { border: 3px double var(--cx-rubric); }
+[data-ds-theme="codex"] .ds-card[data-variant="elevated"] { position: relative; border: 1px solid var(--ds-color-border); padding-top: calc(var(--ds-space-5) + 18px); }
+[data-ds-theme="codex"] .ds-card[data-variant="elevated"]::before { content: ""; position: absolute; left: 10px; right: 10px; top: 8px; height: 12px; background: var(--cx-lapis); -webkit-mask: var(--cx-knot) 0 50% / 24px 12px repeat-x; mask: var(--cx-knot) 0 50% / 24px 12px repeat-x; }
+[data-ds-theme="codex"] .ds-card[data-variant="filled"] { box-shadow: inset 0 0 0 1px var(--ds-color-border), inset 0 0 0 5px var(--ds-color-surface-alt), inset 0 0 0 6px color-mix(in srgb, var(--cx-rubric) 50%, transparent); }
+[data-ds-theme="codex"] .ds-card[data-interactive]:hover { border-color: var(--cx-rubric); }
+[data-ds-theme="codex"] .ds-dialog__panel { border: 3px double var(--cx-rubric); box-shadow: inset 0 0 0 6px var(--ds-color-surface), inset 0 0 0 7px #c89a2c, var(--ds-shadow-lg); }
+
+/* Alerts are marked with a rubricated pilcrow. */
+[data-ds-theme="codex"] .ds-alert { border: 0; border-radius: 0; background: transparent; border-left: 1px solid var(--_tone); padding-left: var(--ds-space-4); }
+[data-ds-theme="codex"] .ds-alert__icon { display: none; }
+[data-ds-theme="codex"] .ds-alert__title::before { content: "\00B6\00A0"; color: var(--cx-rubric); font-weight: 700; }
+
+/* Badges in red small caps; avatars are gold roundels ringed in lapis. */
+[data-ds-theme="codex"] .ds-badge { font-variant: small-caps; text-transform: none; letter-spacing: 0.06em; font-size: 0.95rem; }
+[data-ds-theme="codex"] .ds-badge[data-variant="outline"] { border-style: double; border-width: 3px; height: 1.8em; }
+[data-ds-theme="codex"] .ds-avatar { background: var(--cx-gold); color: var(--cx-rubric); font-family: var(--ds-font-display); font-weight: 400; box-shadow: 0 0 0 2px var(--cx-lapis), 0 0 0 4px #f8eccb, 0 0 0 5px var(--cx-lapis); margin: 5px; }
+
+/* Ruled lines for inputs, like a scribe's guide lines. */
+[data-ds-theme="codex"] .ds-input,
+[data-ds-theme="codex"] .ds-select__control { border-width: 0 0 1px; border-radius: 0; background: transparent; border-color: color-mix(in srgb, var(--cx-rubric) 55%, transparent); }
+[data-ds-theme="codex"] .ds-textarea { background: repeating-linear-gradient(180deg, transparent 0 calc(1.6em - 1px), color-mix(in srgb, var(--cx-rubric) 22%, transparent) calc(1.6em - 1px) 1.6em) 0 0.35em / 100% 1.6em, var(--ds-color-surface); line-height: 1.6em; }
+[data-ds-theme="codex"] .ds-input:focus-within,
+[data-ds-theme="codex"] .ds-select__control:focus { box-shadow: 0 2px 0 var(--cx-lapis); border-color: var(--cx-lapis); }
+[data-ds-theme="codex"] .ds-choice__input:checked + .ds-choice__box { background: var(--cx-rubric); border-color: var(--cx-rubric); color: #fff8e8; }
+[data-ds-theme="codex"] .ds-switch__track[data-state="on"] { background: var(--cx-lapis); border-color: var(--cx-lapis); }
+[data-ds-theme="codex"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: #e3c06a; }
+
+[data-ds-theme="codex"] .ds-progress { height: 10px; border-radius: 0; border: 1px solid color-mix(in srgb, var(--ds-color-text) 25%, transparent); }
+[data-ds-theme="codex"] .ds-progress__bar { background: var(--cx-gold); }
+[data-ds-theme="codex"] .ds-progress[data-tone="danger"] .ds-progress__bar,
+[data-ds-theme="codex"] .ds-progress[data-tone="success"] .ds-progress__bar { background: var(--_tone); }
+[data-ds-theme="codex"] .ds-tabs__tab { font-variant: small-caps; font-size: 1rem; letter-spacing: 0.05em; }
+[data-ds-theme="codex"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { background: var(--cx-rubric); height: 3px; }
+[data-ds-theme="codex"] .ds-accordion__item[open] .ds-accordion__trigger { color: var(--cx-rubric); }
+[data-ds-theme="codex"] .ds-divider { border: 0; height: 12px; background: var(--cx-lapis); -webkit-mask: var(--cx-knot) 0 50% / 24px 12px repeat-x; mask: var(--cx-knot) 0 50% / 24px 12px repeat-x; opacity: 0.85; }
+[data-ds-theme="codex"] .ds-tooltip__content { background: #2a1d10; color: #f8eccb; border: 1px solid #c89a2c; font-style: italic; }
+[data-ds-theme="codex"] .ds-spinner { border-color: color-mix(in srgb, #c89a2c 30%, transparent); border-top-color: var(--cx-rubric); }
+[data-ds-theme="codex"] .ds-slider__control::-webkit-slider-thumb { background: var(--cx-gold); border-color: var(--cx-lapis); }

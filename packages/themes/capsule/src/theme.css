@@ -1,0 +1,61 @@
+/* Capsule personality: pharmacy. Two-tone capsule buttons, blister-pack progress, Rx label cards, scored tablets. */
+
+[data-ds-theme="capsule"] {
+  --cp-coral: var(--ds-color-accent);
+  --cp-half: rgba(255, 255, 255, 0.2);
+  --cp-seam: rgba(0, 0, 0, 0.18);
+  --cp-cross: linear-gradient(var(--ds-color-primary) 0 0) 50% 50% / 4px 14px no-repeat, linear-gradient(var(--ds-color-primary) 0 0) 50% 50% / 14px 4px no-repeat;
+  background: var(--ds-color-bg);
+}
+[data-ds-theme="capsule"][data-ds-mode="dark"] { --cp-half: rgba(0, 0, 0, 0.16); --cp-seam: rgba(0, 0, 0, 0.35); }
+
+@keyframes capsule-tumble { 0% { transform: rotate(0); } 50% { transform: rotate(200deg); } 100% { transform: rotate(360deg); } }
+
+[data-ds-theme="capsule"] .ds-heading[data-size="2"],
+[data-ds-theme="capsule"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--ds-text-n1); color: var(--ds-color-primary); }
+
+/* Two-tone capsules: a lighter half, a seam in the middle and a gloss highlight. */
+[data-ds-theme="capsule"] .ds-button[data-variant="solid"] { background:
+  linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent 45%) 0 0 / 100% 100%,
+  linear-gradient(90deg, transparent calc(50% - 1px), var(--cp-seam) calc(50% - 1px) calc(50% + 1px), var(--cp-half) calc(50% + 1px)),
+  var(--_bg); }
+[data-ds-theme="capsule"] .ds-button[data-variant="outline"] { border-width: 2px; }
+[data-ds-theme="capsule"] .ds-icon-button[data-variant="solid"] { background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent 45%), var(--_bg); }
+
+/* Cards: dispensing labels. Raised cards carry an Rx mark and a dosage stripe. */
+[data-ds-theme="capsule"] .ds-card { position: relative; }
+[data-ds-theme="capsule"] .ds-card[data-variant="elevated"] { border: 1px solid var(--ds-color-border); background: linear-gradient(90deg, var(--ds-color-primary) 0 50%, var(--cp-coral) 50%) 0 0 / 100% 6px no-repeat, var(--ds-color-surface); padding-top: calc(var(--ds-space-5) + 6px); }
+[data-ds-theme="capsule"] .ds-card[data-variant="elevated"]::after { content: "\211E"; position: absolute; top: 14px; right: 16px; font-family: var(--ds-font-display); font-weight: 700; font-size: 1.4rem; line-height: 1; color: color-mix(in srgb, var(--ds-color-primary) 45%, transparent); pointer-events: none; }
+[data-ds-theme="capsule"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-primary); }
+[data-ds-theme="capsule"] .ds-card[data-variant="filled"] { background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--ds-color-primary) 8%, transparent) 0 9px, transparent 10px) 0 0 / 32px 32px, var(--ds-color-surface-alt); }
+[data-ds-theme="capsule"] .ds-dialog__panel { background: linear-gradient(90deg, var(--ds-color-primary) 0 50%, var(--cp-coral) 50%) 0 0 / 100% 6px no-repeat, var(--ds-color-surface); }
+
+/* Badges are little capsules too. */
+[data-ds-theme="capsule"] .ds-badge { border-radius: 999px; padding: 0 0.8em; }
+[data-ds-theme="capsule"] .ds-badge[data-variant="solid"] { background: linear-gradient(90deg, transparent 50%, var(--cp-half) 50%), var(--_tone); }
+[data-ds-theme="capsule"] .ds-badge[data-variant="soft"] { background: linear-gradient(90deg, transparent 50%, color-mix(in srgb, var(--_tone) 10%, transparent) 50%), color-mix(in srgb, var(--_tone) 14%, var(--ds-color-surface)); }
+
+/* Scored tablets for avatars. */
+[data-ds-theme="capsule"] .ds-avatar { background: linear-gradient(180deg, transparent calc(50% - 1px), color-mix(in srgb, var(--ds-color-text) 15%, transparent) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)), radial-gradient(circle at 35% 30%, #ffffff, #e6eef1 70%); color: var(--ds-color-primary); box-shadow: inset 0 -2px 3px rgba(16, 42, 54, 0.15), 0 2px 4px rgba(16, 42, 54, 0.2); }
+[data-ds-theme="capsule"][data-ds-mode="dark"] .ds-avatar { color: #00756a; }
+
+/* Blister pack: rounded pockets that fill. */
+[data-ds-theme="capsule"] .ds-progress { height: 20px; border-radius: 6px; background: radial-gradient(ellipse 7px 6px at 50% 50%, color-mix(in srgb, var(--ds-color-text) 10%, transparent) 90%, transparent) 0 0 / 20px 20px repeat-x, var(--ds-color-surface-alt); box-shadow: inset 0 0 0 1px var(--ds-color-border); }
+[data-ds-theme="capsule"] .ds-progress__bar { border-radius: 6px 0 0 6px; background: radial-gradient(ellipse 7px 6px at 50% 50%, var(--_tone) 90%, transparent) 0 0 / 20px 20px repeat-x; }
+[data-ds-theme="capsule"] .ds-progress[data-indeterminate] .ds-progress__bar { border-radius: 6px; }
+
+[data-ds-theme="capsule"] .ds-spinner { border: 0; width: calc(var(--_s) * 0.5); border-radius: 999px; background: linear-gradient(180deg, currentColor 50%, color-mix(in srgb, currentColor 35%, transparent) 50%); animation: capsule-tumble 1s var(--ds-easing) infinite; }
+[data-ds-theme="capsule"] .ds-input,
+[data-ds-theme="capsule"] .ds-select__control { border-radius: 999px; padding-inline: var(--ds-space-4); }
+[data-ds-theme="capsule"] .ds-textarea { border-radius: 16px; }
+[data-ds-theme="capsule"] .ds-choice__box { border-radius: 6px; }
+[data-ds-theme="capsule"] .ds-switch__track { width: 50px; }
+[data-ds-theme="capsule"] .ds-switch__track[data-state="on"] { background: linear-gradient(90deg, transparent 50%, var(--cp-half) 50%), var(--ds-color-primary); }
+[data-ds-theme="capsule"] .ds-switch__track[data-state="on"] .ds-switch__thumb { transform: translate(26px, -50%); }
+[data-ds-theme="capsule"] .ds-alert { border-radius: 14px; border-width: 0; border-left: 5px solid var(--_tone); }
+[data-ds-theme="capsule"] .ds-tabs[data-variant="pill"] .ds-tabs__list { border-radius: 999px; }
+[data-ds-theme="capsule"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: linear-gradient(90deg, transparent 50%, var(--cp-half) 50%), var(--ds-color-primary); color: var(--ds-color-on-primary); }
+[data-ds-theme="capsule"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--ds-color-primary) 50%, var(--cp-coral) 50%); }
+[data-ds-theme="capsule"] .ds-divider { border: 0; height: 2px; background: repeating-linear-gradient(90deg, var(--ds-color-border) 0 6px, transparent 6px 10px); }
+[data-ds-theme="capsule"] .ds-tooltip__content { border-radius: 999px; padding-inline: var(--ds-space-3); }
+[data-ds-theme="capsule"] .ds-slider__control::-webkit-slider-thumb { width: 30px; height: 16px; margin-top: -5px; border: 0; background: linear-gradient(90deg, var(--ds-color-primary) 50%, var(--cp-coral) 50%); box-shadow: inset 0 3px 3px rgba(255, 255, 255, 0.35), 0 1px 3px rgba(0, 0, 0, 0.3); }

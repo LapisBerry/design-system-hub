@@ -1,0 +1,70 @@
+/* Terrazzo personality: polished stone-chip floors. Speckled surfaces, brass inlay strips, pebble avatars and badges. */
+
+[data-ds-theme="terrazzo"] {
+  --tz-brass: linear-gradient(180deg, #e9cf8a, #b98d3a 50%, #8a6420);
+  --tz-chips:
+    radial-gradient(ellipse 5px 3px at 12% 18%, #c86b4f 98%, transparent) 0 0 / 61px 53px,
+    radial-gradient(ellipse 3px 4px at 70% 30%, #6f9a86 98%, transparent) 0 0 / 47px 59px,
+    radial-gradient(ellipse 4px 2.5px at 40% 75%, #d8a84a 98%, transparent) 0 0 / 53px 41px,
+    radial-gradient(circle 1.6px at 85% 60%, #8a8178 98%, transparent) 0 0 / 23px 29px,
+    radial-gradient(circle 1.2px at 25% 45%, #2f2b27 98%, transparent) 0 0 / 31px 19px,
+    radial-gradient(ellipse 7px 4px at 55% 10%, #e7b8a2 98%, transparent) 0 0 / 89px 73px;
+  position: relative;
+  isolation: isolate;
+  background: var(--ds-color-bg);
+}
+[data-ds-theme="terrazzo"]::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--tz-chips); background-size: 122px 106px, 94px 118px, 106px 82px, 46px 58px, 62px 38px, 178px 146px; opacity: 0.45; pointer-events: none; }
+[data-ds-theme="terrazzo"][data-ds-mode="dark"] {
+  --tz-chips:
+    radial-gradient(ellipse 5px 3px at 12% 18%, #9a4f3a 98%, transparent) 0 0 / 61px 53px,
+    radial-gradient(ellipse 3px 4px at 70% 30%, #4f7a68 98%, transparent) 0 0 / 47px 59px,
+    radial-gradient(ellipse 4px 2.5px at 40% 75%, #a8843a 98%, transparent) 0 0 / 53px 41px,
+    radial-gradient(circle 1.6px at 85% 60%, #6a625a 98%, transparent) 0 0 / 23px 29px,
+    radial-gradient(circle 1.2px at 25% 45%, #e8e0d4 98%, transparent) 0 0 / 31px 19px,
+    radial-gradient(ellipse 7px 4px at 55% 10%, #5a4a40 98%, transparent) 0 0 / 89px 73px;
+}
+
+[data-ds-theme="terrazzo"] .ds-heading[data-size="6"],
+[data-ds-theme="terrazzo"] .ds-heading[data-size="5"] { line-height: 1.02; }
+[data-ds-theme="terrazzo"] .ds-heading[data-size="6"]::after { content: ""; display: block; width: 72px; height: 4px; margin-top: 0.3em; background: var(--tz-brass); border-radius: 2px; }
+[data-ds-theme="terrazzo"] .ds-heading[data-size="2"],
+[data-ds-theme="terrazzo"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: var(--ds-text-n1); }
+
+/* Buttons: polished slabs with a soft sheen. */
+[data-ds-theme="terrazzo"] .ds-button[data-variant="solid"] { background: linear-gradient(160deg, rgba(255, 255, 255, 0.22), transparent 45%), var(--_bg); }
+[data-ds-theme="terrazzo"] .ds-button[data-variant="outline"] { border-width: 2px; }
+[data-ds-theme="terrazzo"] .ds-button[data-variant="soft"] { background: var(--tz-chips), var(--_bg); }
+
+/* Cards: polished slabs; filled ones show the chips, raised ones are set in a brass inlay. */
+[data-ds-theme="terrazzo"] .ds-card[data-variant="filled"] { background: var(--tz-chips), var(--ds-color-surface-alt); }
+[data-ds-theme="terrazzo"] .ds-card[data-variant="elevated"] { position: relative; border: 0; box-shadow: 0 0 0 3px var(--ds-color-surface), 0 0 0 5px #c49a48, var(--ds-shadow-md); margin: 5px; }
+[data-ds-theme="terrazzo"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border); background: var(--tz-chips), var(--ds-color-surface); }
+[data-ds-theme="terrazzo"] .ds-card[data-interactive]:hover { box-shadow: 0 0 0 3px var(--ds-color-surface), 0 0 0 5px #c49a48, var(--ds-shadow-lg); }
+[data-ds-theme="terrazzo"] .ds-dialog__panel { border: 0; box-shadow: 0 0 0 4px var(--ds-color-surface), 0 0 0 6px #c49a48, var(--ds-shadow-lg); }
+
+/* Pebbles: avatars and badges are smooth irregular stones. */
+[data-ds-theme="terrazzo"] .ds-avatar { border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%; background: linear-gradient(150deg, rgba(255, 255, 255, 0.35), transparent 50%), #c86b4f; color: #ffffff; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
+[data-ds-theme="terrazzo"] .ds-avatar:nth-child(3n + 2) { background: linear-gradient(150deg, rgba(255, 255, 255, 0.35), transparent 50%), #4f7f6e; border-radius: 58% 42% 46% 54% / 44% 56% 48% 52%; }
+[data-ds-theme="terrazzo"] .ds-avatar:nth-child(3n) { background: linear-gradient(150deg, rgba(255, 255, 255, 0.35), transparent 50%), #8a6a2a; border-radius: 52% 48% 40% 60% / 58% 46% 54% 42%; }
+[data-ds-theme="terrazzo"] .ds-badge { border-radius: 10px 14px 12px 8px / 9px 12px 10px 13px; }
+
+/* Fields. */
+[data-ds-theme="terrazzo"] .ds-input:focus-within,
+[data-ds-theme="terrazzo"] .ds-select__control:focus,
+[data-ds-theme="terrazzo"] .ds-textarea:focus { border-color: #b98d3a; box-shadow: 0 0 0 3px rgba(185, 141, 58, 0.25); }
+[data-ds-theme="terrazzo"] .ds-choice__box { border-radius: 6px 8px 7px 5px; }
+[data-ds-theme="terrazzo"] .ds-switch__thumb { background: linear-gradient(150deg, #fff, #d8cfc2); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+[data-ds-theme="terrazzo"] .ds-switch__track[data-state="on"] { background: var(--tz-chips), var(--ds-color-primary); }
+
+/* Brass inlay strips. */
+[data-ds-theme="terrazzo"] .ds-divider { border: 0; height: 3px; background: var(--tz-brass); border-radius: 2px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+[data-ds-theme="terrazzo"] .ds-progress { height: 10px; box-shadow: inset 0 0 0 1px var(--ds-color-border); }
+[data-ds-theme="terrazzo"] .ds-progress__bar { background: var(--tz-chips), linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent), var(--_tone); }
+[data-ds-theme="terrazzo"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 3px; background: var(--tz-brass); }
+[data-ds-theme="terrazzo"] .ds-tabs[data-variant="pill"] .ds-tabs__list { background: var(--tz-chips), var(--ds-color-surface-alt); }
+[data-ds-theme="terrazzo"] .ds-alert { border-width: 0; border-left: 3px solid var(--_tone); }
+[data-ds-theme="terrazzo"] .ds-accordion__item { border-bottom: 2px solid transparent; border-image: linear-gradient(90deg, #e9cf8a, #b98d3a, #8a6420) 1; }
+[data-ds-theme="terrazzo"] .ds-accordion { border-top: 2px solid transparent; border-image: linear-gradient(90deg, #e9cf8a, #b98d3a, #8a6420) 1; }
+[data-ds-theme="terrazzo"] .ds-tooltip__content { border-radius: 10px 14px 12px 8px; }
+[data-ds-theme="terrazzo"] .ds-spinner { border-color: color-mix(in srgb, #b98d3a 30%, transparent); border-top-color: #b98d3a; }
+[data-ds-theme="terrazzo"] .ds-slider__control::-webkit-slider-thumb { border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%; background: linear-gradient(150deg, #fff, #d8cfc2); border-color: #b98d3a; }

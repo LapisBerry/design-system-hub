@@ -1,0 +1,68 @@
+/* Hoop personality: cross-stitch. Aida cloth, rows of X stitches, embroidery-hoop avatars, checkboxes that stitch an X. */
+
+[data-ds-theme="hoop"] {
+  --hp-thread: var(--ds-color-primary);
+  --hp-thread-2: var(--ds-color-accent);
+  --hp-wood: #c9a06a;
+  --hp-wood-dark: #9c7442;
+  --hp-x: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 2 L8 8 M8 2 L2 8' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  --hp-aida:
+    linear-gradient(90deg, rgba(120, 95, 60, 0.07) 1px, transparent 1px) 0 0 / 5px 5px,
+    linear-gradient(180deg, rgba(120, 95, 60, 0.07) 1px, transparent 1px) 0 0 / 5px 5px;
+  background: var(--hp-aida), var(--ds-color-bg);
+}
+
+/* Big headings sit over a stitched band. */
+[data-ds-theme="hoop"] .ds-heading[data-size="6"],
+[data-ds-theme="hoop"] .ds-heading[data-size="5"] { color: var(--hp-thread); }
+[data-ds-theme="hoop"] .ds-heading[data-size="6"]::after,
+[data-ds-theme="hoop"] .ds-heading[data-size="5"]::after { content: ""; display: block; width: 180px; height: 10px; margin-top: 0.35em; background: var(--hp-thread-2); -webkit-mask: var(--hp-x) 0 0 / 10px 10px repeat-x; mask: var(--hp-x) 0 0 / 10px 10px repeat-x; }
+[data-ds-theme="hoop"] .ds-heading[data-size="2"],
+[data-ds-theme="hoop"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; }
+
+/* Buttons: soft, with a backstitched outline on the quiet variants. */
+[data-ds-theme="hoop"] .ds-button[data-variant="outline"] { border-width: 2px; border-style: dashed; }
+[data-ds-theme="hoop"] .ds-button[data-variant="solid"] { background: var(--hp-aida), var(--_bg); }
+
+/* Cards: stitched X borders top and bottom on raised cards; filled cards are plain aida. */
+[data-ds-theme="hoop"] .ds-card { position: relative; }
+[data-ds-theme="hoop"] .ds-card[data-variant="elevated"] { padding-top: calc(var(--ds-space-5) + 14px); padding-bottom: calc(var(--ds-space-5) + 14px); }
+[data-ds-theme="hoop"] .ds-card[data-variant="elevated"]::before,
+[data-ds-theme="hoop"] .ds-card[data-variant="elevated"]::after { content: ""; position: absolute; left: 12px; right: 12px; height: 10px; background: var(--hp-thread); -webkit-mask: var(--hp-x) 0 0 / 10px 10px repeat-x; mask: var(--hp-x) 0 0 / 10px 10px repeat-x; pointer-events: none; }
+[data-ds-theme="hoop"] .ds-card[data-variant="elevated"]::before { top: 8px; }
+[data-ds-theme="hoop"] .ds-card[data-variant="elevated"]::after { bottom: 8px; background: var(--hp-thread-2); }
+[data-ds-theme="hoop"] .ds-card[data-variant="filled"] { background: var(--hp-aida), var(--ds-color-surface-alt); }
+[data-ds-theme="hoop"] .ds-card[data-variant="outlined"] { border: 2px dashed var(--hp-thread); }
+[data-ds-theme="hoop"] .ds-dialog__panel { border: 2px dashed var(--hp-thread); outline: 6px solid var(--ds-color-surface); }
+
+/* Hoop avatars: a wooden ring with a brass clasp line. */
+[data-ds-theme="hoop"] .ds-avatar { background: var(--hp-aida), var(--ds-color-surface); color: var(--hp-thread); box-shadow: 0 0 0 3px var(--hp-wood), 0 0 0 5px var(--hp-wood-dark), 0 3px 6px 3px rgba(80, 55, 30, 0.2); margin: 6px; font-family: var(--ds-font-display); font-weight: 700; }
+[data-ds-theme="hoop"] .ds-badge { border: 1.5px dashed currentColor; }
+[data-ds-theme="hoop"] .ds-badge[data-variant="solid"] { border-color: color-mix(in srgb, var(--_on) 55%, transparent); }
+
+/* Checkboxes fill with a stitched X instead of a tick. */
+[data-ds-theme="hoop"] .ds-choice__input:checked + .ds-choice__box svg { display: none; }
+[data-ds-theme="hoop"] .ds-choice[data-kind="checkbox"] .ds-choice__input:checked + .ds-choice__box,
+[data-ds-theme="hoop"] .ds-choice:not([data-kind="radio"]) .ds-choice__input:checked + .ds-choice__box { background: linear-gradient(45deg, transparent 42%, #ffffff 42% 58%, transparent 58%), linear-gradient(-45deg, transparent 42%, #ffffff 42% 58%, transparent 58%), var(--hp-thread); border-color: var(--hp-thread); }
+[data-ds-theme="hoop"] .ds-choice[data-kind="radio"] .ds-choice__input:checked + .ds-choice__box { box-shadow: inset 0 0 0 4px var(--ds-color-surface), inset 0 0 0 10px var(--hp-thread); }
+[data-ds-theme="hoop"] .ds-switch__track { background: var(--hp-aida), var(--ds-color-surface-alt); }
+[data-ds-theme="hoop"] .ds-switch__track[data-state="on"] { background: var(--hp-aida), var(--hp-thread-2); border-color: var(--hp-thread-2); }
+
+/* Progress fills stitch by stitch. */
+[data-ds-theme="hoop"] .ds-progress { height: 14px; border-radius: 3px; background: var(--hp-aida), var(--ds-color-surface-alt); box-shadow: inset 0 0 0 1px var(--ds-color-border); }
+[data-ds-theme="hoop"] .ds-progress__bar { border-radius: 0; background: var(--_tone); -webkit-mask: var(--hp-x) 0 2px / 10px 10px repeat-x; mask: var(--hp-x) 0 2px / 10px 10px repeat-x; }
+[data-ds-theme="hoop"] .ds-divider { border: 0; height: 10px; background: linear-gradient(90deg, var(--hp-thread) 50%, var(--hp-thread-2) 50%) 0 0 / 40px 100%; -webkit-mask: var(--hp-x) 0 0 / 10px 10px repeat-x; mask: var(--hp-x) 0 0 / 10px 10px repeat-x; opacity: 0.85; }
+
+[data-ds-theme="hoop"] .ds-input,
+[data-ds-theme="hoop"] .ds-select__control,
+[data-ds-theme="hoop"] .ds-textarea { border-width: 2px; }
+[data-ds-theme="hoop"] .ds-input:focus-within,
+[data-ds-theme="hoop"] .ds-select__control:focus,
+[data-ds-theme="hoop"] .ds-textarea:focus { border-style: dashed; border-color: var(--hp-thread); }
+[data-ds-theme="hoop"] .ds-alert { border-style: dashed; border-width: 2px; border-color: var(--_tone); }
+[data-ds-theme="hoop"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 8px; bottom: -4px; background: var(--hp-thread); -webkit-mask: var(--hp-x) 0 0 / 8px 8px repeat-x; mask: var(--hp-x) 0 0 / 8px 8px repeat-x; }
+[data-ds-theme="hoop"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { outline: 1.5px dashed var(--hp-thread); outline-offset: -4px; }
+[data-ds-theme="hoop"] .ds-accordion__item { border-bottom-style: dashed; }
+[data-ds-theme="hoop"] .ds-tooltip__content { background: var(--hp-thread); color: #ffffff; border-radius: 8px; }
+[data-ds-theme="hoop"] .ds-spinner { border-style: dashed; border-width: 3px; animation-duration: 1.6s; }
+[data-ds-theme="hoop"] .ds-slider__control::-webkit-slider-thumb { background: var(--hp-wood); border: 3px solid var(--hp-wood-dark); }

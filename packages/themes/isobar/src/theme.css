@@ -1,0 +1,53 @@
+/* Isobar personality: weather map. Isobar contours, front-line dividers, pressure-center avatars, a cyclone spinner. */
+
+[data-ds-theme="isobar"] {
+  --ib-cold: var(--ds-color-primary);
+  --ib-warm: var(--ds-color-accent);
+  --ib-occl: var(--ds-color-focus);
+  --ib-iso: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='360' viewBox='0 0 520 360'%3E%3Cg fill='none' stroke='%231d5fb4' stroke-width='1' opacity='.16'%3E%3Cellipse cx='130' cy='120' rx='40' ry='28'/%3E%3Cellipse cx='130' cy='122' rx='78' ry='56'/%3E%3Cellipse cx='132' cy='126' rx='120' ry='88'/%3E%3Cpath d='M-10 300 C80 250 200 260 280 220 S430 150 530 180'/%3E%3Cpath d='M-10 340 C90 300 210 310 300 270 S440 210 530 230'/%3E%3Cellipse cx='420' cy='90' rx='34' ry='24'/%3E%3Cellipse cx='420' cy='92' rx='66' ry='46'/%3E%3C/g%3E%3C/svg%3E");
+  --ib-front:
+    conic-gradient(from 135deg at 50% 0, var(--ib-cold) 0 90deg, transparent 90deg) 0 0 / 28px 8px repeat-x,
+    radial-gradient(circle 5px at 50% 100%, var(--ib-warm) 98%, transparent) 14px 6px / 28px 6px repeat-x,
+    linear-gradient(90deg, var(--ib-cold) 50%, var(--ib-warm) 50%) 0 6px / 28px 2px repeat-x;
+  background: var(--ib-iso) 0 0 / 520px 360px, var(--ds-color-bg);
+}
+[data-ds-theme="isobar"][data-ds-mode="dark"] { --ib-iso: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='360' viewBox='0 0 520 360'%3E%3Cg fill='none' stroke='%236ea8ff' stroke-width='1' opacity='.14'%3E%3Cellipse cx='130' cy='120' rx='40' ry='28'/%3E%3Cellipse cx='130' cy='122' rx='78' ry='56'/%3E%3Cellipse cx='132' cy='126' rx='120' ry='88'/%3E%3Cpath d='M-10 300 C80 250 200 260 280 220 S430 150 530 180'/%3E%3Cpath d='M-10 340 C90 300 210 310 300 270 S440 210 530 230'/%3E%3Cellipse cx='420' cy='90' rx='34' ry='24'/%3E%3Cellipse cx='420' cy='92' rx='66' ry='46'/%3E%3C/g%3E%3C/svg%3E"); }
+
+[data-ds-theme="isobar"] .ds-heading[data-size="6"],
+[data-ds-theme="isobar"] .ds-heading[data-size="5"] { line-height: 1.02; }
+[data-ds-theme="isobar"] .ds-heading[data-size="6"]::after { content: ""; display: block; width: 168px; height: 12px; margin-top: 0.35em; background: var(--ib-front); }
+[data-ds-theme="isobar"] .ds-heading[data-size="2"],
+[data-ds-theme="isobar"] .ds-heading[data-size="1"] { font-family: var(--ds-font-mono); font-weight: 400; text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--ds-text-n1); color: var(--ds-color-text-muted); }
+
+[data-ds-theme="isobar"] .ds-button { font-size: 0.82rem; }
+[data-ds-theme="isobar"] .ds-button[data-variant="outline"] { border-width: 2px; }
+
+/* Cards: map panels; raised cards carry a corner of isobars and a pressure reading. */
+[data-ds-theme="isobar"] .ds-card { position: relative; border: 1px solid var(--ds-color-border); }
+[data-ds-theme="isobar"] .ds-card[data-variant="elevated"] { background: var(--ib-iso) 60% 0 / 520px 360px, var(--ds-color-surface); }
+[data-ds-theme="isobar"] .ds-card[data-variant="elevated"]::after { content: "1012 hPa"; position: absolute; top: 10px; right: 12px; font-family: var(--ds-font-mono); font-size: 0.68rem; color: var(--ds-color-text-muted); }
+[data-ds-theme="isobar"] .ds-card[data-variant="filled"] { background: repeating-radial-gradient(ellipse at 100% 0, transparent 0 22px, color-mix(in srgb, var(--ib-cold) 12%, transparent) 22px 23px), var(--ds-color-surface-alt); }
+[data-ds-theme="isobar"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ib-cold); }
+[data-ds-theme="isobar"] .ds-card[data-interactive]:hover { border-color: var(--ib-cold); }
+[data-ds-theme="isobar"] .ds-dialog__panel { background: var(--ib-iso) 0 0 / 520px 360px, var(--ds-color-surface); }
+
+/* Pressure centers: avatars ringed by isobars, H in blue or L in red. */
+[data-ds-theme="isobar"] .ds-avatar { background: repeating-radial-gradient(circle, var(--ds-color-surface) 0 calc(var(--_s) * 0.08), color-mix(in srgb, var(--ib-cold) 40%, var(--ds-color-surface)) calc(var(--_s) * 0.08) calc(var(--_s) * 0.1)); color: var(--ib-cold); font-family: var(--ds-font-display); font-weight: 800; box-shadow: inset 0 0 0 2px var(--ib-cold); }
+[data-ds-theme="isobar"] .ds-avatar:nth-child(even) { background: repeating-radial-gradient(circle, var(--ds-color-surface) 0 calc(var(--_s) * 0.08), color-mix(in srgb, var(--ib-warm) 40%, var(--ds-color-surface)) calc(var(--_s) * 0.08) calc(var(--_s) * 0.1)); color: color-mix(in srgb, var(--ib-warm) 85%, var(--ds-color-text)); box-shadow: inset 0 0 0 2px var(--ib-warm); }
+[data-ds-theme="isobar"] .ds-badge { font-family: var(--ds-font-mono); font-weight: 400; border-radius: 999px; }
+
+[data-ds-theme="isobar"] .ds-input:focus-within,
+[data-ds-theme="isobar"] .ds-select__control:focus,
+[data-ds-theme="isobar"] .ds-textarea:focus { border-color: var(--ib-occl); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ib-occl) 22%, transparent); }
+[data-ds-theme="isobar"] .ds-switch__track[data-state="on"] { background: linear-gradient(90deg, var(--ib-cold), var(--ib-occl)); border-color: var(--ib-cold); }
+
+/* Fronts: dividers and tab underlines; progress advances like a cold front. */
+[data-ds-theme="isobar"] .ds-divider { border: 0; height: 12px; background: var(--ib-front); }
+[data-ds-theme="isobar"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 8px; bottom: -1px; background: conic-gradient(from 135deg at 50% 0, var(--ib-cold) 0 90deg, transparent 90deg) 0 0 / 12px 6px repeat-x, linear-gradient(var(--ib-cold) 0 0) 0 100% / 100% 2px no-repeat; transform-origin: left; }
+[data-ds-theme="isobar"] .ds-progress { height: 14px; border-radius: 3px; overflow: hidden; }
+[data-ds-theme="isobar"] .ds-progress__bar { position: relative; border-radius: 0; background: var(--_tone); }
+[data-ds-theme="isobar"] .ds-progress__bar::after { content: ""; position: absolute; top: 0; bottom: 0; right: -7px; width: 7px; background: var(--_tone); clip-path: polygon(0 0, 100% 50%, 0 100%); }
+[data-ds-theme="isobar"] .ds-alert { border-width: 0; border-left: 4px solid var(--_tone); }
+[data-ds-theme="isobar"] .ds-tooltip__content { font-family: var(--ds-font-mono); font-size: 0.72rem; }
+[data-ds-theme="isobar"] .ds-spinner { border: 0; background: conic-gradient(from 0deg, transparent, currentColor); -webkit-mask: repeating-radial-gradient(circle, #000 0 2px, transparent 2px 4px); mask: repeating-radial-gradient(circle, #000 0 2px, transparent 2px 4px); animation-duration: 1s; }
+[data-ds-theme="isobar"] .ds-slider__control::-webkit-slider-thumb { background: var(--ds-color-surface); border-color: var(--ib-warm); }

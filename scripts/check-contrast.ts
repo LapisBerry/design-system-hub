@@ -75,6 +75,30 @@ import { stud } from "@dsh/theme-stud";
 import { press } from "@dsh/theme-press";
 import { optic } from "@dsh/theme-optic";
 import { hive } from "@dsh/theme-hive";
+import { sticker } from "@dsh/theme-sticker";
+import { denim } from "@dsh/theme-denim";
+import { codex } from "@dsh/theme-codex";
+import { iso } from "@dsh/theme-iso";
+import { patch } from "@dsh/theme-patch";
+import { mixtape } from "@dsh/theme-mixtape";
+import { hoop } from "@dsh/theme-hoop";
+import { casino } from "@dsh/theme-casino";
+import { terrazzo } from "@dsh/theme-terrazzo";
+import { marble } from "@dsh/theme-marble";
+import { capsule } from "@dsh/theme-capsule";
+import { lino } from "@dsh/theme-lino";
+import { tartan } from "@dsh/theme-tartan";
+import { spray } from "@dsh/theme-spray";
+import { gingham } from "@dsh/theme-gingham";
+import { syntax } from "@dsh/theme-syntax";
+import { tarot } from "@dsh/theme-tarot";
+import { swatch } from "@dsh/theme-swatch";
+import { kintsugi } from "@dsh/theme-kintsugi";
+import { labeler } from "@dsh/theme-labeler";
+import { bigtop } from "@dsh/theme-bigtop";
+import { peg } from "@dsh/theme-peg";
+import { thermal } from "@dsh/theme-thermal";
+import { isobar } from "@dsh/theme-isobar";
 
 const themes: ThemeDefinition[] = [folio, grit, mist, phosphor, terra, grid, konstrukt, sorbet, noir, blueprint, riso, dial,
   kumo, arcade, clarity, pow, origami, aurora, sketch, deco, graphite, harbor, puff, cyber,
@@ -82,6 +106,8 @@ const themes: ThemeDefinition[] = [folio, grit, mist, phosphor, terra, grid, kon
   atomic, rivet, marquee, holo, wire, bento, contour, transit, receipt, groove, relief, sprint,
   nouveau, element, leadlight, beton, floe, dune, gazette, trace, orbit, bezel, catalog, lava,
   plain, frontier, acid, flap, abyss, post, cork, darkroom, stud, press, optic, hive,
+  sticker, denim, codex, iso, patch, mixtape, hoop, casino, terrazzo, marble, capsule, lino,
+  tartan, spray, gingham, syntax, tarot, swatch, kintsugi, labeler, bigtop, peg, thermal, isobar,
 ];
 let failures = 0;
 

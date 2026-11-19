@@ -38,18 +38,30 @@ importers:
       '@dsh/theme-bezel':
         specifier: workspace:*
         version: link:packages/themes/bezel
+      '@dsh/theme-bigtop':
+        specifier: workspace:*
+        version: link:packages/themes/bigtop
       '@dsh/theme-blueprint':
         specifier: workspace:*
         version: link:packages/themes/blueprint
       '@dsh/theme-botanica':
         specifier: workspace:*
         version: link:packages/themes/botanica
+      '@dsh/theme-capsule':
+        specifier: workspace:*
+        version: link:packages/themes/capsule
+      '@dsh/theme-casino':
+        specifier: workspace:*
+        version: link:packages/themes/casino
       '@dsh/theme-catalog':
         specifier: workspace:*
         version: link:packages/themes/catalog
       '@dsh/theme-clarity':
         specifier: workspace:*
         version: link:packages/themes/clarity
+      '@dsh/theme-codex':
+        specifier: workspace:*
+        version: link:packages/themes/codex
       '@dsh/theme-contour':
         specifier: workspace:*
         version: link:packages/themes/contour
@@ -65,6 +77,9 @@ importers:
       '@dsh/theme-deco':
         specifier: workspace:*
         version: link:packages/themes/deco
+      '@dsh/theme-denim':
+        specifier: workspace:*
+        version: link:packages/themes/denim
       '@dsh/theme-dial':
         specifier: workspace:*
         version: link:packages/themes/dial
@@ -92,6 +107,9 @@ importers:
       '@dsh/theme-gazette':
         specifier: workspace:*
         version: link:packages/themes/gazette
+      '@dsh/theme-gingham':
+        specifier: workspace:*
+        version: link:packages/themes/gingham
       '@dsh/theme-graphite':
         specifier: workspace:*
         version: link:packages/themes/graphite
@@ -113,6 +131,18 @@ importers:
       '@dsh/theme-holo':
         specifier: workspace:*
         version: link:packages/themes/holo
+      '@dsh/theme-hoop':
+        specifier: workspace:*
+        version: link:packages/themes/hoop
+      '@dsh/theme-iso':
+        specifier: workspace:*
+        version: link:packages/themes/iso
+      '@dsh/theme-isobar':
+        specifier: workspace:*
+        version: link:packages/themes/isobar
+      '@dsh/theme-kintsugi':
+        specifier: workspace:*
+        version: link:packages/themes/kintsugi
       '@dsh/theme-konstrukt':
         specifier: workspace:*
         version: link:packages/themes/konstrukt
@@ -122,6 +152,9 @@ importers:
       '@dsh/theme-kumo':
         specifier: workspace:*
         version: link:packages/themes/kumo
+      '@dsh/theme-labeler':
+        specifier: workspace:*
+        version: link:packages/themes/labeler
       '@dsh/theme-lava':
         specifier: workspace:*
         version: link:packages/themes/lava
@@ -131,12 +164,21 @@ importers:
       '@dsh/theme-ledger':
         specifier: workspace:*
         version: link:packages/themes/ledger
+      '@dsh/theme-lino':
+        specifier: workspace:*
+        version: link:packages/themes/lino
+      '@dsh/theme-marble':
+        specifier: workspace:*
+        version: link:packages/themes/marble
       '@dsh/theme-marquee':
         specifier: workspace:*
         version: link:packages/themes/marquee
       '@dsh/theme-mist':
         specifier: workspace:*
         version: link:packages/themes/mist
+      '@dsh/theme-mixtape':
+        specifier: workspace:*
+        version: link:packages/themes/mixtape
       '@dsh/theme-noir':
         specifier: workspace:*
         version: link:packages/themes/noir
@@ -152,6 +194,12 @@ importers:
       '@dsh/theme-origami':
         specifier: workspace:*
         version: link:packages/themes/origami
+      '@dsh/theme-patch':
+        specifier: workspace:*
+        version: link:packages/themes/patch
+      '@dsh/theme-peg':
+        specifier: workspace:*
+        version: link:packages/themes/peg
       '@dsh/theme-phosphor':
         specifier: workspace:*
         version: link:packages/themes/phosphor
@@ -188,18 +236,42 @@ importers:
       '@dsh/theme-sorbet':
         specifier: workspace:*
         version: link:packages/themes/sorbet
+      '@dsh/theme-spray':
+        specifier: workspace:*
+        version: link:packages/themes/spray
       '@dsh/theme-sprint':
         specifier: workspace:*
         version: link:packages/themes/sprint
       '@dsh/theme-squiggle':
         specifier: workspace:*
         version: link:packages/themes/squiggle
+      '@dsh/theme-sticker':
+        specifier: workspace:*
+        version: link:packages/themes/sticker
       '@dsh/theme-stud':
         specifier: workspace:*
         version: link:packages/themes/stud
+      '@dsh/theme-swatch':
+        specifier: workspace:*
+        version: link:packages/themes/swatch
+      '@dsh/theme-syntax':
+        specifier: workspace:*
+        version: link:packages/themes/syntax
+      '@dsh/theme-tarot':
+        specifier: workspace:*
+        version: link:packages/themes/tarot
+      '@dsh/theme-tartan':
+        specifier: workspace:*
+        version: link:packages/themes/tartan
       '@dsh/theme-terra':
         specifier: workspace:*
         version: link:packages/themes/terra
+      '@dsh/theme-terrazzo':
+        specifier: workspace:*
+        version: link:packages/themes/terrazzo
+      '@dsh/theme-thermal':
+        specifier: workspace:*
+        version: link:packages/themes/thermal
       '@dsh/theme-tile':
         specifier: workspace:*
         version: link:packages/themes/tile
@@ -266,18 +338,30 @@ importers:
       '@dsh/theme-bezel':
         specifier: workspace:*
         version: link:../../packages/themes/bezel
+      '@dsh/theme-bigtop':
+        specifier: workspace:*
+        version: link:../../packages/themes/bigtop
       '@dsh/theme-blueprint':
         specifier: workspace:*
         version: link:../../packages/themes/blueprint
       '@dsh/theme-botanica':
         specifier: workspace:*
         version: link:../../packages/themes/botanica
+      '@dsh/theme-capsule':
+        specifier: workspace:*
+        version: link:../../packages/themes/capsule
+      '@dsh/theme-casino':
+        specifier: workspace:*
+        version: link:../../packages/themes/casino
       '@dsh/theme-catalog':
         specifier: workspace:*
         version: link:../../packages/themes/catalog
       '@dsh/theme-clarity':
         specifier: workspace:*
         version: link:../../packages/themes/clarity
+      '@dsh/theme-codex':
+        specifier: workspace:*
+        version: link:../../packages/themes/codex
       '@dsh/theme-contour':
         specifier: workspace:*
         version: link:../../packages/themes/contour
@@ -293,6 +377,9 @@ importers:
       '@dsh/theme-deco':
         specifier: workspace:*
         version: link:../../packages/themes/deco
+      '@dsh/theme-denim':
+        specifier: workspace:*
+        version: link:../../packages/themes/denim
       '@dsh/theme-dial':
         specifier: workspace:*
         version: link:../../packages/themes/dial
@@ -320,6 +407,9 @@ importers:
       '@dsh/theme-gazette':
         specifier: workspace:*
         version: link:../../packages/themes/gazette
+      '@dsh/theme-gingham':
+        specifier: workspace:*
+        version: link:../../packages/themes/gingham
       '@dsh/theme-graphite':
         specifier: workspace:*
         version: link:../../packages/themes/graphite
@@ -341,6 +431,18 @@ importers:
       '@dsh/theme-holo':
         specifier: workspace:*
         version: link:../../packages/themes/holo
+      '@dsh/theme-hoop':
+        specifier: workspace:*
+        version: link:../../packages/themes/hoop
+      '@dsh/theme-iso':
+        specifier: workspace:*
+        version: link:../../packages/themes/iso
+      '@dsh/theme-isobar':
+        specifier: workspace:*
+        version: link:../../packages/themes/isobar
+      '@dsh/theme-kintsugi':
+        specifier: workspace:*
+        version: link:../../packages/themes/kintsugi
       '@dsh/theme-konstrukt':
         specifier: workspace:*
         version: link:../../packages/themes/konstrukt
@@ -350,6 +452,9 @@ importers:
       '@dsh/theme-kumo':
         specifier: workspace:*
         version: link:../../packages/themes/kumo
+      '@dsh/theme-labeler':
+        specifier: workspace:*
+        version: link:../../packages/themes/labeler
       '@dsh/theme-lava':
         specifier: workspace:*
         version: link:../../packages/themes/lava
@@ -359,12 +464,21 @@ importers:
       '@dsh/theme-ledger':
         specifier: workspace:*
         version: link:../../packages/themes/ledger
+      '@dsh/theme-lino':
+        specifier: workspace:*
+        version: link:../../packages/themes/lino
+      '@dsh/theme-marble':
+        specifier: workspace:*
+        version: link:../../packages/themes/marble
       '@dsh/theme-marquee':
         specifier: workspace:*
         version: link:../../packages/themes/marquee
       '@dsh/theme-mist':
         specifier: workspace:*
         version: link:../../packages/themes/mist
+      '@dsh/theme-mixtape':
+        specifier: workspace:*
+        version: link:../../packages/themes/mixtape
       '@dsh/theme-noir':
         specifier: workspace:*
         version: link:../../packages/themes/noir
@@ -380,6 +494,12 @@ importers:
       '@dsh/theme-origami':
         specifier: workspace:*
         version: link:../../packages/themes/origami
+      '@dsh/theme-patch':
+        specifier: workspace:*
+        version: link:../../packages/themes/patch
+      '@dsh/theme-peg':
+        specifier: workspace:*
+        version: link:../../packages/themes/peg
       '@dsh/theme-phosphor':
         specifier: workspace:*
         version: link:../../packages/themes/phosphor
@@ -416,18 +536,42 @@ importers:
       '@dsh/theme-sorbet':
         specifier: workspace:*
         version: link:../../packages/themes/sorbet
+      '@dsh/theme-spray':
+        specifier: workspace:*
+        version: link:../../packages/themes/spray
       '@dsh/theme-sprint':
         specifier: workspace:*
         version: link:../../packages/themes/sprint
       '@dsh/theme-squiggle':
         specifier: workspace:*
         version: link:../../packages/themes/squiggle
+      '@dsh/theme-sticker':
+        specifier: workspace:*
+        version: link:../../packages/themes/sticker
       '@dsh/theme-stud':
         specifier: workspace:*
         version: link:../../packages/themes/stud
+      '@dsh/theme-swatch':
+        specifier: workspace:*
+        version: link:../../packages/themes/swatch
+      '@dsh/theme-syntax':
+        specifier: workspace:*
+        version: link:../../packages/themes/syntax
+      '@dsh/theme-tarot':
+        specifier: workspace:*
+        version: link:../../packages/themes/tarot
+      '@dsh/theme-tartan':
+        specifier: workspace:*
+        version: link:../../packages/themes/tartan
       '@dsh/theme-terra':
         specifier: workspace:*
         version: link:../../packages/themes/terra
+      '@dsh/theme-terrazzo':
+        specifier: workspace:*
+        version: link:../../packages/themes/terrazzo
+      '@dsh/theme-thermal':
+        specifier: workspace:*
+        version: link:../../packages/themes/thermal
       '@dsh/theme-tile':
         specifier: workspace:*
         version: link:../../packages/themes/tile
@@ -544,6 +688,12 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/bigtop:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/blueprint:
     dependencies:
       '@dsh/core':
@@ -556,6 +706,18 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/capsule:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/casino:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/catalog:
     dependencies:
       '@dsh/core':
@@ -563,6 +725,12 @@ importers:
         version: link:../../core
 
   packages/themes/clarity:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/codex:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
@@ -593,6 +761,12 @@ importers:
         version: link:../../core
 
   packages/themes/deco:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/denim:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
@@ -652,6 +826,12 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/gingham:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/graphite:
     dependencies:
       '@dsh/core':
@@ -694,6 +874,30 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/hoop:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/iso:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/isobar:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/kintsugi:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/konstrukt:
     dependencies:
       '@dsh/core':
@@ -707,6 +911,12 @@ importers:
         version: link:../../core
 
   packages/themes/kumo:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/labeler:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
@@ -730,6 +940,18 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/lino:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/marble:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/marquee:
     dependencies:
       '@dsh/core':
@@ -737,6 +959,12 @@ importers:
         version: link:../../core
 
   packages/themes/mist:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/mixtape:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
@@ -767,6 +995,18 @@ importers:
         version: link:../../core
 
   packages/themes/origami:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/patch:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/peg:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
@@ -844,6 +1084,12 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/spray:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/sprint:
     dependencies:
       '@dsh/core':
@@ -856,13 +1102,55 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/sticker:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/stud:
     dependencies:
       '@dsh/core':
         specifier: workspace:*
         version: link:../../core
 
+  packages/themes/swatch:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/syntax:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/tarot:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/tartan:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/themes/terra:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/terrazzo:
+    dependencies:
+      '@dsh/core':
+        specifier: workspace:*
+        version: link:../../core
+
+  packages/themes/thermal:
     dependencies:
       '@dsh/core':
         specifier: workspace:*

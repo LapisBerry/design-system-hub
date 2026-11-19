@@ -1,0 +1,81 @@
+/* Spray personality: graffiti on a night wall. Overspray halos, drips, splat avatars and tag-style headings. */
+
+[data-ds-theme="spray"] {
+  --sp-pink: var(--ds-color-primary);
+  --sp-cyan: var(--ds-color-accent);
+  --sp-yellow: #ffd23d;
+  --sp-wall:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0 1px, transparent 1.5px) 0 0 / 5px 5px,
+    radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.25) 0 1px, transparent 1.5px) 0 0 / 7px 6px,
+    radial-gradient(ellipse at 80% 10%, rgba(255, 61, 139, 0.08), transparent 45%),
+    radial-gradient(ellipse at 10% 90%, rgba(46, 230, 255, 0.07), transparent 45%);
+  --sp-drips: radial-gradient(circle at 50% 100%, currentColor 0 3px, transparent 3.5px);
+  background: var(--sp-wall), var(--ds-color-bg);
+}
+
+@keyframes spray-drip { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* Tags: soft overspray glow, with drips running off the big ones. */
+[data-ds-theme="spray"] .ds-heading[data-size="6"],
+[data-ds-theme="spray"] .ds-heading[data-size="5"] { color: var(--sp-pink); text-shadow: 0 0 8px color-mix(in srgb, var(--sp-pink) 60%, transparent), 0 0 22px color-mix(in srgb, var(--sp-pink) 30%, transparent); line-height: 1; transform: rotate(-2deg); transform-origin: left; }
+[data-ds-theme="spray"] .ds-heading[data-size="6"]::after,
+[data-ds-theme="spray"] .ds-heading[data-size="5"]::after { content: ""; display: block; width: 160px; height: 26px; margin: -0.08em 0 0 0.4em; color: var(--sp-pink); background:
+  linear-gradient(currentColor 0 0) 10px 0 / 3px 18px no-repeat,
+  linear-gradient(currentColor 0 0) 52px 0 / 2px 10px no-repeat,
+  linear-gradient(currentColor 0 0) 96px 0 / 3px 22px no-repeat,
+  linear-gradient(currentColor 0 0) 140px 0 / 2px 13px no-repeat,
+  radial-gradient(circle 3px at 11.5px 18px, currentColor 98%, transparent),
+  radial-gradient(circle 2.4px at 53px 10px, currentColor 98%, transparent),
+  radial-gradient(circle 3px at 97.5px 22px, currentColor 98%, transparent),
+  radial-gradient(circle 2.4px at 141px 13px, currentColor 98%, transparent);
+  transform-origin: top; animation: spray-drip 1.2s var(--ds-easing) both; }
+[data-ds-theme="spray"] .ds-heading[data-size="4"],
+[data-ds-theme="spray"] .ds-heading[data-size="3"] { color: var(--sp-cyan); text-shadow: 0 0 10px color-mix(in srgb, var(--sp-cyan) 35%, transparent); }
+[data-ds-theme="spray"] .ds-heading[data-size="2"],
+[data-ds-theme="spray"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 800; font-stretch: 140%; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Buttons: sprayed fills with a fuzzy halo; a drip runs off on hover. */
+[data-ds-theme="spray"] .ds-button { position: relative; font-weight: 800; font-stretch: 125%; }
+[data-ds-theme="spray"] .ds-button[data-variant="solid"] { box-shadow: 0 0 0 1px var(--_tone), 0 0 10px 2px color-mix(in srgb, var(--_tone) 55%, transparent), 0 0 26px 2px color-mix(in srgb, var(--_tone) 18%, transparent); }
+[data-ds-theme="spray"] .ds-button[data-variant="solid"]::after { content: ""; position: absolute; left: 24%; top: calc(100% - 2px); width: 3px; height: 14px; border-radius: 0 0 3px 3px; background: radial-gradient(circle at 50% calc(100% - 3px), var(--_tone) 0 3px, transparent 3.5px), linear-gradient(var(--_tone) 0 0) 50% 0 / 3px calc(100% - 3px) no-repeat; transform: scaleY(0); transform-origin: top; transition: transform var(--ds-duration-slow) var(--ds-easing); pointer-events: none; }
+[data-ds-theme="spray"] .ds-button[data-variant="solid"]:hover:not(:disabled)::after { transform: scaleY(1); }
+[data-ds-theme="spray"] .ds-button[data-variant="outline"] { border-width: 2px; box-shadow: 0 0 8px color-mix(in srgb, var(--_tone) 40%, transparent), inset 0 0 8px color-mix(in srgb, var(--_tone) 25%, transparent); }
+
+/* Cards: wall panels. Raised cards get a sprayed outline. */
+[data-ds-theme="spray"] .ds-card { background: var(--sp-wall), var(--ds-color-surface); }
+[data-ds-theme="spray"] .ds-card[data-variant="elevated"] { border: 2px solid var(--sp-cyan); box-shadow: 0 0 12px color-mix(in srgb, var(--sp-cyan) 35%, transparent), inset 0 0 14px color-mix(in srgb, var(--sp-cyan) 15%, transparent), var(--ds-shadow-md); }
+[data-ds-theme="spray"] .ds-card[data-variant="outlined"] { border: 2px dashed var(--ds-color-border-strong); }
+[data-ds-theme="spray"] .ds-card[data-variant="filled"] { background: radial-gradient(ellipse at 90% 0%, color-mix(in srgb, var(--sp-pink) 18%, transparent), transparent 55%), var(--sp-wall), var(--ds-color-surface-alt); }
+[data-ds-theme="spray"] .ds-card[data-interactive]:hover { box-shadow: 0 0 18px color-mix(in srgb, var(--sp-pink) 45%, transparent); border-color: var(--sp-pink); }
+[data-ds-theme="spray"] .ds-dialog__panel { border: 2px solid var(--sp-pink); box-shadow: 0 0 20px color-mix(in srgb, var(--sp-pink) 40%, transparent), var(--ds-shadow-lg); }
+
+/* Splat avatars. */
+[data-ds-theme="spray"] .ds-avatar { border-radius: 0; background: var(--sp-pink); color: #17171a; font-family: var(--ds-font-display); font-size: calc(var(--_s) * 0.42); clip-path: polygon(50% 0, 60% 18%, 82% 6%, 78% 30%, 100% 34%, 84% 52%, 98% 74%, 74% 74%, 70% 100%, 52% 82%, 30% 98%, 28% 76%, 2% 80%, 16% 58%, 0 36%, 22% 30%, 16% 6%, 38% 18%); }
+[data-ds-theme="spray"] .ds-avatar:nth-child(3n + 2) { background: var(--sp-cyan); }
+[data-ds-theme="spray"] .ds-avatar:nth-child(3n) { background: var(--sp-yellow); }
+[data-ds-theme="spray"] .ds-badge { font-weight: 800; font-stretch: 125%; border-radius: 6px; }
+[data-ds-theme="spray"] .ds-badge[data-variant="solid"] { box-shadow: 0 0 8px color-mix(in srgb, var(--_tone) 55%, transparent); }
+
+[data-ds-theme="spray"] .ds-input,
+[data-ds-theme="spray"] .ds-select__control,
+[data-ds-theme="spray"] .ds-textarea { border-width: 2px; background: rgba(0, 0, 0, 0.25); }
+[data-ds-theme="spray"] .ds-input:focus-within,
+[data-ds-theme="spray"] .ds-select__control:focus,
+[data-ds-theme="spray"] .ds-textarea:focus { border-color: var(--sp-cyan); box-shadow: 0 0 12px color-mix(in srgb, var(--sp-cyan) 45%, transparent); }
+[data-ds-theme="spray"] .ds-choice__input:checked + .ds-choice__box { box-shadow: 0 0 8px var(--sp-pink); }
+[data-ds-theme="spray"] .ds-switch__track[data-state="on"] { box-shadow: 0 0 10px color-mix(in srgb, var(--sp-pink) 60%, transparent); }
+
+/* One sprayed stroke for dividers; fuzzy progress. */
+[data-ds-theme="spray"] .ds-divider { border: 0; height: 4px; border-radius: 4px; background: linear-gradient(90deg, transparent, var(--sp-cyan) 8%, var(--sp-pink) 60%, transparent); filter: blur(0.6px); box-shadow: 0 0 10px color-mix(in srgb, var(--sp-pink) 35%, transparent); }
+[data-ds-theme="spray"] .ds-progress { height: 10px; background: rgba(0, 0, 0, 0.35); overflow: visible; }
+[data-ds-theme="spray"] .ds-progress__bar { box-shadow: 0 0 10px 1px color-mix(in srgb, var(--_tone) 60%, transparent); }
+[data-ds-theme="spray"] .ds-progress[data-indeterminate] { overflow: hidden; }
+[data-ds-theme="spray"] .ds-tabs__tab { font-weight: 800; font-stretch: 125%; }
+[data-ds-theme="spray"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; border-radius: 4px; box-shadow: 0 0 8px var(--ds-color-primary); }
+[data-ds-theme="spray"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { background: var(--sp-pink); color: #17171a; box-shadow: 0 0 10px color-mix(in srgb, var(--sp-pink) 55%, transparent); }
+[data-ds-theme="spray"] .ds-alert { border-width: 2px; border-color: var(--_tone); box-shadow: 0 0 10px color-mix(in srgb, var(--_tone) 30%, transparent); }
+[data-ds-theme="spray"] .ds-tooltip__content { background: var(--sp-yellow); color: #17171a; font-weight: 700; transform: translate(-50%, 4px) rotate(-3deg); }
+[data-ds-theme="spray"] .ds-tooltip:hover .ds-tooltip__content,
+[data-ds-theme="spray"] .ds-tooltip:focus-within .ds-tooltip__content { transform: translate(-50%, 0) rotate(-3deg); }
+[data-ds-theme="spray"] .ds-spinner { border-color: transparent; border-top-color: currentColor; filter: drop-shadow(0 0 4px currentColor); }
+[data-ds-theme="spray"] .ds-slider__control::-webkit-slider-thumb { background: var(--sp-yellow); border: 0; box-shadow: 0 0 10px var(--sp-yellow); }

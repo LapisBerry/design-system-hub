@@ -1,0 +1,72 @@
+/* Labeler personality: label maker. Glossy embossed tape with raised white letters and notched cut ends. */
+
+[data-ds-theme="labeler"] {
+  --lb-black: #1b1c1e;
+  --lb-gloss: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0 18%, rgba(255, 255, 255, 0.06) 40%, rgba(0, 0, 0, 0.12) 100%);
+  --lb-ridges: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 3px);
+  --lb-notch: polygon(0 0, 100% 0, calc(100% - 5px) 50%, 100% 100%, 0 100%, 5px 50%);
+  --lb-emboss: 0 1px 0 rgba(0, 0, 0, 0.45), 0 -1px 0 rgba(255, 255, 255, 0.35);
+  background: var(--ds-color-bg);
+}
+
+/* Big headings are punched onto black tape. */
+[data-ds-theme="labeler"] .ds-heading[data-size="6"],
+[data-ds-theme="labeler"] .ds-heading[data-size="5"] { width: fit-content; max-width: 100%; padding: 0.12em 0.55em 0.08em; color: #f7f7f7; background: var(--lb-gloss), var(--lb-ridges), var(--lb-black); clip-path: var(--lb-notch); text-shadow: var(--lb-emboss); line-height: 1.1; font-size: calc(var(--ds-text-6) * 0.78); transform: rotate(-1deg); }
+[data-ds-theme="labeler"] .ds-heading[data-size="5"] { font-size: calc(var(--ds-text-5) * 0.8); background: var(--lb-gloss), var(--lb-ridges), var(--ds-color-primary); color: var(--ds-color-on-primary); transform: none; }
+[data-ds-theme="labeler"] .ds-heading[data-size="2"],
+[data-ds-theme="labeler"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; font-size: var(--ds-text-n1); }
+
+/* Buttons are strips of tape with notched ends. */
+[data-ds-theme="labeler"] .ds-button { font-family: var(--ds-font-display); font-weight: 400; font-size: 0.85rem; }
+[data-ds-theme="labeler"] .ds-button[data-variant="solid"] { background: var(--lb-gloss), var(--lb-ridges), var(--_bg); clip-path: var(--lb-notch); padding-inline: calc(var(--_px) + 6px); text-shadow: var(--lb-emboss); box-shadow: none; }
+[data-ds-theme="labeler"] .ds-icon-button[data-variant="solid"] { clip-path: none; padding-inline: 0; }
+[data-ds-theme="labeler"] .ds-button[data-variant="solid"][data-tone="neutral"] { --_bg: var(--lb-black); --_fg: #f7f7f7; }
+[data-ds-theme="labeler"] .ds-button[data-variant="outline"] { border-width: 2px; border-style: dashed; }
+[data-ds-theme="labeler"] .ds-button:active:not(:disabled) { transform: translateY(1px); }
+
+/* Cards: a short strip of tape stuck on the top-left corner of raised cards. */
+[data-ds-theme="labeler"] .ds-card { position: relative; border: 1px solid var(--ds-color-border); }
+[data-ds-theme="labeler"] .ds-card[data-variant="elevated"] { padding-top: calc(var(--ds-space-5) + 14px); }
+[data-ds-theme="labeler"] .ds-card[data-variant="elevated"]::before { content: "LABEL"; position: absolute; top: -8px; left: 16px; padding: 3px 12px 2px; font-family: var(--ds-font-display); font-size: 0.7rem; letter-spacing: 0.2em; color: #f7f7f7; background: var(--lb-gloss), var(--lb-ridges), var(--lb-black); clip-path: var(--lb-notch); text-shadow: var(--lb-emboss); transform: rotate(-2deg); }
+[data-ds-theme="labeler"] .ds-card[data-variant="elevated"]:nth-child(3n + 2)::before { content: "FILE"; background: var(--lb-gloss), var(--lb-ridges), #1b4fbf; }
+[data-ds-theme="labeler"] .ds-card[data-variant="elevated"]:nth-child(3n)::before { content: "KEEP"; background: var(--lb-gloss), var(--lb-ridges), #c4161c; }
+[data-ds-theme="labeler"] .ds-card[data-variant="outlined"] { border: 2px solid var(--ds-color-border-strong); }
+[data-ds-theme="labeler"] .ds-card[data-variant="filled"] { border-color: transparent; }
+[data-ds-theme="labeler"] .ds-dialog__panel { position: relative; }
+[data-ds-theme="labeler"] .ds-dialog__title { width: fit-content; padding: 0.1em 0.6em; color: #f7f7f7; background: var(--lb-gloss), var(--lb-ridges), var(--lb-black); clip-path: var(--lb-notch); text-shadow: var(--lb-emboss); font-size: var(--ds-text-1); }
+
+/* Badges are tape; avatars are square tape chips. */
+[data-ds-theme="labeler"] .ds-badge { font-family: var(--ds-font-display); font-weight: 400; border-radius: 0; letter-spacing: 0.14em; padding: 0 0.9em; }
+[data-ds-theme="labeler"] .ds-badge[data-variant="solid"] { background: var(--lb-gloss), var(--lb-ridges), var(--_tone); clip-path: var(--lb-notch); text-shadow: var(--lb-emboss); }
+[data-ds-theme="labeler"] .ds-badge:not([data-tone])[data-variant="solid"] { background: var(--lb-gloss), var(--lb-ridges), var(--lb-black); color: #f7f7f7; }
+[data-ds-theme="labeler"] .ds-avatar { border-radius: 3px; background: var(--lb-gloss), var(--lb-ridges), var(--lb-black); color: #f7f7f7; font-family: var(--ds-font-display); font-weight: 400; text-shadow: var(--lb-emboss); }
+[data-ds-theme="labeler"] .ds-avatar:nth-child(3n + 2) { background: var(--lb-gloss), var(--lb-ridges), #1b4fbf; }
+[data-ds-theme="labeler"] .ds-avatar:nth-child(3n) { background: var(--lb-gloss), var(--lb-ridges), #c4161c; }
+
+[data-ds-theme="labeler"] .ds-field__label { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem; }
+[data-ds-theme="labeler"] .ds-input,
+[data-ds-theme="labeler"] .ds-select__control,
+[data-ds-theme="labeler"] .ds-textarea { border-width: 2px; }
+[data-ds-theme="labeler"] .ds-input:focus-within,
+[data-ds-theme="labeler"] .ds-select__control:focus,
+[data-ds-theme="labeler"] .ds-textarea:focus { border-color: var(--ds-color-border-strong); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-color-focus) 40%, transparent); }
+[data-ds-theme="labeler"] .ds-switch__track { border-radius: 2px; }
+[data-ds-theme="labeler"] .ds-switch__thumb { border-radius: 1px; }
+[data-ds-theme="labeler"] .ds-switch__track[data-state="on"] { background: var(--lb-gloss), var(--lb-ridges), var(--ds-color-primary); }
+
+/* Progress feeds out like tape. */
+[data-ds-theme="labeler"] .ds-progress { height: 16px; border-radius: 0; background: repeating-linear-gradient(90deg, var(--ds-color-surface-alt) 0 8px, color-mix(in srgb, var(--ds-color-text) 8%, var(--ds-color-surface-alt)) 8px 9px); }
+[data-ds-theme="labeler"] .ds-progress__bar { border-radius: 0; background: var(--lb-gloss), var(--lb-ridges), var(--_tone); clip-path: polygon(0 0, 100% 0, calc(100% - 5px) 50%, 100% 100%, 0 100%); }
+[data-ds-theme="labeler"] .ds-divider { border: 0; height: 2px; background: repeating-linear-gradient(90deg, var(--ds-color-border-strong) 0 10px, transparent 10px 16px); opacity: 0.5; }
+[data-ds-theme="labeler"] .ds-tabs__tab { font-family: var(--ds-font-display); font-weight: 400; }
+[data-ds-theme="labeler"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"],
+[data-ds-theme="labeler"] .ds-tabs[data-variant="line"] .ds-tabs__tab[data-state="active"] { background: var(--lb-gloss), var(--lb-ridges), var(--lb-black); color: #f7f7f7; clip-path: var(--lb-notch); text-shadow: var(--lb-emboss); border-radius: 0; }
+[data-ds-theme="labeler"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { display: none; }
+[data-ds-theme="labeler"] .ds-alert { border-width: 0; border-left: 6px solid var(--_tone); border-radius: 0; }
+[data-ds-theme="labeler"] .ds-tooltip__content { background: var(--lb-gloss), var(--lb-ridges), var(--lb-black); color: #f7f7f7; border-radius: 0; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem; clip-path: var(--lb-notch); padding-inline: var(--ds-space-3); }
+[data-ds-theme="labeler"] .ds-kbd { border-width: 2px; border-radius: 2px; }
+[data-ds-theme="labeler"] .ds-spinner { border-radius: 2px; border-width: 3px; animation-timing-function: steps(8); }
+[data-ds-theme="labeler"] .ds-slider__control::-webkit-slider-thumb { border-radius: 2px; background: var(--lb-gloss), var(--lb-black); border: 0; width: 22px; height: 18px; margin-top: -6px; }
+/* Keep the focus ring visible: notched clips would cut it off. */
+[data-ds-theme="labeler"] .ds-button:focus-visible,
+[data-ds-theme="labeler"] .ds-tabs__tab:focus-visible { clip-path: none; }

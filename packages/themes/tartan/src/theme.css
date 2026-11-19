@@ -1,0 +1,57 @@
+/* Tartan personality: woven plaid. Hunter green, navy, red and a gold overcheck; fringed edges; kilt-pin badges. */
+
+[data-ds-theme="tartan"] {
+  --tt-g: #1f4d3a;
+  --tt-n: #1b2a4a;
+  --tt-r: #b0222d;
+  --tt-y: #d9b84a;
+  --tt-sett:
+    repeating-linear-gradient(90deg, transparent 0 22px, rgba(217, 184, 74, 0.75) 22px 24px, transparent 24px 46px, rgba(176, 34, 45, 0.55) 46px 52px, transparent 52px 64px),
+    repeating-linear-gradient(0deg, transparent 0 22px, rgba(217, 184, 74, 0.75) 22px 24px, transparent 24px 46px, rgba(176, 34, 45, 0.55) 46px 52px, transparent 52px 64px),
+    repeating-linear-gradient(90deg, rgba(27, 42, 74, 0.7) 0 14px, transparent 14px 32px),
+    repeating-linear-gradient(0deg, rgba(27, 42, 74, 0.7) 0 14px, transparent 14px 32px),
+    var(--tt-g);
+  --tt-twill: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.08) 0 1px, transparent 1px 3px);
+  --tt-fringe: repeating-linear-gradient(90deg, var(--tt-g) 0 2px, transparent 2px 4px, var(--tt-r) 4px 6px, transparent 6px 8px);
+  background: var(--ds-color-bg);
+}
+
+[data-ds-theme="tartan"] .ds-heading[data-size="6"],
+[data-ds-theme="tartan"] .ds-heading[data-size="5"] { line-height: 1.02; }
+[data-ds-theme="tartan"] .ds-heading[data-size="6"]::after { content: ""; display: block; width: 120px; height: 10px; margin-top: 0.3em; background: var(--tt-twill), var(--tt-sett); background-size: auto, 64px 64px; border-radius: 1px; }
+[data-ds-theme="tartan"] .ds-heading[data-size="2"],
+[data-ds-theme="tartan"] .ds-heading[data-size="1"] { font-family: var(--ds-font-body); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--ds-text-n1); }
+
+[data-ds-theme="tartan"] .ds-button[data-variant="outline"] { border-width: 2px; }
+[data-ds-theme="tartan"] .ds-button[data-variant="solid"] { background: var(--tt-twill), var(--_bg); }
+
+/* Raised cards wear a plaid band; filled cards are a faint woven plaid; dialogs end in a fringe. */
+[data-ds-theme="tartan"] .ds-card { position: relative; }
+[data-ds-theme="tartan"] .ds-card[data-variant="elevated"] { border: 1px solid var(--ds-color-border); padding-top: calc(var(--ds-space-5) + 14px); background: linear-gradient(var(--ds-color-surface) 0 0) 0 14px / 100% 100% no-repeat, var(--tt-twill), var(--tt-sett); background-size: 100% 100%, auto, 64px 64px; }
+[data-ds-theme="tartan"] .ds-card[data-variant="filled"]::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--tt-sett); background-size: 64px 64px; opacity: 0.1; }
+[data-ds-theme="tartan"] .ds-card[data-variant="filled"] { isolation: isolate; margin-bottom: 10px; }
+[data-ds-theme="tartan"] .ds-card[data-variant="filled"]::after { content: ""; position: absolute; left: 6px; right: 6px; bottom: -9px; height: 9px; background: var(--tt-fringe); -webkit-mask: linear-gradient(180deg, #000 40%, transparent); mask: linear-gradient(180deg, #000 40%, transparent); }
+[data-ds-theme="tartan"] .ds-card[data-variant="outlined"] { border: 2px solid var(--tt-g); box-shadow: inset 0 0 0 3px var(--ds-color-surface), inset 0 0 0 4px var(--tt-y); }
+[data-ds-theme="tartan"] .ds-dialog__panel { position: relative; padding-top: calc(var(--ds-space-6) + 12px); background: linear-gradient(var(--ds-color-surface) 0 0) 0 12px / 100% 100% no-repeat, var(--tt-twill), var(--tt-sett); background-size: 100% 100%, auto, 64px 64px; }
+
+/* Kilt-pin badges: a bar pin across the top of the label. */
+[data-ds-theme="tartan"] .ds-badge { position: relative; margin-top: 4px; }
+[data-ds-theme="tartan"] .ds-badge::before { content: ""; position: absolute; left: 15%; right: 15%; top: -4px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, #8a7a52, #e3d3a2 50%, #8a7a52); }
+[data-ds-theme="tartan"] .ds-avatar { background: var(--tt-twill), var(--tt-sett); background-size: auto, 32px 32px; color: #ffffff; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); box-shadow: 0 0 0 2px var(--tt-y); font-family: var(--ds-font-display); font-weight: 400; }
+
+[data-ds-theme="tartan"] .ds-input:focus-within,
+[data-ds-theme="tartan"] .ds-select__control:focus,
+[data-ds-theme="tartan"] .ds-textarea:focus { border-color: var(--ds-color-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--tt-y) 40%, transparent); }
+[data-ds-theme="tartan"] .ds-switch__track[data-state="on"] { background: var(--tt-twill), var(--tt-sett); background-size: auto, 32px 32px; border-color: var(--tt-y); }
+[data-ds-theme="tartan"] .ds-switch__track[data-state="on"] .ds-switch__thumb { background: #fcfaf5; }
+[data-ds-theme="tartan"] .ds-progress { height: 12px; border-radius: 2px; }
+[data-ds-theme="tartan"] .ds-progress__bar { background: var(--tt-twill), var(--tt-sett); background-size: auto, 32px 32px; }
+[data-ds-theme="tartan"] .ds-progress[data-tone="danger"] .ds-progress__bar,
+[data-ds-theme="tartan"] .ds-progress[data-tone="warning"] .ds-progress__bar,
+[data-ds-theme="tartan"] .ds-progress[data-tone="success"] .ds-progress__bar { background: var(--tt-twill), var(--_tone); }
+[data-ds-theme="tartan"] .ds-divider { border: 0; height: 6px; background: var(--tt-twill), var(--tt-sett); background-size: auto, 32px 32px; opacity: 0.85; border-radius: 1px; }
+[data-ds-theme="tartan"] .ds-tabs[data-variant="line"] .ds-tabs__tab::after { height: 4px; background: var(--tt-sett); background-size: 32px 32px; }
+[data-ds-theme="tartan"] .ds-tabs[data-variant="pill"] .ds-tabs__tab[data-state="active"] { box-shadow: inset 0 -3px 0 var(--tt-r); }
+[data-ds-theme="tartan"] .ds-alert { border-width: 0; border-left: 5px solid var(--_tone); border-radius: 2px; }
+[data-ds-theme="tartan"] .ds-tooltip__content { background: var(--tt-n); color: #fcfaf5; border-bottom: 3px solid var(--tt-y); }
+[data-ds-theme="tartan"] .ds-slider__control::-webkit-slider-thumb { background: radial-gradient(circle, #e3d3a2 0 30%, #8a7a52 35% 55%, var(--ds-color-surface) 60%); }

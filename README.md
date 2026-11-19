@@ -80,6 +80,30 @@ packages/
     press/              Letterpress: debossed type on cotton paper (light only)
     optic/              Op art: concentric rings, zebra stripes, one red
     hive/               Honeycomb: hexagon cells, honey drips
+    sticker/            Die-cut stickers: white edges, peeling corners
+    denim/              Workwear denim: twill, topstitching, pockets
+    codex/              Illuminated manuscript: gilded initials, interlace (light only)
+    iso/                Isometric blocks: extruded faces, cube avatars
+    patch/              Modular synth: patch cables, jacks, knobs (dark only)
+    mixtape/            Cassette tapes: striped labels, spinning reels
+    hoop/               Cross-stitch: aida cloth, X stitches, hoops (light only)
+    casino/             Card table: baize, poker chips, card corners (dark only)
+    terrazzo/           Terrazzo: stone-chip speckle, brass inlay
+    marble/             Classical: veined marble, inscriptions, fluting
+    capsule/            Pharmacy: capsule buttons, blister packs, Rx labels
+    lino/               Linocut: gouge marks, carved edges (light only)
+    tartan/             Tartan: woven plaid, fringed edges
+    spray/              Graffiti: overspray, drips, splats (dark only)
+    gingham/            Picnic gingham: checks, rickrack, jar lids (light only)
+    syntax/             Code editor: gutters, syntax colors, squiggles
+    tarot/              Tarot: gilded card frames, stars, moons (dark only)
+    swatch/             Paint chips: color blocks, label strips, fan decks
+    kintsugi/           Kintsugi: gold-mended cracks on glaze
+    labeler/            Label maker: embossed tape, raised letters
+    bigtop/             Circus: striped canopies, valances, bunting (light only)
+    peg/                Letter board: ribbed felt, plastic letters (dark only)
+    thermal/            Thermal camera: ironbow heat, blooms (dark only)
+    isobar/             Weather map: isobars, fronts, pressure centers
 apps/
   showcase/             Vite + React gallery, compare view, token docs
 scripts/
@@ -172,6 +196,30 @@ pnpm check:contrast
 | **Press** | Debossed type and controls in cotton paper, blind impressions, one spot red | Invitations, stationers, wine and spirits | Light only |
 | **Optic** | Concentric rings, zebra stripes, checker switch, target avatars, one red | Galleries, fashion, record labels, campaigns | Light, dark |
 | **Hive** | Hexagon avatars and badges, honeycomb backdrop, honey drips, a little buzz | Food and farm, co-ops, team tools, kids' learning | Light, dark |
+| **Sticker** | Thick white die-cut edges, peeling card corners, tilted badges, a slap-on bounce | Creator tools, merch shops, kids' apps, community pages | Light, dark |
+| **Denim** | Indigo twill, double orange topstitching, back-pocket cards, leather-patch badges | Apparel, workwear, makers, outdoor and craft brands | Light, dark |
+| **Codex** | Uncial hand, gold-leaf initial capitals, rubric red, lapis blue, knotwork borders | Archives, museums, scripture and poetry apps, fantasy reading | Light only |
+| **Iso** | Solid extruded blocks on an isometric grid, cube avatars, presses that sink flush | Games, city and logistics sims, dev platforms, explainers | Light, dark |
+| **Patch** | Black synth panels, sagging patch-cable dividers, jack-socket radios, knob sliders, LEDs | Audio and music tools, creative coding, node editors, labs | Dark only |
+| **Mixtape** | Striped cassette labels with ruled lines, handwritten titles, spinning reels, tape-window progress | Music and podcasts, playlists, radio, nostalgic social apps | Light, dark |
+| **Hoop** | Aida cloth weave, rows of X stitches, embroidery-hoop avatars, checkboxes that stitch an X | Craft and hobby shops, family apps, pattern libraries, cosy games | Light only |
+| **Casino** | Green baize, poker-chip avatars, playing-card corner indices, a roulette spinner, gold trim | Card and board games, trivia, sweepstakes, game nights | Dark only |
+| **Terrazzo** | Multicolor stone-chip speckle, brass inlay strips, polished pebble avatars and badges | Interiors, cafes, boutique retail, galleries | Light, dark |
+| **Marble** | Veined marble slabs, inscribed tracked capitals, fluted-column dividers, cameo avatars | Law and finance, museums, universities, premium editorial | Light, dark |
+| **Capsule** | Two-tone capsule buttons and badges, blister-pack progress, Rx label cards, scored-tablet avatars | Health and pharmacy, telemedicine, care plans, reminders | Light, dark |
+| **Lino** | Rough carved edges, gouge-mark hatching, speckled ink fills, black and one red on cream | Bookshops, breweries, folk music, makers' markets | Light only |
+| **Tartan** | Woven plaid setts in hunter green, red and gold, fringed panel edges, kilt-pin badges | Heritage brands, whisky and tea, golf, winter retail | Light, dark |
+| **Spray** | Fuzzy overspray halos, paint drips under headings and buttons, splat avatars, tag-style type | Streetwear, skate and music scenes, youth campaigns, events | Dark only |
+| **Gingham** | Red gingham checks, rickrack ribbon dividers, jam-jar lid avatars, a folded tablecloth corner | Bakeries, recipes, farmers' markets, family events | Light only |
+| **Syntax** | Line-number gutters on cards, keyword purple and string teal, lint squiggles, editor tabs, a block caret | Developer tools, docs, learn-to-code, API consoles | Light, dark |
+| **Tarot** | Gilded card frames with a star cartouche and name plate, starry indigo sky, sun medallion avatars, moon-phase spinner | Astrology and wellness, games, journaling, storytelling | Dark only |
+| **Swatch** | Paint-chip cards with a color block and label strip, fan-deck tint ladders, chip codes in mono | Design tools, paint and decor retail, brand guides, palettes | Light, dark |
+| **Kintsugi** | Gold seams running through glazed cards, cracked-gold dividers, soft bowl shapes, cream or raku black | Wellness and therapy, ceramics and craft, tea, mindful journaling | Light, dark |
+| **Labeler** | Glossy embossed label tape with raised white letters and notched ends on buttons, badges and headings | Organizing and inventory, workshops, school and office tools | Light, dark |
+| **Bigtop** | Red-and-cream canopy stripes with scalloped valances, bunting dividers, ring avatars, a barber-pole progress bar | Festivals and fairs, kids' events, ticketing, playful promos | Light only |
+| **Peg** | Ribbed black felt, white plastic letters pressed into the grooves, oak-framed cards | Cafes and menus, announcements, event boards, signage | Dark only |
+| **Thermal** | Ironbow heat gradients, heat-bloom hovers, temperature-scale strips, heat-signature avatars, spot-meter crosshairs | Energy and climate data, sensors, fitness, inspection tools | Dark only |
+| **Isobar** | Isobar contours behind the page, stationary-front dividers with triangles and half-moons, pressure-center avatars | Weather and climate, aviation and sailing, agriculture, data journalism | Light, dark |
 
 Every theme passes the contrast checks in `packages/core/src/tokens/contrast.ts` (4.5:1 for body text and primary button labels, 3:1 for large text and UI parts) in every mode it supports.
 

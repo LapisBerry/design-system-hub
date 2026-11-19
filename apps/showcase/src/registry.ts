@@ -71,6 +71,30 @@ import { stud } from "@dsh/theme-stud";
 import { press } from "@dsh/theme-press";
 import { optic } from "@dsh/theme-optic";
 import { hive } from "@dsh/theme-hive";
+import { sticker } from "@dsh/theme-sticker";
+import { denim } from "@dsh/theme-denim";
+import { codex } from "@dsh/theme-codex";
+import { iso } from "@dsh/theme-iso";
+import { patch } from "@dsh/theme-patch";
+import { mixtape } from "@dsh/theme-mixtape";
+import { hoop } from "@dsh/theme-hoop";
+import { casino } from "@dsh/theme-casino";
+import { terrazzo } from "@dsh/theme-terrazzo";
+import { marble } from "@dsh/theme-marble";
+import { capsule } from "@dsh/theme-capsule";
+import { lino } from "@dsh/theme-lino";
+import { tartan } from "@dsh/theme-tartan";
+import { spray } from "@dsh/theme-spray";
+import { gingham } from "@dsh/theme-gingham";
+import { syntax } from "@dsh/theme-syntax";
+import { tarot } from "@dsh/theme-tarot";
+import { swatch } from "@dsh/theme-swatch";
+import { kintsugi } from "@dsh/theme-kintsugi";
+import { labeler } from "@dsh/theme-labeler";
+import { bigtop } from "@dsh/theme-bigtop";
+import { peg } from "@dsh/theme-peg";
+import { thermal } from "@dsh/theme-thermal";
+import { isobar } from "@dsh/theme-isobar";
 
 import "@dsh/core/styles.css";
 import "@dsh/theme-folio/theme.css";
@@ -145,6 +169,30 @@ import "@dsh/theme-stud/theme.css";
 import "@dsh/theme-press/theme.css";
 import "@dsh/theme-optic/theme.css";
 import "@dsh/theme-hive/theme.css";
+import "@dsh/theme-sticker/theme.css";
+import "@dsh/theme-denim/theme.css";
+import "@dsh/theme-codex/theme.css";
+import "@dsh/theme-iso/theme.css";
+import "@dsh/theme-patch/theme.css";
+import "@dsh/theme-mixtape/theme.css";
+import "@dsh/theme-hoop/theme.css";
+import "@dsh/theme-casino/theme.css";
+import "@dsh/theme-terrazzo/theme.css";
+import "@dsh/theme-marble/theme.css";
+import "@dsh/theme-capsule/theme.css";
+import "@dsh/theme-lino/theme.css";
+import "@dsh/theme-tartan/theme.css";
+import "@dsh/theme-spray/theme.css";
+import "@dsh/theme-gingham/theme.css";
+import "@dsh/theme-syntax/theme.css";
+import "@dsh/theme-tarot/theme.css";
+import "@dsh/theme-swatch/theme.css";
+import "@dsh/theme-kintsugi/theme.css";
+import "@dsh/theme-labeler/theme.css";
+import "@dsh/theme-bigtop/theme.css";
+import "@dsh/theme-peg/theme.css";
+import "@dsh/theme-thermal/theme.css";
+import "@dsh/theme-isobar/theme.css";
 
 /** Every design system in the hub. Add a new theme package here to show it in the showcase. */
 export const THEMES: ThemeDefinition[] = [
@@ -220,6 +268,30 @@ export const THEMES: ThemeDefinition[] = [
   press,
   optic,
   hive,
+  sticker,
+  denim,
+  codex,
+  iso,
+  patch,
+  mixtape,
+  hoop,
+  casino,
+  terrazzo,
+  marble,
+  capsule,
+  lino,
+  tartan,
+  spray,
+  gingham,
+  syntax,
+  tarot,
+  swatch,
+  kintsugi,
+  labeler,
+  bigtop,
+  peg,
+  thermal,
+  isobar,
 ];
 
 export const themeById = (id: string) => THEMES.find((t) => t.meta.id === id);
